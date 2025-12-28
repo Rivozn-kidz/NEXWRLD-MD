@@ -1,4 +1,4 @@
-It uses the owner number for pairing require('./settings')
+require('./settings')
 const pino = require('pino')
 const { Boom } = require('@hapi/boom')
 const fs = require('fs')
