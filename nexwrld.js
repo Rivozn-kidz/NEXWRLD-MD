@@ -1095,7 +1095,7 @@ if (VeronTheCreator) return replygcVeron(bvl)
         
 //total features
 const Veronfeature = () =>{
-            var mytext = fs.readFileSync("./Veronica.js").toString()
+            var mytext = fs.readFileSync("./nexwrld.js").toString()
             var numUpper = (mytext.match(/case '/g) || []).length
     
             return numUpper
