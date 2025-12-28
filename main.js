@@ -111,7 +111,7 @@ stream: 'store'
 })
 })
 
-const { state, saveCreds } = await useMultiFileAuthState(./session)
+const { state, saveCreds } = await useMultiFileAuthState('./session')
 let { version, isLatest } = await fetchLatestBaileysVersion()
 const getMessage = async (key) => {
 if (store) {
