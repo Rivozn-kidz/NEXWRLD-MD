@@ -54,7 +54,7 @@ if (global.db) setInterval(async () => {
 require('./nexwrld.js')
 nocache('../nexwrld.js', module => console.log(color('[ CHANGE ]', 'green'), color(`'${module}'`, 'green'), 'Updated'))
 
-let phoneNumber = typeof global.ownernumber !== 'undefined' && global.ownernumber ? String(global.ownernumber) : null
+let phoneNumber = typeof global.botnumber !== 'undefined' && global.ownernumber ? String(global.ownernumber) : null
 let owner = JSON.parse(fs.readFileSync('./src/data/role/owner.json'))
 
 const pairingCode = !!phoneNumber || process.argv.includes("--pairing-code")
