@@ -52,7 +52,7 @@ if (global.db.data) await global.db.write()
 }, 30 * 1000)
 
 require('./nexwrld.js')
-nocache('../nexwrld.js')
+nocache('../nexwrld.js', module => console.log(color('[ CHANGE ]', 'green'), color('${module}', 'green'), 'Updated'))
 
 let phoneNumber = typeof global.ownernumber !== 'undefined' && global.ownernumber ? String(global.ownernumber) : null
 let owner = JSON.parse(fs.readFileSync('./src/data/role/owner.json'))
@@ -111,7 +111,7 @@ stream: 'store'
 })
 })
 
-const { state, saveCreds } = await useMultiFileAuthState(/session)
+const { state, saveCreds } = await useMultiFileAuthState(./session)
 let { version, isLatest } = await fetchLatestBaileysVersion()
 const getMessage = async (key) => {
 if (store) {
