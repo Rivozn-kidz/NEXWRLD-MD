@@ -237,7 +237,7 @@ startSession();
 console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First");
 startSession()
 } else if (reason === DisconnectReason.loggedOut) {
-console.log(Device Logged Out, Please Delete Session and Scan Again.);
+console.log("Device Logged Out, Please Delete Session and Scan Again.");
 startSession();
 } else if (reason === DisconnectReason.restartRequired) {
 console.log("Restart Required, Restarting...");
