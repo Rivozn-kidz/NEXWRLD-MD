@@ -8,7 +8,7 @@ global.location = "Africa,Kampala"
 
 global.botname = 'NEXWRLD-MD' 
 global.ownernumber = '237678687593'
-global.botnumber = '256749482583'
+global.botnumber = ''
 global.ownername = 'Rɪᴅᴢ Cᴏᴅᴇʀ❦'
 
 global.websitex = "https://ridzcoder.zone.id"
