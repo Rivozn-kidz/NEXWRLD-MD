@@ -6,9 +6,9 @@ global.ytname = "YT: Ridz-coder01"
 global.socialm = "GitHub: Ridz-coder01"
 global.location = "Africa,Kampala" 
 
-global.botname = 'NEXWRLD-MD' 
-global.ownernumber = '237678687593'
-global.botnumber = ''
+global.botname = 'NEBULA-MD' 
+global.ownernumber = '263714732501'
+global.botnumber = '256749482583'
 global.ownername = 'Rɪᴅᴢ Cᴏᴅᴇʀ❦'
 
 global.websitex = "https://ridzcoder.zone.id"
@@ -16,7 +16,7 @@ global.wagc = "https://chat.whatsapp.com/KQzM54TU1LmGwIGc2TcOGi"
 global.themeemoji = '🧝'
 
 global.wm = "ᴅᴇᴅɪᴄᴀᴛᴇᴅ ᴛᴏ Fᴀʀɪᴅᴀʜ🧝"
-global.botscript = 'https://github.com/ridz-coder01/NEXWRLD-MD'
+global.botscript = 'https://github.com/ridz-coder01/NEBULA-MD'
 global.packname = "Rɪᴅᴢ Cᴏᴅᴇʀ❦"
 
 global.author = "Rɪᴅᴢ Cᴏᴅᴇʀ❦\n\n+263714732501"
