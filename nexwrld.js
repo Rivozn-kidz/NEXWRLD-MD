@@ -295,7 +295,7 @@ module.exports = Veronica = async (VeronicaX, m, msg, chatUpdate, store) => {
                             title: botname,
                             body: ownername,
                             previewType: "PHOTO",
-                            thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                            thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                             sourceUrl: wagc
                         }
                     },
@@ -311,7 +311,7 @@ module.exports = Veronica = async (VeronicaX, m, msg, chatUpdate, store) => {
                         showAdAttribution: true,
                         title: botname,
                         body: ownername,
-                        thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                        thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                         sourceUrl: websitex,
                         mediaType: 1,
                         renderLargerThumbnail: true
@@ -337,7 +337,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: botname,
 body: ownername,
-thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
 sourceUrl: websitex
 },
 },
@@ -383,7 +383,7 @@ quoted: m,
 		const fvideo = {key: { fromMe: false,participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {}) },message: { "videoMessage": { "title":botname, "h": wm,'seconds': '359996400', 'caption': `${pushname}`, 'jpegThumbnail': thumb}}}
 		const floc = {key : {participant : '0@s.whatsapp.net', ...(m.chat ? { remoteJid: `status@broadcast` } : {}) },message: {locationMessage: {name: wm,jpegThumbnail: thumb}}}
 		const fkontak = { key: {participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: `status@broadcast` } : {}) }, message: { 'contactMessage': { 'displayName': ownername, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${ownername},;;;\nFN:${ownername}\nitem1.TEL;waid=916909137213:916909137213\nitem1.X-ABLabel:Mobile\nEND:VCARD`, 'jpegThumbnail': thumb, thumbnail: thumb,sendEphemeral: true}}}
-	    const fakestatus = {key: {fromMe: false,participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {})},message: { "imageMessage": {"url": "https://whatsapp.com/channel/0029Vb57ZHh7IUYcNttXEB3y","mimetype": "image/jpeg","caption": wm,"fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=","fileLength": "28777","height": 1080,"width": 1079,"mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=","fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=","directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69","mediaKeyTimestamp": "1610993486","jpegThumbnail": fs.readFileSync('./Media/theme/vero.jpg'),"scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw=="}}}
+	    const fakestatus = {key: {fromMe: false,participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {})},message: { "imageMessage": {"url": "https://whatsapp.com/channel/0029Vb57ZHh7IUYcNttXEB3y","mimetype": "image/jpeg","caption": wm,"fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=","fileLength": "28777","height": 1080,"width": 1079,"mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=","fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=","directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69","mediaKeyTimestamp": "1610993486","jpegThumbnail": fs.readFileSync('./Media/theme/Nebula.png'),"scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw=="}}}
 	    const frpayment = {
 	key: {
 		remoteJid: '0@s.whatsapp.net',
@@ -1447,7 +1447,7 @@ fs.writeFileSync('./src/data/role/user.json', JSON.stringify(Veronverifieduser, 
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -1557,7 +1557,7 @@ break
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -1683,7 +1683,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             case 'sim': {
                 if (!VeronTheCreator) return VeronStickOwner()
                 let delb = await VeronicaX.downloadAndSaveMediaMessage(quoted)
-                await fsx.copy(delb, './Media/theme/vero.jpg')
+                await fsx.copy(delb, './Media/theme/Nebula.png')
                 fs.unlinkSync(delb)
                 replygcVeron(mess.done)
             }
@@ -1934,7 +1934,7 @@ case 'listowner': {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -2005,7 +2005,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -2077,7 +2077,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -2149,7 +2149,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -2221,7 +2221,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -2293,7 +2293,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -2365,7 +2365,7 @@ if (!VeronTheCreator) return VeronStickOwner()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -2437,7 +2437,7 @@ if (!VeronTheCreator) return VeronStickOwner()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -2509,7 +2509,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -2582,7 +2582,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -2655,7 +2655,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -2728,7 +2728,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -2801,7 +2801,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -2872,7 +2872,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -3128,7 +3128,7 @@ case 'block': case 'ban': {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: `Sent in ${i.length} Group`,
-                                thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+                                thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -3179,7 +3179,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -3276,7 +3276,7 @@ replygcVeron('Success in turning off nsfw in this group')
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -3358,7 +3358,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -3433,7 +3433,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -3527,7 +3527,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -3602,7 +3602,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -3677,7 +3677,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -3752,7 +3752,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -3827,7 +3827,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -3902,7 +3902,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -3994,7 +3994,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -4069,7 +4069,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -4144,7 +4144,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -4219,7 +4219,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -4294,7 +4294,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -4368,7 +4368,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -4442,7 +4442,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -4516,7 +4516,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -4590,7 +4590,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -4664,7 +4664,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -4737,7 +4737,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -4810,7 +4810,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -5308,7 +5308,7 @@ break
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -5380,7 +5380,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -5698,7 +5698,7 @@ break
                             showAdAttribution: true,
                             title: botname,
                             body: ownername,
-                            thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+                            thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
                             sourceUrl: wagc,
                             mediaType: 1,
                             renderLargerThumbnail: true
@@ -5736,7 +5736,7 @@ break
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+                                thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -5752,7 +5752,7 @@ break
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+                                thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -5773,7 +5773,7 @@ break
                             showAdAttribution: true,
                             title: botname,
                             body: ownername,
-                            thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+                            thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
                             sourceUrl: wagc,
                             mediaType: 1,
                             renderLargerThumbnail: true
@@ -5794,7 +5794,7 @@ break
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -6279,7 +6279,7 @@ Type *surrender* to give up and admit defeat`
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -6367,7 +6367,7 @@ break
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -6440,7 +6440,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -9412,7 +9412,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg') }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9461,7 +9461,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg') }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9507,7 +9507,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg') }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9553,7 +9553,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg') }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9599,7 +9599,7 @@ case 'what': {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg') }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9645,7 +9645,7 @@ if (!text) return replygcVeron(`Ask question\n\nExample : ${prefix + command} is
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg') }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9691,7 +9691,7 @@ case 'how': {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg') }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9737,7 +9737,7 @@ case 'rate': {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg') }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9792,7 +9792,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg') }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -10356,7 +10356,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -10406,7 +10406,7 @@ case 'pick': {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -10470,7 +10470,7 @@ if (!text) return replygcVeron('Where is the text?')
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -10514,7 +10514,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -15276,7 +15276,7 @@ case 'handsomecheck':{
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -15321,7 +15321,7 @@ case 'beautifulcheck':{
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -15366,7 +15366,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -15530,7 +15530,7 @@ try {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -15582,7 +15582,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -15654,7 +15654,7 @@ ${translatedChapterHindi.text}`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -15720,7 +15720,7 @@ https://cloud.google.com/translate/docs/languages
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -15843,7 +15843,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -16619,7 +16619,7 @@ await VeronicaX.relayMessage(m.chat, msgs.message, {})
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -16733,7 +16733,7 @@ await VeronicaX.relayMessage(m.chat, msgs.message, {})
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -16987,7 +16987,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image:  fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image:  fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17088,7 +17088,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image:  fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image:  fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17235,7 +17235,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg') }, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: VeronicaX.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17283,7 +17283,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg') }, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: VeronicaX.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17331,7 +17331,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg') }, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: VeronicaX.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17427,7 +17427,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17523,7 +17523,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17571,7 +17571,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17619,7 +17619,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -18111,7 +18111,7 @@ ${resulw}`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image:  fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image:  fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -18247,7 +18247,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image:  fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image:  fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -18338,7 +18338,7 @@ break;
         case 'totalcommand': 
             replygcVeron(`Total Features of ${botname} is ${Veronfeature()}`)
         break
-case 'nexwrld': case 'menu':
+case 'nebula': case 'menu':
             case 'help': {
             let ownernya = ownernumber + '@s.whatsapp.net'
             let timestampe = speed()
@@ -18346,7 +18346,7 @@ case 'nexwrld': case 'menu':
             let a = db.data.users[sender]
             let me = m.sender
             let xmenu_oh2 = `
-╭─❍ *NEXWRLD MD MENU* ⬡────⭓
+╭─❍ *NEBULA MD MENU* ⬡────⭓
 ├▢⬡  ${Veronytimewisher} ${pushname} 
 ├▢⬡ 𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
 ├▢⬡ 𝗢𝘄𝗻𝗲𝗿 𝗡𝗼: +${ownernumber}
@@ -18355,7 +18355,7 @@ case 'nexwrld': case 'menu':
 ╰─────────────────────━━
  `
             let xmenu_oh = `
-╭─❍ *NEXWRLD MD MENU* ⬡────⭓
+╭─❍ *NEBULA MD MENU* ⬡────⭓
 ├▢⬡  ${Veronytimewisher} ${pushname} 
 ├▢⬡ 𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
 ├▢⬡ 𝗢𝘄𝗻𝗲𝗿 𝗡𝗼: +${ownernumber}
@@ -18386,7 +18386,7 @@ case 'nexwrld': case 'menu':
 └─────────────────┈ ⳹`
 if (typemenu === 'v1') {
                     VeronicaX.sendMessage(m.chat, {
-                        image: fs.readFileSync('./Media/theme/vero.jpg'),
+                        image: fs.readFileSync('./Media/theme/NEBULA.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -18399,7 +18399,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/NEBULA.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -18463,7 +18463,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/NEBULA.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -18481,7 +18481,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+      thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -18506,7 +18506,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://files.catbox.moe/pmxdyl.png",
+thumbnailUrl: "https://files.catbox.moe/u30aik.png",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -18578,7 +18578,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/NEBULA.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -18637,7 +18637,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -18771,7 +18771,7 @@ break
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${allmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VeronicaX.sendMessage(m.chat, {
-                        image: fs.readFileSync('./Media/theme/vero.jpg'),
+                        image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -18784,7 +18784,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -18848,7 +18848,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -18866,7 +18866,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+      thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -18892,7 +18892,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://files.catbox.moe/pmxdyl.png",
+thumbnailUrl: "https://files.catbox.moe/u30aik.png",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -18964,7 +18964,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -19023,7 +19023,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -19082,7 +19082,7 @@ break
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${ownermenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VeronicaX.sendMessage(m.chat, {
-                        image: fs.readFileSync('./Media/theme/vero.jpg'),
+                        image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -19095,7 +19095,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -19159,7 +19159,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -19177,7 +19177,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+      thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -19203,7 +19203,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://files.catbox.moe/pmxdyl.png",
+thumbnailUrl: "https://files.catbox.moe/u30aik.png",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -19275,7 +19275,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -19334,7 +19334,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -19393,7 +19393,7 @@ case 'othermenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${othermenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VeronicaX.sendMessage(m.chat, {
-                        image: fs.readFileSync('./Media/theme/vero.jpg'),
+                        image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -19406,7 +19406,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -19470,7 +19470,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -19488,7 +19488,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+      thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -19514,7 +19514,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://files.catbox.moe/pmxdyl.png",
+thumbnailUrl: "https://files.catbox.moe/u30aik.png",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -19586,7 +19586,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -19645,7 +19645,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -19704,7 +19704,7 @@ case 'downloadmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${downloadmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VeronicaX.sendMessage(m.chat, {
-                        image: fs.readFileSync('./Media/theme/vero.jpg'),
+                        image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -19717,7 +19717,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -19781,7 +19781,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -19799,7 +19799,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+      thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -19825,7 +19825,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://files.catbox.moe/pmxdyl.png",
+thumbnailUrl: "https://files.catbox.moe/u30aik.png",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -19897,7 +19897,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -19956,7 +19956,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -20015,7 +20015,7 @@ case 'groupmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${groupmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VeronicaX.sendMessage(m.chat, {
-                        image: fs.readFileSync('./Media/theme/vero.jpg'),
+                        image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -20028,7 +20028,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -20092,7 +20092,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -20110,7 +20110,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+      thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -20136,7 +20136,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://files.catbox.moe/pmxdyl.png",
+thumbnailUrl: "https://files.catbox.moe/u30aik.png",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -20208,7 +20208,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -20267,7 +20267,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -20326,7 +20326,7 @@ case 'gamemenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${gamemenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VeronicaX.sendMessage(m.chat, {
-                        image: fs.readFileSync('./Media/theme/vero.jpg'),
+                        image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -20339,7 +20339,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -20403,7 +20403,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -20421,7 +20421,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+      thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -20447,7 +20447,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://files.catbox.moe/pmxdyl.png",
+thumbnailUrl: "https://files.catbox.moe/u30aik.png",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -20519,7 +20519,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -20578,7 +20578,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -20637,7 +20637,7 @@ case 'funmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${funmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VeronicaX.sendMessage(m.chat, {
-                        image: fs.readFileSync('./Media/theme/vero.jpg'),
+                        image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -20650,7 +20650,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -20714,7 +20714,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -20732,7 +20732,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+      thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -20758,7 +20758,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://files.catbox.moe/pmxdyl.png",
+thumbnailUrl: "https://files.catbox.moe/u30aik.png",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -20830,7 +20830,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -20889,7 +20889,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -20948,7 +20948,7 @@ case 'stalkermenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${stalkermenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VeronicaX.sendMessage(m.chat, {
-                        image: fs.readFileSync('./Media/theme/vero.jpg'),
+                        image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -20961,7 +20961,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -21025,7 +21025,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -21043,7 +21043,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+      thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -21069,7 +21069,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://files.catbox.moe/pmxdyl.png",
+thumbnailUrl: "https://files.catbox.moe/u30aik.png",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -21144,7 +21144,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -21203,7 +21203,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -21262,7 +21262,7 @@ case 'randomphotomenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${randphotomenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VeronicaX.sendMessage(m.chat, {
-                        image: fs.readFileSync('./Media/theme/vero.jpg'),
+                        image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -21275,7 +21275,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -21339,7 +21339,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -21357,7 +21357,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+      thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -21383,7 +21383,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://files.catbox.moe/pmxdyl.png",
+thumbnailUrl: "https://files.catbox.moe/u30aik.png",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -21455,7 +21455,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -21514,7 +21514,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -21573,7 +21573,7 @@ case 'randomvideomenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${randvideomenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VeronicaX.sendMessage(m.chat, {
-                        image: fs.readFileSync('./Media/theme/vero.jpg'),
+                        image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -21586,7 +21586,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -21650,7 +21650,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -21668,7 +21668,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+      thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -21694,7 +21694,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://files.catbox.moe/pmxdyl.png",
+thumbnailUrl: "https://files.catbox.moe/u30aik.png",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -21766,7 +21766,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -21825,7 +21825,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -21884,7 +21884,7 @@ case 'nsfwmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${nsfwmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VeronicaX.sendMessage(m.chat, {
-                        image: fs.readFileSync('./Media/theme/vero.jpg'),
+                        image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -21897,7 +21897,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -21961,7 +21961,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -21979,7 +21979,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+      thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -22005,7 +22005,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://files.catbox.moe/pmxdyl.png",
+thumbnailUrl: "https://files.catbox.moe/u30aik.png",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -22077,7 +22077,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -22136,7 +22136,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -22195,7 +22195,7 @@ case 'animemenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${animemenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VeronicaX.sendMessage(m.chat, {
-                        image: fs.readFileSync('./Media/theme/vero.jpg'),
+                        image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -22208,7 +22208,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -22272,7 +22272,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -22290,7 +22290,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+      thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -22316,7 +22316,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://files.catbox.moe/pmxdyl.png",
+thumbnailUrl: "https://files.catbox.moe/u30aik.png",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -22388,7 +22388,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -22447,7 +22447,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -22506,7 +22506,7 @@ case 'stickermenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${stickermenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VeronicaX.sendMessage(m.chat, {
-                        image: fs.readFileSync('./Media/theme/vero.jpg'),
+                        image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -22519,7 +22519,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -22583,7 +22583,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -22601,7 +22601,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+      thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -22627,7 +22627,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://files.catbox.moe/pmxdyl.png",
+thumbnailUrl: "https://files.catbox.moe/u30aik.png",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -22699,7 +22699,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -22758,7 +22758,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -22817,7 +22817,7 @@ case 'databasemenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${databasemenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VeronicaX.sendMessage(m.chat, {
-                        image: fs.readFileSync('./Media/theme/vero.jpg'),
+                        image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -22830,7 +22830,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -22894,7 +22894,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -22912,7 +22912,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+      thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -22938,7 +22938,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://files.catbox.moe/pmxdyl.png",
+thumbnailUrl: "https://files.catbox.moe/u30aik.png",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -23010,7 +23010,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -23069,7 +23069,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -23128,7 +23128,7 @@ case 'searchmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${searchmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VeronicaX.sendMessage(m.chat, {
-                        image: fs.readFileSync('./Media/theme/vero.jpg'),
+                        image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -23141,7 +23141,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -23205,7 +23205,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -23223,7 +23223,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+      thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -23249,7 +23249,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://files.catbox.moe/pmxdyl.png",
+thumbnailUrl: "https://files.catbox.moe/u30aik.png",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -23321,7 +23321,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -23380,7 +23380,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -23439,7 +23439,7 @@ case 'storemenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${storemenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VeronicaX.sendMessage(m.chat, {
-                        image: fs.readFileSync('./Media/theme/vero.jpg'),
+                        image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -23452,7 +23452,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -23516,7 +23516,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -23534,7 +23534,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+      thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -23560,7 +23560,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://files.catbox.moe/pmxdyl.png",
+thumbnailUrl: "https://files.catbox.moe/u30aik.png",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -23632,7 +23632,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -23691,7 +23691,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -23750,7 +23750,7 @@ case 'aimenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${aimenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VeronicaX.sendMessage(m.chat, {
-                        image: fs.readFileSync('./Media/theme/vero.jpg'),
+                        image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -23763,7 +23763,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -23827,7 +23827,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -23845,7 +23845,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+      thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -23871,7 +23871,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://files.catbox.moe/pmxdyl.png",
+thumbnailUrl: "https://files.catbox.moe/u30aik.png",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -23943,7 +23943,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -24002,7 +24002,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -24061,7 +24061,7 @@ case 'religionmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${religionmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VeronicaX.sendMessage(m.chat, {
-                        image: fs.readFileSync('./Media/theme/vero.jpg'),
+                        image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -24074,7 +24074,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -24138,7 +24138,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -24156,7 +24156,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+      thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -24182,7 +24182,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://files.catbox.moe/pmxdyl.png",
+thumbnailUrl: "https://files.catbox.moe/u30aik.png",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -24254,7 +24254,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -24313,7 +24313,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -24372,7 +24372,7 @@ case 'listmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${listmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VeronicaX.sendMessage(m.chat, {
-                        image: fs.readFileSync('./Media/theme/vero.jpg'),
+                        image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -24385,7 +24385,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -24449,7 +24449,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -24467,7 +24467,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+      thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -24493,7 +24493,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://files.catbox.moe/pmxdyl.png",
+thumbnailUrl: "https://files.catbox.moe/u30aik.png",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -24565,7 +24565,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -24624,7 +24624,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -24683,7 +24683,7 @@ case 'convertmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${convertmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VeronicaX.sendMessage(m.chat, {
-                        image: fs.readFileSync('./Media/theme/vero.jpg'),
+                        image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -24696,7 +24696,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -24760,7 +24760,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                                thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -24778,7 +24778,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://files.catbox.moe/pmxdyl.png',
+      thumbnailUrl: 'https://files.catbox.moe/u30aik.png',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -24804,7 +24804,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://files.catbox.moe/pmxdyl.png",
+thumbnailUrl: "https://files.catbox.moe/u30aik.png",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -24876,7 +24876,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -24935,7 +24935,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/vero.jpg')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -25081,7 +25081,7 @@ ${util.format(err).substring(0, 3000)}
                         showAdAttribution: true,
                         title: "Error Alert",
                         body: `${botname}`,
-                        thumbnail: fs.readFileSync('./Media/theme/vero.jpg'),
+                        thumbnail: fs.readFileSync('./Media/theme/Nebula.png'),
                         sourceUrl: websitex
                     }
                 }
