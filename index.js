@@ -11,7 +11,7 @@ function start() {
       })
       .on('message', data => {
          if (data == 'reset') {
-            console.log('STARTING NEXWRLD MD')
+            console.log('STARTING NEBULA MD')
             p.kill()
             start()
             delete p
