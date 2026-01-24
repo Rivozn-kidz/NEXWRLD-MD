@@ -65,7 +65,7 @@ const {
 } = require('./lib/converter.js')
 const { smsg, getGroupAdmins, formatp, formatDate, getTime, isUrl, await, sleep,  clockString, msToDate, sort, toNumber, enumGetKey, runtime, fetchJson, getBuffer, json, delay, format, logic, generateProfilePicture, parseMention, getRandom, pickRandom, fetchBuffer, buffergif, GIFBufferToVideoBuffer, totalcase
 } = require('./lib/myfunc.js')
-const { Veron_antispam } = require('./lib/antispam.js')
+const { Faridah_antispam } = require('./lib/antispam.js')
 //prem owner function
 const {
     addPremiumUser,
@@ -95,18 +95,18 @@ let bad = JSON.parse(fs.readFileSync('./src/data/function/badword.json'))
 let premium = JSON.parse(fs.readFileSync('./src/data/role/premium.json'))
 const owner = JSON.parse(fs.readFileSync('./src/data/role/owner.json'))
 //media
-const VoiceNoteVeron = JSON.parse(fs.readFileSync('./Media/database/Veronvn.json'))
-const StickerVeron = JSON.parse(fs.readFileSync('./Media/database/Veronsticker.json'))
-const ImageVeron = JSON.parse(fs.readFileSync('./Media/database/Veronimage.json'))
-const VideoVeron = JSON.parse(fs.readFileSync('./Media/database/Veronvideo.json'))
-const DocVeron = JSON.parse(fs.readFileSync('./Media/database/doc.json'))
-const ZipVeron = JSON.parse(fs.readFileSync('./Media/database/zip.json'))
-const ApkVeron = JSON.parse(fs.readFileSync('./Media/database/apk.json'))
+const Voicenotefaridah = JSON.parse(fs.readFileSync('./Media/database/vn.json'))
+const Stickerfaridah = JSON.parse(fs.readFileSync('./Media/database/sticker.json'))
+const Imagefaridah = JSON.parse(fs.readFileSync('./Media/database/image.json'))
+const Videofaridah = JSON.parse(fs.readFileSync('./Media/database/video.json'))
+const Docfaridah = JSON.parse(fs.readFileSync('./Media/database/doc.json'))
+const Zipfaridah = JSON.parse(fs.readFileSync('./Media/database/zip.json'))
+const Apkfaridah = JSON.parse(fs.readFileSync('./Media/database/apk.json'))
 
 //store database
 const db_respon_list = JSON.parse(fs.readFileSync('./src/store/list.json'))
 
-const Veronverifieduser = JSON.parse(fs.readFileSync('./src/data/role/user.json'))
+const faridahverifieduser = JSON.parse(fs.readFileSync('./src/data/role/user.json'))
 
 global.db.data = JSON.parse(fs.readFileSync('./src/database.json'))
 if (global.db.data) global.db.data = {
@@ -128,22 +128,22 @@ const xtime = moment.tz('Africa/Kampala').format('HH:mm:ss')
 const xdate = moment.tz('Africa/Kampala').format('DD/MM/YYYY')
 const time2 = moment().tz('Africa/Kampala').format('HH:mm:ss')  
 if(time2 < "23:59:00"){
-var Veronytimewisher = `Good Night 🌌`
+var kayinzatimewisher = `Good Night 🌌`
  }
  if(time2 < "19:00:00"){
-var Veronytimewisher = `Good Evening 🌃`
+var kayinzatimewisher = `Good Evening 🌃`
  }
  if(time2 < "18:00:00"){
-var Veronytimewisher = `Good Evening 🌃`
+var kayinzatimewisher = `Good Evening 🌃`
  }
  if(time2 < "15:00:00"){
-var Veronytimewisher = `Good Afternoon 🌅`
+var kayinzatimewisher = `Good Afternoon 🌅`
  }
  if(time2 < "11:00:00"){
-var Veronytimewisher = `Good Morning 🌄`
+var kayinzatimewisher = `Good Morning 🌄`
  }
  if(time2 < "05:00:00"){
-var Veronytimewisher = `Good Morning 🌄`
+var kayinzatimewisher = `Good Morning 🌄`
  } 
 //function
 const reSize = async(buffer, ukur1, ukur2) => {
@@ -155,7 +155,7 @@ const reSize = async(buffer, ukur1, ukur2) => {
    })
 }
 //module
-module.exports = Veronica = async (VeronicaX, m, msg, chatUpdate, store) => {
+module.exports = Faridahx = async (Faridah, m, msg, chatUpdate, store) => {
     try {
         const {
             type,
@@ -194,12 +194,12 @@ module.exports = Veronica = async (VeronicaX, m, msg, chatUpdate, store) => {
         const args = (typeof body === 'string') ? body.trim().split(/ +/).slice(1) : []
         const full_args = (typeof body === 'string') ? body.replace(command, '').slice(1).trim() : ''
         const pushname = m.pushName || "No Name"
-        const botNumber = await VeronicaX.decodeJid(VeronicaX.user.id)
+        const botNumber = await Faridah.decodeJid(Faridah.user.id)
         const sender = m.sender
         const text = q = args.join(" ")
         const from = m.key.remoteJid
-        const Veronymisc = (m.quoted || m)
-        const quoted = (Veronymisc.mtype == 'buttonsMessage') ? Veronymisc[Object.keys(Veronymisc)[1]] : (Veronymisc.mtype == 'templateMessage') ? Veronymisc.hydratedTemplate[Object.keys(Veronymisc.hydratedTemplate)[1]] : (Veronymisc.mtype == 'product') ? Veronymisc[Object.keys(Veronymisc)[0]] : m.quoted ? m.quoted : m
+        const kayinzamisc = (m.quoted || m)
+        const quoted = (kayinzamisc.mtype == 'buttonsMessage') ? kayinzamisc[Object.keys(kayinzamisc)[1]] : (kayinzamisc.mtype == 'templateMessage') ? kayinzamisc.hydratedTemplate[Object.keys(kayinzamisc.hydratedTemplate)[1]] : (kayinzamisc.mtype == 'product') ? kayinzamisc[Object.keys(kayinzamisc)[0]] : m.quoted ? m.quoted : m
         const mime = (quoted.msg || quoted).mimetype || ''
         const qmsg = (quoted.msg || quoted)
         //media
@@ -222,12 +222,12 @@ module.exports = Veronica = async (VeronicaX, m, msg, chatUpdate, store) => {
         const isQuotedDocument = type === 'extendedTextMessage' && content.includes('documentMessage')
        //prefix 2
         const pric = /^#.¦|\\^/.test(body) ? body.match(/^#.¦|\\^/gi) : vprefix
-        const Veronybody = body.startsWith(pric)
-        const isCommand = Veronybody ? body.replace(pric, '').trim().split(/ +/).shift().toLowerCase() : ""
+        const kayinzabody = body.startsWith(pric)
+        const isCommand = kayinzabody ? body.replace(pric, '').trim().split(/ +/).shift().toLowerCase() : ""
         const sticker = []
        //group
         const isGroup = m.key.remoteJid.endsWith('@g.us')
-        const groupMetadata = m.isGroup ? await VeronicaX.groupMetadata(m.chat).catch(e => {}) : ''
+        const groupMetadata = m.isGroup ? await Faridah.groupMetadata(m.chat).catch(e => {}) : ''
         const groupName = m.isGroup ? groupMetadata.subject : ''
         const participants = m.isGroup ? await groupMetadata.participants : ''
         const groupAdmins = m.isGroup ? await getGroupAdmins(participants) : ''
@@ -240,55 +240,55 @@ module.exports = Veronica = async (VeronicaX, m, msg, chatUpdate, store) => {
         //anti media
         
         //user status
-        const isUser = Veronverifieduser.includes(sender)
-        const VeronTheCreator = [botNumber, ...owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
-        const isPremium= VeronTheCreator || checkPremiumUser(m.sender, premium)
-        expiredPremiumCheck(Veronica, m, premium)
+        const isUser = faridahverifieduser.includes(sender)
+        const RidzTheCreator = [botNumber, ...owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
+        const isPremium= RidzTheCreator || checkPremiumUser(m.sender, premium)
+        expiredPremiumCheck(Faridahx, m, premium)
         
         //theme sticker reply
-        const VeronStickWait = () => {
-        let VeronStikRep = fs.readFileSync('./Media/theme/sticker_reply/wait.webp')
-        VeronicaX.sendMessage(from, { sticker: VeronStikRep }, { quoted: m })
+        const farindahStickWait = () => {
+        let farindahStikRep = fs.readFileSync('./Media/theme/sticker_reply/wait.webp')
+        Faridah.sendMessage(from, { sticker: farindahStikRep }, { quoted: m })
         }
-        const VeronStickAdmin = () => {
-        let VeronStikRep = fs.readFileSync('./Media/theme/sticker_reply/admin.webp')
-        VeronicaX.sendMessage(from, { sticker: VeronStikRep }, { quoted: m })
+        const farindahStickAdmin = () => {
+        let farindahStikRep = fs.readFileSync('./Media/theme/sticker_reply/admin.webp')
+        Faridah.sendMessage(from, { sticker: farindahStikRep }, { quoted: m })
         }
-        const VeronStickBotAdmin = () => {
-        let VeronStikRep = fs.readFileSync('./Media/theme/sticker_reply/botadmin.webp')
-        VeronicaX.sendMessage(from, { sticker: VeronStikRep }, { quoted: m })
+        const farindahStickBotAdmin = () => {
+        let farindahStikRep = fs.readFileSync('./Media/theme/sticker_reply/botadmin.webp')
+        Faridah.sendMessage(from, { sticker: farindahStikRep }, { quoted: m })
         }
-        const VeronStickOwner = () => {
-        let VeronStikRep = fs.readFileSync('./Media/theme/sticker_reply/owner.webp')
-        VeronicaX.sendMessage(from, { sticker: VeronStikRep }, { quoted: m })
+        const RidzStickOwner = () => {
+        let farindahStikRep = fs.readFileSync('./Media/theme/sticker_reply/owner.webp')
+        Faridah.sendMessage(from, { sticker: farindahStikRep }, { quoted: m })
         }
-        const VeronStickGroup = () => {
-        let VeronStikRep = fs.readFileSync('./Media/theme/sticker_reply/group.webp')
-        VeronicaX.sendMessage(from, { sticker: VeronStikRep }, { quoted: m })
+        const farindahStickGroup = () => {
+        let farindahStikRep = fs.readFileSync('./Media/theme/sticker_reply/group.webp')
+        Faridah.sendMessage(from, { sticker: farindahStikRep }, { quoted: m })
         }
-        const VeronStickPrivate = () => {
-        let VeronStikRep = fs.readFileSync('./Media/theme/sticker_reply/private.webp')
-        VeronicaX.sendMessage(from, { sticker: VeronStikRep }, { quoted: m })
+        const farindahStickPrivate = () => {
+        let farindahStikRep = fs.readFileSync('./Media/theme/sticker_reply/private.webp')
+        Faridah.sendMessage(from, { sticker: farindahStikRep }, { quoted: m })
         }
  
         //premium
         async function replyprem(teks) {
-    replygcVeron(`This feature is for premium user, contact the owner to become premium user`)
+    replygcFaridah(`This feature is for premium user, contact the owner to become premium user`)
 }
         //script replier
-        async function sendVeronicaMessage(chatId, message, options = {}){
+        async function sendFaridahxMessage(chatId, message, options = {}){
     let generate = await generateWAMessage(chatId, message, options)
     let type2 = getContentType(generate.message)
     if ('contextInfo' in options) generate.message[type2].contextInfo = options?.contextInfo
     if ('contextInfo' in message) generate.message[type2].contextInfo = message?.contextInfo
-    return await VeronicaX.relayMessage(chatId, generate.message, { messageId: generate.key.id })
+    return await Faridah.relayMessage(chatId, generate.message, { messageId: generate.key.id })
 }
         //reply
-        async function replygcVeron(teks) {
+        async function replygcFaridah(teks) {
             if (typereply === 'v1') {
                 m.reply(teks)
             } else if (typereply === 'v2') {
-                VeronicaX.sendMessage(m.chat, {
+                Faridah.sendMessage(m.chat, {
                     contextInfo: {
                         externalAdReply: {
                             showAdAttribution: true,
@@ -304,7 +304,7 @@ module.exports = Veronica = async (VeronicaX, m, msg, chatUpdate, store) => {
                     quoted: m
                 });
             } else if (typereply === 'v3') {
-               VeronicaX.sendMessage(m.chat, {
+               Faridah.sendMessage(m.chat, {
                   text: teks,
                   contextInfo: {
                      externalAdReply: {
@@ -319,13 +319,13 @@ module.exports = Veronica = async (VeronicaX, m, msg, chatUpdate, store) => {
                   }
                }, { quoted: m })
             } else if (typereply === 'v4') {
-                replygcVeron2(teks)
+                replygcFaridah2(teks)
             }
         }
         
         // 
-async function replygcVeron2(txt) {
-const Veronnewrep = {      
+async function replygcFaridah2(txt) {
+const farindahnewwrep = {      
 contextInfo: {
 forwardingScore: 999,
 isForwarded: true,
@@ -343,7 +343,7 @@ sourceUrl: websitex
 },
 text: txt,
 }
-return VeronicaX.sendMessage(from, Veronnewrep, {
+return Faridah.sendMessage(from, farindahnewwrep, {
 quoted: m,
 })
 }
@@ -427,7 +427,7 @@ return arr[Math.floor(Math.random() * arr.length)]
                 if (!('title' in user)) user.title = ''
                 if (!('serialNumber' in user)) user.serialNumber = randomBytes(16).toString('hex') 
                 if (!('afkReason' in user)) user.afkReason = ''
-                if (!('nick' in user)) user.nick = VeronicaX.getName(sender)
+                if (!('nick' in user)) user.nick = Faridah.getName(sender)
                 if (!isPremium) user.premium = false
                 if (!('totalLimit' in user)) user.totalLimit = 0
                 if (!isNumber(user.limit)) user.limit = limitUser
@@ -437,7 +437,7 @@ return arr[Math.floor(Math.random() * arr.length)]
                afkTime: -1,
                badword: 0,
                afkReason: '',
-               nick: VeronicaX.getName(sender),
+               nick: Faridah.getName(sender),
                premium: `${isPremium ? 'true' : 'false'}`,
                limit: limitUser,
                totalLimit: 0
@@ -504,7 +504,7 @@ return arr[Math.floor(Math.random() * arr.length)]
                if (!('onlygrub' in setting)) setting.onlygrub = false
                if (!('onlypc' in setting)) setting.onlypc = false
                if (!('watermark' in setting)) setting.watermark = { packname , author }
-               if (!('about' in setting)) setting.about = { bot: { nick: VeronicaX.getName(botNumber), alias: botname}, owner: { nick: VeronicaX.getName(global.ownernumber + '@s.whatsapp.net'), alias: global.ownernumber}}
+               if (!('about' in setting)) setting.about = { bot: { nick: Faridah.getName(botNumber), alias: botname}, owner: { nick: Faridah.getName(global.ownernumber + '@s.whatsapp.net'), alias: global.ownernumber}}
             } else global.db.data.settings[botNumber] = {
                totalhit: 0,
                totalError: 0,
@@ -527,11 +527,11 @@ return arr[Math.floor(Math.random() * arr.length)]
                },
                about: {
                   bot: {
-                     nick: VeronicaX.getName(botNumber), 
+                     nick: Faridah.getName(botNumber), 
                      alias: botname
                   },
                   owner: {
-                     nick: VeronicaX.getName(global.ownernumber + '@s.whatsapp.net'), 
+                     nick: Faridah.getName(global.ownernumber + '@s.whatsapp.net'), 
                      alias: global.ownernumber
                   }
                }
@@ -599,19 +599,19 @@ return build_server + data.image
 }
 
 //autoreact
-const Veronreact = async () => {
+const Faridahreact = async () => {
   const emojis = ["🌷", "🤙", "😂", "🤣", "😭", "🫂", "💔", "😡"]; 
   for (const emoji of emojis) {
     await sleep(80);
-    VeronicaX.sendMessage(m.chat, { react: { text: emoji, key: m.key }});
+    Faridah.sendMessage(m.chat, { react: { text: emoji, key: m.key }});
   }
   await sleep(50);
-  VeronicaX.sendMessage(m.chat, { react: { text: randomemoji, key: m.key }});
+  Faridah.sendMessage(m.chat, { react: { text: randomemoji, key: m.key }});
 }
 
 //bug loading
 async function loading () {
-var Veronlod = [
+var Faridahlod = [
 "《 █▒▒▒▒▒▒▒▒▒▒▒》10%",
 "《 ████▒▒▒▒▒▒▒▒》30%",
 "《 ███████▒▒▒▒▒》50%",
@@ -619,15 +619,15 @@ var Veronlod = [
 "《 ████████████》100%",
 "𝙻𝙾𝙰𝙳𝙸𝙽𝙶 𝙲𝙾𝙼𝙿𝙻𝙴𝚃𝙴𝙳 🦄..."
 ]
-let { key } = await VeronicaX.sendMessage(from, {text: 'ʟᴏᴀᴅɪɴɢ...'})
+let { key } = await Faridah.sendMessage(from, {text: 'ʟᴏᴀᴅɪɴɢ...'})
 
-for (let i = 0; i < Veronlod.length; i++) {
-await VeronicaX.sendMessage(from, {text: Veronlod[i], edit: key })
+for (let i = 0; i < Faridahlod.length; i++) {
+await Faridah.sendMessage(from, {text: Faridahlod[i], edit: key })
 }
 } 
 
-const Veronimun = (texto) => {
-VeronicaX.sendMessage(from, { text: texto, mentions: [sender]}, {quoted: m }).catch(e => {
+const faridahimun = (texto) => {
+Faridah.sendMessage(from, { text: texto, mentions: [sender]}, {quoted: m }).catch(e => {
 return m.reply("Erro..")
 })
 }
@@ -709,21 +709,21 @@ async function styletext(teks) {
         
         async function Telesticker(url) {
     return new Promise(async (resolve, reject) => {
-        if (!url.match(/(https:\/\/t.me\/addstickers\/)/gi)) return replygcVeron('Enther your url telegram sticker link')
+        if (!url.match(/(https:\/\/t.me\/addstickers\/)/gi)) return replygcFaridah('Enther your url telegram sticker link')
         packName = url.replace("https://t.me/addstickers/", "")
         data = await axios(`https://api.telegram.org/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/getStickerSet?name=${encodeURIComponent(packName)}`, {method: "GET",headers: {"User-Agent": "GoogleBot"}})
-        const Veronyresult = []
+        const kayinzaresult = []
         for (let i = 0; i < data.data.result.stickers.length; i++) {
             fileId = data.data.result.stickers[i].thumb.file_id
             data2 = await axios(`https://api.telegram.org/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/getFile?file_id=${fileId}`)
             result = {
             status: 200,
-            author: 'DGVeron',
+            author: 'ridzcoder',
             url: "https://api.telegram.org/file/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/" + data2.data.result.file_path
             }
-            Veronyresult.push(result)
+            kayinzaresult.push(result)
         }
-    resolve(Veronyresult)
+    resolve(kayinzaresult)
     })
 }
 //mega download
@@ -749,87 +749,87 @@ function formatDuration(ms) {
         async function useLimit(senuseLimitder, amount) {
             db.data.users[sender].limit -= amount
             db.data.users[sender].totalLimit += amount
-            replygcVeron(`You have used up: ${amount} limit\nRemaining: ${db.data.users[sender].limit} limit`)
+            replygcFaridah(`You have used up: ${amount} limit\nRemaining: ${db.data.users[sender].limit} limit`)
         }
         async function resetLimit() {
             let users = Object.keys(global.db.data.users)
-            let LimitVeron = isPremium ? limit.prem : limit.free
+            let LimitFaridah = isPremium ? limit.prem : limit.free
             for (let i of users) {
-               db.data.users[i].limit = LimitVeron
+               db.data.users[i].limit = LimitFaridah
             }
-            VeronicaX.sendText('120363305010536937@g.us', { text: `Reset Limit`})
+            Faridah.sendText('120363305010536937@g.us', { text: `Reset Limit`})
         }
         // Grup Only
-        if (!m.isGroup && !VeronTheCreator && db.data.settings[botNumber].onlygrub ) {
+        if (!m.isGroup && !RidzTheCreator && db.data.settings[botNumber].onlygrub ) {
         	if (isCommand){
-            return replygcVeron(`Hello buddy! Because We Want to Reduce Spam, Please Use Bot in the Group Chat !\n\nIf you have issue please chat owner wa.me/${ownernumber}`)
+            return replygcFaridah(`Hello buddy! Because We Want to Reduce Spam, Please Use Bot in the Group Chat !\n\nIf you have issue please chat owner wa.me/${ownernumber}`)
             }
         }
         // Private Only
-        if (!VeronTheCreator && db.data.settings[botNumber].onlypc && m.isGroup) {
+        if (!RidzTheCreator && db.data.settings[botNumber].onlypc && m.isGroup) {
         	if (isCommand){
-	         return replygcVeron("Hello buddy! if you want to use this bot, please chat the bot in private chat")
+	         return replygcFaridah("Hello buddy! if you want to use this bot, please chat the bot in private chat")
 	     }
 	}
 	     
-        if (!VeronicaX.public) {
-            if (VeronTheCreator && !m.key.fromMe) return
+        if (!Faridah.public) {
+            if (RidzTheCreator && !m.key.fromMe) return
         }
         if (db.data.settings[botNumber].online) {
         	if (isCommand) {
-        	VeronicaX.sendPresenceUpdate('unavailable', from)
+        	Faridah.sendPresenceUpdate('unavailable', from)
         }
         }
         if (db.data.settings[botNumber].autoread) {
-            VeronicaX.readMessages([m.key])
+            Faridah.readMessages([m.key])
         }
         //auto set bio\\
 	if (db.data.settings[botNumber].autobio) {
-            VeronicaX.updateProfileStatus(`${botname} Have Been Running For ${runtime(process.uptime())}`).catch(_ => _)
+            Faridah.updateProfileStatus(`${botname} Have Been Running For ${runtime(process.uptime())}`).catch(_ => _)
         }
      //auto type record
         if (db.data.settings[botNumber].autorecordtype){
         if (isCommand) {
-            let Veronmix = ['composing', 'recording']
-            Veronmix2 = Veronmix[Math.floor(Veronmix.length * Math.random())]
-            VeronicaX.sendPresenceUpdate(Veronmix2, from)
+            let kayinzamix = ['composing', 'recording']
+            kayinzamix2 = mix[Math.floor(kayinzamix.length * Math.random())]
+            Faridah.sendPresenceUpdate(kayinzamix2, from)
         }
         }
         if (db.data.settings[botNumber].autorecord){
         if (isCommand) {
-        	let Veronmix = ['recording']
-            Veronmix2 = Veronmix[Math.floor(Veronmix.length * Math.random())]
-            VeronicaX.sendPresenceUpdate(Veronmix2, from)
+        	let kayinzamix = ['recording']
+            kayinzamix2 = kayinzamix[Math.floor(kayinzamix.length * Math.random())]
+            Faridah.sendPresenceUpdate(kayinzamix2, from)
         }
         }
         if (db.data.settings[botNumber].autotype){
         if (isCommand) {
-        	let Veronpos = ['composing']
-            VeronicaX.sendPresenceUpdate(Veronpos, from)
+        	let kayinzapos = ['composing']
+            Faridah.sendPresenceUpdate(kayinzapos, from)
         }
         }
         
         //auto block number
         if (m.sender.startsWith(`${autoblocknumber}`) && db.data.settings[botNumber].autoblocknum === true) {
-            return VeronicaX.updateBlockStatus(m.sender, 'block')
+            return Faridah.updateBlockStatus(m.sender, 'block')
         }
         if (!m.sender.startsWith('91') && db.data.settings[botNumber].onlyindia === true) {
-            return VeronicaX.updateBlockStatus(m.sender, 'block')
+            return Faridah.updateBlockStatus(m.sender, 'block')
         }
         if (!m.sender.startsWith('62') && db.data.settings[botNumber].onlyindo === true) {
-            return VeronicaX.updateBlockStatus(m.sender, 'block')
+            return Faridah.updateBlockStatus(m.sender, 'block')
         } 
         if (!m.sender.startsWith(`${antiforeignnumber}`) && db.data.chats[m.chat].antiforeignnum === true){ 
-        	if (VeronTheCreator || isAdmins || !isBotAdmins) return
-            VeronicaX.sendMessage(m.chat, { text: `Sorry buddy! you will be removed because the group admin/owner has enabled anti foreign number, only +${antiforeignnumber} country code is allowed to join the group` }, {quoted: m})
+        	if (RidzTheCreator || isAdmins || !isBotAdmins) return
+            Faridah.sendMessage(m.chat, { text: `Sorry buddy! you will be removed because the group admin/owner has enabled anti foreign number, only +${antiforeignnumber} country code is allowed to join the group` }, {quoted: m})
             await sleep(2000)
-            await VeronicaX.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+            await Faridah.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         }
         let list = []
 for (let i of owner) {
 list.push({
-	    	displayName: await VeronicaX.getName(i),
-	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await VeronicaX.getName(i)}\nFN:${await VeronicaX.getName(i)}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click here to chat\nitem2.EMAIL;type=INTERNET:${ytname}\nitem2.X-ABLabel:YouTube\nitem3.URL:${socialm}\nitem3.X-ABLabel:GitHub\nitem4.ADR:;;${location};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+	    	displayName: await Faridah.getName(i),
+	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await Faridah.getName(i)}\nFN:${await Faridah.getName(i)}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click here to chat\nitem2.EMAIL;type=INTERNET:${ytname}\nitem2.X-ABLabel:YouTube\nitem3.URL:${socialm}\nitem3.X-ABLabel:GitHub\nitem4.ADR:;;${location};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
 	    })
 	}
         //console log
@@ -845,14 +845,14 @@ list.push({
         let msg = val.message?.viewOnceMessage?.message || val.message?.viewOnceMessageV2?.message
         delete msg[Object.keys(msg)[0]].viewOnce
         val.message = msg
-        await VeronicaX.sendMessage(m.chat, { forward: val }, { quoted: m })
+        await Faridah.sendMessage(m.chat, { forward: val }, { quoted: m })
     }
     
     //antispam kick
 if (db.data.chats[m.chat].antispam) {
-if (m.isGroup && m.message && Veron_antispam.isFiltered(from)) {
+if (m.isGroup && m.message && Faridah_antispam.isFiltered(from)) {
 console.log(`[SPAM]`, color(moment(m.messageTimestamp * 100).format('DD/MM/YYYY HH:mm:ss'), 'yellow'), color(`${command} [${args.length}]`), 'from', color(m.pushName))
-return await VeronicaX.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+return await Faridah.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 }
 }
     
@@ -860,9 +860,9 @@ return await VeronicaX.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 if (db.data.chats[m.chat].antipromotion) {
 if (budy.match(`instagram booster|tiktok booster|ml booster|bgmi selling|selling uc|selling diamonds|selling coin|selling id|selling account|selling ids|buy account|sell account|buy id|sell id|instagram followers|tiktok followers|buy panel|sell panel|adminpanel5kpm|open jasa push member grup|yangmaubuypanelpm|admin panel 10k pm|Hanya menyediakan Jasa Push Member Grup|admin panel 5k pm|yang mau beli panel murah pm|list harga panel by|list harga vps|LIST HARGA VPS|OPEN JASA PUSH MEMBER GRUP|READY|Redy|LIST HARGA PANEL BY|list harga panel|menyediakan|MENYEDIAKAN|OPEN MURBUG|open|OPEN|PANEL READY|PANEL|PANNEL READY|panel|panel ready|pannel ready minat pm|mau panel pm|MAU PANNEL PM|Admin panel ready|ADMIN PANEL READY|Chat aja om ready selalu|OPEN JASA INSTALL|open jasa installMENYEDIAKAN JASA INSTALL|menyediakan jasa install`)) {
 if (!isBotAdmins) return
-if(VeronTheCreator) return
+if(RidzTheCreator) return
 if (isAdmins) return
-VeronicaX.sendMessage(m.chat,
+Faridah.sendMessage(m.chat,
 			    {
 			        delete: {
 			            remoteJid: m.chat,
@@ -871,21 +871,21 @@ VeronicaX.sendMessage(m.chat,
 			            participant: m.key.participant
 			        }
 			    })
-VeronicaX.sendMessage(from, {text:`\`\`\`「 Promotion Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} has sent a promotion message and successfully deleted`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
+Faridah.sendMessage(from, {text:`\`\`\`「 Promotion Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} has sent a promotion message and successfully deleted`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
 }
 }
 
         //ANTI VIRUS
 if (isGroup && db.data.chats[m.chat].antivirtex) {
 if (budy.includes('๒๒๒๒') || budy.includes('ดุ') || budy.includes('ผิดุท้เึางืผิดุท้เึางื') || budy.includes('๑๑๑๑๑๑๑๑') || budy.includes('৭৭৭৭৭৭৭৭') || budy.includes('   ⃢   ⃢   ⃢  ') || budy.includes('*⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃟⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢⃟⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢⃟⃟ᡃ⃟ᡃ⃟ᡃ⃢ᡃ⃢ᡃ⃢⃟⃢⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃟⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢⃟⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢⃟⃟ᡃ⃟ᡃ⃟ᡃ⃢ᡃ⃢ᡃ⃢⃟⃢⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃟⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢⃟⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢⃟⃟ᡃ⃟ᡃ⃟ᡃ⃢ᡃ⃢ᡃ⃢⃟⃢⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟') || budy.includes('ผดิทุเ้ึางผืดิทุเ้') || budy.includes('.*࡞ࣰࣰࣰࣲࣲࣲࣲࣩࣩࣩࣩࣶࣶ࣯࣯࣮࣮ࣦ࣯ࣨࣨࣨࣻࣻࣻࣼࣼࣼࣽࣽࣾࣷࣵࣴ࣬࣬࣬ࣤࣤࣧࣧ*') || budy.includes('᥋') || budy.includes('؁') || budy.includes('ٯٯٯٯٯ') ) {
-if (isGroupAdmins) return replygcVeron('*VIRTEX DETECTED*')
+if (isGroupAdmins) return replygcFaridah('*VIRTEX DETECTED*')
 console.log(color('[KICK]', 'red'), color('Received a virus text!', 'yellow'))
-VeronicaX.sendText(m.chat, `*MARK AS READ*\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n *Virus sender here👇:* \nwa.me/${sender.split("@")[0]}`)   
+Faridah.sendText(m.chat, `*MARK AS READ*\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n *Virus sender here👇:* \nwa.me/${sender.split("@")[0]}`)   
 if (!isBotAdmins) return
-if(VeronTheCreator) return
-VeronicaX.groupParticipantsUpdate(from, [sender], 'remove')
-await VeronicaX.sendMessage(from, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
-VeronicaX.sendMessage(`${ownernumber}@s.whatsapp.net`,{text: `Hi Owner! wa.me/${sender.split("@")[0]} Detected Having Sent Virtex ${isGroup?`in ${groupName}`:''}`})
+if(RidzTheCreator) return
+Faridah.groupParticipantsUpdate(from, [sender], 'remove')
+await Faridah.sendMessage(from, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
+Faridah.sendMessage(`${ownernumber}@s.whatsapp.net`,{text: `Hi Owner! wa.me/${sender.split("@")[0]} Detected Having Sent Virtex ${isGroup?`in ${groupName}`:''}`})
  }
  }
  
@@ -893,89 +893,89 @@ VeronicaX.sendMessage(`${ownernumber}@s.whatsapp.net`,{text: `Hi Owner! wa.me/${
     if (m.isBaileys && m.fromMe == false){
         if (isAdmins || !isBotAdmins){		  
         } else {
-          replygcVeron(`*Another Bot Detected*\n\nHusshhh Get away from this group!!!`)
-    return await VeronicaX.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+          replygcFaridah(`*Another Bot Detected*\n\nHusshhh Get away from this group!!!`)
+    return await Faridah.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         }
     }
    }
  
         //anti media
         if (db.data.chats[m.chat].antimedia && isMedia) {
-        if (VeronTheCreator || isAdmins || !isBotAdmins){		  
+        if (RidzTheCreator || isAdmins || !isBotAdmins){		  
         } else {
-          replygcVeron(`\`\`\`「 Media Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-media for this group`)
-    return VeronicaX.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
+          replygcFaridah(`\`\`\`「 Media Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-media for this group`)
+    return Faridah.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
         }
   }
         if (db.data.chats[m.chat].image && isMedia) {
     if(isMedia === "imageMessage"){
-        if (VeronTheCreator || isAdmins || !isBotAdmins){		  
+        if (RidzTheCreator || isAdmins || !isBotAdmins){		  
         } else {
-          replygcVeron(`\`\`\`「 Image Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-image for this group`)
-    return VeronicaX.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
+          replygcFaridah(`\`\`\`「 Image Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-image for this group`)
+    return Faridah.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
         }
     }
   }
         if (db.data.chats[m.chat].antivideo && isMedia) {
     if(isMedia === "videoMessage"){
-        if (VeronTheCreator || isAdmins || !isBotAdmins){		  
+        if (RidzTheCreator || isAdmins || !isBotAdmins){		  
         } else {
-          replygcVeron(`\`\`\`「 Video Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-video for this group`)
-    return VeronicaX.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
+          replygcFaridah(`\`\`\`「 Video Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-video for this group`)
+    return Faridah.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
         }
     }
   }
         if (db.data.chats[m.chat].antisticker && isMedia) {
     if(isMedia === "stickerMessage"){
-        if (VeronTheCreator || isAdmins || !isBotAdmins){		  
+        if (RidzTheCreator || isAdmins || !isBotAdmins){		  
         } else {
-          replygcVeron(`\`\`\`「 Sticker Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-sticker for this group`)
-    return VeronicaX.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
+          replygcFaridah(`\`\`\`「 Sticker Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-sticker for this group`)
+    return Faridah.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
         }
     }
   }
         if (db.data.chats[m.chat].antiaudio && isMedia) {
     if(isMedia === "audioMessage"){
-        if (VeronTheCreator || isAdmins || !isBotAdmins){		  
+        if (RidzTheCreator || isAdmins || !isBotAdmins){		  
         } else {
-          replygcVeron(`\`\`\`「 Audio Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-audio for this group`)
-    return VeronicaX.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
+          replygcFaridah(`\`\`\`「 Audio Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-audio for this group`)
+    return Faridah.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
         }
     }
   }
        if (db.data.chats[m.chat].antipoll && isMedia) {
     if(isMedia === "pollCreationMessage"){
-        if (VeronTheCreator || isAdmins || !isBotAdmins){		  
+        if (RidzTheCreator || isAdmins || !isBotAdmins){		  
         } else {
-          replygcVeron(`\`\`\`「 Poll Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-poll for this group`)
-    return VeronicaX.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
+          replygcFaridah(`\`\`\`「 Poll Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-poll for this group`)
+    return Faridah.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
         }
     }
   }
        if (db.data.chats[m.chat].antilocation && isMedia) {
     if(isMedia === "locationMessage"){
-        if (VeronTheCreator || isAdmins || !isBotAdmins){		  
+        if (RidzTheCreator || isAdmins || !isBotAdmins){		  
         } else {
-          replygcVeron(`\`\`\`「 Location Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-location for this group`)
-    return VeronicaX.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
+          replygcFaridah(`\`\`\`「 Location Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-location for this group`)
+    return Faridah.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
         }
     }
   }
        if (db.data.chats[m.chat].antidocument && isMedia) {
     if(isMedia === "documentMessage"){
-        if (VeronTheCreator || isAdmins || !isBotAdmins){		  
+        if (RidzTheCreator || isAdmins || !isBotAdmins){		  
         } else {
-          replygcVeron(`\`\`\`「 Document Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-document for this group`)
-    return VeronicaX.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
+          replygcFaridah(`\`\`\`「 Document Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-document for this group`)
+    return Faridah.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
         }
     }
   }
       if (db.data.chats[m.chat].anticontact && isMedia) {
     if(isMedia === "contactMessage"){
-        if (VeronTheCreator || isAdmins || !isBotAdmins){		  
+        if (RidzTheCreator || isAdmins || !isBotAdmins){		  
         } else {
-          replygcVeron(`\`\`\`「 Contact Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-contact for this group`)
-    return VeronicaX.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
+          replygcFaridah(`\`\`\`「 Contact Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-contact for this group`)
+    return Faridah.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
         }
     }
   }
@@ -984,7 +984,7 @@ VeronicaX.sendMessage(`${ownernumber}@s.whatsapp.net`,{text: `Hi Owner! wa.me/${
             for (let bak of bad) {
                if (budy === bak) {
                   let baduser = await db.data.users[sender].badword
-                  VeronicaX.sendMessage(m.chat,
+                  Faridah.sendMessage(m.chat,
 			    {
 			        delete: {
 			            remoteJid: m.chat,
@@ -993,7 +993,7 @@ VeronicaX.sendMessage(`${ownernumber}@s.whatsapp.net`,{text: `Hi Owner! wa.me/${
 			            participant: m.key.participant
 			        }
 			    })
-			VeronicaX.sendMessage(from, {text:`\`\`\`「 Bad Word Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} was using harsh words and his chat has been deleted`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
+			Faridah.sendMessage(from, {text:`\`\`\`「 Bad Word Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} was using harsh words and his chat has been deleted`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
                }
             }
         }
@@ -1001,28 +1001,28 @@ VeronicaX.sendMessage(`${ownernumber}@s.whatsapp.net`,{text: `Hi Owner! wa.me/${
         if (db.data.settings[botNumber].autodownload && !m.key.fromMe && !isCmd2) {
 try {
 if (budy.match(`instagram.com`)) {
-await VeronicaX.sendMessage(m.chat, { react: { text: "⏱️",key: m.key,}})   
+await Faridah.sendMessage(m.chat, { react: { text: "⏱️",key: m.key,}})   
 let anu = await fetchJson(`https://api.junn4.my.id/download/instagram?url=${budy}`)
-VeronicaX.sendMessage(m.chat, { video: { url: anu.result.media}, caption: `Auto Download ✅`}, {quoted: m})
-await VeronicaX.sendMessage(m.chat, { react: { text: "☑️",key: m.key,}})   
+Faridah.sendMessage(m.chat, { video: { url: anu.result.media}, caption: `Auto Download ✅`}, {quoted: m})
+await Faridah.sendMessage(m.chat, { react: { text: "☑️",key: m.key,}})   
 } else if (budy.match(`tiktok.com`)) {
-await VeronicaX.sendMessage(m.chat, { react: { text: "⏱️",key: m.key,}})   
+await Faridah.sendMessage(m.chat, { react: { text: "⏱️",key: m.key,}})   
 let anu = await fetchJson(`https://api.junn4.my.id/download/tiktok?url=${budy}`)
-VeronicaX.sendMessage(m.chat, { video: { url: anu.result.Medium.url}, caption: `Auto Download ✅`}, {quoted: m})
-await VeronicaX.sendMessage(m.chat, { react: { text: "☑️",key: m.key,}})   
+Faridah.sendMessage(m.chat, { video: { url: anu.result.Medium.url}, caption: `Auto Download ✅`}, {quoted: m})
+await Faridah.sendMessage(m.chat, { react: { text: "☑️",key: m.key,}})   
 } else if (budy.match(`facebook.com`)) {
-await VeronicaX.sendMessage(m.chat, { react: { text: "⏱️",key: m.key,}})   
+await Faridah.sendMessage(m.chat, { react: { text: "⏱️",key: m.key,}})   
 let anu = await fetchJson(`https://api.junn4.my.id/download/facebook?url=${budy}`)
-VeronicaX.sendMessage(m.chat, { video: { url: anu.result.video_sd}, caption: `Auto Download ✅`}, {quoted: m})
-await VeronicaX.sendMessage(m.chat, { react: { text: "☑️",key: m.key,}})   
+Faridah.sendMessage(m.chat, { video: { url: anu.result.video_sd}, caption: `Auto Download ✅`}, {quoted: m})
+await Faridah.sendMessage(m.chat, { react: { text: "☑️",key: m.key,}})   
 } else if (budy.match(`youtube.com|youtu.be`)) {
-await VeronicaX.sendMessage(m.chat, { react: { text: "⏱️",key: m.key,}})   
+await Faridah.sendMessage(m.chat, { react: { text: "⏱️",key: m.key,}})   
 let anu = await fetchJson(`https://api.junn4.my.id/download/ytmp4?url=${budy}`)
-VeronicaX.sendMessage(m.chat, { video: { url: anu.result.result}, caption: ``}, {quoted: m})
-await VeronicaX.sendMessage(m.chat, { react: { text: "☑️",key: m.key,}})   
+Faridah.sendMessage(m.chat, { video: { url: anu.result.result}, caption: ``}, {quoted: m})
+await Faridah.sendMessage(m.chat, { react: { text: "☑️",key: m.key,}})   
 } 
 } catch (err) {
-await VeronicaX.sendMessage(m.chat, { react: { text: "✖️",key: m.key,}})   
+await Faridah.sendMessage(m.chat, { react: { text: "✖️",key: m.key,}})   
 }
 } 
         
@@ -1031,22 +1031,22 @@ await VeronicaX.sendMessage(m.chat, { react: { text: "✖️",key: m.key,}})
         	if (m.key.fromMe) return
             if (/image/.test(mime) && !/webp/.test(mime)) {
                 let mediac = await quoted.download()
-                VeronicaX.sendImageAsSticker(from, mediac, m, { packname: global.packname, author: global.author })
+                Faridah.sendImageAsSticker(from, mediac, m, { packname: global.packname, author: global.author })
                 console.log(`Auto sticker detected`)
             } else if (/video/.test(mime)) {
                 if ((quoted.msg || quoted).seconds > 11) return
                 let mediac = await quoted.download()
-                VeronicaX.sendVideoAsSticker(from, mediac, m, { packname: global.packname, author: global.author })
+                Faridah.sendVideoAsSticker(from, mediac, m, { packname: global.packname, author: global.author })
             }
         }
         
         if (db.data.chats[m.chat].antilinkgc) {
             if (budy.match(`chat.whatsapp.com`)) {
                bvl = `\`\`\`「 GC Link Detected 」\`\`\`\n\nAdmin has sent a gc link, admin is free to send any link😇`
-if (isAdmins) return replygcVeron(bvl)
-if (m.key.fromMe) return replygcVeron(bvl)
-if (VeronTheCreator) return replygcVeron(bvl)
-               await VeronicaX.sendMessage(m.chat,
+if (isAdmins) return replygcFaridah(bvl)
+if (m.key.fromMe) return replygcFaridah(bvl)
+if (RidzTheCreator) return replygcFaridah(bvl)
+               await Faridah.sendMessage(m.chat,
 			    {
 			        delete: {
 			            remoteJid: m.chat,
@@ -1055,16 +1055,16 @@ if (VeronTheCreator) return replygcVeron(bvl)
 			            participant: m.key.participant
 			        }
 			    })
-			VeronicaX.sendMessage(from, {text:`\`\`\`「 GC Link Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} has sent a link and successfully deleted`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
+			Faridah.sendMessage(from, {text:`\`\`\`「 GC Link Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} has sent a link and successfully deleted`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
             }
         }
         if (db.data.chats[m.chat].antilink) {
             if (budy.match('http') && budy.match('https')) {
                bvl = `\`\`\`「 Link Detected 」\`\`\`\n\nAdmin has sent a link, admin is free to send any link😇`
-if (isAdmins) return replygcVeron(bvl)
-if (m.key.fromMe) return replygcVeron(bvl)
-if (VeronTheCreator) return replygcVeron(bvl)
-               await VeronicaX.sendMessage(m.chat,
+if (isAdmins) return replygcFaridah(bvl)
+if (m.key.fromMe) return replygcFaridah(bvl)
+if (RidzTheCreator) return replygcFaridah(bvl)
+               await Faridah.sendMessage(m.chat,
 			    {
 			        delete: {
 			            remoteJid: m.chat,
@@ -1073,7 +1073,7 @@ if (VeronTheCreator) return replygcVeron(bvl)
 			            participant: m.key.participant
 			        }
 			    })
-			VeronicaX.sendMessage(from, {text:`\`\`\`「 Link Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} has sent a link and successfully deleted`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
+			Faridah.sendMessage(from, {text:`\`\`\`「 Link Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} has sent a link and successfully deleted`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
             }
         }
         //afk
@@ -1084,18 +1084,18 @@ if (VeronTheCreator) return replygcVeron(bvl)
             let afkTime = user.afkTime
             if (!afkTime || afkTime < 0) continue
             let reason = user.afkReason || ''
-            replygcVeron(`Please Don't Tag Him\nHe's AFK ${reason ? 'With reason ' + reason : 'no reason'}\nAfk Since ${clockString(new Date - afkTime)}`.trim())
+            replygcFaridah(`Please Don't Tag Him\nHe's AFK ${reason ? 'With reason ' + reason : 'no reason'}\nAfk Since ${clockString(new Date - afkTime)}`.trim())
         }
         if (db.data.users[m.sender].afkTime > -1) {
             let user = global.db.data.users[m.sender]
-            replygcVeron(`You Have Returned From AFK\nAFK Reason: ${user.afkReason ? user.afkReason : ''}\nAFK Duration: ${clockString(new Date - user.afkTime)}`.trim())
+            replygcFaridah(`You Have Returned From AFK\nAFK Reason: ${user.afkReason ? user.afkReason : ''}\nAFK Duration: ${clockString(new Date - user.afkTime)}`.trim())
             user.afkTime = -1
             user.afkReason = ''
         }
         
 //total features
-const Veronfeature = () =>{
-            var mytext = fs.readFileSync("./nexwrld.js").toString()
+const Faridahfeature = () =>{
+            var mytext = fs.readFileSync("./faridah.js").toString()
             var numUpper = (mytext.match(/case '/g) || []).length
     
             return numUpper
@@ -1109,15 +1109,15 @@ const Veronfeature = () =>{
     if (quotedMessage) {
       if (quotedMessage.imageMessage) {
         let imageCaption = quotedMessage.imageMessage.caption;
-        let imageUrl = await VeronicaX.downloadAndSaveMediaMessage(quotedMessage.imageMessage);
-        VeronicaX.sendMessage(m.chat, { image: { url: imageUrl }, caption: imageCaption });
-        replygcVeron('*Downloading status...*');
+        let imageUrl = await Faridah.downloadAndSaveMediaMessage(quotedMessage.imageMessage);
+        Faridah.sendMessage(m.chat, { image: { url: imageUrl }, caption: imageCaption });
+        replygcFaridah('*Downloading status...*');
       }
       if (quotedMessage.videoMessage) {
         let videoCaption = quotedMessage.videoMessage.caption;
-        let videoUrl = await VeronicaX.downloadAndSaveMediaMessage(quotedMessage.videoMessage);
-        VeronicaX.sendMessage(m.chat, { video: { url: videoUrl }, caption: videoCaption });
-        replygcVeron('*Downloading status...*');
+        let videoUrl = await Faridah.downloadAndSaveMediaMessage(quotedMessage.videoMessage);
+        Faridah.sendMessage(m.chat, { video: { url: videoUrl }, caption: videoCaption });
+        replygcFaridah('*Downloading status...*');
       }
     }
   }
@@ -1125,57 +1125,57 @@ const Veronfeature = () =>{
   console.error("Error in 'send message' handling:", error);
 }
         //autoreply
-for (let BhosdikaVeron of VoiceNoteVeron) {
-if (budy === BhosdikaVeron) {
-let audiobuffy = fs.readFileSync(`./Media/audio/${BhosdikaVeron}.mp3`)
-VeronicaX.sendMessage(m.chat, { audio: audiobuffy, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
+for (let BhosdikaFaridah of Voicenotefaridah) {
+if (budy === BhosdikaFaridah) {
+let audiobuffy = fs.readFileSync(`./Media/audio/${BhosdikaFaridah}.mp3`)
+Faridah.sendMessage(m.chat, { audio: audiobuffy, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
 }
 }
-for (let BhosdikaVeron of StickerVeron){
-if (budy === BhosdikaVeron){
-let stickerbuffy = fs.readFileSync(`./Media/sticker/${BhosdikaVeron}.webp`)
-VeronicaX.sendMessage(m.chat, { sticker: stickerbuffy }, { quoted: m })
+for (let BhosdikaFaridah of Stickerfaridah){
+if (budy === BhosdikaFaridah){
+let stickerbuffy = fs.readFileSync(`./Media/sticker/${BhosdikaFaridah}.webp`)
+Faridah.sendMessage(m.chat, { sticker: stickerbuffy }, { quoted: m })
 }
 }
-for (let BhosdikaVeron of ImageVeron){
-if (budy === BhosdikaVeron){
-let imagebuffy = fs.readFileSync(`./Media/image/${BhosdikaVeron}.jpg`)
-VeronicaX.sendMessage(m.chat, { image: imagebuffy }, { quoted: m })
+for (let BhosdikaFaridah of Imagefaridah){
+if (budy === BhosdikaFaridah){
+let imagebuffy = fs.readFileSync(`./Media/image/${BhosdikaFaridah}.jpg`)
+Faridah.sendMessage(m.chat, { image: imagebuffy }, { quoted: m })
 }
 }
-for (let BhosdikaVeron of VideoVeron){
-if (budy === BhosdikaVeron){
-let videobuffy = fs.readFileSync(`./Media/video/${BhosdikaVeron}.mp4`)
-VeronicaX.sendMessage(m.chat, { video: videobuffy }, { quoted: m })
+for (let BhosdikaFaridah of Videofaridah){
+if (budy === BhosdikaFaridah){
+let videobuffy = fs.readFileSync(`./Media/video/${BhosdikaFaridah}.mp4`)
+Faridah.sendMessage(m.chat, { video: videobuffy }, { quoted: m })
 }
 }
 
 const sendapk = (teks) => {
-VeronicaX.sendMessage(from, { document: teks, mimetype: 'application/vnd.android.package-archive'}, {quoted:m})
+Faridah.sendMessage(from, { document: teks, mimetype: 'application/vnd.android.package-archive'}, {quoted:m})
 }
-for (let BhosdikaVeron of ApkVeron) {
-if (budy === BhosdikaVeron) {
-let buffer = fs.readFileSync(`./Media/apk/${BhosdikaVeron}.apk`)
+for (let BhosdikaFaridah of Apkfaridah) {
+if (budy === BhosdikaFaridah) {
+let buffer = fs.readFileSync(`./Media/apk/${BhosdikaFaridah}.apk`)
 sendapk(buffer)
 }
 }
 
 const sendzip = (teks) => {
-VeronicaX.sendMessage(from, { document: teks, mimetype: 'application/zip'}, {quoted:m})
+Faridah.sendMessage(from, { document: teks, mimetype: 'application/zip'}, {quoted:m})
 }
-for (let BhosdikaVeron of ZipVeron) {
-if (budy === BhosdikaVeron) {
-let buffer = fs.readFileSync(`./Media/zip/${BhosdikaVeron}.zip`)
+for (let BhosdikaFaridah of Zipfaridah) {
+if (budy === BhosdikaFaridah) {
+let buffer = fs.readFileSync(`./Media/zip/${BhosdikaFaridah}.zip`)
 sendzip(buffer)
 }
 }
 
 const senddocu = (teks) => {
-VeronicaX.sendMessage(from, { document: teks, mimetype: 'application/pdf'}, {quoted:m})
+Faridah.sendMessage(from, { document: teks, mimetype: 'application/pdf'}, {quoted:m})
 }
-for (let BhosdikaVeron of DocVeron) {
-if (budy === BhosdikaVeron) {
-let buffer = fs.readFileSync(`./Media/doc/${BhosdikaVeron}.pdf`)
+for (let BhosdikaFaridah of Docfaridah) {
+if (budy === BhosdikaFaridah) {
+let buffer = fs.readFileSync(`./Media/doc/${BhosdikaFaridah}.pdf`)
 senddocu(buffer)
 }
 }
@@ -1184,11 +1184,11 @@ senddocu(buffer)
 if (m.isGroup && isAlreadyResponList(from, body.toLowerCase(), db_respon_list)) {
 var get_data_respon = getDataResponList(from, body.toLowerCase(), db_respon_list)
 if (get_data_respon.isImage === false) {
-VeronicaX.sendMessage(from, { text: sendResponList(from, body.toLowerCase(), db_respon_list) }, {
+Faridah.sendMessage(from, { text: sendResponList(from, body.toLowerCase(), db_respon_list) }, {
 quoted: m
 })
 } else {
-VeronicaX.sendMessage(from, { image: await getBuffer(get_data_respon.image_url), caption: get_data_respon.response }, {
+Faridah.sendMessage(from, { image: await getBuffer(get_data_respon.image_url), caption: get_data_respon.response }, {
 quoted: m
 })
 } 
@@ -1199,10 +1199,10 @@ if (isMedia && m.msg.fileSha256 && (m.msg.fileSha256.toString('base64') in globa
 let hash = global.db.data.sticker[m.msg.fileSha256.toString('base64')]
 let { text, mentionedJid } = hash
 let messages = await generateWAMessage(m.chat, { text: text, mentions: m.mentionedJid }, {
-    userJid: VeronicaX.user.id,
+    userJid: Faridah.user.id,
     quoted: m.quoted && m.quoted.fakeObj
 })
-messages.key.fromMe = areJidsSameUser(m.sender, VeronicaX.user.id)
+messages.key.fromMe = areJidsSameUser(m.sender, Faridah.user.id)
 messages.key.id = m.key.id
 messages.pushName = m.pushName
 if (m.isGroup) messages.participant = m.sender
@@ -1211,7 +1211,7 @@ let msg = {
     messages: [proto.WebMessageInfo.fromObject(messages)],
     type: 'append'
 }
-VeronicaX.ev.emit('messages.upsert', msg)
+Faridah.ev.emit('messages.upsert', msg)
 } 
 
 //============= [LIST RESPONCE CHECKING START ]================
@@ -1227,7 +1227,7 @@ VeronicaX.ev.emit('messages.upsert', msg)
                         pushName : m.pushName,
                         messageTimestamp  : m.messageTimestamp || 754785898978
                     }
-                    return VeronicaX.ev.emit("messages.upsert" , { messages : [ emit_msg ] ,  type : "notify"})
+                    return Faridah.ev.emit("messages.upsert" , { messages : [ emit_msg ] ,  type : "notify"})
                 }
             }
         }
@@ -1240,9 +1240,9 @@ if (kuismath.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
             kuis = true
             jawaban = kuismath[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await replygcVeron(`🎮 Math Quiz 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Send ${prefix}math mode`)
+                await replygcFaridah(`🎮 Math Quiz 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Send ${prefix}math mode`)
                 delete kuismath[m.sender.split('@')[0]]
-            } else replygcVeron('*Wrong Answer!*')
+            } else replygcFaridah('*Wrong Answer!*')
         }
         
         //game
@@ -1253,14 +1253,14 @@ if (kuismath.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
             let isWin = !1
             let isTie = !1
             let isSurrender = !1
-            // replygcVeron(`[DEBUG]\n${parseInt(m.text)}`)
+            // replygcFaridah(`[DEBUG]\n${parseInt(m.text)}`)
             if (!/^([1-9]|(me)?giveup|surr?ender|off|skip)$/i.test(m.text)) return
             isSurrender = !/^[1-9]$/.test(m.text)
             if (m.sender !== room.game.currentTurn) {
                 if (!isSurrender) return !0
             }
             if (!isSurrender && 1 > (ok = room.game.turn(m.sender === room.game.playerO, parseInt(m.text) - 1))) {
-                replygcVeron({
+                replygcFaridah({
                     '-3': 'The game is over',
                     '-2': 'Invalid',
                     '-1': 'Invalid Position',
@@ -1303,10 +1303,10 @@ ${isWin ? `@${winner.split('@')[0]} Won!` : isTie ? `Game over` : `Turn ${['❌'
 Type *surrender* to surrender and admit defeat`
             if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
                 room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
-            if (room.x !== room.o) VeronicaX.sendText(room.x, str, m, {
+            if (room.x !== room.o) Faridah.sendText(room.x, str, m, {
                 mentions: parseMention(str)
             })
-            VeronicaX.sendText(room.o, str, m, {
+            Faridah.sendText(room.o, str, m, {
                 mentions: parseMention(str)
             })
             if (isTie || isWin) {
@@ -1322,7 +1322,7 @@ Type *surrender* to surrender and admit defeat`
 	    let tie = false
 	    if (m.sender == roof.p2 && /^(acc(ept)?|accept|yes|okay?|reject|no|later|nop(e.)?yes|y)/i.test(m.text) && m.isGroup && roof.status == 'wait') {
 	    if (/^(reject|no|later|n|nop(e.)?yes)/i.test(m.text)) {
-	    VeronicaX.sendTextWithMentions(m.chat, `@${roof.p2.split`@`[0]} rejected the suit, the suit is canceled`, m)
+	    Faridah.sendTextWithMentions(m.chat, `@${roof.p2.split`@`[0]} rejected the suit, the suit is canceled`, m)
 	    delete this.suit[roof.id]
 	    return !0
 	    }
@@ -1330,20 +1330,20 @@ Type *surrender* to surrender and admit defeat`
 	    roof.asal = m.chat
 	    clearTimeout(roof.waktu)
 	    //delete roof[roof.id].waktu
-	    VeronicaX.sendText(m.chat, `Suit has been sent to chat
+	    Faridah.sendText(m.chat, `Suit has been sent to chat
 
 @${roof.p.split`@`[0]} and 
 @${roof.p2.split`@`[0]}
 
 Please choose a suit in the respective chat"
 click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] })
-	    if (!roof.pilih) VeronicaX.sendText(roof.p, `Please Select \n\Rock🗿\nPaper📄\nScissors✂️`, m)
-	    if (!roof.pilih2) VeronicaX.sendText(roof.p2, `Please Select \n\nRock🗿\nPaper📄\nScissors✂️`, m)
+	    if (!roof.pilih) Faridah.sendText(roof.p, `Please Select \n\Rock🗿\nPaper📄\nScissors✂️`, m)
+	    if (!roof.pilih2) Faridah.sendText(roof.p2, `Please Select \n\nRock🗿\nPaper📄\nScissors✂️`, m)
 	    roof.waktu_milih = setTimeout(() => {
-	    if (!roof.pilih && !roof.pilih2) VeronicaX.sendText(m.chat, `Both Players Don't Want To Play,\nSuit Canceled`)
+	    if (!roof.pilih && !roof.pilih2) Faridah.sendText(m.chat, `Both Players Don't Want To Play,\nSuit Canceled`)
 	    else if (!roof.pilih || !roof.pilih2) {
 	    win = !roof.pilih ? roof.p2 : roof.p
-	    VeronicaX.sendTextWithMentions(m.chat, `@${(roof.pilih ? roof.p2 : roof.p).split`@`[0]} Didn't Choose Suit, Game Over!`, m)
+	    Faridah.sendTextWithMentions(m.chat, `@${(roof.pilih ? roof.p2 : roof.p).split`@`[0]} Didn't Choose Suit, Game Over!`, m)
 	    }
 	    delete this.suit[roof.id]
 	    return !0
@@ -1358,14 +1358,14 @@ click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] 
 	    if (jwb && reg.test(m.text) && !roof.pilih && !m.isGroup) {
 	    roof.pilih = reg.exec(m.text.toLowerCase())[0]
 	    roof.text = m.text
-	    replygcVeron(`You have chosen ${m.text} ${!roof.pilih2 ? `\n\nWaiting for the opponent to choose` : ''}`)
-	    if (!roof.pilih2) VeronicaX.sendText(roof.p2, '_The opponent has chosen_\nNow it is your turn', 0)
+	    replygcFaridah(`You have chosen ${m.text} ${!roof.pilih2 ? `\n\nWaiting for the opponent to choose` : ''}`)
+	    if (!roof.pilih2) Faridah.sendText(roof.p2, '_The opponent has chosen_\nNow it is your turn', 0)
 	    }
 	    if (jwb2 && reg.test(m.text) && !roof.pilih2 && !m.isGroup) {
 	    roof.pilih2 = reg.exec(m.text.toLowerCase())[0]
 	    roof.text2 = m.text
-	    replygcVeron(`You have chosen ${m.text} ${!roof.pilih ? `\n\nWaiting for the opponent to choose` : ''}`)
-	    if (!roof.pilih) VeronicaX.sendText(roof.p, '_The opponent has chosen_\nNow it is your turn', 0)
+	    replygcFaridah(`You have chosen ${m.text} ${!roof.pilih ? `\n\nWaiting for the opponent to choose` : ''}`)
+	    if (!roof.pilih) Faridah.sendText(roof.p, '_The opponent has chosen_\nNow it is your turn', 0)
 	    }
 	    let stage = roof.pilih
 	    let stage2 = roof.pilih2
@@ -1378,7 +1378,7 @@ click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] 
 	    else if (k.test(stage) && b.test(stage2)) win = roof.p
 	    else if (k.test(stage) && g.test(stage2)) win = roof.p2
 	    else if (stage == stage2) tie = true
-	    VeronicaX.sendText(roof.asal, `_*Suit Results*_${tie ? '\nSERIES' : ''}
+	    Faridah.sendText(roof.asal, `_*Suit Results*_${tie ? '\nSERIES' : ''}
 
 @${roof.p.split`@`[0]} (${roof.text}) ${tie ? '' : roof.p == win ? ` Win \n` : ` Lost \n`}
 @${roof.p2.split`@`[0]} (${roof.text2}) ${tie ? '' : roof.p2 == win ? ` Win \n` : ` Lost  \n`}
@@ -1389,48 +1389,48 @@ click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] 
         
         //user db
         if (isCommand && !isUser) {
-Veronverifieduser.push(sender)
-fs.writeFileSync('./src/data/role/user.json', JSON.stringify(Veronverifieduser, null, 2))
+faridahverifieduser.push(sender)
+fs.writeFileSync('./src/data/role/user.json', JSON.stringify(faridahverifieduser, null, 2))
 }
         
         switch (isCommand) {
 
             case 'addbadword': case 'addbd':
-               if (!VeronTheCreator) return VeronStickOwner()
-               if (!groupAdmins) return replygcVeron(mess.admin)
-               if (args.length < 1) return replygcVeron( `Send command ${prefix}addbadword [harsh word]. Example ${prefix}addbadword asshole`)
+               if (!RidzTheCreator) return RidzStickOwner()
+               if (!groupAdmins) return replygcFaridah(mess.admin)
+               if (args.length < 1) return replygcFaridah( `Send command ${prefix}addbadword [harsh word]. Example ${prefix}addbadword asshole`)
                bad.push(q)
                fs.writeFileSync('./src/data/function/badword.json', JSON.stringify(bad))
-               replygcVeron('Successfully Added Bad Word!')
+               replygcFaridah('Successfully Added Bad Word!')
             break
             case 'delbadword': case 'deldb':
-               if (!VeronTheCreator) return VeronStickOwner()
-               if (!groupAdmins) return replygcVeron(mess.admin)
-               if (args.length < 1) return replygcVeron( `Send commands ${prefix}addbadword [bad word]. Example ${prefix}addbadword asshole`)                 
+               if (!RidzTheCreator) return RidzStickOwner()
+               if (!groupAdmins) return replygcFaridah(mess.admin)
+               if (args.length < 1) return replygcFaridah( `Send commands ${prefix}addbadword [bad word]. Example ${prefix}addbadword asshole`)                 
                bad.splice(q)
                fs.writeFileSync('./src/data/function/badword.json', JSON.stringify(bad))
-               replygcVeron('Successfully Deleted Bad Word!')
+               replygcFaridah('Successfully Deleted Bad Word!')
             break 
             case 'resetuser':
             case 'resetdbuser': {
-               if (!VeronTheCreator) return VeronStickOwner()
+               if (!RidzTheCreator) return RidzStickOwner()
                let totalusernya = db.data.users[0]
-               replygcVeron(`Succesfully Deleted ${totalusernya} Users in Database`)
+               replygcFaridah(`Succesfully Deleted ${totalusernya} Users in Database`)
                db.data.users = []
             }
             break
             case 'resethit':
             case 'resettotalhit': {
-               if (!VeronTheCreator) return VeronStickOwner()
+               if (!RidzTheCreator) return RidzStickOwner()
                global.db.data.settings[botNumber].totalhit = 0
-               replygcVeron(mess.done)
+               replygcFaridah(mess.done)
             }
             break
             case 'setmenu': {
-            if (!VeronTheCreator) return VeronStickOwner()
+            if (!RidzTheCreator) return RidzStickOwner()
             if (text.startsWith('v')) {
                   typemenu = text
-                  replygcVeron(mess.done)
+                  replygcFaridah(mess.done)
                } else {
                let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -1447,7 +1447,7 @@ fs.writeFileSync('./src/data/role/user.json', JSON.stringify(Veronverifieduser, 
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -1530,17 +1530,17 @@ fs.writeFileSync('./src/data/role/user.json', JSON.stringify(Veronverifieduser, 
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
 }
 break
             case 'setreply':{
-               if (!VeronTheCreator) return VeronStickOwner()
+               if (!RidzTheCreator) return RidzStickOwner()
                if (text.startsWith('v')) {
                   typereply = text
-                  replygcVeron(mess.done)
+                  replygcFaridah(mess.done)
                } else {
                   let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -1557,7 +1557,7 @@ break
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -1608,7 +1608,7 @@ break
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -1617,53 +1617,53 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             case 'statustext': 
             case 'upswtext':
             case 'upswteks': {
-               if (!VeronTheCreator) return VeronStickOwner()
-               if (!q) return replygcVeron('Text?')
-               await VeronicaX.sendMessage('status@broadcast', { text: q }, { backgroundColor: '#FF000000', font: 3, statusJidList: Object.keys(global.db.data.users) })
-               replygcVeron(mess.done)
+               if (!RidzTheCreator) return RidzStickOwner()
+               if (!q) return replygcFaridah('Text?')
+               await Faridah.sendMessage('status@broadcast', { text: q }, { backgroundColor: '#FF000000', font: 3, statusJidList: Object.keys(global.db.data.users) })
+               replygcFaridah(mess.done)
             }
             break
             case 'statusvideo':
             case 'upswvideo': {
-               if (!VeronTheCreator) return VeronStickOwner()
+               if (!RidzTheCreator) return RidzStickOwner()
                if (/video/.test(mime)) {
-                  var videosw = await VeronicaX.downloadAndSaveMediaMessage(quoted)
-                  await VeronicaX.sendMessage('status@broadcast', {
+                  var videosw = await Faridah.downloadAndSaveMediaMessage(quoted)
+                  await Faridah.sendMessage('status@broadcast', {
                      video: {
                         url: videosw
                      },
                      caption: q ? q : ''
                   }, { statusJidList: Object.keys(global.db.data.users) })
-                  await replygcVeron(mess.done)
+                  await replygcFaridah(mess.done)
                } else {
-                  replygcVeron('Reply to video')
+                  replygcFaridah('Reply to video')
                }
             }
             break
             case 'statusimg':
             case 'statusimage':
             case 'upswimg': {
-               if (!VeronTheCreator) return VeronStickOwner()
+               if (!RidzTheCreator) return RidzStickOwner()
                if (/image/.test(mime)) {
-                  var imagesw = await VeronicaX.downloadAndSaveMediaMessage(quoted)
-                  await VeronicaX.sendMessage('status@broadcast', {
+                  var imagesw = await Faridah.downloadAndSaveMediaMessage(quoted)
+                  await Faridah.sendMessage('status@broadcast', {
                      image: {
                         url: imagesw
                      },
                      caption: q ? q : ''
                   }, { statusJidList: Object.keys(global.db.data.users)})
-                  await replygcVeron(mess.done)
+                  await replygcFaridah(mess.done)
                } else {
-                  replygcVeron('Reply to image')
+                  replygcFaridah('Reply to image')
                }
             }
             break
             case 'statusaudio':
             case 'upswaudio': {
-               if (!VeronTheCreator) return VeronStickOwner()
+               if (!RidzTheCreator) return RidzStickOwner()
                if (/audio/.test(mime)) {
-                  var audiosw = await VeronicaX.downloadAndSaveMediaMessage(quoted)
-                  await VeronicaX.sendMessage('status@broadcast', {
+                  var audiosw = await Faridah.downloadAndSaveMediaMessage(quoted)
+                  await Faridah.sendMessage('status@broadcast', {
                      audio: {
                         url: audiosw
                      },
@@ -1673,109 +1673,109 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
                      backgroundColor: '#FF000000',
                      statusJidList: Object.keys(global.db.data.users)
                   })
-                  await replygcVeron(mess.done)
+                  await replygcFaridah(mess.done)
                } else {
-                  replygcVeron('Reply to audio')
+                  replygcFaridah('Reply to audio')
                }
             }
             break
             case 'setimgmenu':
             case 'sim': {
-                if (!VeronTheCreator) return VeronStickOwner()
-                let delb = await VeronicaX.downloadAndSaveMediaMessage(quoted)
+                if (!RidzTheCreator) return RidzStickOwner()
+                let delb = await Faridah.downloadAndSaveMediaMessage(quoted)
                 await fsx.copy(delb, './Media/theme/Nebula.png')
                 fs.unlinkSync(delb)
-                replygcVeron(mess.done)
+                replygcFaridah(mess.done)
             }
             break
             case 'setvidmenu':
             case 'svm': 
             	case 'setvgifmenu':
             case 'sgm': {
-                if (!VeronTheCreator) return VeronStickOwner()
-                let delb = await VeronicaX.downloadAndSaveMediaMessage(quoted)
+                if (!RidzTheCreator) return RidzStickOwner()
+                let delb = await Faridah.downloadAndSaveMediaMessage(quoted)
                 await fsx.copy(delb, './Media/theme/nebula.mp4')
                 fs.unlinkSync(delb)
-                replygcVeron(mess.done)
+                replygcFaridah(mess.done)
             }
             break
             case 'addtitle':{
-               if (!VeronTheCreator) return VeronStickOwner()
-               if (!text) return replygcVeron(`Usage ${prefix + command} number|title`)
+               if (!RidzTheCreator) return RidzStickOwner()
+               if (!text) return replygcFaridah(`Usage ${prefix + command} number|title`)
                nonya = text.split('|')[0]
                titlenya = text.split('|')[1]
                let oo = `${nonya}@s.whatsapp.net`
                db.data.users[oo].title = titlenya
-               await replygcVeron(mess.done)
+               await replygcFaridah(mess.done)
             }
             break
             case 'deltitle':{
-               if (!VeronTheCreator) return VeronStickOwner()
-               if (!text) return replygcVeron(`Usage ${prefix + command} number`)
+               if (!RidzTheCreator) return RidzStickOwner()
+               if (!text) return replygcFaridah(`Usage ${prefix + command} number`)
                nonya = text.split(',')[0]
                let oo = `${nonya}@s.whatsapp.net`
                db.data.users[oo].title = ''
-               await replygcVeron(mess.done)
+               await replygcFaridah(mess.done)
             }
             break
             case 'addlimit':
             case 'givelimit':{
-                if (!VeronTheCreator) return VeronStickOwner()
-                if (!text) return replygcVeron(`Usage ${prefix + command} number|limit amount`)
+                if (!RidzTheCreator) return RidzStickOwner()
+                if (!text) return replygcFaridah(`Usage ${prefix + command} number|limit amount`)
                 usernya = text.split('|')[0]
                 limitnya = text.split('|')[1]
                 let oo = `${usernya}@s.whatsapp.net`
                 db.data.users[oo].limit += limitnya
-                replygcVeron(mess.done)
+                replygcFaridah(mess.done)
             }
             break
             case 'dellimit':{
-                if (!VeronTheCreator) return VeronStickOwner()
-                if (!text) return replygcVeron(`Usage ${prefix + command} number|limit amount`)
+                if (!RidzTheCreator) return RidzStickOwner()
+                if (!text) return replygcFaridah(`Usage ${prefix + command} number|limit amount`)
                 usernya = text.split('|')[0]
                 limitnya = text.split('|')[1]
-                if (db.data.users[usernya + '@s.whatsapp.net'].limit < limitnya) return replygcVeron(`His Limit Is Less Than ${limitnya}`)
+                if (db.data.users[usernya + '@s.whatsapp.net'].limit < limitnya) return replygcFaridah(`His Limit Is Less Than ${limitnya}`)
                 db.data.users[usernya + '@s.whatsapp.net'].limit -= limitnya
-                replygcVeron(mess.done)
+                replygcFaridah(mess.done)
             }
             break
             case 'addprem':
-                if (!VeronTheCreator) return VeronStickOwner()
+                if (!RidzTheCreator) return RidzStickOwner()
                 if (args.length < 2)
-                    return replygcVeron(`Usage ${prefix + command} @tag time\n${prefix + command} number time\n\nExample : ${prefix + command} @tag 30d`)
+                    return replygcFaridah(`Usage ${prefix + command} @tag time\n${prefix + command} number time\n\nExample : ${prefix + command} @tag 30d`)
                 if (m.mentionedJid.length !== 0) {
                     for (let i = 0; i < m.mentionedJid.length; i++) {
                         addPremiumUser(m.mentionedJid[0], args[1], premium)
                     }
-                    replygcVeron("Premium Success")
+                    replygcFaridah("Premium Success")
                 } else {
                     addPremiumUser(args[0] + "@s.whatsapp.net", args[1], premium)
-                    replygcVeron("Premium Success")
+                    replygcFaridah("Premium Success")
                 }
             break
             case 'delprem':
-                if (!VeronTheCreator) return VeronStickOwner()
-                if (args.length < 1) return replygcVeron(`Usage ${prefix + command} @tag\n${prefix + command} number\n\nExample : ${prefix + command} 916909137213`)
+                if (!RidzTheCreator) return RidzStickOwner()
+                if (args.length < 1) return replygcFaridah(`Usage ${prefix + command} @tag\n${prefix + command} number\n\nExample : ${prefix + command} 916909137213`)
                 if (m.mentionedJid.length !== 0) {
                     for (let i = 0; i < m.mentionedJid.length; i++) {
                         premium.splice(getPremiumPosition(m.mentionedJid[i], premium), 1)
                         fs.writeFileSync("./src/data/role/premium.json", JSON.stringify(premium))
                     }
-                    replygcVeron("Delete Success")
+                    replygcFaridah("Delete Success")
                 } else {
                     premium.splice(getPremiumPosition(args[0] + "@s.whatsapp.net", premium), 1)
                     fs.writeFileSync("./src/data/role/premium.json", JSON.stringify(premium))
-                    replygcVeron("Delete Success")
+                    replygcFaridah("Delete Success")
                 }
             break
             case 'listprem': {
-                if (!VeronTheCreator) return VeronStickOwner()
+                if (!RidzTheCreator) return RidzStickOwner()
                 let data = require('./src/data/role/premium.json')
                 let txt = `*------「 LIST PREMIUM 」------*\n\n`
                 for (let x of data) {
                     txt += `Number : ${x.id}\n`
                     txt += `Expire In: ${x.expired} ms\n`
-                VeronicaX.sendMessage(m.chat, {
+                Faridah.sendMessage(m.chat, {
                     text: txt,
                     mentions: x
                 }, {
@@ -1785,23 +1785,23 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             }
             break
 case 'addowner':
-if (!VeronTheCreator) return VeronStickOwner()
-if (!args[0]) return replygcVeron(`Use ${prefix+command} number\nExample ${prefix+command} ${ownernumber}`)
+if (!RidzTheCreator) return RidzStickOwner()
+if (!args[0]) return replygcFaridah(`Use ${prefix+command} number\nExample ${prefix+command} ${ownernumber}`)
 bnnd = q.split("|")[0].replace(/[^0-9]/g, '')
-let ceknye = await VeronicaX.onWhatsApp(bnnd)
-if (ceknye.length == 0) return replygcVeron(`Enter A Valid And Registered Number On WhatsApp!!!`)
+let ceknye = await Faridah.onWhatsApp(bnnd)
+if (ceknye.length == 0) return replygcFaridah(`Enter A Valid And Registered Number On WhatsApp!!!`)
 owner.push(bnnd)
 fs.writeFileSync('./src/data/role/owner.json', JSON.stringify(owner))
-replygcVeron(`Number ${bnnd} Has Become An Owner!!!`)
+replygcFaridah(`Number ${bnnd} Has Become An Owner!!!`)
 break
 case 'delowner':
-if (!VeronTheCreator) return VeronStickOwner()
-if (!args[0]) return replygcVeron(`Use ${prefix+command} nomor\nExample ${prefix+command} 916909137213`)
+if (!RidzTheCreator) return RidzStickOwner()
+if (!args[0]) return replygcFaridah(`Use ${prefix+command} nomor\nExample ${prefix+command} 916909137213`)
 ya = q.split("|")[0].replace(/[^0-9]/g, '')
 unp = owner.indexOf(ya)
 owner.splice(unp, 1)
 fs.writeFileSync('./src/data/role/owner.json', JSON.stringify(owner))
-replygcVeron(`The Number ${ya} Has been deleted from owner list by the owner!!!`)
+replygcFaridah(`The Number ${ya} Has been deleted from owner list by the owner!!!`)
 break
 case 'listowner': {
                 let teks = '┌──⭓「 *List Owner* 」\n│\n'
@@ -1809,54 +1809,54 @@ case 'listowner': {
                     teks += `│⭔ ${x}\n`
                 }
                 teks += `│\n└────────────⭓\n\n*Total : ${owner.length}*`
-                replygcVeron(teks)
+                replygcFaridah(teks)
             }
             break
             case 'delsession':
             case 'clearsession': {
-                if (!VeronTheCreator) return VeronStickOwner()
+                if (!RidzTheCreator) return RidzStickOwner()
                 fs.readdir("./session", async function(err, files) {
                     if (err) {
                         console.log('Unable to scan directory: ' + err);
-                        return replygcVeron('Unable to scan directory: ' + err);
+                        return replygcFaridah('Unable to scan directory: ' + err);
                     }
                     let filteredArray = await files.filter(item => item.startsWith("pre-key") ||
                         item.startsWith("sender-key") || item.startsWith("session-") || item.startsWith("app-state")
                     )
                     console.log(filteredArray.length);
                     let teks = `Detected ${filteredArray.length} junk files\n\n`
-                    if (filteredArray.length == 0) return replygcVeron(teks)
+                    if (filteredArray.length == 0) return replygcFaridah(teks)
                     filteredArray.map(function(e, i) {
                         teks += (i + 1) + `. ${e}\n`
                     })
-                    replygcVeron(teks)
+                    replygcFaridah(teks)
                     await sleep(2000)
-                    replygcVeron("Deleting junk files...")
+                    replygcFaridah("Deleting junk files...")
                     await filteredArray.forEach(function(file) {
                         fs.unlinkSync(`./session/${file}`)
                     });
                     await sleep(2000)
-                    replygcVeron("Successfully deleted all the trash in the session folder")
+                    replygcFaridah("Successfully deleted all the trash in the session folder")
                 });
             }
             break
             case 'join':
                 try {
-                    if (!VeronTheCreator) return VeronStickOwner()
-                    if (!text) return replygcVeron('Enter Group Link!')
-                    if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return replygcVeron('Link Invalid!')
+                    if (!RidzTheCreator) return RidzStickOwner()
+                    if (!text) return replygcFaridah('Enter Group Link!')
+                    if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return replygcFaridah('Link Invalid!')
                     let result = args[0].split('https://chat.whatsapp.com/')[1]
-                    VeronicaX.groupAcceptInvite(result)
-                    await replygcVeron(`Done`)
+                    Faridah.groupAcceptInvite(result)
+                    await replygcFaridah(`Done`)
                 } catch {
-                    replygcVeron('Failed to join the Group')
+                    replygcFaridah('Failed to join the Group')
                 }
                 break
             case 'getsession':
-                if (!VeronTheCreator) return VeronStickOwner()
-                replygcVeron('Wait a moment, currently retrieving your session file')
+                if (!RidzTheCreator) return RidzStickOwner()
+                replygcFaridah('Wait a moment, currently retrieving your session file')
                 let sesi = fs.readFileSync('./session/creds.json')
-                VeronicaX.sendMessage(m.chat, {
+                Faridah.sendMessage(m.chat, {
                     document: sesi,
                     mimetype: 'application/json',
                     fileName: 'creds.json'
@@ -1866,7 +1866,7 @@ case 'listowner': {
             break
             case 'myip':
             case 'ipbot':
-                if (!VeronTheCreator) return VeronStickOwner()
+                if (!RidzTheCreator) return RidzStickOwner()
                 var http = require('http')
                 http.get({
                     'host': 'api.ipify.org',
@@ -1874,12 +1874,12 @@ case 'listowner': {
                     'path': '/'
                 }, function(resp) {
                     resp.on('data', function(ip) {
-                        replygcVeron("🔎 My public IP address is: " + ip);
+                        replygcFaridah("🔎 My public IP address is: " + ip);
                     })
                 })
             break
             case 'request': case 'reportbug': {
-	if (!text) return replygcVeron(`Example : ${
+	if (!text) return replygcFaridah(`Example : ${
         prefix + command
       } hi dev play command is not working`)
             textt = `*| REQUEST/BUG |*`
@@ -1888,14 +1888,14 @@ case 'listowner': {
   }\n*Request/Bug* : ${text}`
             teks2 = `\n\n*Hii ${pushname},You request has been forwarded to my Owners*.\n*Please wait...*`
             for (let i of owner) {
-                VeronicaX.sendMessage(i + "@s.whatsapp.net", {
+                Faridah.sendMessage(i + "@s.whatsapp.net", {
                     text: textt + teks1,
                     mentions: [m.sender],
                 }, {
                     quoted: m,
                 })
             }
-            VeronicaX.sendMessage(m.chat, {
+            Faridah.sendMessage(m.chat, {
                 text: textt + teks2 + teks1,
                 mentions: [m.sender],
             }, {
@@ -1905,19 +1905,19 @@ case 'listowner': {
         }
         break
             case 'shutdown':
-                if (!VeronTheCreator) return VeronStickOwner()
-                replygcVeron(`Restarting will be completed in seconds`)
+                if (!RidzTheCreator) return RidzStickOwner()
+                replygcFaridah(`Restarting will be completed in seconds`)
                 await sleep(3000)
                 process.exit()
             break
             case 'autoread':
-                if (!VeronTheCreator) return VeronStickOwner()
+                if (!RidzTheCreator) return RidzStickOwner()
                 if (q === 'on') {
                     db.data.settings[botNumber].autoread = true
-                    replygcVeron(`Successfully changed autoread to ${q}`)
+                    replygcFaridah(`Successfully changed autoread to ${q}`)
                 } else if (q === 'off') {
                     db.data.settings[botNumber].autoread = false
-                    replygcVeron(`Successfully changed autoread to ${q}`)
+                    replygcFaridah(`Successfully changed autoread to ${q}`)
                 } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -1934,7 +1934,7 @@ case 'listowner': {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -1976,19 +1976,19 @@ case 'listowner': {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
             break
             case 'unavailable':
-                if (!VeronTheCreator) return VeronStickOwner()
+                if (!RidzTheCreator) return RidzStickOwner()
                 if (q === 'on') {
                     db.data.settings[botNumber].online = true
-                    replygcVeron(`Successfully changed unavailable to ${q}`)
+                    replygcFaridah(`Successfully changed unavailable to ${q}`)
                 } else if (q === 'off') {
                     db.data.settings[botNumber].online = false
-                    replygcVeron(`Successfully changed unavailable to ${q}`)
+                    replygcFaridah(`Successfully changed unavailable to ${q}`)
                 } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -2005,7 +2005,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -2047,20 +2047,20 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
             break
             case 'autorecordtype':
-                if (!VeronTheCreator) return VeronStickOwner()
+                if (!RidzTheCreator) return RidzStickOwner()
                 
                 if (q === 'on') {
                     db.data.settings[botNumber].autorecordtype = true
-                    replygcVeron(`Successfully changed Auto-RecordingTyping to ${q}`)
+                    replygcFaridah(`Successfully changed Auto-RecordingTyping to ${q}`)
                 } else if (q === 'off') {
                     db.data.settings[botNumber].autorecordtype = false
-                    replygcVeron(`Successfully changed Auto-RecordingTyping to ${q}`)
+                    replygcFaridah(`Successfully changed Auto-RecordingTyping to ${q}`)
                 } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -2077,7 +2077,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -2119,20 +2119,20 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
             break
             case 'autorecord':
-                if (!VeronTheCreator) return VeronStickOwner()
+                if (!RidzTheCreator) return RidzStickOwner()
                 
                 if (q === 'on') {
                     db.data.settings[botNumber].autorecord = true
-                    replygcVeron(`Successfully changed Auto-Recording to ${q}`)
+                    replygcFaridah(`Successfully changed Auto-Recording to ${q}`)
                 } else if (q === 'off') {
                     db.data.settings[botNumber].autorecord = false
-                    replygcVeron(`Successfully changed Auto-Recording to ${q}`)
+                    replygcFaridah(`Successfully changed Auto-Recording to ${q}`)
                 } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -2149,7 +2149,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -2191,20 +2191,20 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
             break
             case 'autotype':
-                if (!VeronTheCreator) return VeronStickOwner()
+                if (!RidzTheCreator) return RidzStickOwner()
                 
                 if (q === 'on') {
                     db.data.settings[botNumber].autotype = true
-                    replygcVeron(`Successfully changed Auto-Typing to ${q}`)
+                    replygcFaridah(`Successfully changed Auto-Typing to ${q}`)
                 } else if (q === 'off') {
                     db.data.settings[botNumber].autotype = false
-                    replygcVeron(`Successfully changed Auto-Typing to ${q}`)
+                    replygcFaridah(`Successfully changed Auto-Typing to ${q}`)
                 } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -2221,7 +2221,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -2263,20 +2263,20 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
             break
             case 'autobio':
-                if (!VeronTheCreator) return VeronStickOwner()
+                if (!RidzTheCreator) return RidzStickOwner()
                 
                 if (q == 'on') {
                     db.data.settings[botNumber].autobio = true
-                    replygcVeron(`Successfully Changed AutoBio To ${q}`)
+                    replygcFaridah(`Successfully Changed AutoBio To ${q}`)
                 } else if (q == 'off') {
                     db.data.settings[botNumber].autobio = false
-                    replygcVeron(`Successfully Changed AutoBio To ${q}`)
+                    replygcFaridah(`Successfully Changed AutoBio To ${q}`)
                 } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -2293,7 +2293,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -2335,20 +2335,20 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
             break
             case 'autosticker': case 'autostickergc':
-if (!VeronTheCreator) return VeronStickOwner()
+if (!RidzTheCreator) return RidzStickOwner()
                 
                 if (q == 'on') {
                     db.data.settings[botNumber].autosticker = true
-                    replygcVeron(`Successfully Changed Auto Sticker To ${q}`)
+                    replygcFaridah(`Successfully Changed Auto Sticker To ${q}`)
                 } else if (q == 'off') {
                     db.data.settings[botNumber].autosticker = false
-                    replygcVeron(`Successfully Changed Auto Sticker To ${q}`)
+                    replygcFaridah(`Successfully Changed Auto Sticker To ${q}`)
                 } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -2365,7 +2365,7 @@ if (!VeronTheCreator) return VeronStickOwner()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -2407,20 +2407,20 @@ if (!VeronTheCreator) return VeronStickOwner()
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
             break
             case 'autodownload': case 'autodl':
-if (!VeronTheCreator) return VeronStickOwner()
+if (!RidzTheCreator) return RidzStickOwner()
                 
                 if (q == 'on') {
                     db.data.settings[botNumber].autodownload = true
-                    replygcVeron(`Successfully Changed Auto Download To ${q}`)
+                    replygcFaridah(`Successfully Changed Auto Download To ${q}`)
                 } else if (q == 'off') {
                     db.data.settings[botNumber].autodownload = false
-                    replygcVeron(`Successfully Changed Auto Download To ${q}`)
+                    replygcFaridah(`Successfully Changed Auto Download To ${q}`)
                 } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -2437,7 +2437,7 @@ if (!VeronTheCreator) return VeronStickOwner()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -2479,20 +2479,20 @@ if (!VeronTheCreator) return VeronStickOwner()
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
             break
             case 'autoblock':
-                if (!VeronTheCreator) return VeronStickOwner()
+                if (!RidzTheCreator) return RidzStickOwner()
                 
                 if (q == 'on') {
                     db.data.settings[botNumber].autoblocknum = true
-                    replygcVeron(`Successfully Changed Auto-Block To ${q}`)
+                    replygcFaridah(`Successfully Changed Auto-Block To ${q}`)
                 } else if (q == 'off') {
                     db.data.settings[botNumber].autoblocknum = false
-                    replygcVeron(`Successfully Changed Auto-Block To ${q}`)
+                    replygcFaridah(`Successfully Changed Auto-Block To ${q}`)
                 } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -2509,7 +2509,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -2551,21 +2551,21 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
             break
             case 'onlygroup':
             case 'onlygc':
-                if (!VeronTheCreator) return VeronStickOwner()
+                if (!RidzTheCreator) return RidzStickOwner()
                 
                 if (q == 'on') {
                     db.data.settings[botNumber].onlygrub = true
-                    replygcVeron(`Successfully Changed Onlygroup To ${q}`)
+                    replygcFaridah(`Successfully Changed Onlygroup To ${q}`)
                 } else if (q == 'off') {
                     db.data.settings[botNumber].onlygrub = false
-                    replygcVeron(`Successfully Changed Onlygroup To ${q}`)
+                    replygcFaridah(`Successfully Changed Onlygroup To ${q}`)
                 } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -2582,7 +2582,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -2624,21 +2624,21 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
             break
             case 'onlyprivatechat':
             case 'onlypc':
-                if (!VeronTheCreator) return VeronStickOwner()
+                if (!RidzTheCreator) return RidzStickOwner()
                 
                 if (q == 'on') {
                     db.data.settings[botNumber].onlypc = true
-                    replygcVeron(`Successfully Changed Only-Pc To ${q}`)
+                    replygcFaridah(`Successfully Changed Only-Pc To ${q}`)
                 } else if (q == 'off') {
                     db.data.settings[botNumber].onlypc = false
-                    replygcVeron(`Successfully Changed Only-Pc To ${q}`)
+                    replygcFaridah(`Successfully Changed Only-Pc To ${q}`)
                 } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -2655,7 +2655,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -2697,21 +2697,21 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
             break
             case 'onlyindia':
             case 'onlyindianumber':
-                if (!VeronTheCreator) return VeronStickOwner()
+                if (!RidzTheCreator) return RidzStickOwner()
                 
                 if (q == 'on') {
                     db.data.settings[botNumber].onlyindia = true
-                    replygcVeron(`Successfully Changed Only-Indian To ${q}`)
+                    replygcFaridah(`Successfully Changed Only-Indian To ${q}`)
                 } else if (q == 'off') {
                     db.data.settings[botNumber].onlyindia = false
-                    replygcVeron(`Successfully Changed Only-Indian To ${q}`)
+                    replygcFaridah(`Successfully Changed Only-Indian To ${q}`)
                 } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -2728,7 +2728,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -2770,21 +2770,21 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
             break
             case 'onlyindo':
             case 'onlyindonumber':
-                if (!VeronTheCreator) return VeronStickOwner()
+                if (!RidzTheCreator) return RidzStickOwner()
                 
                 if (q == 'on') {
                     db.data.settings[botNumber].onlyindo = true
-                    replygcVeron(`Successfully Changed Only-Indonesian To ${q}`)
+                    replygcFaridah(`Successfully Changed Only-Indonesian To ${q}`)
                 } else if (q == 'off') {
                     db.data.settings[botNumber].onlyindo = false
-                    replygcVeron(`Successfully Changed Only-Indonesian To ${q}`)
+                    replygcFaridah(`Successfully Changed Only-Indonesian To ${q}`)
                 } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -2801,7 +2801,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -2843,19 +2843,19 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
             break
             case 'self': case 'public': case 'mode': {
-                if (!VeronTheCreator) return VeronStickOwner()
+                if (!RidzTheCreator) return RidzStickOwner()
                 if (q == 'on') {
-                VeronicaX.public = true
-                replygcVeron('*Successful in Changing To Public Usage*')
+                Faridah.public = true
+                replygcFaridah('*Successful in Changing To Public Usage*')
                 } else if (q == 'off') {
-                VeronicaX.public = false
-                replygcVeron('*Successful in Changing To Self Usage*')
+                Faridah.public = false
+                replygcFaridah('*Successful in Changing To Self Usage*')
                 } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -2872,7 +2872,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -2914,7 +2914,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -2922,44 +2922,44 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             break
             case 'setexif':
             case 'setwm':
-                if (!VeronTheCreator) return VeronStickOwner()
-                if (!text) return replygcVeron(`Example : ${prefix + command} packname|author`)
+                if (!RidzTheCreator) return RidzStickOwner()
+                if (!text) return replygcFaridah(`Example : ${prefix + command} packname|author`)
                 global.packname = text.split("|")[0]
                 global.author = text.split("|")[1]
-                replygcVeron(`Exif successfully changed to\n\n• Packname : ${global.packname}\n• Author : ${global.author}`)
+                replygcFaridah(`Exif successfully changed to\n\n• Packname : ${global.packname}\n• Author : ${global.author}`)
                 break
                 case 'setprefix':
-                if (!VeronTheCreator) return VeronStickOwner()
-                if (!text) return replygcVeron(`Example : ${prefix + command} packname|author`)
+                if (!RidzTheCreator) return RidzStickOwner()
+                if (!text) return replygcFaridah(`Example : ${prefix + command} packname|author`)
                 global.vprefix = text
-                replygcVeron(`Prefix successfully changed to ${text}`)
+                replygcFaridah(`Prefix successfully changed to ${text}`)
                 break
                 case 'setautoblock':
-                if (!VeronTheCreator) return VeronStickOwner()
-                if (!text) return replygcVeron(`Example : ${prefix + command} packname|author`)
+                if (!RidzTheCreator) return RidzStickOwner()
+                if (!text) return replygcFaridah(`Example : ${prefix + command} packname|author`)
                 global.autoblocknumber = text
-                replygcVeron(`Auto-Block number successfully changed to ${text}`)
+                replygcFaridah(`Auto-Block number successfully changed to ${text}`)
                 break
                 case 'setantiforeign':
-                if (!VeronTheCreator) return VeronStickOwner()
-                if (!text) return replygcVeron(`Example : ${prefix + command} packname|author`)
+                if (!RidzTheCreator) return RidzStickOwner()
+                if (!text) return replygcFaridah(`Example : ${prefix + command} packname|author`)
                 global.antiforeignnumber = text
-                replygcVeron(`Anti-foreign number successfully changed to ${text}`)
+                replygcFaridah(`Anti-foreign number successfully changed to ${text}`)
                 break
             case 'setbotpp':
             case 'setpp':
             case 'setpp':
             case 'setppbot':
-                if (!VeronTheCreator) return VeronStickOwner()
-                if (!quoted) return replygcVeron(`Send/Reply Image With Caption ${prefix + command}`)
-                if (!/image/.test(mime)) return replygcVeron(`Send/Reply Image With Caption ${prefix + command}`)
-                if (/webp/.test(mime)) return replygcVeron(`Send/Reply Image With Caption ${prefix + command}`)
-                var medis = await VeronicaX.downloadAndSaveMediaMessage(quoted, 'ppbot.jpeg')
+                if (!RidzTheCreator) return RidzStickOwner()
+                if (!quoted) return replygcFaridah(`Send/Reply Image With Caption ${prefix + command}`)
+                if (!/image/.test(mime)) return replygcFaridah(`Send/Reply Image With Caption ${prefix + command}`)
+                if (/webp/.test(mime)) return replygcFaridah(`Send/Reply Image With Caption ${prefix + command}`)
+                var medis = await Faridah.downloadAndSaveMediaMessage(quoted, 'ppbot.jpeg')
                 if (args[0] == 'full') {
                     var {
                         img
                     } = await generateProfilePicture(medis)
-                    await VeronicaX.query({
+                    await Faridah.query({
                         tag: 'iq',
                         attrs: {
                             to: botNumber,
@@ -2975,101 +2975,101 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
                         }]
                     })
                     fs.unlinkSync(medis)
-                    replygcVeron(mess.done)
+                    replygcFaridah(mess.done)
                 } else {
-                    var memeg = await VeronicaX.updateProfilePicture(botNumber, {
+                    var memeg = await Faridah.updateProfilePicture(botNumber, {
                         url: medis
                     })
                     fs.unlinkSync(medis)
-                    replygcVeron(mess.done)
+                    replygcFaridah(mess.done)
                 }
                 break
             case 'leave':
             case 'out':
-                if (!VeronTheCreator) return VeronStickOwner()
-                if (!m.isGroup) return VeronStickGroup()
-                replygcVeron('Bye Everyone 🥺')
-                await VeronicaX.groupLeave(m.chat)
+                if (!RidzTheCreator) return RidzStickOwner()
+                if (!m.isGroup) return farindahStickGroup()
+                replygcFaridah('Bye Everyone 🥺')
+                await Faridah.groupLeave(m.chat)
             break
             case 'bc':
             case 'broadcast': {
-               if (!VeronTheCreator) return VeronStickOwner()
-               if (!text) return replygcVeron('Text?')
+               if (!RidzTheCreator) return RidzStickOwner()
+               if (!text) return replygcFaridah('Text?')
                let teksnya = `${text}\n\n\n\nDate: ${xdate} ${xtime}`
                for (let i of Object.keys(global.db.data.users)) {
                await sleep(1500)
                   if (/image/.test(mime)) {
                      var media = await quoted.download()
-                     await VeronicaX.sendMessage(i, { 
+                     await Faridah.sendMessage(i, { 
                         image:media,
                         caption: teksnya
                      })
                   } else if (/video/.test(mime)) {
                      var media = await quoted.download()
-                     await VeronicaX.sendMessage(i, {
+                     await Faridah.sendMessage(i, {
                         video: media,
                         caption: teksnya
                      })
                   } else if (text) {
-                     await VeronicaX.sendMessage(i, {
+                     await Faridah.sendMessage(i, {
                         text: teksnya
                      })
                   }
                }
-               replygcVeron(`Success ${command} To ${Object.keys(global.db.data.users).length} Users`)
+               replygcFaridah(`Success ${command} To ${Object.keys(global.db.data.users).length} Users`)
             }
             break
             case 'jpm': case 'post': {
-if (!VeronTheCreator) return VeronStickOwner()
-if (!text) return replygcVeron(`*Incorrect Usage Please Use Like This*\n${prefix+command} text|pause\n\nReply Image To Send Images to All Groups\nFor a pause, 1000 = 1 second\n\nExample: ${prefix + command} hello|9000`)
-await replygcVeron(`Waiting in progress`)
-let getGroups = await VeronicaX.groupFetchAllParticipating()
+if (!RidzTheCreator) return RidzStickOwner()
+if (!text) return replygcFaridah(`*Incorrect Usage Please Use Like This*\n${prefix+command} text|pause\n\nReply Image To Send Images to All Groups\nFor a pause, 1000 = 1 second\n\nExample: ${prefix + command} hello|9000`)
+await replygcFaridah(`Waiting in progress`)
+let getGroups = await Faridah.groupFetchAllParticipating()
 let groups = Object.entries(getGroups).slice(0).map((entry) => entry[1])
 let anu = groups.map((v) => v.id)
 for (let xnxx of anu) {
-let metadat72 = await VeronicaX.groupMetadata(xnxx)
+let metadat72 = await Faridah.groupMetadata(xnxx)
 let participanh = await metadat72.participants
 if (/image/.test(mime)) {
-media = await VeronicaX.downloadAndSaveMediaMessage(quoted)
+media = await Faridah.downloadAndSaveMediaMessage(quoted)
 mem = await uptotelegra(media)
-await VeronicaX.sendMessage(xnxx, { image: { url: mem }, caption: text.split('|')[0], mentions: participanh.map(a => a.id) })
+await Faridah.sendMessage(xnxx, { image: { url: mem }, caption: text.split('|')[0], mentions: participanh.map(a => a.id) })
 await sleep(text.split('|')[1])
 } else {
-await VeronicaX.sendMessage(xnxx, { text: text.split('|')[0], mentions: participanh.map(a => a.id) })
+await Faridah.sendMessage(xnxx, { text: text.split('|')[0], mentions: participanh.map(a => a.id) })
 await sleep(text.split('|')[1])
 }}
-replygcVeron(`Success`)
+replygcFaridah(`Success`)
 }
 break
             case 'pushcontact': {
-    if (!VeronTheCreator) return VeronStickOwner()
-      if (!m.isGroup) return replygcVeron(`The feature works only in grup`)
-    if (!text) return replygcVeron(`text?`)
+    if (!RidzTheCreator) return RidzStickOwner()
+      if (!m.isGroup) return replygcFaridah(`The feature works only in grup`)
+    if (!text) return replygcFaridah(`text?`)
     let mem = await participants.filter(v => v.id.endsWith('.net')).map(v => v.id)
-    replygcVeron(`Success in pushing the message to contacts`)
+    replygcFaridah(`Success in pushing the message to contacts`)
     for (let pler of mem) {
-    VeronicaX.sendMessage(pler, { text: q})
+    Faridah.sendMessage(pler, { text: q})
      }  
-     replygcVeron(`Done`)
+     replygcFaridah(`Done`)
       }
       break
 case "pushcontactv2":{
-if (!VeronTheCreator) return VeronStickOwner()
-if (!q) return replygcVeron(`Incorrect Usage Please Use Command Like This\n${prefix+command} idgc|text`)
-await VeronStickWait()
-const metadata2 = await VeronicaX.groupMetadata(q.split("|")[0])
+if (!RidzTheCreator) return RidzStickOwner()
+if (!q) return replygcFaridah(`Incorrect Usage Please Use Command Like This\n${prefix+command} idgc|text`)
+await farindahStickWait()
+const metadata2 = await Faridah.groupMetadata(q.split("|")[0])
 const halss = metadata2.participants
 for (let mem of halss) {
-VeronicaX.sendMessage(`${mem.id.split('@')[0]}` + "@s.whatsapp.net", { text: q.split("|")[1] })
+Faridah.sendMessage(`${mem.id.split('@')[0]}` + "@s.whatsapp.net", { text: q.split("|")[1] })
 await sleep(5000)
 }
-replygcVeron(`Success`)
+replygcFaridah(`Success`)
 }
 break
 case 'pushcontactv3':
-if (!VeronTheCreator) return VeronStickOwner()
-if (!isGroup) return VeronStickGroup()
-if (!text) return replygcVeron(
+if (!RidzTheCreator) return RidzStickOwner()
+if (!isGroup) return farindahStickGroup()
+if (!text) return replygcFaridah(
 `
 *Usage example :*
 
@@ -3083,45 +3083,45 @@ let captny = text.split("|")[1]
 const halsss = await participants.filter(v => v.id.endsWith('.net')).map(v => v.id)
 for (let men of halsss) {
 if (/image/.test(mime)) {
-media = await VeronicaX.downloadAndSaveMediaMessage(quoted)
+media = await Faridah.downloadAndSaveMediaMessage(quoted)
 mem = await TelegraPh(media)
-await VeronicaX.sendMessage(men, { image: { url: mem }, caption: captny }, { quoted: m })
+await Faridah.sendMessage(men, { image: { url: mem }, caption: captny }, { quoted: m })
 await sleep(1000)
-await VeronicaX.sendMessage(men, { text: captny  }, { quoted: m })
+await Faridah.sendMessage(men, { text: captny  }, { quoted: m })
 await sleep(jedany)
 } else {
-await VeronicaX.sendMessage(men, { text: captny  }, { quoted: m })
+await Faridah.sendMessage(men, { text: captny  }, { quoted: m })
 await sleep(jedany)
 }
 }
-replygcVeron(`Success`)
+replygcFaridah(`Success`)
 break
 case 'block': case 'ban': {
-		if (!VeronTheCreator) return VeronStickOwner()
+		if (!RidzTheCreator) return RidzStickOwner()
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await VeronicaX.updateBlockStatus(users, 'block')
-		await replygcVeron(`Done`)
+		await Faridah.updateBlockStatus(users, 'block')
+		await replygcFaridah(`Done`)
 	}
 	break
 	case 'unblock': case 'unban': {
-		if (!VeronTheCreator) return VeronStickOwner()
+		if (!RidzTheCreator) return RidzStickOwner()
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await VeronicaX.updateBlockStatus(users, 'unblock')
-		await replygcVeron(`Done`)
+		await Faridah.updateBlockStatus(users, 'unblock')
+		await replygcFaridah(`Done`)
 	}
 	break
             case 'bcgc':
             case 'bcgroup': {
-                if (!VeronTheCreator) return VeronStickOwner()
-                if (!text) return replygcVeron(`Text mana?\n\nExample : ${prefix + command} Besok Libur `)
-                let getGroups = await VeronicaX.groupFetchAllParticipating()
+                if (!RidzTheCreator) return RidzStickOwner()
+                if (!text) return replygcFaridah(`Text mana?\n\nExample : ${prefix + command} Besok Libur `)
+                let getGroups = await Faridah.groupFetchAllParticipating()
                 let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
                 let anu = groups.map(v => v.id)
-                replygcVeron(`Sending Broadcast To ${anu.length} Group Chat, End Time ${anu.length * 1.5} seconds`)
+                replygcFaridah(`Sending Broadcast To ${anu.length} Group Chat, End Time ${anu.length * 1.5} seconds`)
                 for (let i of anu) {
                     await sleep(1500)
                     let a = `${ownername}'s Broadcast\n\n` + '```' + `Message: ${text}\n\n` + '```'
-                    VeronicaX.sendMessage(i, {
+                    Faridah.sendMessage(i, {
                         text: a,
                         contextInfo: {
                             externalAdReply: {
@@ -3136,33 +3136,33 @@ case 'block': case 'ban': {
                         }
                     })
                 }
-                replygcVeron(`Successful in sending Broadcast To ${anu.length} Group`)
+                replygcFaridah(`Successful in sending Broadcast To ${anu.length} Group`)
             }
             break
             case 'getcase':
-                if (!VeronTheCreator) return VeronStickOwner()
+                if (!RidzTheCreator) return RidzStickOwner()
                 try {
                    const getCase = (cases) => {
-                      return "case" + `'${cases}'` + fs.readFileSync("nexwrld.js").toString().split('case \'' + cases + '\'')[1].split("break")[0] + "break"
+                      return "case" + `'${cases}'` + fs.readFileSync("nebula.js").toString().split('case \'' + cases + '\'')[1].split("break")[0] + "break"
                    }
-                   replygcVeron(`${getCase(q)}`)
+                   replygcFaridah(`${getCase(q)}`)
                 } catch {
-                  replygcVeron(`case ${q} not found!`)
+                  replygcFaridah(`case ${q} not found!`)
                 }
             break
             //group
             case 'antibadword':
             case 'antitoxic':{
-		         if (!m.isGroup) return VeronStickGroup()
-if (!isBotAdmins) return VeronStickBotAdmin()
-if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
+		         if (!m.isGroup) return farindahStickGroup()
+if (!isBotAdmins) return farindahStickBotAdmin()
+if (!isAdmins && !RidzTheCreator) return farindahStickAdmin()
                
                if (args[0] === 'on') {
                   db.data.chats[from].badword = true
-                  replygcVeron(`${command} is enabled`)
+                  replygcFaridah(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].badword = false
-                  replygcVeron(`${commad} is disabled`)
+                  replygcFaridah(`${commad} is disabled`)
                } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -3179,7 +3179,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -3221,45 +3221,45 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
                }
             break
             case 'react': {
-                if (!VeronTheCreator) return VeronStickOwner()
+                if (!RidzTheCreator) return RidzStickOwner()
                 reactionMessage = {
                     react: {
                         text: args[0],
                         key: { remoteJid: m.chat, fromMe: true, id: quoted.id }
                     }
                 }
-                VeronicaX.sendMessage(m.chat, reactionMessage)
+                Faridah.sendMessage(m.chat, reactionMessage)
             }
             break
            case 'nsfw': {
-if (!m.isGroup) return VeronStickGroup()
-if (!isBotAdmins) return VeronStickBotAdmin()
-if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
+if (!m.isGroup) return farindahStickGroup()
+if (!isBotAdmins) return farindahStickBotAdmin()
+if (!isAdmins && !RidzTheCreator) return farindahStickAdmin()
 if (args[0] === "on") {
-if (AntiNsfw) return replygcVeron('Already activated')
+if (AntiNsfw) return replygcFaridah('Already activated')
 ntnsfw.push(from)
 fs.writeFileSync('./src/data/function/nsfw.json', JSON.stringify(ntnsfw))
-replygcVeron('Success in turning on nsfw in this group')
-var groupe = await VeronicaX.groupMetadata(from)
+replygcFaridah('Success in turning on nsfw in this group')
+var groupe = await Faridah.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-VeronicaX.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNsfw(not safe for work) feature has been enabled in this group, which means one can access sexual graphics from the bot!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+Faridah.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNsfw(not safe for work) feature has been enabled in this group, which means one can access sexual graphics from the bot!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
-if (!AntiNsfw) return replygcVeron('Already deactivated')
+if (!AntiNsfw) return replygcFaridah('Already deactivated')
 let off = ntnsfw.indexOf(from)
 ntnsfw.splice(off, 1)
 fs.writeFileSync('./src/data/function/nsfw.json', JSON.stringify(ntnsfw))
-replygcVeron('Success in turning off nsfw in this group')
+replygcFaridah('Success in turning off nsfw in this group')
 } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -3276,7 +3276,7 @@ replygcVeron('Success in turning off nsfw in this group')
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -3318,7 +3318,7 @@ replygcVeron('Success in turning off nsfw in this group')
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -3328,20 +3328,20 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
   case 'jid':
   case 'groupjid':
             case 'id':{
-            replygcVeron(from)
+            replygcFaridah(from)
            }
           break
             case 'antiaudio':{
-            	if (!m.isGroup) return VeronStickGroup()
-if (!isBotAdmins) return VeronStickBotAdmin()
-if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
+            	if (!m.isGroup) return farindahStickGroup()
+if (!isBotAdmins) return farindahStickBotAdmin()
+if (!isAdmins && !RidzTheCreator) return farindahStickAdmin()
                
                if (args[0] === 'on') {
                   db.data.chats[from].antiaudio = true
-                  replygcVeron(`${command} is enabled`)
+                  replygcFaridah(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antiaudio = false
-                  replygcVeron(`${command} is disabled`)
+                  replygcFaridah(`${command} is disabled`)
                } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -3358,7 +3358,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -3400,23 +3400,23 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
                }
             break
             case 'antiforeign':{
-            	if (!m.isGroup) return VeronStickGroup()
-if (!isBotAdmins) return VeronStickBotAdmin()
-if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
+            	if (!m.isGroup) return farindahStickGroup()
+if (!isBotAdmins) return farindahStickBotAdmin()
+if (!isAdmins && !RidzTheCreator) return farindahStickAdmin()
                
                if (args[0] === 'on') {
                   db.data.chats[m.chat].antiforeignnum = true
-                  replygcVeron(`${command} is enabled`)
+                  replygcFaridah(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[m.chat].antiforeignnum = false
-                  replygcVeron(`${command} is disabled`)
+                  replygcFaridah(`${command} is disabled`)
                } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -3433,7 +3433,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -3475,24 +3475,24 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
                }
             break
             case 'poll': {
-	if (!VeronTheCreator) return VeronStickOwner()
+	if (!RidzTheCreator) return RidzStickOwner()
             let [poll, opt] = text.split("|")
             if (text.split("|") < 2)
-                return await replygcVeron(
-                    `Mention question and atleast 2 options\nExample: ${prefix}poll Who is best admin?|Veron,Cheems,Doge...`
+                return await replygcFaridah(
+                    `Mention question and atleast 2 options\nExample: ${prefix}poll Who is best admin?|Ridz-coder, Rivozn-coder, The-developer...`
                 )
             let options = []
             for (let i of opt.split(',')) {
                 options.push(i)
             }
-            await VeronicaX.sendMessage(m.chat, {
+            await Faridah.sendMessage(m.chat, {
                 poll: {
                     name: poll,
                     values: options
@@ -3501,16 +3501,16 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
         }
         break
             case 'antipoll':{
-            	if (!m.isGroup) return VeronStickGroup()
-if (!isBotAdmins) return VeronStickBotAdmin()
-if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
+            	if (!m.isGroup) return farindahStickGroup()
+if (!isBotAdmins) return farindahStickBotAdmin()
+if (!isAdmins && !RidzTheCreator) return farindahStickAdmin()
                
                if (args[0] === 'on') {
                   db.data.chats[from].antipoll = true
-                  replygcVeron(`${command} is enabled`)
+                  replygcFaridah(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antipoll = false
-                  replygcVeron(`${command} is disabled`)
+                  replygcFaridah(`${command} is disabled`)
                } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -3527,7 +3527,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -3569,23 +3569,23 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
                }
             break
             case 'antisticker':{
-            	if (!m.isGroup) return VeronStickGroup()
-if (!isBotAdmins) return VeronStickBotAdmin()
-if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
+            	if (!m.isGroup) return farindahStickGroup()
+if (!isBotAdmins) return farindahStickBotAdmin()
+if (!isAdmins && !RidzTheCreator) return farindahStickAdmin()
                
                if (args[0] === 'on') {
                   db.data.chats[from].antisticker = true
-                  replygcVeron(`${command} is enabled`)
+                  replygcFaridah(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antisticker = false
-                  replygcVeron(`${command} is disabled`)
+                  replygcFaridah(`${command} is disabled`)
                } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -3602,7 +3602,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -3644,23 +3644,23 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
                }
             break
             case 'antiimage':{
-            	if (!m.isGroup) return VeronStickGroup()
-if (!isBotAdmins) return VeronStickBotAdmin()
-if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
+            	if (!m.isGroup) return farindahStickGroup()
+if (!isBotAdmins) return farindahStickBotAdmin()
+if (!isAdmins && !RidzTheCreator) return farindahStickAdmin()
                
                if (args[0] === 'on') {
                   db.data.chats[from].antiimage = true
-                  replygcVeron(`${command} is enabled`)
+                  replygcFaridah(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antiimage = false
-                  replygcVeron(`${command} is disabled`)
+                  replygcFaridah(`${command} is disabled`)
                } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -3677,7 +3677,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -3719,23 +3719,23 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
                }
             break
             case 'antivideo':{
-            	if (!m.isGroup) return VeronStickGroup()
-if (!isBotAdmins) return VeronStickBotAdmin()
-if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
+            	if (!m.isGroup) return farindahStickGroup()
+if (!isBotAdmins) return farindahStickBotAdmin()
+if (!isAdmins && !RidzTheCreator) return farindahStickAdmin()
                
                if (args[0] === 'on') {
                   db.data.chats[from].antivideo = true
-                  replygcVeron(`${command} is enabled`)
+                  replygcFaridah(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antivideo = false
-                  replygcVeron(`${command} is disabled`)
+                  replygcFaridah(`${command} is disabled`)
                } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -3752,7 +3752,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -3794,23 +3794,23 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
                }
             break
             case 'antivirtex':{
-		         if (!m.isGroup) return VeronStickGroup()
-if (!isBotAdmins) return VeronStickBotAdmin()
-if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
+		         if (!m.isGroup) return farindahStickGroup()
+if (!isBotAdmins) return farindahStickBotAdmin()
+if (!isAdmins && !RidzTheCreator) return farindahStickAdmin()
                
                if (args[0] === 'on') {
                   db.data.chats[from].antivirtex = true
-                  replygcVeron(`${command} is enabled`)
+                  replygcFaridah(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antivirtex = false
-                  replygcVeron(`${command} is disabled`)
+                  replygcFaridah(`${command} is disabled`)
                } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -3827,7 +3827,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -3869,23 +3869,23 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
                }
             break
             case 'antibot':{
-		         if (!m.isGroup) return VeronStickGroup()
-if (!isBotAdmins) return VeronStickBotAdmin()
-if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
+		         if (!m.isGroup) return farindahStickGroup()
+if (!isBotAdmins) return farindahStickBotAdmin()
+if (!isAdmins && !RidzTheCreator) return farindahStickAdmin()
                
                if (args[0] === 'on') {
                   db.data.chats[from].antibot = true
-                  replygcVeron(`${command} is enabled`)
+                  replygcFaridah(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antibot = false
-                  replygcVeron(`${command} is disabled`)
+                  replygcFaridah(`${command} is disabled`)
                } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -3902,7 +3902,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -3944,15 +3944,15 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
                }
             break
             case 'readviewonce': case 'rvo': {
-	if (!m.quoted) return replygcVeron(`Reply to view once message`)
-	if (m.quoted.mtype !== 'viewOnceMessageV2') return replygcVeron(`This is not a view once message`)
+	if (!m.quoted) return replygcFaridah(`Reply to view once message`)
+	if (m.quoted.mtype !== 'viewOnceMessageV2') return replygcFaridah(`This is not a view once message`)
     let msg = m.quoted.message
     let type = Object.keys(msg)[0]
     let media = await downloadContentFromMessage(msg[type], type == 'imageMessage' ? 'image' : 'video')
@@ -3961,23 +3961,23 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
         buffer = Buffer.concat([buffer, chunk])
     }
     if (/video/.test(type)) {
-        return VeronicaX.sendFile(m.chat, buffer, 'media.mp4', msg[type].caption || '', m)
+        return Faridah.sendFile(m.chat, buffer, 'media.mp4', msg[type].caption || '', m)
     } else if (/image/.test(type)) {
-        return VeronicaX.sendFile(m.chat, buffer, 'media.jpg', msg[type].caption || '', m)
+        return Faridah.sendFile(m.chat, buffer, 'media.jpg', msg[type].caption || '', m)
     }
 }
 break
             case 'antiviewonce':{
-		         if (!m.isGroup) return VeronStickGroup()
-if (!isBotAdmins) return VeronStickBotAdmin()
-if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
+		         if (!m.isGroup) return farindahStickGroup()
+if (!isBotAdmins) return farindahStickBotAdmin()
+if (!isAdmins && !RidzTheCreator) return farindahStickAdmin()
                
                if (args[0] === 'on') {
                   db.data.chats[from].antiviewonce = true
-                  replygcVeron(`${command} is enabled`)
+                  replygcFaridah(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antiviewonce = false
-                  replygcVeron(`${command} is disabled`)
+                  replygcFaridah(`${command} is disabled`)
                } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -3994,7 +3994,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -4036,23 +4036,23 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
                }
             break
             case 'antispam':{
-		         if (!m.isGroup) return VeronStickGroup()
-if (!isBotAdmins) return VeronStickBotAdmin()
-if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
+		         if (!m.isGroup) return farindahStickGroup()
+if (!isBotAdmins) return farindahStickBotAdmin()
+if (!isAdmins && !RidzTheCreator) return farindahStickAdmin()
                
                if (args[0] === 'on') {
                   db.data.chats[from].antispam = true
-                  replygcVeron(`${command} is enabled`)
+                  replygcFaridah(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antispam = false
-                  replygcVeron(`${command} is disabled`)
+                  replygcFaridah(`${command} is disabled`)
                } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -4069,7 +4069,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -4111,23 +4111,23 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
                }
             break
             case 'antimedia':{
-		         if (!m.isGroup) return VeronStickGroup()
-if (!isBotAdmins) return VeronStickBotAdmin()
-if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
+		         if (!m.isGroup) return farindahStickGroup()
+if (!isBotAdmins) return farindahStickBotAdmin()
+if (!isAdmins && !RidzTheCreator) return farindahStickAdmin()
                
                if (args[0] === 'on') {
                   db.data.chats[from].antimedia = true
-                  replygcVeron(`${command} is enabled`)
+                  replygcFaridah(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antimedia = false
-                  replygcVeron(`${command} is disabled`)
+                  replygcFaridah(`${command} is disabled`)
                } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -4144,7 +4144,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -4186,23 +4186,23 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
                }
             break
             case 'antidocument':{
-		         if (!m.isGroup) return VeronStickGroup()
-if (!isBotAdmins) return VeronStickBotAdmin()
-if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
+		         if (!m.isGroup) return farindahStickGroup()
+if (!isBotAdmins) return farindahStickBotAdmin()
+if (!isAdmins && !RidzTheCreator) return farindahStickAdmin()
                
                if (args[0] === 'on') {
                   db.data.chats[from].antidocument = true
-                  replygcVeron(`${command} is enabled`)
+                  replygcFaridah(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antidocument = false
-                  replygcVeron(`${command} is disabled`)
+                  replygcFaridah(`${command} is disabled`)
                } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -4219,7 +4219,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -4261,23 +4261,23 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
                }
             break
             case 'anticontact':{
-		         if (!m.isGroup) return VeronStickGroup()
-if (!isBotAdmins) return VeronStickBotAdmin()
-if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
+		         if (!m.isGroup) return farindahStickGroup()
+if (!isBotAdmins) return farindahStickBotAdmin()
+if (!isAdmins && !RidzTheCreator) return farindahStickAdmin()
          
                if (args[0] === 'on') {
                   db.data.chats[from].anticontact = true
-                  replygcVeron(`${command} is enabled`)
+                  replygcFaridah(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].anticontact = false
-                  replygcVeron(`${command} is disabled`)
+                  replygcFaridah(`${command} is disabled`)
                } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -4294,7 +4294,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -4336,22 +4336,22 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
                }
             break
             case 'antilocation':{
-		         if (!m.isGroup) return VeronStickGroup()
-if (!isBotAdmins) return VeronStickBotAdmin()
-if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
+		         if (!m.isGroup) return farindahStickGroup()
+if (!isBotAdmins) return farindahStickBotAdmin()
+if (!isAdmins && !RidzTheCreator) return farindahStickAdmin()
                if (args[0] === 'on') {
                   db.data.chats[from].antilocation = true
-                  replygcVeron(`${command} is enabled`)
+                  replygcFaridah(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antilocation = false
-                  replygcVeron(`${command} is disabled`)
+                  replygcFaridah(`${command} is disabled`)
                } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -4368,7 +4368,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -4410,22 +4410,22 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
                }
             break
             case 'antilink': {
-               if (!m.isGroup) return VeronStickGroup()
-if (!isBotAdmins) return VeronStickBotAdmin()
-if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
+               if (!m.isGroup) return farindahStickGroup()
+if (!isBotAdmins) return farindahStickBotAdmin()
+if (!isAdmins && !RidzTheCreator) return farindahStickAdmin()
                if (args[0] === 'on') {
                   db.data.chats[from].antilink = true
-                  replygcVeron(`${command} is enabled`)
+                  replygcFaridah(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antilink = false
-                  replygcVeron(`${command} is disabled`)
+                  replygcFaridah(`${command} is disabled`)
                } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -4442,7 +4442,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -4484,22 +4484,22 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
             }
             break
             case 'antilinkgc': {
-               if (!m.isGroup) return VeronStickGroup()
-if (!isBotAdmins) return VeronStickBotAdmin()
-if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
+               if (!m.isGroup) return farindahStickGroup()
+if (!isBotAdmins) return farindahStickBotAdmin()
+if (!isAdmins && !RidzTheCreator) return farindahStickAdmin()
                if (args[0] === 'on') {
                   db.data.chats[from].antilinkgc = true
-                  replygcVeron(`${command} is enabled`)
+                  replygcFaridah(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antilinkgc = false
-                  replygcVeron(`${command} is disabled`)
+                  replygcFaridah(`${command} is disabled`)
                } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -4516,7 +4516,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -4558,22 +4558,22 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
             }
             break
             case 'antipromotion': {
-               if (!m.isGroup) return VeronStickGroup()
-if (!isBotAdmins) return VeronStickBotAdmin()
-if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
+               if (!m.isGroup) return farindahStickGroup()
+if (!isBotAdmins) return farindahStickBotAdmin()
+if (!isAdmins && !RidzTheCreator) return farindahStickAdmin()
                if (args[0] === 'on') {
                   db.data.chats[from].antipromotion = true
-                  replygcVeron(`${command} is enabled`)
+                  replygcFaridah(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antipromotion = false
-                  replygcVeron(`${command} is disabled`)
+                  replygcFaridah(`${command} is disabled`)
                } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -4590,7 +4590,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -4632,7 +4632,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -4640,14 +4640,14 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             break
             case 'welcome':
             case 'left': {
-               if (!m.isGroup) return VeronStickGroup()
-if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
+               if (!m.isGroup) return farindahStickGroup()
+if (!isAdmins && !RidzTheCreator) return farindahStickAdmin()
                if (args[0] === 'on') {
                   welcome = true
-                  replygcVeron(`${command} is enabled`)
+                  replygcFaridah(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   welcome = false
-                  replygcVeron(`${command} is disabled`)
+                  replygcFaridah(`${command} is disabled`)
                }else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -4664,7 +4664,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -4706,21 +4706,21 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
             }
             break
             case 'adminevent': {
-               if (!m.isGroup) return VeronStickGroup()
-if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
+               if (!m.isGroup) return farindahStickGroup()
+if (!isAdmins && !RidzTheCreator) return farindahStickAdmin()
                if (args[0] === 'on') {
                   adminevent = true
-                  replygcVeron(`${command} is enabled`)
+                  replygcFaridah(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   adminevent = false
-                  replygcVeron(`${command} is disabled`)
+                  replygcFaridah(`${command} is disabled`)
                } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -4737,7 +4737,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -4779,21 +4779,21 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
             }
             break
 case 'groupevent': {
-               if (!m.isGroup) return VeronStickGroup()
-if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
+               if (!m.isGroup) return farindahStickGroup()
+if (!isAdmins && !RidzTheCreator) return farindahStickAdmin()
                if (args[0] === 'on') {
                   groupevent = true
-                  replygcVeron(`${command} is enabled`)
+                  replygcFaridah(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   groupevent = false
-                  replygcVeron(`${command} is disabled`)
+                  replygcFaridah(`${command} is disabled`)
                } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -4810,7 +4810,7 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -4852,28 +4852,28 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
             }
             break 
             case 'invite': {
-	if (!m.isGroup) return VeronStickGroup()
-	if (!isBotAdmins) return VeronStickBotAdmin()
-if (!text) return replygcVeron(`Enter the number you want to invite to the group\n\nExample :\n*${prefix + command}* 916909137213`)
-if (text.includes('+')) return replygcVeron(`Enter the number together without *+*`)
-if (isNaN(text)) return replygcVeron(`Enter only the numbers plus your country code without spaces`)
+	if (!m.isGroup) return farindahStickGroup()
+	if (!isBotAdmins) return farindahStickBotAdmin()
+if (!text) return replygcFaridah(`Enter the number you want to invite to the group\n\nExample :\n*${prefix + command}* 916909137213`)
+if (text.includes('+')) return replygcFaridah(`Enter the number together without *+*`)
+if (isNaN(text)) return replygcFaridah(`Enter only the numbers plus your country code without spaces`)
 let group = m.chat
-let link = 'https://chat.whatsapp.com/' + await VeronicaX.groupInviteCode(group)
-      await VeronicaX.sendMessage(text+'@s.whatsapp.net', {text: `≡ *GROUP INVITATION*\n\nA user invites you to join this group \n\n${link}`, mentions: [m.sender]})
-        replygcVeron(` An invite link is sent to the user`) 
+let link = 'https://chat.whatsapp.com/' + await Faridah.groupInviteCode(group)
+      await Faridah.sendMessage(text+'@s.whatsapp.net', {text: `≡ *GROUP INVITATION*\n\nA user invites you to join this group \n\n${link}`, mentions: [m.sender]})
+        replygcFaridah(` An invite link is sent to the user`) 
 }
 break
             case 'closetime':
-                if (!m.isGroup) return VeronStickGroup()
-                if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
-                if (!isBotAdmins) return VeronStickBotAdmin()
+                if (!m.isGroup) return farindahStickGroup()
+                if (!isAdmins && !RidzTheCreator) return farindahStickAdmin()
+                if (!isBotAdmins) return farindahStickBotAdmin()
                 if (args[1] == 'second') {
                     var timer = args[0] * `1000`
                 } else if (args[1] == 'minute') {
@@ -4883,20 +4883,20 @@ break
                 } else if (args[1] == 'day') {
                     var timer = args[0] * `86400000`
                 } else {
-                    return replygcVeron('*select:*\nsecond\nminute\nhour\n\n*Example*\n10 second')
+                    return replygcFaridah('*select:*\nsecond\nminute\nhour\n\n*Example*\n10 second')
                 }
-                replygcVeron(`Close time ${q} starting from now`)
+                replygcFaridah(`Close time ${q} starting from now`)
                 setTimeout(() => {
                     var nomor = m.participant
                     const close = `*Close time* group closed by admin\nnow only admin can send messages`
-                    VeronicaX.groupSettingUpdate(m.chat, 'announcement')
-                    replygcVeron(close)
+                    Faridah.groupSettingUpdate(m.chat, 'announcement')
+                    replygcFaridah(close)
                 }, timer)
                 break
             case 'opentime':
-                if (!m.isGroup) return VeronStickGroup()
-                if (!isAdmins && !VeronTheCreator) return replygcVeron(mess.admin)
-                if (!isBotAdmins) return VeronStickBotAdmin()
+                if (!m.isGroup) return farindahStickGroup()
+                if (!isAdmins && !RidzTheCreator) return replygcFaridah(mess.admin)
+                if (!isBotAdmins) return farindahStickBotAdmin()
                 if (args[1] == 'second') {
                     var timer = args[0] * `1000`
                 } else if (args[1] == 'minute') {
@@ -4906,44 +4906,44 @@ break
                 } else if (args[1] == 'day') {
                     var timer = args[0] * `86400000`
                 } else {
-                    return replygcVeron('*select:*\nsecond\nminute\nhour\n\n*example*\n10 second')
+                    return replygcFaridah('*select:*\nsecond\nminute\nhour\n\n*example*\n10 second')
                 }
-                replygcVeron(`Open time ${q} starting from now`)
+                replygcFaridah(`Open time ${q} starting from now`)
                 setTimeout(() => {
                     var nomor = m.participant
                     const open = `*Open time* the group was opened by admin\n now members can send messages`
-                    VeronicaX.groupSettingUpdate(m.chat, 'not_announcement')
-                    replygcVeron(open)
+                    Faridah.groupSettingUpdate(m.chat, 'not_announcement')
+                    replygcFaridah(open)
                 }, timer)
                 break
             case 'kick':
-                if (!isAdmins && !isGroupOwner && !VeronTheCreator) return VeronStickAdmin()
-                if (!m.isGroup) return VeronStickGroup()
-                if (!isAdmins && !isGroupOwner && !VeronTheCreator) return VeronStickAdmin()
-                if (!isBotAdmins) return VeronStickBotAdmin()
+                if (!isAdmins && !isGroupOwner && !RidzTheCreator) return farindahStickAdmin()
+                if (!m.isGroup) return farindahStickGroup()
+                if (!isAdmins && !isGroupOwner && !RidzTheCreator) return farindahStickAdmin()
+                if (!isBotAdmins) return farindahStickBotAdmin()
                 let blockwww = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
-                await VeronicaX.groupParticipantsUpdate(m.chat, [blockwww], 'remove')
-                replygcVeron(mess.done)
+                await Faridah.groupParticipantsUpdate(m.chat, [blockwww], 'remove')
+                replygcFaridah(mess.done)
                 break
 
                 case "idgroup": case "groupid": {
-if (!VeronTheCreator) return VeronStickOwner()
-let getGroups = await VeronicaX.groupFetchAllParticipating()
+if (!RidzTheCreator) return RidzStickOwner()
+let getGroups = await Faridah.groupFetchAllParticipating()
 let groups = Object.entries(getGroups).slice(0).map((entry) => entry[1])
 let anu = groups.map((v) => v.id)
 let teks = `⬣ *GROUP LIST BELOW*\n\nTotal Group : ${anu.length} Group\n\n`
 for (let x of anu) {
-let metadata2 = await VeronicaX.groupMetadata(x)
+let metadata2 = await Faridah.groupMetadata(x)
 teks += `◉ Name : ${metadata2.subject}\n◉ ID : ${metadata2.id}\n◉ Member : ${metadata2.participants.length}\n\n────────────────────────\n\n`
 }
-replygcVeron(teks + `To Use Please Type Command ${prefix}pushcontact idgroup|teks\n\nBefore using, please first copy the group id above`)
+replygcFaridah(teks + `To Use Please Type Command ${prefix}pushcontact idgroup|teks\n\nBefore using, please first copy the group id above`)
 }
 break
 case 'wanumber': case 'nowa': case 'searchno': case 'searchnumber':{
-           	if (!text) return replygcVeron(`Provide Number with last number x\n\nExample: ${prefix + command} 91690913721x`)
+           	if (!text) return replygcFaridah(`Provide Number with last number x\n\nExample: ${prefix + command} 91690913721x`)
 var inputnumber = text.split(" ")[0]
         
-        replygcVeron(`Searching for WhatsApp account in given range...`)
+        replygcFaridah(`Searching for WhatsApp account in given range...`)
         function countInstances(string, word) {
             return string.split(word).length - 1
         }
@@ -4977,11 +4977,11 @@ var inputnumber = text.split(" ")[0]
             } else if (random_length == 4) {
                 random21 = `${status1}${status2}${status3}${dom4}`
             }
-            var anu = await VeronicaX.onWhatsApp(`${number0}${i}${number1}@s.whatsapp.net`)
+            var anu = await Faridah.onWhatsApp(`${number0}${i}${number1}@s.whatsapp.net`)
             var anuu = anu.length !== 0 ? anu : false
             try {
                 try {
-                    var anu1 = await VeronicaX.fetchStatus(anu[0].jid)
+                    var anu1 = await Faridah.fetchStatus(anu[0].jid)
                 } catch {
                     var anu1 = '401'
                 }
@@ -4994,23 +4994,23 @@ var inputnumber = text.split(" ")[0]
                 nowhatsapp += `${number0}${i}${number1}\n`
             }
         }
-        replygcVeron(`${text66}${nobio}${nowhatsapp}`)
+        replygcFaridah(`${text66}${nobio}${nowhatsapp}`)
         }
 break
 case 'getcontact': case 'getcon': {
-if (!m.isGroup) return VeronStickGroup()
-if (!(isGroupAdmins || VeronTheCreator)) return VeronStickAdmin()
-Veronbigpp = await VeronicaX.sendMessage(m.chat, {
+if (!m.isGroup) return farindahStickGroup()
+if (!(isGroupAdmins || RidzTheCreator)) return farindahStickAdmin()
+Faridahbigpp = await Faridah.sendMessage(m.chat, {
     text: `\nGroup: *${groupMetadata.subject}*\nMember: *${participants.length}*`
 }, {quoted: m, ephemeralExpiration: 86400})
 await sleep(1000)
-VeronicaX.sendContact(m.chat, participants.map(a => a.id), Veronbigpp)
+Faridah.sendContact(m.chat, participants.map(a => a.id), Faridahbigpp)
 }
 break
 case 'savecontact': case 'svcontact':{
-if (!m.isGroup) return VeronStickGroup()
-if (!(isGroupAdmins || VeronTheCreator)) return VeronStickAdmin()
-let cmiggc = await VeronicaX.groupMetadata(m.chat)
+if (!m.isGroup) return farindahStickGroup()
+if (!(isGroupAdmins || RidzTheCreator)) return farindahStickAdmin()
+let cmiggc = await Faridah.groupMetadata(m.chat)
 let orgiggc = participants.map(a => a.id)
 vcard = ''
 noPort = 0
@@ -5018,86 +5018,86 @@ for (let a of cmiggc.participants) {
     vcard += `BEGIN:VCARD\nVERSION:3.0\nFN:[${noPort++}] +${a.id.split("@")[0]}\nTEL;type=CELL;type=VOICE;waid=${a.id.split("@")[0]}:+${a.id.split("@")[0]}\nEND:VCARD\n`
 }
 let nmfilect = './contacts.vcf'
-replygcVeron('\nBe patient bro, saving... '+cmiggc.participants.length+' contact')
+replygcFaridah('\nBe patient bro, saving... '+cmiggc.participants.length+' contact')
 require('fs').writeFileSync(nmfilect, vcard.trim())
 await sleep(2000)
-VeronicaX.sendMessage(m.chat, {
+Faridah.sendMessage(m.chat, {
     document: require('fs').readFileSync(nmfilect), mimetype: 'text/vcard', fileName: 'Contact.vcf', caption: '\nSucceed\nGroup: *'+cmiggc.subject+'*\nContact: *'+cmiggc.participants.length+'*'
 }, {ephemeralExpiration: 86400, quoted: m})
 require('fs').unlinkSync(nmfilect)
 }
 break
 case 'sendcontact': case 'sencontact': {
-if (!m.isGroup) return VeronStickGroup()
-if (!m.mentionedJid[0]) return replygcVeron('\nUse like this\n Example:.sendcontact @tag|name')
+if (!m.isGroup) return farindahStickGroup()
+if (!m.mentionedJid[0]) return replygcFaridah('\nUse like this\n Example:.sendcontact @tag|name')
 let snTak = text.split(' ')[1] ? text.split(' ')[1] : 'Contact'
 let snContact = {
 	displayName: "Contact", contacts: [{displayName: snTak, vcard: "BEGIN:VCARD\nVERSION:3.0\nN:;"+snTak+";;;\nFN:"+snTak+"\nitem1.TEL;waid="+m.mentionedJid[0].split('@')[0]+":"+m.mentionedJid[0].split('@')[0]+"\nitem1.X-ABLabel:Mobile\nEND:VCARD"}]
 }
-VeronicaX.sendMessage(m.chat, {contacts: snContact}, {ephemeralExpiration: 86400})
+Faridah.sendMessage(m.chat, {contacts: snContact}, {ephemeralExpiration: 86400})
 }
 break
 case 'contacttag': case 'contag':{
-if (!m.isGroup) return VeronStickGroup()
-if (!(isGroupAdmins || VeronTheCreator)) return VeronStickAdmin()
-if (!m.mentionedJid[0]) return replygcVeron('\nUse like this\n Example:.contacttag @tag|name')
+if (!m.isGroup) return farindahStickGroup()
+if (!(isGroupAdmins || RidzTheCreator)) return farindahStickAdmin()
+if (!m.mentionedJid[0]) return replygcFaridah('\nUse like this\n Example:.contacttag @tag|name')
 let sngTak = text.split(' ')[1] ? text.split(' ')[1] : 'Contact'
 let sngContact = {
 	displayName: "Contact", contacts: [{displayName: sngTak, vcard: "BEGIN:VCARD\nVERSION:3.0\nN:;"+sngTak+";;;\nFN:"+sngTak+"\nitem1.TEL;waid="+m.mentionedJid[0].split('@')[0]+":"+m.mentionedJid[0].split('@')[0]+"\nitem1.X-ABLabel:Mobile\nEND:VCARD"}]
 }
-VeronicaX.sendMessage(m.chat, {contacts: sngContact, mentions: participants.map(a => a.id)}, {ephemeralExpiration: 86400})
+Faridah.sendMessage(m.chat, {contacts: sngContact, mentions: participants.map(a => a.id)}, {ephemeralExpiration: 86400})
 }
 break
             case 'add':
-                if (!m.isGroup) return VeronStickGroup()
-                if(!VeronTheCreator) return VeronStickOwner()
-                if (!isBotAdmins) return VeronStickBotAdmin()
+                if (!m.isGroup) return farindahStickGroup()
+                if(!RidzTheCreator) return RidzStickOwner()
+                if (!isBotAdmins) return farindahStickBotAdmin()
                 let blockwwww = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
-                await VeronicaX.groupParticipantsUpdate(m.chat, [blockwwww], 'add')
-                replygcVeron(mess.done)
+                await Faridah.groupParticipantsUpdate(m.chat, [blockwwww], 'add')
+                replygcFaridah(mess.done)
                 break
             case 'promote':
-                if (!m.isGroup) return VeronStickGroup()
-                if (!isAdmins && !isGroupOwner && !VeronTheCreator) return VeronStickAdmin()
-                if (!isBotAdmins) return VeronStickBotAdmin()
+                if (!m.isGroup) return farindahStickGroup()
+                if (!isAdmins && !isGroupOwner && !RidzTheCreator) return farindahStickAdmin()
+                if (!isBotAdmins) return farindahStickBotAdmin()
                 let blockwwwww = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
-                await VeronicaX.groupParticipantsUpdate(m.chat, [blockwwwww], 'promote')
-                replygcVeron(mess.done)
+                await Faridah.groupParticipantsUpdate(m.chat, [blockwwwww], 'promote')
+                replygcFaridah(mess.done)
                 break
             case 'demote':
-                if (!m.isGroup) return VeronStickGroup()
-                if (!isAdmins && !isGroupOwner && !VeronTheCreator) return VeronStickAdmin()
-                if (!isBotAdmins) return VeronStickBotAdmin()
+                if (!m.isGroup) return farindahStickGroup()
+                if (!isAdmins && !isGroupOwner && !RidzTheCreator) return farindahStickAdmin()
+                if (!isBotAdmins) return farindahStickBotAdmin()
                 let blockwwwwwa = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
-                await VeronicaX.groupParticipantsUpdate(m.chat, [blockwwwwwa], 'demote')
-                replygcVeron(mess.done)
+                await Faridah.groupParticipantsUpdate(m.chat, [blockwwwwwa], 'demote')
+                replygcFaridah(mess.done)
                 break
             case 'setnamegc':
             case 'setsubject':
-                if (!m.isGroup) return VeronStickGroup()
-                if (!isAdmins && !isGroupOwner && !VeronTheCreator) return VeronStickAdmin()
-                if (!isBotAdmins) return VeronStickBotAdmin()
-                if (!text) return replygcVeron('Text ?')
-                await VeronicaX.groupUpdateSubject(m.chat, text)
-                replygcVeron(mess.done)
+                if (!m.isGroup) return farindahStickGroup()
+                if (!isAdmins && !isGroupOwner && !RidzTheCreator) return farindahStickAdmin()
+                if (!isBotAdmins) return farindahStickBotAdmin()
+                if (!text) return replygcFaridah('Text ?')
+                await Faridah.groupUpdateSubject(m.chat, text)
+                replygcFaridah(mess.done)
                 break
                 case 'userjid':{
-          	if(!VeronTheCreator) return VeronStickOwner()
-        const groupMetadata = m.isGroup ? await VeronicaX.groupMetadata(m.chat).catch((e) => {}) : ""
+          	if(!RidzTheCreator) return RidzStickOwner()
+        const groupMetadata = m.isGroup ? await Faridah.groupMetadata(m.chat).catch((e) => {}) : ""
 		const participants = m.isGroup ? await groupMetadata.participants : ""
     let textt = `_Here is jid address of all users of_\n *- ${groupMetadata.subject}*\n\n`
     for (let mem of participants) {
             textt += `${themeemoji} ${mem.id}\n`
         }
-      replygcVeron(textt)
+      replygcFaridah(textt)
     }
     break
     case 'creategc': case 'creategroup': {
-if (!VeronTheCreator) return VeronStickOwner()
-if (!args.join(" ")) return replygcVeron(`Use ${prefix+command} groupname`)
+if (!RidzTheCreator) return RidzStickOwner()
+if (!args.join(" ")) return replygcFaridah(`Use ${prefix+command} groupname`)
 try {
-let cret = await VeronicaX.groupCreate(args.join(" "), [])
-let response = await VeronicaX.groupInviteCode(cret.id)
+let cret = await Faridah.groupCreate(args.join(" "), [])
+let response = await Faridah.groupInviteCode(cret.id)
 const teksop = `     「 Create Group 」
 
 ▸ Name : ${cret.subject}
@@ -5105,40 +5105,40 @@ const teksop = `     「 Create Group 」
 ▸ Creation : ${moment(cret.creation * 1000).tz("Africa/Kampala").format("DD/MM/YYYY HH:mm:ss")}
 
 https://chat.whatsapp.com/${response}`
-VeronicaX.sendMessage(m.chat, { text:teksop, mentions: await VeronicaX.parseMention(teksop)}, {quoted:m})
+Faridah.sendMessage(m.chat, { text:teksop, mentions: await Faridah.parseMention(teksop)}, {quoted:m})
 } catch {
-	replygcVeron(`Error`)
+	replygcFaridah(`Error`)
 	}
 }
 break
     case 'setbotbio':{
-if (!VeronTheCreator) return VeronStickOwner()
-if (!text) return replygcVeron(`Where is the text?\nExample: ${prefix + command} Cheems Bot`)
-    await VeronicaX.updateProfileStatus(text)
-    replygcVeron(`Success in changing the bio of bot's number`)
+if (!RidzTheCreator) return RidzStickOwner()
+if (!text) return replygcFaridah(`Where is the text?\nExample: ${prefix + command} Cheems Bot`)
+    await Faridah.updateProfileStatus(text)
+    replygcFaridah(`Success in changing the bio of bot's number`)
     }
     break
     case 'deleteppgroup': case 'delppgc': case 'deleteppgc': case 'delppgroup': {
-if (!m.isGroup) return VeronStickGroup()
-if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
-if (!isBotAdmins) return VeronStickBotAdmin()
-    await VeronicaX.removeProfilePicture(from)
+if (!m.isGroup) return farindahStickGroup()
+if (!isAdmins && !RidzTheCreator) return farindahStickAdmin()
+if (!isBotAdmins) return farindahStickBotAdmin()
+    await Faridah.removeProfilePicture(from)
     }
     break
     case 'deleteppbot': case 'delppbot': {
-if (!VeronTheCreator) return VeronStickOwner()
-    await VeronicaX.removeProfilePicture(VeronicaX.user.id)
-    replygcVeron(`Success in deleting bot's profile picture`)
+if (!RidzTheCreator) return RidzStickOwner()
+    await Faridah.removeProfilePicture(Faridah.user.id)
+    replygcFaridah(`Success in deleting bot's profile picture`)
     }
     break
             case 'setdesc':
             case 'setdesk':
-                if (!m.isGroup) return VeronStickGroup()
-                if (!isAdmins && !isGroupOwner && !VeronTheCreator) return VeronStickAdmin()
-                if (!isBotAdmins) return VeronStickBotAdmin()
-                if (!text) return replygcVeron('Text ?')
-                await VeronicaX.groupUpdateDescription(m.chat, text)
-                replygcVeron(mess.done)
+                if (!m.isGroup) return farindahStickGroup()
+                if (!isAdmins && !isGroupOwner && !RidzTheCreator) return farindahStickAdmin()
+                if (!isBotAdmins) return farindahStickBotAdmin()
+                if (!text) return replygcFaridah('Text ?')
+                await Faridah.groupUpdateDescription(m.chat, text)
+                replygcFaridah(mess.done)
                 break
             case 'setppgroup':
             case 'setppgrup':
@@ -5146,18 +5146,18 @@ if (!VeronTheCreator) return VeronStickOwner()
             case 'setgrouppp':
             case 'setgruppp':
             case 'setgcpp':
-                if (!m.isGroup) return VeronStickGroup()
-                if (!isAdmins) return replygcVeron(mess.admin)
-                if (!isBotAdmins) return VeronStickBotAdmin()
-                if (!quoted) return replygcVeron(`Send/Reply Image With Caption ${prefix + command}`)
-                if (!/image/.test(mime)) return replygcVeron(`Send/Reply Image Caption Caption ${prefix + command}`)
-                if (/webp/.test(mime)) return replygcVeron(`Send/Reply Image With Caption ${prefix + command}`)
-                var medis = await VeronicaX.downloadAndSaveMediaMessage(quoted, 'ppbot.jpeg')
+                if (!m.isGroup) return farindahStickGroup()
+                if (!isAdmins) return replygcFaridah(mess.admin)
+                if (!isBotAdmins) return farindahStickBotAdmin()
+                if (!quoted) return replygcFaridah(`Send/Reply Image With Caption ${prefix + command}`)
+                if (!/image/.test(mime)) return replygcFaridah(`Send/Reply Image Caption Caption ${prefix + command}`)
+                if (/webp/.test(mime)) return replygcFaridah(`Send/Reply Image With Caption ${prefix + command}`)
+                var medis = await Faridah.downloadAndSaveMediaMessage(quoted, 'ppbot.jpeg')
                 if (args[0] == 'full') {
                     var {
                         img
                     } = await generateProfilePicture(medis)
-                    await VeronicaX.query({
+                    await Faridah.query({
                         tag: 'iq',
                         attrs: {
                             to: m.chat,
@@ -5173,26 +5173,26 @@ if (!VeronTheCreator) return VeronStickOwner()
                         }]
                     })
                     fs.unlinkSync(medis)
-                    replygcVeron(mess.done)
+                    replygcFaridah(mess.done)
                 } else {
-                    var memeg = await VeronicaX.updateProfilePicture(m.chat, {
+                    var memeg = await Faridah.updateProfilePicture(m.chat, {
                         url: medis
                     })
                     fs.unlinkSync(medis)
-                    replygcVeron(mess.done)
+                    replygcFaridah(mess.done)
                 }
                 break
             case 'tagall':
             case 'tag':
-                if (!m.isGroup) return VeronStickGroup()
-                if (!isAdmins && !isGroupOwner && !VeronTheCreator) return VeronStickAdmin()
-                if (!isBotAdmins) return VeronStickBotAdmin()
+                if (!m.isGroup) return farindahStickGroup()
+                if (!isAdmins && !isGroupOwner && !RidzTheCreator) return farindahStickAdmin()
+                if (!isBotAdmins) return farindahStickBotAdmin()
                 let me = m.sender
                 let teks = `╚»˙·٠${themeemoji}●♥ Tag All ♥●${themeemoji}٠·˙«╝\n😶 *Tagger :*  @${me.split('@')[0]}\n🌿 *Message : ${q ? q : 'no message'}*\n\n`
                 for (let mem of participants) {
                 teks += `${themeemoji} @${mem.id.split('@')[0]}\n`
                 }
-                VeronicaX.sendMessage(m.chat, {
+                Faridah.sendMessage(m.chat, {
                     text: teks,
                     mentions: participants.map(a => a.id)
                 }, {
@@ -5200,10 +5200,10 @@ if (!VeronTheCreator) return VeronStickOwner()
                 })
             break
             case 'kickall': {
- if (!m.isGroup) return VeronStickGroup()
- if (!isAdmins && !isGroupOwner && !VeronTheCreator) return VeronStickAdmin()
- if (!isBotAdmins) return VeronStickBotAdmin()
-  const Veronkickall = (args[0] === 'numBut')
+ if (!m.isGroup) return farindahStickGroup()
+ if (!isAdmins && !isGroupOwner && !RidzTheCreator) return farindahStickAdmin()
+ if (!isBotAdmins) return farindahStickBotAdmin()
+  const Faridahkickall = (args[0] === 'numBut')
   ? text.replace(`${args[0]} `, '').split('|')
   : (Number(args[0]))
     ? groupMetadata.participants
@@ -5215,18 +5215,18 @@ if (!VeronTheCreator) return VeronStickOwner()
  if (global.welcome === true) {
  welcome = false;
   }
- for (let remove of Veronkickall) {
- await VeronicaX.groupParticipantsUpdate(m.chat, [(args[0] === "numBut") ? `${remove}@s.whatsapp.net` : remove], "remove");
+ for (let remove of Faridahkickall) {
+ await Faridah.groupParticipantsUpdate(m.chat, [(args[0] === "numBut") ? `${remove}@s.whatsapp.net` : remove], "remove");
  await sleep(100);
  }
- replygcVeron(`Success`);
+ replygcFaridah(`Success`);
 }
 break
 case 'promoteall': {
- if (!m.isGroup) return VeronStickGroup()
- if (!isAdmins && !isGroupOwner && !VeronTheCreator) return VeronStickAdmin()
- if (!isBotAdmins) return VeronStickBotAdmin()
-  const Veronpromoteall = (args[0] === 'numBut')
+ if (!m.isGroup) return farindahStickGroup()
+ if (!isAdmins && !isGroupOwner && !RidzTheCreator) return farindahStickAdmin()
+ if (!isBotAdmins) return farindahStickBotAdmin()
+  const faridahmoteall = (args[0] === 'numBut')
   ? text.replace(`${args[0]} `, '').split('|')
   : (Number(args[0]))
     ? groupMetadata.participants
@@ -5235,18 +5235,18 @@ case 'promoteall': {
     : groupMetadata.participants
       .filter(item => item.id !== botNumber && item.id !== `${ownernumber}@s.whatsapp.net`)
       .map(item => item.id);
- for (let promote of Veronpromoteall) {
- await VeronicaX.groupParticipantsUpdate(m.chat, [(args[0] === "numBut") ? `${promote}@s.whatsapp.net` : promote], "promote");
+ for (let promote of Faridahpromoteall) {
+ await Faridah.groupParticipantsUpdate(m.chat, [(args[0] === "numBut") ? `${promote}@s.whatsapp.net` : promote], "promote");
  await sleep(100);
  }
- replygcVeron(`Success`);
+ replygcFaridah(`Success`);
 }
 break
 case 'demoteall': {
- if (!m.isGroup) return VeronStickGroup()
- if (!isAdmins && !isGroupOwner && !VeronTheCreator) return VeronStickAdmin()
- if (!isBotAdmins) return VeronStickBotAdmin()
-  const Verondemoteall = (args[0] === 'numBut')
+ if (!m.isGroup) return farindahStickGroup()
+ if (!isAdmins && !isGroupOwner && !RidzTheCreator) return farindahStickAdmin()
+ if (!isBotAdmins) return farindahStickBotAdmin()
+  const faridahdemoteall = (args[0] === 'numBut')
   ? text.replace(`${args[0]} `, '').split('|')
   : (Number(args[0]))
     ? groupMetadata.participants
@@ -5255,18 +5255,18 @@ case 'demoteall': {
     : groupMetadata.participants
       .filter(item => item.id !== botNumber && item.id !== `${ownernumber}@s.whatsapp.net`)
       .map(item => item.id);
- for (let demote of Verondemoteall) {
- await VeronicaX.groupParticipantsUpdate(m.chat, [(args[0] === "numBut") ? `${demote}@s.whatsapp.net` : demote], "demote");
+ for (let demote of faridahdemoteall) {
+ await Faridah.groupParticipantsUpdate(m.chat, [(args[0] === "numBut") ? `${demote}@s.whatsapp.net` : demote], "demote");
  await sleep(100);
  }
- replygcVeron(`Success`);
+ replygcFaridah(`Success`);
 }
 break
             case 'hidetag':
-                if (!m.isGroup) return VeronStickGroup()
-                if (!isAdmins && !isGroupOwner && !VeronTheCreator) return VeronStickAdmin()
-                if (!isBotAdmins) return VeronStickBotAdmin()
-                VeronicaX.sendMessage(m.chat, {
+                if (!m.isGroup) return farindahStickGroup()
+                if (!isAdmins && !isGroupOwner && !RidzTheCreator) return farindahStickAdmin()
+                if (!isBotAdmins) return farindahStickBotAdmin()
+                Faridah.sendMessage(m.chat, {
                     text: q ? q : '',
                     mentions: participants.map(a => a.id)
                 }, {
@@ -5274,24 +5274,24 @@ break
                 })
             break
             case 'totag':
-                if (!m.isGroup) return VeronStickGroup()
-                if (!isBotAdmins) return VeronStickBotAdmin()
-                if (!isAdmins) return replygcVeron(mess.admin)
-                if (!m.quoted) return replygcVeron(`Reply media with caption ${prefix + command}`)
-                VeronicaX.sendMessage(m.chat, {
+                if (!m.isGroup) return farindahStickGroup()
+                if (!isBotAdmins) return farindahStickBotAdmin()
+                if (!isAdmins) return replygcFaridah(mess.admin)
+                if (!m.quoted) return replygcFaridah(`Reply media with caption ${prefix + command}`)
+                Faridah.sendMessage(m.chat, {
                     forward: m.quoted.fakeObj,
                     mentions: participants.map(a => a.id)
                 })
             break
             case 'group':
             case 'grup':{
-                if (!m.isGroup) return VeronStickGroup()
-                if (!isAdmins && !isGroupOwner && !VeronTheCreator) return VeronStickAdmin()
-                if (!isBotAdmins) return VeronStickBotAdmin()
+                if (!m.isGroup) return farindahStickGroup()
+                if (!isAdmins && !isGroupOwner && !RidzTheCreator) return farindahStickAdmin()
+                if (!isBotAdmins) return farindahStickBotAdmin()
                 if (args[0] === 'close') {
-                    await VeronicaX.groupSettingUpdate(m.chat, 'announcement').then((res) => replygcVeron(`Success Closing Group`))
+                    await Faridah.groupSettingUpdate(m.chat, 'announcement').then((res) => replygcFaridah(`Success Closing Group`))
                 } else if (args[0] === 'open') {
-                    await VeronicaX.groupSettingUpdate(m.chat, 'not_announcement').then((res) => replygcVeron(`Success Opening Group`))
+                    await Faridah.groupSettingUpdate(m.chat, 'not_announcement').then((res) => replygcFaridah(`Success Opening Group`))
                 } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -5308,7 +5308,7 @@ break
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -5350,20 +5350,20 @@ break
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
                 }
             break
             case 'editinfo':{
-                if (!m.isGroup) return VeronStickGroup()
-                if (!isAdmins && !isGroupOwner && !VeronTheCreator) return VeronStickAdmin()
-                if (!isBotAdmins) return VeronStickBotAdmin()
+                if (!m.isGroup) return farindahStickGroup()
+                if (!isAdmins && !isGroupOwner && !RidzTheCreator) return farindahStickAdmin()
+                if (!isBotAdmins) return farindahStickBotAdmin()
                 if (args[0] === 'open') {
-                    await VeronicaX.groupSettingUpdate(m.chat, 'unlocked').then((res) => replygcVeron(`Successfully Opened Edit Group Info`))
+                    await Faridah.groupSettingUpdate(m.chat, 'unlocked').then((res) => replygcFaridah(`Successfully Opened Edit Group Info`))
                 } else if (args[0] === 'close') {
-                    await VeronicaX.groupSettingUpdate(m.chat, 'locked').then((res) => replygcVeron(`Successfully Closed Edit Group Info`))
+                    await Faridah.groupSettingUpdate(m.chat, 'locked').then((res) => replygcFaridah(`Successfully Closed Edit Group Info`))
                 } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -5380,7 +5380,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -5422,7 +5422,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -5434,11 +5434,11 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             case 'gclink':
             case 'grouplink':
             case 'gruplink':
-                if (!m.isGroup) return VeronStickGroup()
-                if (!isAdmins && !isGroupOwner && !VeronTheCreator) return VeronStickAdmin()
-                if (!isBotAdmins) return VeronStickBotAdmin()
-                let response = await VeronicaX.groupInviteCode(m.chat)
-                VeronicaX.sendText(m.chat, `👥 *GROUP LINK*\n📛 *Name :* ${groupMetadata.subject}\n👤 *Owner Grup :* ${groupMetadata.owner !== undefined ? '+'+ groupMetadata.owner.split`@`[0] : 'Not known'}\n🌱 *ID :* ${groupMetadata.id}\n🔗 *Chat Link :* https://chat.whatsapp.com/${response}\n👥 *Member :* ${groupMetadata.participants.length}\n`, m, {
+                if (!m.isGroup) return farindahStickGroup()
+                if (!isAdmins && !isGroupOwner && !RidzTheCreator) return farindahStickAdmin()
+                if (!isBotAdmins) return farindahStickBotAdmin()
+                let response = await Faridah.groupInviteCode(m.chat)
+                Faridah.sendText(m.chat, `👥 *GROUP LINK*\n📛 *Name :* ${groupMetadata.subject}\n👤 *Owner Grup :* ${groupMetadata.owner !== undefined ? '+'+ groupMetadata.owner.split`@`[0] : 'Not known'}\n🌱 *ID :* ${groupMetadata.id}\n🔗 *Chat Link :* https://chat.whatsapp.com/${response}\n👥 *Member :* ${groupMetadata.participants.length}\n`, m, {
                     detectLink: true
                 })
             break
@@ -5447,26 +5447,26 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
     let who
     if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted.sender
     else who = m.quoted.sender ? m.quoted.sender : m.sender
-    let bio = await VeronicaX.fetchStatus(who)
-    replygcVeron(bio.status)
+    let bio = await Faridah.fetchStatus(who)
+    replygcFaridah(bio.status)
   } catch {
-    if (text) return replygcVeron(`bio is private or you haven't replied to the person's message!`)
+    if (text) return replygcFaridah(`bio is private or you haven't replied to the person's message!`)
     else try {
       let who = m.quoted ? m.quoted.sender : m.sender
-      let bio = await VeronicaX.fetchStatus(who)
-      replygcVeron(bio.status)
+      let bio = await Faridah.fetchStatus(who)
+      replygcFaridah(bio.status)
     } catch {
-      return replygcVeron(`bio is private or you haven't replied to the person's message!`)
+      return replygcFaridah(`bio is private or you haven't replied to the person's message!`)
     }
   }
 }
 break
         break
         case 'vote': {
-            if (!m.isGroup) return VeronStickGroup()
-            if (m.chat in vote) return replygcVeron(`_There are still votes in this chat!_\n\n*${prefix}deletevote* - to delete votes`)
-            if (!text) return replygcVeron(`Enter Reason for Vote, Example: *${prefix + command} Handsome Owner*`)
-            replygcVeron(`Voting starts!\n\n*${prefix}upvote* - for upvote\n*${prefix}downvote* - for downvote\n*${prefix}checkvote* - to check the vote\n*${prefix}deletevote* - to delete vote`)
+            if (!m.isGroup) return farindahStickGroup()
+            if (m.chat in vote) return replygcFaridah(`_There are still votes in this chat!_\n\n*${prefix}deletevote* - to delete votes`)
+            if (!text) return replygcFaridah(`Enter Reason for Vote, Example: *${prefix + command} Handsome Owner*`)
+            replygcFaridah(`Voting starts!\n\n*${prefix}upvote* - for upvote\n*${prefix}downvote* - for downvote\n*${prefix}checkvote* - to check the vote\n*${prefix}deletevote* - to delete vote`)
             vote[m.chat] = [q, [], []]
             await sleep(1000)
             upvote = vote[m.chat][1]
@@ -5476,11 +5476,11 @@ break
 *Reason:* ${vote[m.chat][0]}
 
 ┌〔 UPVOTE 〕 
-├▢⬡ Total: ${vote[m.chat][1].length} 
+│┃友 Total: ${vote[m.chat][1].length} 
 └────
 
 ┌〔 DOWNVOTE 〕
-├▢⬡ Total: ${vote[m.chat][2].length} 
+│┃友 Total: ${vote[m.chat][2].length} 
 └────
 
 Please Type Below
@@ -5488,15 +5488,15 @@ Please Type Below
 *${prefix}downvote* -  to downvote
 *${prefix}deletevote* - to delete vote
 > *ᴅᴇᴅɪᴄᴀᴛᴇᴅ ᴛᴏ Fᴀʀɪᴅᴀʜ🧝*`
-            VeronicaX.sendMessage(m.chat, {text: teks_vote}, {quoted:m})
+            Faridah.sendMessage(m.chat, {text: teks_vote}, {quoted:m})
 	    }
             break
                case 'upvote': {
-            if (!m.isGroup) return VeronStickGroup()
-            if (!(m.chat in vote)) return replygcVeron(`_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`)
+            if (!m.isGroup) return farindahStickGroup()
+            if (!(m.chat in vote)) return replygcFaridah(`_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`)
             isVote = vote[m.chat][1].concat(vote[m.chat][2])
             wasVote = isVote.includes(m.sender)
-            if (wasVote) return replygcVeron('You have Voted')
+            if (wasVote) return replygcFaridah('You have Voted')
             vote[m.chat][1].push(m.sender)
             menvote = vote[m.chat][1].concat(vote[m.chat][2])
             teks_vote = `* VOTE *
@@ -5504,13 +5504,13 @@ Please Type Below
 *Reason:* ${vote[m.chat][0]}
 
 ┌〔 UPVOTE 〕 
-├▢⬡ Total: ${vote[m.chat][1].length}
-${vote[m.chat][1].map((v, i) => `├▢⬡  ${i + 1}. @${v.split`@`[0]}`).join('\n')} 
+│┃友 Total: ${vote[m.chat][1].length}
+${vote[m.chat][1].map((v, i) => `│┃友  ${i + 1}. @${v.split`@`[0]}`).join('\n')} 
 └────
 
 ┌〔 DOWNVOTE 〕
-├▢⬡ Total: ${vote[m.chat][2].length}
-${vote[m.chat][2].map((v, i) => `├▢⬡  ${i + 1}. @${v.split`@`[0]}`).join('\n')}
+│┃友 Total: ${vote[m.chat][2].length}
+${vote[m.chat][2].map((v, i) => `│┃友  ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 └────
 
 Please Type Below
@@ -5518,15 +5518,15 @@ Please Type Below
 *${prefix}downvote* -  to downvote
 *${prefix}deletevote* - to delete vote
 > *ᴅᴇᴅɪᴄᴀᴛᴇᴅ ᴛᴏ Fᴀʀɪᴅᴀʜ🧝*`
-            VeronicaX.sendMessage(m.chat, {text: teks_vote, mentions: menvote}, {quoted:m})
+            Faridah.sendMessage(m.chat, {text: teks_vote, mentions: menvote}, {quoted:m})
 	    }
              break
                 case 'downvote': {
-            if (!m.isGroup) return VeronStickGroup()
-            if (!(m.chat in vote)) return replygcVeron(`_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`)
+            if (!m.isGroup) return farindahStickGroup()
+            if (!(m.chat in vote)) return replygcFaridah(`_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`)
             isVote = vote[m.chat][1].concat(vote[m.chat][2])
             wasVote = isVote.includes(m.sender)
-            if (wasVote) return replygcVeron('You have Voted')
+            if (wasVote) return replygcFaridah('You have Voted')
             vote[m.chat][2].push(m.sender)
             menvote = vote[m.chat][1].concat(vote[m.chat][2])
             teks_vote = `* VOTE *
@@ -5534,13 +5534,13 @@ Please Type Below
 *Reason:* ${vote[m.chat][0]}
 
 ┌〔 UPVOTE 〕
-├▢⬡  Total: ${vote[m.chat][1].length}
-${vote[m.chat][1].map((v, i) => `├▢⬡  ${i + 1}. @${v.split`@`[0]}`).join('\n')}
+│┃友  Total: ${vote[m.chat][1].length}
+${vote[m.chat][1].map((v, i) => `│┃友  ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 └────
 
 ┌〔 DOWNVOTE 〕
-├▢⬡  Total: ${vote[m.chat][2].length}
-${vote[m.chat][2].map((v, i) => `├▢⬡  ${i + 1}. @${v.split`@`[0]}`).join('\n')} 
+│┃友  Total: ${vote[m.chat][2].length}
+${vote[m.chat][2].map((v, i) => `│┃友  ${i + 1}. @${v.split`@`[0]}`).join('\n')} 
 └────
 
 Please Type Below
@@ -5548,48 +5548,48 @@ Please Type Below
 *${prefix}downvote* -  to downvote
 *${prefix}deletevote* - to delete vote
 > *ᴅᴇᴅɪᴄᴀᴛᴇᴅ ᴛᴏ Fᴀʀɪᴅᴀʜ🧝*`
-            VeronicaX.sendMessage(m.chat, {text: teks_vote, mentions: menvote}, {quoted:m})
+            Faridah.sendMessage(m.chat, {text: teks_vote, mentions: menvote}, {quoted:m})
 	}
             break
                  
 case 'checkvote':
-if (!m.isGroup) return VeronStickGroup()
-if (!(m.chat in vote)) return replygcVeron(`_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`)
+if (!m.isGroup) return farindahStickGroup()
+if (!(m.chat in vote)) return replygcFaridah(`_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`)
 teks_vote = `* VOTE *
 
 *Reason:* ${vote[m.chat][0]}
 
 ┌〔 UPVOTE 〕
-├▢⬡  Total: ${upvote.length}
-${vote[m.chat][1].map((v, i) => `├▢⬡  ${i + 1}. @${v.split`@`[0]}`).join('\n')}
+│┃友  Total: ${upvote.length}
+${vote[m.chat][1].map((v, i) => `│┃友  ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 └────
 
 ┌〔 DOWNVOTE 〕
-├▢⬡  Total: ${devote.length}
-${vote[m.chat][2].map((v, i) => `├▢⬡  ${i + 1}. @${v.split`@`[0]}`).join('\n')} 
+│┃友  Total: ${devote.length}
+${vote[m.chat][2].map((v, i) => `│┃友  ${i + 1}. @${v.split`@`[0]}`).join('\n')} 
 └────
 
 *${prefix}deletevote* - to delete votes
 > *ᴅᴇᴅɪᴄᴀᴛᴇᴅ ᴛᴏ Fᴀʀɪᴅᴀʜ🧝*
 `
-VeronicaX.sendTextWithMentions(m.chat, teks_vote, m)
+Faridah.sendTextWithMentions(m.chat, teks_vote, m)
 break
 		case 'deletevote': case'delvote': case 'hapusvote': {
-            if (!m.isGroup) return VeronStickGroup()
-            if (!(m.chat in vote)) return replygcVeron(`_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`)
+            if (!m.isGroup) return farindahStickGroup()
+            if (!(m.chat in vote)) return replygcFaridah(`_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`)
             delete vote[m.chat]
-            replygcVeron('Successfully Deleted Vote Session In This Group')
+            replygcFaridah('Successfully Deleted Vote Session In This Group')
 	    }
             break
 break
             case 'revoke':
             case 'resetlink':
-                if (!m.isGroup) return VeronStickGroup()
-                if (!isAdmins && !isGroupOwner && !VeronTheCreator) return VeronStickAdmin()
-                if (!isBotAdmins) return VeronStickBotAdmin()
-                await VeronicaX.groupRevokeInvite(m.chat)
+                if (!m.isGroup) return farindahStickGroup()
+                if (!isAdmins && !isGroupOwner && !RidzTheCreator) return farindahStickAdmin()
+                if (!isBotAdmins) return farindahStickBotAdmin()
+                await Faridah.groupRevokeInvite(m.chat)
                     .then(res => {
-                        replygcVeron(`Reset Success`)
+                        replygcFaridah(`Reset Success`)
                     })
             break
                 //bot status
@@ -5637,7 +5637,7 @@ ${cpus[0].model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type =>
 _CPU Core(s) Usage (${cpus.length} Core CPU)_
 ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}`).join('\n\n')}` : ''}
                 `.trim()
-	VeronicaX.relayMessage(m.chat,  {
+	Faridah.relayMessage(m.chat,  {
         requestPaymentMessage: {
           currencyCodeIso4217: 'INR',
           amount1000: 999999999,
@@ -5667,7 +5667,7 @@ ${themeemoji} Forks: ${repoData.forks_count}
 ${themeemoji} URL: ${repoData.html_url}
      
  `.trim()
-      await VeronicaX.relayMessage(m.chat,  {
+      await Faridah.relayMessage(m.chat,  {
         requestPaymentMessage: {
           currencyCodeIso4217: 'INR',
           amount1000: 69000,
@@ -5680,18 +5680,18 @@ ${themeemoji} URL: ${repoData.html_url}
           showAdAttribution: true
           }}}}}}, { quoted: m })
     } else {
-      await replygcVeron(`Unable to fetch repository information`)
+      await replygcFaridah(`Unable to fetch repository information`)
     }
   } catch (error) {
     console.error(error)
-    await replygcVeron(`Repository currently not available `)
+    await replygcFaridah(`Repository currently not available `)
   }
 }
 break
             case 'buypremium':
             case 'premiumuser': {
                 let teks = `Hi ${pushname}👋\nWant to Buy Premium?Just chat with the owner😉`
-                await VeronicaX.sendMessage(m.chat, {
+                await Faridah.sendMessage(m.chat, {
                     text: teks,
                     contextInfo: {
                         externalAdReply: {
@@ -5710,10 +5710,10 @@ break
             }
             break
             case 'rentbot':
-                replygcVeron(`Type ${prefix}owner and chat him`)
+                replygcFaridah(`Type ${prefix}owner and chat him`)
                 break
             case 'speedtest': {
-                replygcVeron('Testing Speed...')
+                replygcFaridah('Testing Speed...')
                 let cp = require('child_process')
                 let {
                     promisify
@@ -5729,7 +5729,7 @@ break
                         stdout,
                         stderr
                     } = o
-                    if (stdout.trim()) VeronicaX.sendMessage(m.chat, {
+                    if (stdout.trim()) Faridah.sendMessage(m.chat, {
                         text: stdout,
                         contextInfo: {
                             externalAdReply: {
@@ -5745,7 +5745,7 @@ break
                     }, {
                         quoted: m
                     })
-                    if (stderr.trim()) VeronicaX.sendMessage(m.chat, {
+                    if (stderr.trim()) Faridah.sendMessage(m.chat, {
                         text: stderr,
                         contextInfo: {
                             externalAdReply: {
@@ -5766,7 +5766,7 @@ break
             break
             case 'runtime':
                 let pinga = `Bots Have Been Running For ${runtime(process.uptime())}`
-                VeronicaX.sendMessage(m.chat, {
+                Faridah.sendMessage(m.chat, {
                     text: pinga,
                     contextInfo: {
                         externalAdReply: {
@@ -5785,7 +5785,7 @@ break
                 break
 
             case 'owner': {
-                VeronicaX.sendMessage(from, {
+                Faridah.sendMessage(from, {
                     contacts: {
                         displayName: `${list.length} Contact`,
                         contacts: list
@@ -5807,51 +5807,51 @@ break
             break
             //convert
 case 's': case 'sticker': case 'stiker': {
-if (!quoted) return replygcVeron(`Send/Reply Images/Videos/Gifs With Captions ${prefix+command}\nVideo Duration 1-9 Seconds`)
+if (!quoted) return replygcFaridah(`Send/Reply Images/Videos/Gifs With Captions ${prefix+command}\nVideo Duration 1-9 Seconds`)
 if (/image/.test(mime)) {
 let media = await quoted.download()
-let encmedia = await VeronicaX.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+let encmedia = await Faridah.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 } else if (/video/.test(mime)) {
-if ((quoted.msg || quoted).seconds > 11) return replygcVeron('Send/Reply Images/Videos/Gifs With Captions ${prefix+command}\nVideo Duration 1-9 Seconds')
+if ((quoted.msg || quoted).seconds > 11) return replygcFaridah('Send/Reply Images/Videos/Gifs With Captions ${prefix+command}\nVideo Duration 1-9 Seconds')
 let media = await quoted.download()
-let encmedia = await VeronicaX.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+let encmedia = await Faridah.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 } else {
-replygcVeron(`Send/Reply Images/Videos/Gifs With Captions ${prefix+command}\nVideo Duration 1-9 Seconds`)
+replygcFaridah(`Send/Reply Images/Videos/Gifs With Captions ${prefix+command}\nVideo Duration 1-9 Seconds`)
 }
 }
 break
             case 'swm': case 'steal': case 'stickerwm': case 'take':{
 if (!isPremium) return replyprem(mess.premium)
-if (!args.join(" ")) return replygcVeron(`Where is the text?`)
+if (!args.join(" ")) return replygcFaridah(`Where is the text?`)
 const swn = args.join(" ")
 const pcknm = swn.split("|")[0]
 const atnm = swn.split("|")[1]
 if (m.quoted.isAnimated === true) {
-VeronicaX.downloadAndSaveMediaMessage(quoted, "gifee")
-VeronicaX.sendMessage(m.chat, {sticker:fs.readFileSync("gifee.webp")}, m, { packname: pcknm, author: atnm })
+Faridah.downloadAndSaveMediaMessage(quoted, "gifee")
+Faridah.sendMessage(m.chat, {sticker:fs.readFileSync("gifee.webp")}, m, { packname: pcknm, author: atnm })
 } else if (/image/.test(mime)) {
 let media = await quoted.download()
-let encmedia = await VeronicaX.sendImageAsSticker(m.chat, media, m, { packname: pcknm, author: atnm })
+let encmedia = await Faridah.sendImageAsSticker(m.chat, media, m, { packname: pcknm, author: atnm })
 } else if (/video/.test(mime)) {
-if ((quoted.msg || quoted).seconds > 11) return replygcVeron('Maximum 10 Seconds!')
+if ((quoted.msg || quoted).seconds > 11) return replygcFaridah('Maximum 10 Seconds!')
 let media = await quoted.download()
-let encmedia = await VeronicaX.sendVideoAsSticker(m.chat, media, m, { packname: pcknm, author: atnm })
+let encmedia = await Faridah.sendVideoAsSticker(m.chat, media, m, { packname: pcknm, author: atnm })
 } else {
-replygcVeron(`Photo/Video?`)
+replygcFaridah(`Photo/Video?`)
 }
 }
 break
             case 'toimage':
             case 'toimg': {
-                if (!/webp/.test(mime)) return replygcVeron(`Reply sticker with caption *${prefix + command}*`)
-                await VeronStickWait()
-                let media = await VeronicaX.downloadAndSaveMediaMessage(qmsg)
+                if (!/webp/.test(mime)) return replygcFaridah(`Reply sticker with caption *${prefix + command}*`)
+                await farindahStickWait()
+                let media = await Faridah.downloadAndSaveMediaMessage(qmsg)
                 let ran = await getRandom('.png')
                 exec(`ffmpeg -i ${media} ${ran}`, (err) => {
                     fs.unlinkSync(media)
                     if (err) return err
                     let buffer = fs.readFileSync(ran)
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         image: buffer
                     }, {
                         quoted: m
@@ -5863,11 +5863,11 @@ break
             break
             case 'tomp4':
             case 'tovideo': {
-                if (!/webp/.test(mime)) return replygcVeron(`Reply sticker with caption *${prefix + command}*`)
-                await VeronStickWait()
-                let media = await VeronicaX.downloadAndSaveMediaMessage(qmsg)
+                if (!/webp/.test(mime)) return replygcFaridah(`Reply sticker with caption *${prefix + command}*`)
+                await farindahStickWait()
+                let media = await Faridah.downloadAndSaveMediaMessage(qmsg)
                 let webpToMp4 = await webp2mp4File(media)
-                await VeronicaX.sendMessage(m.chat, {
+                await Faridah.sendMessage(m.chat, {
                     video: {
                         url: webpToMp4.result,
                         caption: 'Convert Webp To Video'
@@ -5881,11 +5881,11 @@ break
             break
             case 'toaud':
             case 'toaudio': {
-                if (!/video/.test(mime) && !/audio/.test(mime)) return replygcVeron(`Send/Reply Video/Audio that you want to make into audio with captions ${prefix + command}`)
-                await VeronStickWait()
-                let media = await VeronicaX.downloadMediaMessage(qmsg)
+                if (!/video/.test(mime) && !/audio/.test(mime)) return replygcFaridah(`Send/Reply Video/Audio that you want to make into audio with captions ${prefix + command}`)
+                await farindahStickWait()
+                let media = await Faridah.downloadMediaMessage(qmsg)
                 let audio = await toAudio(media, 'mp4')
-                VeronicaX.sendMessage(m.chat, {
+                Faridah.sendMessage(m.chat, {
                     audio: audio,
                     mimetype: 'audio/mpeg'
                 }, {
@@ -5895,14 +5895,14 @@ break
             }
             break
             case 'tomp3': {
-                if (!/video/.test(mime) && !/audio/.test(mime)) return replygcVeron(`Send/Reply Video/Audio that you want to make into MP3 with captions ${prefix + command}`)
-                await VeronStickWait()
-                let media = await VeronicaX.downloadMediaMessage(qmsg)
+                if (!/video/.test(mime) && !/audio/.test(mime)) return replygcFaridah(`Send/Reply Video/Audio that you want to make into MP3 with captions ${prefix + command}`)
+                await farindahStickWait()
+                let media = await Faridah.downloadMediaMessage(qmsg)
                 let audio = await toAudio(media, 'mp4')
-                VeronicaX.sendMessage(m.chat, {
+                Faridah.sendMessage(m.chat, {
                     document: audio,
                     mimetype: 'audio/mp3',
-                    fileName: `dgVeron.mp3`
+                    fileName: `nebulal-md.mp3`
                 }, {
                     quoted: m
                 })
@@ -5911,14 +5911,14 @@ break
             break
             case 'tovn':
             case 'toptt': {
-                if (!/video/.test(mime) && !/audio/.test(mime)) return replygcVeron(`Send/Reply Video/Audio that you want to make into a VN with captions ${prefix + command}`)
-                await VeronStickWait()
-                let media = await VeronicaX.downloadMediaMessage(qmsg)
+                if (!/video/.test(mime) && !/audio/.test(mime)) return replygcFaridah(`Send/Reply Video/Audio that you want to make into a VN with captions ${prefix + command}`)
+                await farindahStickWait()
+                let media = await Faridah.downloadMediaMessage(qmsg)
                 let {
                     toPTT
                 } = require('./lib/converter.js')
                 let audio = await toPTT(media, 'mp4')
-                VeronicaX.sendMessage(m.chat, {
+                Faridah.sendMessage(m.chat, {
                     audio: audio,
                     mimetype: 'audio/mpeg',
                     ptt: true
@@ -5929,11 +5929,11 @@ break
             }
             break
             case 'togif': {
-                if (!/webp/.test(mime)) return replygcVeron(`Reply sticker with caption *${prefix + command}*`)
-                await VeronStickWait()
-                let media = await VeronicaX.downloadAndSaveMediaMessage(qmsg)
+                if (!/webp/.test(mime)) return replygcFaridah(`Reply sticker with caption *${prefix + command}*`)
+                await farindahStickWait()
+                let media = await Faridah.downloadAndSaveMediaMessage(qmsg)
                 let webpToMp4 = await webp2mp4File(media)
-                await VeronicaX.sendMessage(m.chat, {
+                await Faridah.sendMessage(m.chat, {
                     video: {
                         url: webpToMp4.result,
                         caption: 'Convert Webp To Video'
@@ -5947,14 +5947,14 @@ break
             }
             break
             case 'tourl': {
-                await VeronStickWait()
-                let media = await VeronicaX.downloadAndSaveMediaMessage(qmsg)
+                await farindahStickWait()
+                let media = await Faridah.downloadAndSaveMediaMessage(qmsg)
                 if (/image/.test(mime)) {
                     let anu = await TelegraPh(media)
-                    replygcVeron(util.format(anu))
+                    replygcFaridah(util.format(anu))
                 } else if (!/image/.test(mime)) {
                     let anu = await UploadFileUgu(media)
-                    replygcVeron(util.format(anu))
+                    replygcFaridah(util.format(anu))
                 }
                 await fs.unlinkSync(media)
 
@@ -5962,12 +5962,12 @@ break
             break
             case 'emojimix': {
                 let [emoji1, emoji2] = text.split`+`
-                if (!emoji1) return replygcVeron(`Example : ${prefix + command} 😅+🤔`)
-                if (!emoji2) return replygcVeron(`Example : ${prefix + command} 😅+🤔`)
-                await VeronStickWait()
+                if (!emoji1) return replygcFaridah(`Example : ${prefix + command} 😅+🤔`)
+                if (!emoji2) return replygcFaridah(`Example : ${prefix + command} 😅+🤔`)
+                await farindahStickWait()
                 let anu = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)
                 for (let res of anu.results) {
-                    let encmedia = await VeronicaX.sendImageAsSticker(m.chat, res.url, m, {
+                    let encmedia = await Faridah.sendImageAsSticker(m.chat, res.url, m, {
                         packname: global.packname,
                         author: global.author,
                         categories: res.tags
@@ -5976,10 +5976,10 @@ break
             }
             break
             case 'emojimix2': {
-                if (!text) return replygcVeron(`Example : ${prefix + command} 😅`)
+                if (!text) return replygcFaridah(`Example : ${prefix + command} 😅`)
                 let anu = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(text)}`)
                 for (let res of anu.results) {
-                    let encmedia = await VeronicaX.sendImageAsSticker(m.chat, res.url, m, {
+                    let encmedia = await Faridah.sendImageAsSticker(m.chat, res.url, m, {
                         packname: global.packname,
                         author: global.author,
                         categories: res.tags
@@ -5989,10 +5989,10 @@ break
             break
             case 'toonce':
             case 'toviewonce': {
-                if (!quoted) return replygcVeron(`Reply Image/Video`)
+                if (!quoted) return replygcFaridah(`Reply Image/Video`)
                 if (/image/.test(mime)) {
-                    anuan = await VeronicaX.downloadAndSaveMediaMessage(quoted)
-                    VeronicaX.sendMessage(m.chat, {
+                    anuan = await Faridah.downloadAndSaveMediaMessage(quoted)
+                    Faridah.sendMessage(m.chat, {
                         image: {
                             url: anuan
                         },
@@ -6003,8 +6003,8 @@ break
                         quoted: m
                     })
                 } else if (/video/.test(mime)) {
-                    anuanuan = await VeronicaX.downloadAndSaveMediaMessage(quoted)
-                    VeronicaX.sendMessage(m.chat, {
+                    anuanuan = await Faridah.downloadAndSaveMediaMessage(quoted)
+                    Faridah.sendMessage(m.chat, {
                         video: {
                             url: anuanuan
                         },
@@ -6015,8 +6015,8 @@ break
                         quoted: m
                     })
                 } else if (/audio/.test(mime)) {
-                   bebasap = await VeronicaX.downloadAndSaveMediaMessage(quoted)
-                   VeronicaX.sendMessage(m.chat, {
+                   bebasap = await Faridah.downloadAndSaveMediaMessage(quoted)
+                   Faridah.sendMessage(m.chat, {
                      audio: {
                         url: bebasap
                      },
@@ -6028,14 +6028,14 @@ break
             }
             break
             case 'fliptext': {
-                if (args.length < 1) return replygcVeron(`Example:\n${prefix}fliptext dgVeron`)
+                if (args.length < 1) return replygcFaridah(`Example:\n${prefix}fliptext Nebula-md`)
                 quere = args.join(" ")
                 flipe = quere.split('').reverse().join('')
-                replygcVeron(`\`\`\`「 FLIP TEXT 」\`\`\`\n*•> Normal :*\n${quere}\n*•> Flip :*\n${flipe}`)
+                replygcFaridah(`\`\`\`「 FLIP TEXT 」\`\`\`\n*•> Normal :*\n${quere}\n*•> Flip :*\n${flipe}`)
             }
             break
             case 'toqr':{
-  if (!q) return replygcVeron(' Please include link or text!')
+  if (!q) return replygcFaridah(' Please include link or text!')
    const QrCode = require('qrcode-reader')
    const qrcode = require('qrcode')
    let qyuer = await qrcode.toDataURL(q, { scale: 35 })
@@ -6043,32 +6043,32 @@ break
    let buff = getRandom('.jpg')
    await fs.writeFileSync('./'+buff, data)
    let medi = fs.readFileSync('./' + buff)
-  await VeronicaX.sendMessage(from, { image: medi, caption:"Here you go!"}, { quoted: m })
+  await Faridah.sendMessage(from, { image: medi, caption:"Here you go!"}, { quoted: m })
    setTimeout(() => { fs.unlinkSync(buff) }, 10000)
   }
   break
   case 'volaudio': {
-if (!args.join(" ")) return replygcVeron(`Example: ${prefix + command} 10`)
-media = await VeronicaX.downloadAndSaveMediaMessage(quoted, "volume")
+if (!args.join(" ")) return replygcFaridah(`Example: ${prefix + command} 10`)
+media = await Faridah.downloadAndSaveMediaMessage(quoted, "volume")
 rname = getRandom('.mp3')
 exec(`ffmpeg -i ${media} -filter:a volume=${args[0]} ${rname}`, (err, stderr, stdout) => {
 fs.unlinkSync(media)
-if (err) return replygcVeron('Error!')
+if (err) return replygcFaridah('Error!')
 jadie = fs.readFileSync(rname)
-VeronicaX.sendMessage(from, {audio:jadie, mimetype: 'audio/mp4', ptt: true}, {quoted: m})
+Faridah.sendMessage(from, {audio:jadie, mimetype: 'audio/mp4', ptt: true}, {quoted: m})
 fs.unlinkSync(rname)
 })
 }
 break
 case 'volvideo': {
-if (!args.join(" ")) return replygcVeron(`Example: ${prefix + command} 10`)
-media = await VeronicaX.downloadAndSaveMediaMessage(quoted, "volume")
+if (!args.join(" ")) return replygcFaridah(`Example: ${prefix + command} 10`)
+media = await Faridah.downloadAndSaveMediaMessage(quoted, "volume")
 rname = getRandom('.mp4')
 exec(`ffmpeg -i ${media} -filter:a volume=${args[0]} ${rname}`, (err, stderr, stdout) => {
 fs.unlinkSync(media)
-if (err) return replygcVeron('Error!')
+if (err) return replygcFaridah('Error!')
 jadie = fs.readFileSync(rname)
-VeronicaX.sendMessage(from, {video:jadie, mimetype: 'video/mp4'}, {quoted: m})
+Faridah.sendMessage(from, {video:jadie, mimetype: 'video/mp4'}, {quoted: m})
 fs.unlinkSync(rname)
 })
 }
@@ -6089,19 +6089,19 @@ break
                 if (/smooth/.test(command)) set = '-filter:v "minterpolate=\'mi_mode=mci:mc_mode=aobmc:vsbmc=1:fps=120\'"'
                 if (/squirrel/.test(command)) set = '-filter:a "atempo=0.5,asetrate=65100"'
                 if (/audio/.test(mime)) {
-                await VeronStickWait()
-                let media = await VeronicaX.downloadAndSaveMediaMessage(quoted)
+                await farindahStickWait()
+                let media = await Faridah.downloadAndSaveMediaMessage(quoted)
                 let ran = getRandom('.mp3')
                 exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
                 fs.unlinkSync(media)
-                if (err) return replygcVeron(err)
+                if (err) return replygcFaridah(err)
                 let buff = fs.readFileSync(ran)
-                VeronicaX.sendMessage(m.chat, { audio: buff, mimetype: 'audio/mpeg' }, { quoted : m })
+                Faridah.sendMessage(m.chat, { audio: buff, mimetype: 'audio/mpeg' }, { quoted : m })
                 fs.unlinkSync(ran)
                 })
-                } else replygcVeron(`Reply to the audio you want to change with a caption *${prefix + command}*`)
+                } else replygcFaridah(`Reply to the audio you want to change with a caption *${prefix + command}*`)
                 } catch (e) {
-                replygcVeron(e)
+                replygcFaridah(e)
                 }
                 break
                 //media db
@@ -6111,7 +6111,7 @@ for (let x of bad) {
 teks += `│⭔ ${x}\n`
 }
 teks += `│\n└────────────⭓\n\n*Totally there are : ${bad.length}*`
-replygcVeron(teks)
+replygcFaridah(teks)
 }
 break
 
@@ -6121,10 +6121,10 @@ break
             case 'tictactoe': {
                 let TicTacToe = require("./lib/tictactoe.js")
                 this.game = this.game ? this.game : {}
-                if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) return replygcVeron('You are still in the game')
+                if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) return replygcFaridah('You are still in the game')
                 let room = Object.values(this.game).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
                 if (room) {
-                    replygcVeron('Partner not found!')
+                    replygcFaridah('Partner not found!')
                     room.o = m.chat
                     room.game.playerO = m.sender
                     room.state = 'PLAYING'
@@ -6152,10 +6152,10 @@ ${arr.slice(6).join('')}
 Turn @${room.game.currentTurn.split('@')[0]}
 
 Type *surrender* to give up and admit defeat`
-                    if (room.x !== room.o) await VeronicaX.sendText(room.x, str, m, {
+                    if (room.x !== room.o) await Faridah.sendText(room.x, str, m, {
                         mentions: parseMention(str)
                     })
-                    await VeronicaX.sendText(room.o, str, m, {
+                    await Faridah.sendText(room.o, str, m, {
                         mentions: parseMention(str)
                     })
                 } else {
@@ -6167,7 +6167,7 @@ Type *surrender* to give up and admit defeat`
                         state: 'WAITING'
                     }
                     if (text) room.name = text
-                    replygcVeron('Waiting for partner' + (text ? ` type the command below ${prefix}${command} ${text}` : ''))
+                    replygcFaridah('Waiting for partner' + (text ? ` type the command below ${prefix}${command} ${text}` : ''))
                     this.game[room.id] = room
                 }
             }
@@ -6178,12 +6178,12 @@ Type *surrender* to give up and admit defeat`
                 try {
                     if (this.game) {
                         delete this.game
-                        VeronicaX.sendText(m.chat, `Berhasil delete session TicTacToe`, m)
+                        Faridah.sendText(m.chat, `Berhasil delete session TicTacToe`, m)
                     } else if (!this.game) {
-                        replygcVeron(`Session TicTacToe🎮 tidak ada`)
-                    } else replygcVeron('?')
+                        replygcFaridah(`Session TicTacToe🎮 tidak ada`)
+                    } else replygcFaridah('?')
                 } catch (e) {
-                    replygcVeron('Error')
+                    replygcFaridah('Error')
                 }
             }
             break
@@ -6193,12 +6193,12 @@ Type *surrender* to give up and admit defeat`
                 let poin = 10
                 let poin_lose = 10
                 let timeout = 60000
-                if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.sender))) replygcVeron(`Finish your previous suit`)
-                if (m.mentionedJid[0] === m.sender) return replygcVeron(`Can't play with myself !`)
-                if (!m.mentionedJid[0]) return replygcVeron(`_Who do you want to challenge?_\nTag the person..\n\nExample : ${prefix}suit @${owner[1]}`, m.chat, {
+                if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.sender))) replygcFaridah(`Finish your previous suit`)
+                if (m.mentionedJid[0] === m.sender) return replygcFaridah(`Can't play with myself !`)
+                if (!m.mentionedJid[0]) return replygcFaridah(`_Who do you want to challenge?_\nTag the person..\n\nExample : ${prefix}suit @${owner[1]}`, m.chat, {
                     mentions: [owner[1] + '@s.whatsapp.net']
                 })
-                if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.mentionedJid[0]))) return replygcVeron(`The person you are challenging is playing suit with someone else :(`)
+                if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.mentionedJid[0]))) return replygcFaridah(`The person you are challenging is playing suit with someone else :(`)
                 let id = 'suit_' + new Date() * 1
                 let caption = `_*SUIT PvP*_
 
@@ -6206,7 +6206,7 @@ Type *surrender* to give up and admit defeat`
 
 @${m.mentionedJid[0].split`@`[0]}Please type accept/reject, accept to accept or reject to reject the challenge`
                 this.suit[id] = {
-                    chat: await VeronicaX.sendText(m.chat, caption, m, {
+                    chat: await Faridah.sendText(m.chat, caption, m, {
                         mentions: parseMention(caption)
                     }),
                     id: id,
@@ -6214,7 +6214,7 @@ Type *surrender* to give up and admit defeat`
                     p2: m.mentionedJid[0],
                     status: 'wait',
                     waktu: setTimeout(() => {
-                        if (this.suit[id]) VeronicaX.sendText(m.chat, `_Suit time is up_`, m)
+                        if (this.suit[id]) Faridah.sendText(m.chat, `_Suit time is up_`, m)
                         delete this.suit[id]
                     }, 60000),
                     poin,
@@ -6224,17 +6224,17 @@ Type *surrender* to give up and admit defeat`
             }
             break
             case 'mathquiz': case 'math': {
-                if (kuismath.hasOwnProperty(m.sender.split('@')[0])) replygcVeron(`There are still unfinished sessions!`)
+                if (kuismath.hasOwnProperty(m.sender.split('@')[0])) replygcFaridah(`There are still unfinished sessions!`)
                 let { genMath, modes } = require('./lib/math.js')
-                if (!text) return replygcVeron(`Mode: ${Object.keys(modes).join(' | ')}\nUsage example: ${prefix}math medium`)
+                if (!text) return replygcFaridah(`Mode: ${Object.keys(modes).join(' | ')}\nUsage example: ${prefix}math medium`)
                 let result = await genMath(text.toLowerCase())
-                VeronicaX.sendText(m.chat, `*What is the result of: ${result.soal.toLowerCase()}*?\n\nTime: ${(result.waktu / 1000).toFixed(2)} second`, m).then(() => {
+                Faridah.sendText(m.chat, `*What is the result of: ${result.soal.toLowerCase()}*?\n\nTime: ${(result.waktu / 1000).toFixed(2)} second`, m).then(() => {
                     kuismath[m.sender.split('@')[0]] = result.jawaban
                 })
                 await sleep(result.waktu)
                 if (kuismath.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Answer: " + result.jawaban)
-                    replygcVeron("Time has run out\nAnswer: " + kuismath[m.sender.split('@')[0]])
+                    replygcFaridah("Time has run out\nAnswer: " + kuismath[m.sender.split('@')[0]])
                     delete kuismath[m.sender.split('@')[0]]
                 }
             }
@@ -6243,26 +6243,26 @@ Type *surrender* to give up and admit defeat`
                 let user = global.db.data.users[m.sender]
                 user.afkTime = + new Date
                 user.afkReason = text
-                replygcVeron(`${m.pushName} *Has Gone AFK*${text ? ': ' + text : ''}`)
+                replygcFaridah(`${m.pushName} *Has Gone AFK*${text ? ': ' + text : ''}`)
             }
             break	
             case 'openai-indo': {
-	            if (!q) return replygcVeron(`Example : ${prefix + command} who is ronaldo`)
+	            if (!q) return replygcFaridah(`Example : ${prefix + command} who is ronaldo`)
 			      var isiai = await fetchJson(`https://aemt.me/openai?text=${q}`)
 			      var isi = isiai.result
-		         await replygcVeron(isi)
+		         await replygcFaridah(isi)
 			   }
 			   break
     case 'ephemeral': {
-                if (!m.isGroup) return VeronStickGroup()
-                if (!isBotAdmins) return VeronStickBotAdmin()
-                if (!isAdmins) return VeronStickAdmin()
+                if (!m.isGroup) return farindahStickGroup()
+                if (!isBotAdmins) return farindahStickBotAdmin()
+                if (!isAdmins) return farindahStickAdmin()
                 if (args[0] === 'on') {
-                    await VeronicaX.sendMessage(m.chat, { disappearingMessagesInChat: WA_DEFAULT_EPHEMERAL })
-                    await replygcVeron(`Done`)
+                    await Faridah.sendMessage(m.chat, { disappearingMessagesInChat: WA_DEFAULT_EPHEMERAL })
+                    await replygcFaridah(`Done`)
                 } else if (args[0] === 'off') {
-                    await VeronicaX.sendMessage(m.chat, { disappearingMessagesInChat: false })
-                    await replygcVeron(`Done`)
+                    await Faridah.sendMessage(m.chat, { disappearingMessagesInChat: false })
+                    await replygcFaridah(`Done`)
                 } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -6279,7 +6279,7 @@ Type *surrender* to give up and admit defeat`
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -6321,7 +6321,7 @@ Type *surrender* to give up and admit defeat`
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -6338,19 +6338,19 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
  } catch (e) {
  	console.error(e)
  }
- VeronicaX.sendMessage(m.chat, { delete: key })
+ Faridah.sendMessage(m.chat, { delete: key })
 }
 break
     case 'autoswview':
     case 'autostatusview':{
-             if (!VeronTheCreator) return VeronStickOwner()
+             if (!RidzTheCreator) return RidzStickOwner()
                
                if (args[0] === 'on') {
                   antiswview = true
-                  replygcVeron(`${command} is enabled`)
+                  replygcFaridah(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   antiswview = false
-                  replygcVeron(`${command} is disabled`)
+                  replygcFaridah(`${command} is disabled`)
                } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -6367,7 +6367,7 @@ break
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -6409,21 +6409,21 @@ break
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
             }
             break
     case 'anticall': {
-             if (!VeronTheCreator) return VeronStickOwner()
+             if (!RidzTheCreator) return RidzStickOwner()
                
                if (args[0] === 'on') {
                   anticall = true
-                  replygcVeron(`${command} is enabled`)
+                  replygcFaridah(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   anticall = false
-                  replygcVeron(`${command} is disabled`)
+                  replygcFaridah(`${command} is disabled`)
                } else {
                 	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -6440,7 +6440,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -6482,7 +6482,7 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -6490,109 +6490,109 @@ await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
             break
              break
 case 'addvideo':{
-if (!VeronTheCreator) return VeronStickOwner()
-if (args.length < 1) return replygcVeron('Whats the video name?')
-if (VideoVeron.includes(q)) return replygcVeron("The name is already in use")
-let delb = await VeronicaX.downloadAndSaveMediaMessage(quoted)
-VideoVeron.push(q)
+if (!RidzTheCreator) return RidzStickOwner()
+if (args.length < 1) return replygcFaridah('Whats the video name?')
+if (Videofaridah.includes(q)) return replygcFaridah("The name is already in use")
+let delb = await Faridah.downloadAndSaveMediaMessage(quoted)
+Videofaridah.push(q)
 await fsx.copy(delb, `./Media/video/${q}.mp4`)
-fs.writeFileSync('./Media/database/Veronvideo.json', JSON.stringify(VideoVeron))
+fs.writeFileSync('./Media/database/video.json', JSON.stringify(Videofaridah))
 fs.unlinkSync(delb)
-replygcVeron(`Success Adding Video\nCheck by typing ${prefix}listvideo`)
+replygcFaridah(`Success Adding Video\nCheck by typing ${prefix}listvideo`)
 }
 break
 case 'delvideo':{
-if (!VeronTheCreator) return VeronStickOwner()
-if (args.length < 1) return replygcVeron('Enter the video name')
-if (!VideoVeron.includes(q)) return replygcVeron("The name does not exist in the database")
-let wanu = VideoVeron.indexOf(q)
-VideoVeron.splice(wanu, 1)
-fs.writeFileSync('./Media/database/Veronvideo.json', JSON.stringify(VideoVeron))
+if (!RidzTheCreator) return RidzStickOwner()
+if (args.length < 1) return replygcFaridah('Enter the video name')
+if (!Videofaridah.includes(q)) return replygcFaridah("The name does not exist in the database")
+let wanu = Videofaridah.indexOf(q)
+Videofaridah.splice(wanu, 1)
+fs.writeFileSync('./Media/database/video.json', JSON.stringify(Videofaridah))
 fs.unlinkSync(`./Media/video/${q}.mp4`)
-replygcVeron(`Success deleting video ${q}`)
+replygcFaridah(`Success deleting video ${q}`)
 }
 break
 case 'listvideo':{
 let teks = '┌──⭓「 *Video List* 」\n│\n'
-for (let x of VideoVeron) {
+for (let x of Videofaridah) {
 teks += `│⭔ ${x}\n`
 }
-teks += `│\n└────────────⭓\n\n*Totally there are : ${VideoVeron.length}*`
-replygcVeron(teks)
+teks += `│\n└────────────⭓\n\n*Totally there are : ${Videofaridah.length}*`
+replygcFaridah(teks)
 }
 break
 case 'addimage':{
-if (!VeronTheCreator) return VeronStickOwner()
-if (args.length < 1) return replygcVeron('Whats the image name?')
-if (ImageVeron.includes(q)) return replygcVeron("The name is already in use")
-let delb = await VeronicaX.downloadAndSaveMediaMessage(quoted)
-ImageVeron.push(q)
+if (!RidzTheCreator) return RidzStickOwner()
+if (args.length < 1) return replygcFaridah('Whats the image name?')
+if (Imagefaridah.includes(q)) return replygcFaridah("The name is already in use")
+let delb = await Faridah.downloadAndSaveMediaMessage(quoted)
+Imagefaridah.push(q)
 await fsx.copy(delb, `./Media/image/${q}.jpg`)
-fs.writeFileSync('./Media/database/Veronimage.json', JSON.stringify(ImageVeron))
+fs.writeFileSync('./Media/database/image.json', JSON.stringify(Imagefaridah))
 fs.unlinkSync(delb)
-replygcVeron(`Success Adding Image\nCheck by typing ${prefix}listimage`)
+replygcFaridah(`Success Adding Image\nCheck by typing ${prefix}listimage`)
 }
 break
 case 'delimage':{
-if (!VeronTheCreator) return VeronStickOwner()
-if (args.length < 1) return replygcVeron('Enter the image name')
-if (!ImageVeron.includes(q)) return replygcVeron("The name does not exist in the database")
-let wanu = ImageVeron.indexOf(q)
-ImageVeron.splice(wanu, 1)
-fs.writeFileSync('./Media/database/Veronimage.json', JSON.stringify(ImageVeron))
+if (!RidzTheCreator) return RidzStickOwner()
+if (args.length < 1) return replygcFaridah('Enter the image name')
+if (!Imagefaridah.includes(q)) return replygcFaridah("The name does not exist in the database")
+let wanu = Imagefaridah.indexOf(q)
+Imagefaridah.splice(wanu, 1)
+fs.writeFileSync('./Media/database/image.json', JSON.stringify(Imagefaridah))
 fs.unlinkSync(`./Media/image/${q}.jpg`)
-replygcVeron(`Success deleting image ${q}`)
+replygcFaridah(`Success deleting image ${q}`)
 }
 break
 case 'listimage':{
 let teks = '┌──⭓「 *Image List* 」\n│\n'
-for (let x of ImageVeron) {
+for (let x of Imagefaridah) {
 teks += `│⭔ ${x}\n`
 }
-teks += `│\n└────────────⭓\n\n*Totally there are : ${ImageVeron.length}*`
-replygcVeron(teks)
+teks += `│\n└────────────⭓\n\n*Totally there are : ${Imagefaridah.length}*`
+replygcFaridah(teks)
 }
 break
 case 'addsticker':{
-if (!VeronTheCreator) return VeronStickOwner()
-if (args.length < 1) return replygcVeron('Whats the sticker name?')
-if (StickerVeron.includes(q)) return replygcVeron("The name is already in use")
-let delb = await VeronicaX.downloadAndSaveMediaMessage(quoted)
-StickerVeron.push(q)
+if (!RidzTheCreator) return RidzStickOwner()
+if (args.length < 1) return replygcFaridah('Whats the sticker name?')
+if (Stickerfaridah.includes(q)) return replygcFaridah("The name is already in use")
+let delb = await Faridah.downloadAndSaveMediaMessage(quoted)
+Stickerfaridah.push(q)
 await fsx.copy(delb, `./Media/sticker/${q}.webp`)
-fs.writeFileSync('./Media/database/Veronsticker.json', JSON.stringify(StickerVeron))
+fs.writeFileSync('./Media/database/sticker.json', JSON.stringify(Stickerfaridah))
 fs.unlinkSync(delb)
-replygcVeron(`Success Adding Sticker\nCheck by typing ${prefix}liststicker`)
+replygcFaridah(`Success Adding Sticker\nCheck by typing ${prefix}liststicker`)
 }
 break
 case 'delsticker':{
-if (!VeronTheCreator) return VeronStickOwner()
-if (args.length < 1) return replygcVeron('Enter the sticker name')
-if (!StickerVeron.includes(q)) return replygcVeron("The name does not exist in the database")
-let wanu = StickerVeron.indexOf(q)
-StickerVeron.splice(wanu, 1)
-fs.writeFileSync('./Media/database/Veronsticker.json', JSON.stringify(StickerVeron))
+if (!RidzTheCreator) return RidzStickOwner()
+if (args.length < 1) return replygcFaridah('Enter the sticker name')
+if (!Stickerfaridah.includes(q)) return replygcFaridah("The name does not exist in the database")
+let wanu = Stickerfaridah.indexOf(q)
+Stickerfaridah.splice(wanu, 1)
+fs.writeFileSync('./Media/database/sticker.json', JSON.stringify(Stickerfaridah))
 fs.unlinkSync(`./Media/sticker/${q}.webp`)
-replygcVeron(`Success deleting sticker ${q}`)
+replygcFaridah(`Success deleting sticker ${q}`)
 }
 break
 case 'liststicker':{
 let teks = '┌──⭓「 *Sticker List* 」\n│\n'
-for (let x of StickerVeron) {
+for (let x of Stickerfaridah) {
 teks += `│⭔ ${x}\n`
 }
-teks += `│\n└────────────⭓\n\n*Totally there are : ${StickerVeron.length}*`
-replygcVeron(teks)
+teks += `│\n└────────────⭓\n\n*Totally there are : ${Stickerfaridah.length}*`
+replygcFaridah(teks)
 }
 break
 case 'addmsg': {
-	if (!VeronTheCreator) return VeronStickOwner()
-                if (!m.quoted) return replygcVeron('Reply Message You Want To Save In Database')
-                if (!text) return replygcVeron(`Example : ${prefix + command} filename`)
+	if (!RidzTheCreator) return RidzStickOwner()
+                if (!m.quoted) return replygcFaridah('Reply Message You Want To Save In Database')
+                if (!text) return replygcFaridah(`Example : ${prefix + command} filename`)
                 let msgs = global.db.data.database
-                if (text.toLowerCase() in msgs) return replygcVeron(`'${text}' registered in the message list`)
+                if (text.toLowerCase() in msgs) return replygcFaridah(`'${text}' registered in the message list`)
                 msgs[text.toLowerCase()] = quoted.fakeObj
-replygcVeron(`Successfully added message in message list as '${text}'
+replygcFaridah(`Successfully added message in message list as '${text}'
     
 Access with ${prefix}getmsg ${text}
 
@@ -6600,10 +6600,10 @@ View list of Messages With ${prefix}listmsg`)
             }
             break
             case 'getmsg': {
-                if (!text) return replygcVeron(`Example : ${prefix + command} file name\n\nView list of messages with ${prefix}listmsg`)
+                if (!text) return replygcFaridah(`Example : ${prefix + command} file name\n\nView list of messages with ${prefix}listmsg`)
                 let msgs = global.db.data.database
-                if (!(text.toLowerCase() in msgs)) return replygcVeron(`'${text}' not listed in the message list`)
-                VeronicaX.copyNForward(m.chat, msgs[text.toLowerCase()], true)
+                if (!(text.toLowerCase() in msgs)) return replygcFaridah(`'${text}' not listed in the message list`)
+                Faridah.copyNForward(m.chat, msgs[text.toLowerCase()], true)
             }
             break
             case 'listmsg': {
@@ -6613,199 +6613,199 @@ View list of Messages With ${prefix}listmsg`)
 		for (let i of seplit) {
 		    teks += `${themeemoji} *Name :* ${i.nama}\n${themeemoji} *Type :* ${getContentType(i.message).replace(/Message/i, '')}\n────────────────────────\n\n`
 	        }
-	        replygcVeron(teks)
+	        replygcFaridah(teks)
 	    }
 	    break 
 	case 'delmsg': case 'deletemsg': {
-		if (!VeronTheCreator) return VeronStickOwner()
+		if (!RidzTheCreator) return RidzStickOwner()
 	        let msgs = global.db.data.database
-	        if (!(text.toLowerCase() in msgs)) return replygcVeron(`'${text}' not listed in the message list`)
+	        if (!(text.toLowerCase() in msgs)) return replygcFaridah(`'${text}' not listed in the message list`)
 		delete msgs[text.toLowerCase()]
-		replygcVeron(`Successfully deleted '${text}' from the message list`)
+		replygcFaridah(`Successfully deleted '${text}' from the message list`)
             }
 	    break
 case 'addvn':{
-if (!VeronTheCreator) return VeronStickOwner()
-if (args.length < 1) return replygcVeron('Whats the audio name?')
-if (VoiceNoteVeron.includes(q)) return replygcVeron("The name is already in use")
-let delb = await VeronicaX.downloadAndSaveMediaMessage(quoted)
-VoiceNoteVeron.push(q)
+if (!RidzTheCreator) return RidzStickOwner()
+if (args.length < 1) return replygcFaridah('Whats the audio name?')
+if (Voicenotefaridah.includes(q)) return replygcFaridah("The name is already in use")
+let delb = await Faridah.downloadAndSaveMediaMessage(quoted)
+Voicenotefaridah.push(q)
 await fsx.copy(delb, `./Media/audio/${q}.mp3`)
-fs.writeFileSync('./Media/database/Veronvn.json', JSON.stringify(VoiceNoteVeron))
+fs.writeFileSync('./Media/database/vn.json', JSON.stringify(Voicenotefaridah))
 fs.unlinkSync(delb)
-replygcVeron(`Success Adding Audio\nCheck by typing ${prefix}listvn`)
+replygcFaridah(`Success Adding Audio\nCheck by typing ${prefix}listvn`)
 }
 break
 case 'delvn':{
-if (!VeronTheCreator) return VeronStickOwner()
-if (args.length < 1) return replygcVeron('Enter the vn name')
-if (!VoiceNoteVeron.includes(q)) return replygcVeron("The name does not exist in the database")
-let wanu = VoiceNoteVeron.indexOf(q)
-VoiceNoteVeron.splice(wanu, 1)
-fs.writeFileSync('./Media/database/Veronvn.json', JSON.stringify(VoiceNoteVeron))
+if (!RidzTheCreator) return RidzStickOwner()
+if (args.length < 1) return replygcFaridah('Enter the vn name')
+if (!Voicenotefaridah.includes(q)) return replygcFaridah("The name does not exist in the database")
+let wanu = Voicenotefaridah.indexOf(q)
+Voicenotefaridah.splice(wanu, 1)
+fs.writeFileSync('./Media/database/vn.json', JSON.stringify(Voicenotefaridah))
 fs.unlinkSync(`./Media/audio/${q}.mp3`)
-replygcVeron(`Success deleting vn ${q}`)
+replygcFaridah(`Success deleting vn ${q}`)
 }
 break
 case 'listvn':{
 let teks = '┌──⭓「 *VN List* 」\n│\n'
-for (let x of VoiceNoteVeron) {
+for (let x of Voicenotefaridah) {
 teks += `│⭔ ${x}\n`
 }
-teks += `│\n└────────────⭓\n\n*Totally there are : ${VoiceNoteVeron.length}*`
-replygcVeron(teks)
+teks += `│\n└────────────⭓\n\n*Totally there are : ${Voicenotefaridah.length}*`
+replygcFaridah(teks)
 }
 break
 case 'addzip':{
-if (!VeronTheCreator) return VeronStickOwner()
+if (!RidzTheCreator) return RidzStickOwner()
 
-if (args.length < 1) return replygcVeron(`What's the zip name?`)
+if (args.length < 1) return replygcFaridah(`What's the zip name?`)
 let teks = `${text}`
 {
-if (ZipVeron.includes(teks)) return replygcVeron("This name is already in use")
-let delb = await VeronicaX.downloadAndSaveMediaMessage(quoted)
-ZipVeron.push(teks)
+if (Zipfaridah.includes(teks)) return replygcFaridah("This name is already in use")
+let delb = await Faridah.downloadAndSaveMediaMessage(quoted)
+Zipfaridah.push(teks)
 await fsx.copy(delb, `./Media/zip/${teks}.zip`)
-fs.writeFileSync('./Media/database/zip.json', JSON.stringify(ZipVeron))
+fs.writeFileSync('./Media/database/zip.json', JSON.stringify(Zipfaridah))
 fs.unlinkSync(delb)
-replygcVeron(`Success Adding zip\nTo check type ${prefix}listzip`)
+replygcFaridah(`Success Adding zip\nTo check type ${prefix}listzip`)
 }
 }
 break
 case 'delzip':{
-if (!VeronTheCreator) return VeronStickOwner()
+if (!RidzTheCreator) return RidzStickOwner()
 
-if (args.length < 1) return replygcVeron('Enter the text in the zip list')
+if (args.length < 1) return replygcFaridah('Enter the text in the zip list')
 let teks = `${text}`
 {
-if (!ZipVeron.includes(teks)) return replygcVeron("This name does not exist in the database")
-let wanu = ZipVeron.indexOf(teks)
-ZipVeron.splice(wanu, 1)
-fs.writeFileSync('./Media/database/zip.json', JSON.stringify(ZipVeron))
+if (!Zipfaridah.includes(teks)) return replygcFaridah("This name does not exist in the database")
+let wanu = Zipfaridah.indexOf(teks)
+Zipfaridah.splice(wanu, 1)
+fs.writeFileSync('./Media/database/zip.json', JSON.stringify(Zipfaridah))
 fs.unlinkSync(`./Media/zip/${teks}.zip`)
-replygcVeron(`Successfully deleted zip ${teks}`)
+replygcFaridah(`Successfully deleted zip ${teks}`)
 }
 }
 break
 case 'listzip': {
 
 let teksooooo = '┌──⭓「 *ZIP LIST* 」\n│\n'
-for (let x of ZipVeron) {
+for (let x of Zipfaridah) {
 teksooooo += `│⭔ ${x}\n`
 }
-teksooooo += `│\n└────────────⭓\n\n*Total : ${ZipVeron.length}*`
-replygcVeron(teksooooo)
+teksooooo += `│\n└────────────⭓\n\n*Total : ${Zipfaridah.length}*`
+replygcFaridah(teksooooo)
 }
 break
 case 'addapk':{
-if (!VeronTheCreator) return VeronStickOwner()
+if (!RidzTheCreator) return RidzStickOwner()
 
-if (args.length < 1) return replygcVeron('What is the name of the apk?')
+if (args.length < 1) return replygcFaridah('What is the name of the apk?')
 let teks = `${text}`
 {
-if (ApkVeron.includes(teks)) return replygcVeron("This name is already in use")
-let delb = await VeronicaX.downloadAndSaveMediaMessage(quoted)
+if (Apkfaridah.includes(teks)) return replygcFaridah("This name is already in use")
+let delb = await Faridah.downloadAndSaveMediaMessage(quoted)
 apknye.push(teks)
 await fsx.copy(delb, `./Media/apk/${teks}.apk`)
-fs.writeFileSync('./Media/database/apk.json', JSON.stringify(ApkVeron))
+fs.writeFileSync('./Media/database/apk.json', JSON.stringify(Apkfaridah))
 fs.unlinkSync(delb)
-replygcVeron(`Successful Adding apk\nTo Check type ${prefix}listapk`)
+replygcFaridah(`Successful Adding apk\nTo Check type ${prefix}listapk`)
 }
 }
 break
 case 'delapk':{
-if (!VeronTheCreator) return VeronStickOwner()
+if (!RidzTheCreator) return RidzStickOwner()
 
-if (args.length < 1) return replygcVeron('Name of the apk?')
+if (args.length < 1) return replygcFaridah('Name of the apk?')
 let teks = `${text}`
 {
-if (!ApkVeron.includes(teks)) return replygcVeron("This name does not exist in the database")
-let wanu = ApkVeron.indexOf(teks)
-ApkVeron.splice(wanu, 1)
-fs.writeFileSync('./Media/database/apk.json', JSON.stringify(ApkVeron))
+if (!Apkfaridah.includes(teks)) return replygcFaridah("This name does not exist in the database")
+let wanu = Apkfaridah.indexOf(teks)
+Apkfaridah.splice(wanu, 1)
+fs.writeFileSync('./Media/database/apk.json', JSON.stringify(Apkfaridah))
 fs.unlinkSync(`./Media/apk/${teks}.apk`)
-replygcVeron(`Successfully deleted Apk ${teks}`)
+replygcFaridah(`Successfully deleted Apk ${teks}`)
 }
 }
 break
 case 'listapk': {
 
 let teksoooooo = '┌──⭓「 *APK LIST* 」\n│\n'
-for (let x of ApkVeron) {
+for (let x of Apkfaridah) {
 teksoooooo += `│⭔ ${x}\n`
 }
-teksoooooo += `│\n└────────────⭓\n\n*Total : ${ApkVeron.length}`
-replygcVeron(teksoooooo)
+teksoooooo += `│\n└────────────⭓\n\n*Total : ${Apkfaridah.length}`
+replygcFaridah(teksoooooo)
 }
 break
 case 'addpdf':{
-if (!VeronTheCreator) return VeronStickOwner()
+if (!RidzTheCreator) return RidzStickOwner()
 
-if (args.length < 1) return replygcVeron('What is the name of the pdf')
+if (args.length < 1) return replygcFaridah('What is the name of the pdf')
 let teks = `${text}`
 {
-if (DocVeron.includes(teks)) return replygcVeron("This name is already in use")
-let delb = await VeronicaX.downloadAndSaveMediaMessage(quoted)
-DocVeron.push(teks)
+if (Docfaridah.includes(teks)) return replygcFaridah("This name is already in use")
+let delb = await Faridah.downloadAndSaveMediaMessage(quoted)
+Docfaridah.push(teks)
 await fsx.copy(delb, `./Media/doc/${teks}.pdf`)
-fs.writeFileSync('./Media/database/doc.json', JSON.stringify(DocVeron))
+fs.writeFileSync('./Media/database/doc.json', JSON.stringify(Docfaridah))
 fs.unlinkSync(delb)
-replygcVeron(`Successful Adding Pdf\nTo check type ${prefix}listpdf`)
+replygcFaridah(`Successful Adding Pdf\nTo check type ${prefix}listpdf`)
 }
 }
 break
 case 'delpdf':{
-if (!VeronTheCreator) return VeronStickOwner()
+if (!RidzTheCreator) return RidzStickOwner()
 
-if (args.length < 1) return replygcVeron('Enter the name')
+if (args.length < 1) return replygcFaridah('Enter the name')
 let teks = `${text}`
 {
-if (!DocVeron.includes(teks)) return replygcVeron("This name does not exist in the database")
-let wanu = DocVeron.indexOf(teks)
-DocVeron.splice(wanu, 1)
-fs.writeFileSync('./Media/database/doc.json', JSON.stringify(DocVeron))
+if (!Docfaridah.includes(teks)) return replygcFaridah("This name does not exist in the database")
+let wanu = Docfaridah.indexOf(teks)
+Docfaridah.splice(wanu, 1)
+fs.writeFileSync('./Media/database/doc.json', JSON.stringify(Docfaridah))
 fs.unlinkSync(`./Media/doc/${teks}.pdf`)
-replygcVeron(`Successfully deleted pdf ${teks}`)
+replygcFaridah(`Successfully deleted pdf ${teks}`)
 }
 }
 break
 case 'listpdf': {
 
 let teksoooo = '┌──⭓「 *PDF LIST* 」\n│\n'
-for (let x of DocVeron) {
+for (let x of Docfaridah) {
 teksoooo += `│⭔ ${x}\n`
 }
-teksoooo += `│\n└────────────⭓\n\n*Total : ${DocVeron.length}*`
-replygcVeron(teksoooo)
+teksoooo += `│\n└────────────⭓\n\n*Total : ${Docfaridah.length}*`
+replygcFaridah(teksoooo)
 }
 break
 case 'q': case 'quoted': {
-if (!m.quoted) return replygcVeron('Reply the Message!!')
-let Veronquotx= await VeronicaX.serializeM(await m.getQuotedObj())
-if (!Veronquotx.quoted) return replygcVeron('The message you are replying to is not sent by the bot')
-await Veronquotx.quoted.copyNForward(m.chat, true)
+if (!m.quoted) return replygcFaridah('Reply the Message!!')
+let faridahquotx= await Faridah.serializeM(await m.getQuotedObj())
+if (!faridahquotx.quoted) return replygcFaridah('The message you are replying to is not sent by the bot')
+await faridahquotx.quoted.copyNForward(m.chat, true)
 }
 break
 case 'obfus': case 'obfuscate':{
-if (!q) return replygcVeron(`Example ${prefix+command} const Veronbot = require('baileys')`)
+if (!q) return replygcFaridah(`Example ${prefix+command} const faridahbot = require('baileys')`)
 let meg = await obfus(q)
-replygcVeron(`Success
+replygcFaridah(`Success
 ${meg.result}`)
 }
 break
 case 'style': case 'styletext': {
 		let { styletext } = require('./lib/scraper.js')
-		if (!text) return replygcVeron('Enter Query text!')
+		if (!text) return replygcFaridah('Enter Query text!')
                 let anu = await styletext(text)
                 let teks = `Style Text From ${text}\n\n`
                 for (let i of anu) {
                     teks += `${themeemoji} *${i.name}* : ${i.result}\n\n`
                 }
-                replygcVeron(teks)
+                replygcFaridah(teks)
 	    }
 	    break
 case 'yts2': case 'ytsearch2': {
-                if (!text) return replygcVeron(`Example : ${prefix + command} story wa anime`)
+                if (!text) return replygcFaridah(`Example : ${prefix + command} story wa anime`)
                 let yts = require("yt-search")
                 let search = await yts(text)
                 let teks = 'YouTube Search\n\n Result From '+text+'\n\n'
@@ -6813,19 +6813,19 @@ case 'yts2': case 'ytsearch2': {
                 for (let i of search.all) {
                     teks += `${themeemoji} No : ${no++}\n${themeemoji} Type : ${i.type}\n${themeemoji} Video ID : ${i.videoId}\n${themeemoji} Title : ${i.title}\n${themeemoji} Views : ${i.views}\n${themeemoji} Duration : ${i.timestamp}\n${themeemoji} Uploaded : ${i.ago}\n${themeemoji} Url : ${i.url}\n\n─────────────────\n\n`
                 }
-                VeronicaX.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
+                Faridah.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
             }
             break
             
             case 'yts': case 'ytsearch': {
-  if (!text) return replygcVeron(`*Example :* ${prefix + command} title`);
+  if (!text) return replygcFaridah(`*Example :* ${prefix + command} title`);
   try {
 let yts = require("yt-search")
     let search = await yts(text);
     let videos = search.all;
     console.log(videos)
     if (!videos || videos.length === 0) {
-      replygcVeron('No video found');
+      replygcFaridah('No video found');
       return;
     }
     // Choose between 1 and 5 videos at random
@@ -6840,7 +6840,7 @@ let yts = require("yt-search")
     for (let i = 0; i < selectedVideos.length; i++) {
       let video = selectedVideos[i];
       let cap = `Title : ${video.title}`;
-      const mediaMessage = await prepareWAMessageMedia({ image: { url: video.thumbnail } }, { upload: VeronicaX.waUploadToServer });
+      const mediaMessage = await prepareWAMessageMedia({ image: { url: video.thumbnail } }, { upload: Faridah.waUploadToServer });
       push.push({
         body: proto.Message.InteractiveMessage.Body.fromObject({
           text: cap
@@ -6898,31 +6898,33 @@ let yts = require("yt-search")
         }
       }
     }, {quoted:m});
-    await VeronicaX.relayMessage(m.chat, msg.message, {
+    await Faridah.relayMessage(m.chat, msg.message, {
       messageId: msg.key.id
     });
   } catch (e) {
     console.error(e);
-    await replygcVeron(`Error`);
+    await replygcFaridah(`Error`);
   }
 }
 break
-case 'play': {
-    if (!text) return replygcVeron(`Example : ${prefix + command} anime whatsapp status`)
+case 'play2': {
+    if (!text) return replygcFaridah(`Example : ${prefix + command} anime whatsapp status`)
     
     let search = await yts(text)
     let anup3k = search.videos[0]
     
     // Get MP3 download link from API
-    const response = await axios.get(`https://veron-apis.zone.id/downloader/youtube?url=${encodeURIComponent(anup3k.url)}`);
+const response = await axios.get(
+  `https://api.nekolabs.web.id/downloader/youtube/play/v1?q=${encodeURIComponent(anup3k.url)}`
+);
     
     if (!response.data.success || !response.data.result.success) {
-        return replygcVeron('Failed to fetch song from YouTube');
+        return replygcFaridah('Failed to fetch song from YouTube');
     }
     
     const apiResult = response.data.result;
     
-    await VeronicaX.sendMessage(m.chat, {
+    await Faridah.sendMessage(m.chat, {
         audio: { url: apiResult.download },
         fileName: apiResult.meta.title + '.mp3',
         mimetype: 'audio/mpeg',
@@ -6941,22 +6943,24 @@ case 'play': {
 }
 break
 
-case 'play2': {
-    if (!text) return replygcVeron(`Example : ${prefix + command} anime whatsapp status`)
+case 'play': {
+    if (!text) return replygcFaridah(`Example : ${prefix + command} anime whatsapp status`)
     
     let search = await yts(text)
     let anup3k = search.videos[0]
     
     // Get MP3 download link from API
-    const response = await axios.get(`https://veron-apis.zone.id/downloader/youtube?url=${encodeURIComponent(anup3k.url)}`);
+const response = await axios.get(
+  `https://api.nekolabs.web.id/downloader/youtube/play/v1?q=${encodeURIComponent(anup3k.url)}`
+);
     
     if (!response.data.success || !response.data.result.success) {
-        return replygcVeron('Failed to fetch song from YouTube');
+        return replygcFaridah('Failed to fetch song from YouTube');
     }
     
     const apiResult = response.data.result;
     
-    await VeronicaX.sendMessage(m.chat, {
+    await Faridah.sendMessage(m.chat, {
         document: { url: apiResult.download },
         fileName: apiResult.meta.title.replace(/[^a-z0-9]/gi, '_') + '.mp3',
         mimetype: 'audio/mpeg',
@@ -6975,22 +6979,24 @@ case 'play2': {
 }
 break
 
-case 'ytmp3':
-case 'ytaudio': {
+case 'play3':
+case 'playx': {
     if (args.length < 1 || !isUrl(text)) {
-        return replygcVeron(`Where's the yt link?\nExample: ${prefix + command} https://youtube.com/shorts/YQf-vMjDuKY?feature=share`)
+        return replygcFaridah(`Where's the yt link?\nExample: ${prefix + command} https://youtube.com/shorts/YQf-vMjDuKY?feature=share`)
     }
     
     // Get MP3 download link from API
-    const response = await axios.get(`https://veron-apis.zone.id/downloader/youtube?url=${encodeURIComponent(text)}`);
+    const response = await axios.get(
+  `https://api.nekolabs.web.id/downloader/youtube/play/v1?q=${encodeURIComponent(text)}`
+);
     
     if (!response.data.success || !response.data.result.success) {
-        return replygcVeron('Failed to fetch audio from YouTube');
+        return replygcFaridah('Failed to fetch audio from YouTube');
     }
     
     const apiResult = response.data.result;
     
-    await VeronicaX.sendMessage(m.chat, {
+    await Faridah.sendMessage(m.chat, {
         audio: { url: apiResult.download },
         fileName: apiResult.meta.title + '.mp3',
         mimetype: 'audio/mpeg',
@@ -7011,7 +7017,7 @@ break
 case 'ytmp4':
 case 'ytvideo': {
     if (args.length < 1 || !isUrl(text)) {
-        return replygcVeron(`Where is the link??\n\nExample : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag 360`)
+        return replygcFaridah(`Where is the link??\n\nExample : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag 360`)
     }
     
     // Parse quality from args if provided
@@ -7022,10 +7028,12 @@ case 'ytvideo': {
     }
     
     // Get video download link from API
-    const response = await axios.get(`https://veron-apis.zone.id/downloader/youtube1?url=${encodeURIComponent(text)}&type=video&quality=${quality}`);
+const response = await axios.get(
+  `https://api.nekolabs.web.id/downloader/youtube/v1?url=${encodeURIComponent(text)}&format=${quality}`
+);
     
     if (!response.data.success || !response.data.result.success) {
-        return replygcVeron('Failed to fetch video from YouTube');
+        return replygcFaridah('Failed to fetch video from YouTube');
     }
     
     const apiResult = response.data.result;
@@ -7034,69 +7042,69 @@ case 'ytvideo': {
 *${themeemoji}Duration:* ${apiResult.duration}
 *${themeemoji}Quality:* ${apiResult.quality}p`
 
-    await VeronicaX.sendMessage(m.chat, {
+    await Faridah.sendMessage(m.chat, {
         video: { url: apiResult.downloadUrl },
         caption: ytc
     }, { quoted: m })
 }
 break
 case 'git': case 'gitclone':
-if (!args[0]) return replygcVeron(`Where is the link?\nExample :\n${prefix}${command} https://github.com/ridz-coder01/Media`)
-if (!isUrl(args[0]) && !args[0].includes('github.com')) return replygcVeron(`Link invalid!!`)
+if (!args[0]) return replygcFaridah(`Where is the link?\nExample :\n${prefix}${command} https://github.com/ridz-coder01/Media`)
+if (!isUrl(args[0]) && !args[0].includes('github.com')) return replygcFaridah(`Link invalid!!`)
 let regex1 = /(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i
     let [, user, repo] = args[0].match(regex1) || []
     repo = repo.replace(/.git$/, '')
     let url = `https://api.github.com/repos/${user}/${repo}/zipball`
     let filename = (await fetch(url, {method: 'HEAD'})).headers.get('content-disposition').match(/attachment; filename=(.*)/)[1]
-    VeronicaX.sendMessage(m.chat, { document: { url: url }, fileName: filename+'.zip', mimetype: 'application/zip' }, { quoted: m }).catch((err) => replygcVeron(mess.error))
+    Faridah.sendMessage(m.chat, { document: { url: url }, fileName: filename+'.zip', mimetype: 'application/zip' }, { quoted: m }).catch((err) => replygcFaridah(mess.error))
 break
 case'tiktok':{
-if (!text) return replygcVeron(`Use it by the way: ${prefix+command} *query*\n\n_Example_\n\n${prefix+command} khaby lame`)
-VeronicaX.sendMessage(m.chat, { react: { text: `⏱️`, key: m.key }})
+if (!text) return replygcFaridah(`Use it by the way: ${prefix+command} *query*\n\n_Example_\n\n${prefix+command} khaby lame`)
+Faridah.sendMessage(m.chat, { react: { text: `⏱️`, key: m.key }})
 try{
 let anu = await fetchJson(`https://api.junn4.my.id/search/tiktoksearch?query=${text}`)
 const capt = anu.result.title
-await VeronicaX.sendMessage(m.chat, { video: { url: anu.result.no_watermark}, caption: `🔖TITLE : ${capt}`}, {quoted: m})
-await VeronicaX.sendMessage(m.chat, { react: { text: `☑️`, key: m.key }})
+await Faridah.sendMessage(m.chat, { video: { url: anu.result.no_watermark}, caption: `🔖TITLE : ${capt}`}, {quoted: m})
+await Faridah.sendMessage(m.chat, { react: { text: `☑️`, key: m.key }})
 }catch (error) {
-replygcVeron(`Sorry this video can't be download\n\nRequest failed with status code *400*`);
+replygcFaridah(`Sorry this video can't be download\n\nRequest failed with status code *400*`);
 }
 }
 break
 case 'tiktokvideo':
 case 'tiktokmp4': {
-if (!q) return replygcVeron( `Example : ${prefix + command} link`)
-if (!q.includes('tiktok')) return replygcVeron(`Link Invalid!!`)
+if (!q) return replygcFaridah( `Example : ${prefix + command} link`)
+if (!q.includes('tiktok')) return replygcFaridah(`Link Invalid!!`)
 require('./lib/tiktok.js').Tiktok(q).then( data => {
-VeronicaX.sendMessage(m.chat, { caption: `Here you go!`, video: { url: data.watermark }}, {quoted:m})
+Faridah.sendMessage(m.chat, { caption: `Here you go!`, video: { url: data.watermark }}, {quoted:m})
 })
 }
 break
 case 'tiktokmp3':
 case 'tiktokaudio':{
-if (!q) return replygcVeron( `Example : ${prefix + command} link`)
-if (!q.includes('tiktok')) return replygcVeron(`Link Invalid!!`)
+if (!q) return replygcFaridah( `Example : ${prefix + command} link`)
+if (!q.includes('tiktok')) return replygcFaridah(`Link Invalid!!`)
 require('./lib/tiktok.js').Tiktok(q).then( data => {
-const Verontikmp3 = {url:data.audio}
-VeronicaX.sendMessage(m.chat, { audio: Verontikmp3, mimetype: 'audio/mp4', ptt: true }, { quoted: m })
+const faridahtikmp3 = {url:data.audio}
+Faridah.sendMessage(m.chat, { audio: faridahtikmp3, mimetype: 'audio/mp4', ptt: true }, { quoted: m })
 })
 }
 break
 case'ttslide': case 'tiktokslide':{
-if (!text) return replygcVeron(`Use it by the way ${prefix+command} *url*\n\n_Example_\n\n${prefix+command} https://vt.tiktok.com/ZSL36LfEP/`)
-VeronicaX.sendMessage(m.chat, { react: { text: `⏱️`, key: m.key }})
+if (!text) return replygcFaridah(`Use it by the way ${prefix+command} *url*\n\n_Example_\n\n${prefix+command} https://vt.tiktok.com/ZSL36LfEP/`)
+Faridah.sendMessage(m.chat, { react: { text: `⏱️`, key: m.key }})
 try{
 let anu = await fetchJson(`https://aemt.me/download/tiktokslide?url=${text}`)
-await VeronicaX.sendMessage(m.chat, { image: { url: anu.result.data.origin_cover}, caption: ``}, {quoted: m})
-await VeronicaX.sendMessage(m.chat, { react: { text: "☑️",key: m.key,}})   
+await Faridah.sendMessage(m.chat, { image: { url: anu.result.data.origin_cover}, caption: ``}, {quoted: m})
+await Faridah.sendMessage(m.chat, { react: { text: "☑️",key: m.key,}})   
 }catch (error) {
-await VeronicaX.sendMessage(m.chat, { react: { text: "✖️",key: m.key,}})   
+await Faridah.sendMessage(m.chat, { react: { text: "✖️",key: m.key,}})   
 }
 }
 break
 case 'google': {
-if (!q) return replygcVeron(`Example : ${prefix + command} ${botname}`)
-await VeronStickWait()
+if (!q) return replygcFaridah(`Example : ${prefix + command} ${botname}`)
+await farindahStickWait()
 let google = require('google-it')
 google({'query': text}).then(res => {
 let teks = `Google Search From : ${text}\n\n`
@@ -7105,12 +7113,12 @@ teks += `⭔ *Title* : ${g.title}\n`
 teks += `⭔ *Description* : ${g.snippet}\n`
 teks += `⭔ *Link* : ${g.link}\n\n────────────────────────\n\n`
 } 
-replygcVeron(teks)
+replygcFaridah(teks)
 })
 }
 break
 case 'weather':{
-if (!text) return replygcVeron('What location?')
+if (!text) return replygcFaridah('What location?')
             let wdata = await axios.get(
                 `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`
             );
@@ -7127,7 +7135,7 @@ if (!text) return replygcVeron('What location?')
             textw += `*Longitude:-* ${wdata.data.coord.lon}\n`
             textw += `*Country:-* ${wdata.data.sys.country}\n`
 
-           VeronicaX.sendMessage(
+           Faridah.sendMessage(
                 m.chat, {
                     text: textw,
                 }, {
@@ -7137,15 +7145,15 @@ if (!text) return replygcVeron('What location?')
            }
            break
            case 'facebook2': case 'fb2':{
-if (!text) return replygcVeron(`Enter the link!!!`)
-if (!isUrl(args[0])) return replygcVeron(`Where is the link?`)
-await VeronicaX.sendMessage(m.chat, { react: { text: "⏱️",key: m.key,}})   
+if (!text) return replygcFaridah(`Enter the link!!!`)
+if (!isUrl(args[0])) return replygcFaridah(`Where is the link?`)
+await Faridah.sendMessage(m.chat, { react: { text: "⏱️",key: m.key,}})   
 try{
 let anu = await fetchJson(`https://aemt.me/download/fbdown?url=${text}`)
-VeronicaX.sendMessage(m.chat, { video: { url: anu.result.url.urls[0].hd }, caption: 'Here you go!' }, { quoted: m })
-await VeronicaX.sendMessage(m.chat, { react: { text: "☑️",key: m.key,}})   
+Faridah.sendMessage(m.chat, { video: { url: anu.result.url.urls[0].hd }, caption: 'Here you go!' }, { quoted: m })
+await Faridah.sendMessage(m.chat, { react: { text: "☑️",key: m.key,}})   
 }catch (error) {
-await VeronicaX.sendMessage(m.chat, { react: { text: "✖️",key: m.key,}})   
+await Faridah.sendMessage(m.chat, { react: { text: "✖️",key: m.key,}})   
 }
 }
 break
@@ -7153,11 +7161,11 @@ break
            case 'facebook':
 case 'facebookvid': {
            if (!args[0]) {
-    return replygcVeron(`Please send the link of a Facebook video\n\nEXAMPLE :\n*${prefix + command}* https://fb.watch/pLLTM4AFrO/?mibextid=Nif5oz`)
+    return replygcFaridah(`Please send the link of a Facebook video\n\nEXAMPLE :\n*${prefix + command}* https://fb.watch/pLLTM4AFrO/?mibextid=Nif5oz`)
   }
   const urlRegex = /^(?:https?:\/\/)?(?:www\.)?(?:facebook\.com|fb\.watch)\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i;
   if (!urlRegex.test(args[0])) {
-    return replygcVeron('Url invalid')
+    return replygcFaridah('Url invalid')
   }
   try {
     const result = await fg.fbdl(args[0]);
@@ -7167,14 +7175,14 @@ ${themeemoji} Title: ${result.title}`;
     const response = await fetch(result.videoUrl)
     const arrayBuffer = await response.arrayBuffer()
     const videoBuffer = Buffer.from(arrayBuffer)
-    VeronicaX.sendMessage(m.chat, {video: videoBuffer, caption: tex}, {quoted: m})
+    Faridah.sendMessage(m.chat, {video: videoBuffer, caption: tex}, {quoted: m})
   } catch (error) {
-    replygcVeron('Maybe private video!')
+    replygcFaridah('Maybe private video!')
   }
   }
   break
 case 'tiktokstalk': {
-	  if (!text) return replygcVeron(`Username? `)
+	  if (!text) return replygcFaridah(`Username? `)
   let res = await fg.ttStalk(args[0])
   let txt = `
 ┌──「 *TIKTOK STALK* 
@@ -7186,11 +7194,11 @@ case 'tiktokstalk': {
 
 ▢ *🔗 Link* : https://tiktok.com/${res.username}
 └────────────`
-  await VeronicaX.sendMessage(m.chat, {image: { url: res.profile}, caption: txt}, {quoted: m})
+  await Faridah.sendMessage(m.chat, {image: { url: res.profile}, caption: txt}, {quoted: m})
 }
 break
 case 'xxxigstalk': {
-if (!text) return replygcVeron(`Enter Instagram Username\n\nExample: ${prefix + command} unicorn_Veron13`)
+if (!text) return replygcFaridah(`Enter Instagram Username\n\nExample: ${prefix + command} ridz-coder01`)
     let res = await fg.igStalk(text)
     let te = `
 ┌──「 *STALKING* 
@@ -7202,15 +7210,15 @@ if (!text) return replygcVeron(`Enter Instagram Username\n\nExample: ${prefix + 
 ▢ *🏝️Posts:* ${res.postsH}
 ▢ *🔗 Link* : https://instagram.com/${res.username.replace(/^@/, '')}
 └────────────`
-     await VeronicaX.sendMessage(m.chat, {image: { url: res.profilePic }, caption: te }, {quoted: m})
+     await Faridah.sendMessage(m.chat, {image: { url: res.profilePic }, caption: te }, {quoted: m})
 }
 break
 case 'ghstalk': case 'githubstalk':{
-if (!q) return replygcVeron(`Example ${prefix+command} DGVeron`)
-await VeronStickWait()
+if (!q) return replygcFaridah(`Example ${prefix+command} ridz-coder01`)
+await farindahStickWait()
 let githubstalk = require('./lib/scraper.js')
 aj = await githubstalk.githubstalk(`${q}`)
-VeronicaX.sendMessage(m.chat, { image: { url : aj.profile_pic }, caption: 
+Faridah.sendMessage(m.chat, { image: { url : aj.profile_pic }, caption: 
 `*/ Github Stalker \\*
 
 Username : ${aj.username}
@@ -7235,11 +7243,11 @@ Updated At : ${aj.updated_at}` }, { quoted: m } )
 }
 break
 case 'npmstalk':{
-if (!q) return replygcVeron(`Example ${prefix+command} Veronapi`)
-await VeronStickWait()
+if (!q) return replygcFaridah(`Example ${prefix+command} baileys`)
+await farindahStickWait()
 let npmstalk = require('./lib/scraper.js')
 eha = await npmstalk.npmstalk(q)
-replygcVeron(`*/ Npm Stalker \\*
+replygcFaridah(`*/ Npm Stalker \\*
 
 Name : ${eha.name}
 Version Latest : ${eha.versionLatest}
@@ -7252,22 +7260,22 @@ Latest Publish Time : ${eha.latestPublishTime}`)
 }
 break
 case 'ffstalk':{
-if (!q) return replygcVeron(`Example ${prefix+command} 946716486`)
-await VeronStickWait()
+if (!q) return replygcFaridah(`Example ${prefix+command} 946716486`)
+await farindahStickWait()
 let ffstalk = require('./lib/scraper.js')
 eeh = await ffstalk.ffstalk(`${q}`)
-replygcVeron(`*/ Free Fire Stalker \\*
+replygcFaridah(`*/ Free Fire Stalker \\*
 
 Id : ${eeh.id}
 Nickname : ${eeh.nickname}`)
 }
 break
 case 'mlstalk': {
-if (!q) return replygcVeron(`Example ${prefix+command} 530793138|8129`)
-await VeronStickWait()
+if (!q) return replygcFaridah(`Example ${prefix+command} 530793138|8129`)
+await farindahStickWait()
 let mlstalk = require('./lib/scraper.js')
 let dat = await mlstalk.mlstalk(q.split("|")[0], q.split("|")[1])
-replygcVeron(`*/ Mobile Legend Stalker \\*
+replygcFaridah(`*/ Mobile Legend Stalker \\*
 
 Username : ${dat.userName}
 Id : ${q.split("|")[0]}
@@ -7275,13 +7283,13 @@ ID Zone: ${q.split("|")[1]}`)
 }
 break
 case 'spotify':{
-	if (!text) return replygcVeron(`*Please enter a song name*`)
+	if (!text) return replygcFaridah(`*Please enter a song name*`)
     try {
         const apiUrl = `https://www.guruapi.tech/api/spotifyinfo?text=${encodeURIComponent(text)}`
         const response = await fetch(apiUrl);
         if (!response.ok) {
             console.log('Error searching for song:', response.statusText)
-            return replygcVeron('Error searching for song')
+            return replygcFaridah('Error searching for song')
         }
         const data = await response.json()
         const coverimage = data.spty.results.thumbnail
@@ -7291,7 +7299,7 @@ case 'spotify':{
         const audioResponse = await fetch(dlapi)
         if (!audioResponse.ok) {
             console.log('Error fetching audio:', audioResponse.statusText)
-            return replygcVeron('Error fetching audio')
+            return replygcFaridah('Error fetching audio')
         }
         const audioBuffer = await audioResponse.buffer()
         const tempDir = os.tmpdir()
@@ -7300,7 +7308,7 @@ case 'spotify':{
             await fs.promises.writeFile(audioFilePath, audioBuffer)
         } catch (writeError) {
             console.error('Error writing audio file:', writeError)
-            return replygcVeron( 'Error writing audio file')
+            return replygcFaridah( 'Error writing audio file')
         }
         let doc = {
             audio: {
@@ -7309,7 +7317,7 @@ case 'spotify':{
             mimetype: 'audio/mpeg',
             ptt: true,
             waveform:  [100, 0, 100, 0, 100, 0, 100],
-            fileName: "dgVeron",
+            fileName: "NEBULA-MD",
             contextInfo: {
               mentionedJid: [m.sender],
               externalAdReply: {
@@ -7322,16 +7330,16 @@ case 'spotify':{
               }
             }
         }        
-        await VeronicaX.sendMessage(m.chat, doc, { quoted: m })
+        await Faridah.sendMessage(m.chat, doc, { quoted: m })
     } catch (error) {
         console.error('Error fetching Spotify data:', error)
-        return replygcVeron('*Error*')
+        return replygcFaridah('*Error*')
     }
     }
     break
 case 'imdb':
-if (!text) return replygcVeron(`_Name a Series or movie`)
-await VeronStickWait()
+if (!text) return replygcFaridah(`_Name a Series or movie`)
+await farindahStickWait()
             let fids = await axios.get(`http://www.omdbapi.com/?apikey=742b2d09&t=${text}&plot=full`)
             let imdbt = ""
             console.log(fids.data)
@@ -7353,7 +7361,7 @@ await VeronStickWait()
             imdbt += "🏙️Production : " + fids.data.Production + "\n"
             imdbt += "🌟imdbRating : " + fids.data.imdbRating + "\n"
             imdbt += "✅imdbVotes  : " + fids.data.imdbVotes + ""
-           VeronicaX.sendMessage(m.chat, {
+           Faridah.sendMessage(m.chat, {
                 image: {
                     url: fids.data.Poster,
                 },
@@ -7363,52 +7371,52 @@ await VeronStickWait()
             })
             break
             case 'ebinary': {
-if (!q) return replygcVeron(`Send/reply text with captions ${prefix + command}`)
+if (!q) return replygcFaridah(`Send/reply text with captions ${prefix + command}`)
 let { eBinary } = require('./lib/binary.js')
 let eb = await eBinary(`${q}`)
-replygcVeron(eb)
+replygcFaridah(eb)
 }
 break
 case 'dbinary': {
-if (!q) return replygcVeron(`Send/reply text with captions ${prefix + command}`)
+if (!q) return replygcFaridah(`Send/reply text with captions ${prefix + command}`)
 let { dBinary } = require('./lib/binary.js')
 let db = await dBinary(`${q}`)
-replygcVeron(db)
+replygcFaridah(db)
 }
 break
 case 'happymod':{
-if (!q) return replygcVeron(`Example ${prefix+command} Sufway surfer mod`)
-await VeronStickWait()
+if (!q) return replygcFaridah(`Example ${prefix+command} Sufway surfer mod`)
+await farindahStickWait()
 let kat = await scp2.happymod(q)
-replygcVeron(util.format(kat))
+replygcFaridah(util.format(kat))
 }
 break
 case 'gdrive': {
-		if (!args[0]) return replygcVeron(`Enter the Google Drive link`)
-	await VeronStickWait()
+		if (!args[0]) return replygcFaridah(`Enter the Google Drive link`)
+	await farindahStickWait()
 	const fg = require('api-dylux')
 	try {
 	let res = await fg.GDriveDl(args[0])
-	 await replygcVeron(`
+	 await replygcFaridah(`
 ≡ *Google Drive DL*
 ▢ *Nama:* ${res.fileName}
 ▢ *Size:* ${res.fileSize}
 ▢ *Type:* ${res.mimetype}`)
-	VeronicaX.sendMessage(m.chat, { document: { url: res.downloadUrl }, fileName: res.fileName, mimetype: res.mimetype }, { quoted: m })
+	Faridah.sendMessage(m.chat, { document: { url: res.downloadUrl }, fileName: res.fileName, mimetype: res.mimetype }, { quoted: m })
    } catch {
-	replygcVeron('Error: Check link or try another link') 
+	replygcFaridah('Error: Check link or try another link') 
   }
 }
 break
 case 'pinterest': case 'pin': {
-  if (!text) return replygcVeron(`Title?`);
+  if (!text) return replygcFaridah(`Title?`);
   async function createImage(url) {
     const { imageMessage } = await generateWAMessageContent({
       image: {
         url
       }
     }, {
-      upload: VeronicaX.waUploadToServer
+      upload: Faridah.waUploadToServer
     });
     return imageMessage;
   }
@@ -7476,13 +7484,13 @@ case 'pinterest': case 'pin': {
       }
     }
   }, {});
-  await VeronicaX.relayMessage(m.chat, bot.message, {
+  await Faridah.relayMessage(m.chat, bot.message, {
     messageId: bot.key.id
   });
 }
 break
 case 'pinterest2': {
-if (!text) return replygcVeron(`Use example ${prefix+ command} one piece`)
+if (!text) return replygcFaridah(`Use example ${prefix+ command} one piece`)
     const { googleImage } = require('@bochilteam/scraper')
     const anutrest = await googleImage(text)
     let image = anutrest[Math.floor(Math.random() * anutrest.length)]
@@ -7502,7 +7510,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: image } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: image } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -7524,19 +7532,19 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'ringtone': {
-		if (!text) return replygcVeron(`Example : ${prefix + command} black rover`)
+		if (!text) return replygcFaridah(`Example : ${prefix + command} black rover`)
         let { ringtone }= require('./lib/scraper.js')
 		let anutone2 = await ringtone(text)
 		let result = anutone2[Math.floor(Math.random() * anutone2.length)]
-		VeronicaX.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: m })
+		Faridah.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: m })
 	    }
 	    break
 case 'tiktokgirl':{
-await VeronStickWait()
+await farindahStickWait()
 var asupan = JSON.parse(fs.readFileSync('./src/media/tiktokvids/tiktokgirl.json'))
 var hasil = pickRandom(asupan)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -7555,7 +7563,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ video: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ video: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -7577,11 +7585,11 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'tiktokghea':{
-await VeronStickWait()
+await farindahStickWait()
 var gheayubi = JSON.parse(fs.readFileSync('./src/media/tiktokvids/gheayubi.json'))
 var hasil = pickRandom(gheayubi)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -7601,7 +7609,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ video: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ video: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -7623,11 +7631,11 @@ contextInfo: {
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'tiktokbocil':{
-await VeronStickWait()
+await farindahStickWait()
 var bocil = JSON.parse(fs.readFileSync('./src/media/tiktokvids/bocil.json'))
 var hasil = pickRandom(bocil)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -7647,7 +7655,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ video: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ video: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -7669,11 +7677,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'tiktoknukhty':{
-await VeronStickWait()
+await farindahStickWait()
 var ukhty = JSON.parse(fs.readFileSync('./src/media/tiktokvids/ukhty.json'))
 var hasil = pickRandom(ukhty)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -7693,7 +7701,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ video: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ video: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -7715,11 +7723,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'tiktoksantuy':{
-await VeronStickWait()
+await farindahStickWait()
 var santuy = JSON.parse(fs.readFileSync('./src/media/tiktokvids/santuy.json'))
 var hasil = pickRandom(santuy)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -7739,7 +7747,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ video: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ video: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -7761,11 +7769,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'tiktokkayes':{
-await VeronStickWait()
+await farindahStickWait()
 var kayes = JSON.parse(fs.readFileSync('./src/media/tiktokvids/kayes.json'))
 var hasil = pickRandom(kayes)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -7785,7 +7793,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ video: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ video: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -7807,11 +7815,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'tiktokpanrika':{
-await VeronStickWait()
+await farindahStickWait()
 var rikagusriani = JSON.parse(fs.readFileSync('./src/media/tiktokvids/panrika.json'))
 var hasil = pickRandom(rikagusriani)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -7831,7 +7839,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ video: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ video: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -7853,11 +7861,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'tiktoknotnot':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokvids/notnot.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -7877,7 +7885,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ video: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ video: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -7899,11 +7907,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'chinese':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/china.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -7922,7 +7930,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -7944,11 +7952,11 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'hijab':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/hijab.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -7968,7 +7976,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -7990,11 +7998,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'indo':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/indonesia.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -8014,7 +8022,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -8036,11 +8044,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'japanese':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/japan.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -8060,7 +8068,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -8082,11 +8090,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'korean':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/korea.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -8106,7 +8114,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -8128,11 +8136,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'malay':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/malaysia.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -8152,7 +8160,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -8174,11 +8182,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'randomgirl':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/random.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -8198,7 +8206,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -8220,11 +8228,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'randomboy':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/random2.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -8244,7 +8252,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -8266,11 +8274,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'thai':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/thailand.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -8290,7 +8298,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -8312,11 +8320,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'vietnamese':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/vietnam.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -8336,7 +8344,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -8358,11 +8366,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'aesthetic':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/aesthetic.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -8382,7 +8390,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -8404,11 +8412,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'antiwork':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/antiwork.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -8428,7 +8436,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -8450,11 +8458,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'blackpink':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/blackpink.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -8474,7 +8482,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -8496,11 +8504,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'bike':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/bike.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -8520,7 +8528,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -8542,11 +8550,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'boneka':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/boneka.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -8566,7 +8574,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -8588,11 +8596,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'cosplay':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/cosplay.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -8612,7 +8620,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -8634,11 +8642,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'cat':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/cat.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -8658,7 +8666,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -8680,11 +8688,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'doggo':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/doggo.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -8704,7 +8712,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -8726,11 +8734,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'justina':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/justina.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -8750,7 +8758,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -8772,11 +8780,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'kayes':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/kayes.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -8796,7 +8804,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -8818,11 +8826,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'kpop':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/kpop.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -8842,7 +8850,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -8864,11 +8872,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'notnot':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/notnot.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -8888,7 +8896,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -8910,11 +8918,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'car':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/car.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -8934,7 +8942,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -8956,18 +8964,18 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'couplepp': case 'ppcouple': {
 let anu = require('./src/media/randompics/ppcouple.json')
 let random = anu[Math.floor(Math.random() * anu.length)]
-VeronicaX.sendMessage(from, { image: { url: random.male }, caption: `Couple pp for male` }, { quoted: m })
-VeronicaX.sendMessage(from, { image: { url: random.female }, caption: `Couple pp for female` }, { quoted: m })
+Faridah.sendMessage(from, { image: { url: random.male }, caption: `Couple pp for male` }, { quoted: m })
+Faridah.sendMessage(from, { image: { url: random.female }, caption: `Couple pp for female` }, { quoted: m })
 }
 break
 case 'profilepic':  case 'profilepicture':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/profile.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -8987,7 +8995,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9009,11 +9017,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'pubg':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/pubg.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -9033,7 +9041,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9055,11 +9063,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'rose':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/rose.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -9079,7 +9087,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9101,11 +9109,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'ryujin':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/ryujin.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -9125,7 +9133,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9147,11 +9155,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'ulzzangboy':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/ulzzangboy.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -9171,7 +9179,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9193,11 +9201,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'ulzzanggirl':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/ulzzanggirl.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -9217,7 +9225,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9239,11 +9247,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'wallml': case 'wallpaperml':case 'mobilelegend':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/wallml.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -9263,7 +9271,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9285,11 +9293,11 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'wallpaperphone': case 'wallphone':{
-await VeronStickWait()
+await farindahStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/wallhp.json'))
 var hasil = pickRandom(notnot)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -9309,7 +9317,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: hasil.url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9331,13 +9339,13 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
             case 'remini': {
-			if (!quoted) return replygcVeron(`Where is the picture?`)
-			if (!/image/.test(mime)) return replygcVeron(`Send/Reply Photos With Captions ${prefix + command}`)
-			await VeronStickWait()
+			if (!quoted) return replygcFaridah(`Where is the picture?`)
+			if (!/image/.test(mime)) return replygcFaridah(`Send/Reply Photos With Captions ${prefix + command}`)
+			await farindahStickWait()
 			const { remini } = require('./lib/remini.js')
 			let media = await quoted.download()
 			let proses = await remini(media, "enhance")
@@ -9358,7 +9366,7 @@ _*Here is the result of: ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: proses }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: proses }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9380,14 +9388,14 @@ _*Here is the result of: ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 			}
 			break
 			case 'define': 
-if (!q) return replygcVeron(`What do you want to define?`)
+if (!q) return replygcFaridah(`What do you want to define?`)
 try {
 targetfine = await axios.get(`http://api.urbandictionary.com/v0/define?term=${q}`)
-if (!targetfine) return replygcVeron(mess.error)
+if (!targetfine) return replygcFaridah(mess.error)
 const reply = `
 *${themeemoji} Word:* ${q}
 *${themeemoji} Definition:* ${targetfine.data.list[0].definition
@@ -9412,7 +9420,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9434,14 +9442,14 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 } catch (err) {
     console.log(err)
-    return replygcVeron(`*${q}* isn't a valid text`)
+    return replygcFaridah(`*${q}* isn't a valid text`)
     }
     break
                 case 'can': {
-            	if (!text) return replygcVeron(`Ask question\n\nExample : ${prefix + command} i dance?`)
+            	if (!text) return replygcFaridah(`Ask question\n\nExample : ${prefix + command} i dance?`)
             	let bisa = [`Can`,`Can't`,`Cannot`,`Of Course You Can!!!`]
                 let keh = bisa[Math.floor(Math.random() * bisa.length)]
                 let jawab = `*Can ${text}*\nAnswer : ${keh}`
@@ -9461,7 +9469,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9483,11 +9491,11 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
             }
             break
             case 'is': {
-            	if (!text) return replygcVeron(`Ask question\n\nExample : ${prefix + command} she virgin?`)
+            	if (!text) return replygcFaridah(`Ask question\n\nExample : ${prefix + command} she virgin?`)
             	let apa = [`Yes`, `No`, `It Could Be`, `Thats right`]
                 let kah = apa[Math.floor(Math.random() * apa.length)]
                 let jawab = `*Is ${text}*\nAnswer : ${kah}`                
@@ -9507,7 +9515,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9529,11 +9537,11 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
             }
             break
             case 'when': {
-            	if (!text) return replygcVeron(`Ask question\n\nExample : ${prefix + command} will i get married?`)
+            	if (!text) return replygcFaridah(`Ask question\n\nExample : ${prefix + command} will i get married?`)
             	let kapan = ['5 More Days', '10 More Days', '15 More Days','20 More Days', '25 More Days','30 More Days','35 More Days','40 More Days','45 More Days','50 More Days','55 More Days','60 More Days','65 More Days','70 More Days','75 More Days','80 More Days','85 More Days','90 More Days','100 More Days','5 Months More', '10 Months More', '15 Months More','20 Months More', '25 Months More','30 Months More','35 Months More','40 Months More','45 Months More','50 Months More','55 Months More','60 Months More','65 Months More','70 Months More','75 Months More','80 Months More','85 Months More','90 Months More','100 Months More','1 More Year','2 More Years','3 More Years','4 More Years','5 More Years','Tomorrow','The Day After Tomorrow']
                 let koh = kapan[Math.floor(Math.random() * kapan.length)]
                 let jawab = `*${command} ${text}*\nAnswer : ${koh}`                
@@ -9553,7 +9561,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9575,11 +9583,11 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
             }
             break
 case 'what': {
-            	if (!text) return replygcVeron(`Ask question\n\nExample : ${prefix + command} is your name?`)
+            	if (!text) return replygcFaridah(`Ask question\n\nExample : ${prefix + command} is your name?`)
             	let lel = [`Ask Your Gf`, `I Dont Know`, `I Don't Know, Ask Your Father`]
                 let kah = lel[Math.floor(Math.random() * lel.length)]
                 let jawab = `*What ${text}*\nAnswer : ${kah}`                
@@ -9599,7 +9607,7 @@ case 'what': {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9621,11 +9629,11 @@ case 'what': {
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
             }
             break
 case 'where': {
-if (!text) return replygcVeron(`Ask question\n\nExample : ${prefix + command} is your name?`)
+if (!text) return replygcFaridah(`Ask question\n\nExample : ${prefix + command} is your name?`)
             	let wherelol = [`In the mountain`, `On mars`, `On moon`,`In the jungle`,`I dont know ask your mom`,`It could be somewhere`]
                 let kah = wherelol[Math.floor(Math.random() * wherelol.length)]
                 let jawab = `*Whwre ${text}*\nAnswer : ${kah}`              
@@ -9645,7 +9653,7 @@ if (!text) return replygcVeron(`Ask question\n\nExample : ${prefix + command} is
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9667,11 +9675,11 @@ if (!text) return replygcVeron(`Ask question\n\nExample : ${prefix + command} is
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
             }
             break
 case 'how': {
-            	if (!text) return replygcVeron(`Ask question\n\nExample : ${prefix + command} to date girl?`)
+            	if (!text) return replygcFaridah(`Ask question\n\nExample : ${prefix + command} to date girl?`)
             	let gimana = [`Ummm...`, `It's Difficult Bro`, `Sorry Bot Can't Answer`, `Try Searching On Google`,`Holy Cow! Really???`,`Dizzy Ah😴, don't wanna answer`,`Ohhh I See:(`,`The Patient, Boss:(`,`Really dude 🙄`]
                 let kah = gimana[Math.floor(Math.random() * gimana.length)]
                 let jawab = `*How ${text}*\nAnswer : ${kah}`                
@@ -9691,7 +9699,7 @@ case 'how': {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9713,11 +9721,11 @@ case 'how': {
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
             }
             break
 case 'rate': {
-            	if (!text) return replygcVeron(`Example : ${prefix + command} my profile`)
+            	if (!text) return replygcFaridah(`Example : ${prefix + command} my profile`)
             	let ra = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
                 let kah = ra[Math.floor(Math.random() * ra.length)]
                 let jawab = `*Rate ${text}*\nAnswer : ${kah}%`                
@@ -9737,7 +9745,7 @@ case 'rate': {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9759,12 +9767,12 @@ case 'rate': {
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
             }
             break
             case 'runtime': {
             	let lowq = `*The Bot Has Been Online For:*\n*${runtime(process.uptime())}*`
-                replygcVeron(lowq)
+                replygcFaridah(lowq)
             	}
             break
             case 'stupidcheck':case 'uncleancheck':
@@ -9775,7 +9783,7 @@ case 'coolcheck':
 case 'waifucheck':
 cantik = body.slice(1)
 const okebnh1 =['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
-const Veronkak = okebnh1[Math.floor(Math.random() * okebnh1.length)]
+const faridahkak = okebnh1[Math.floor(Math.random() * okebnh1.length)]
 let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
     message: {
@@ -9785,14 +9793,14 @@ let msgs = generateWAMessageFromContent(m.chat, {
         },
         interactiveMessage: proto.Message.InteractiveMessage.create({
           body: proto.Message.InteractiveMessage.Body.create({
-            text: Veronkak
+            text: faridahkak
           }),
           footer: proto.Message.InteractiveMessage.Footer.create({
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9814,10 +9822,10 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 break
             case 'soulmate': {
-            if (!m.isGroup) return VeronStickGroup()
+            if (!m.isGroup) return farindahStickGroup()
             let member = participants.map(u => u.id)
             let me = m.sender
             let jodoh = member[Math.floor(Math.random() * member.length)]
@@ -9839,7 +9847,7 @@ break
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/soulmate.jpg')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/soulmate.jpg')}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9861,11 +9869,11 @@ break
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})        
+return await Faridah.relayMessage(m.chat, msgs.message, {})        
             }
             break
  case 'couple': {
-            if (!m.isGroup) return VeronStickGroup()
+            if (!m.isGroup) return farindahStickGroup()
             let member = participants.map(u => u.id)
             let orang = member[Math.floor(Math.random() * member.length)]
             let jodoh = member[Math.floor(Math.random() * member.length)]
@@ -9885,7 +9893,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/couple.jpg')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/couple.jpg')}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9907,7 +9915,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
             }
             break
                         case 'coffee': case 'kopi': {
@@ -9927,7 +9935,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: {url: 'https://coffee.alexflipnote.dev/random'} }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: {url: 'https://coffee.alexflipnote.dev/random'} }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9949,12 +9957,12 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
             }
             break
             case 'wallpaper': {
-                if (!text) return replygcVeron('Enter Query Title')
-                await VeronStickWait()
+                if (!text) return replygcFaridah('Enter Query Title')
+                await farindahStickWait()
 		let { wallpaper } = require('./lib/scraper.js')
                 anuwallpep = await wallpaper(text)
                 result = anuwallpep[Math.floor(Math.random() * anuwallpep.length)]       
@@ -9974,7 +9982,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: {url: result.image[0]}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: {url: result.image[0]}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -9996,13 +10004,13 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 
             }
             break
             case 'wikimedia': {
-                if (!text) return replygcVeron('Enter Query Title')
-                await VeronStickWait()
+                if (!text) return replygcFaridah('Enter Query Title')
+                await farindahStickWait()
 		let { wikimedia } = require('./lib/scraper.js')
                 let anumedia = await wikimedia(text)
                 result = anumedia[Math.floor(Math.random() * anumedia.length)]
@@ -10022,7 +10030,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: {url: result.image}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: {url: result.image}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -10044,7 +10052,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 
             }
             break
@@ -10068,7 +10076,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: imageBuffer}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: imageBuffer}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -10090,7 +10098,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
  
             }
             break
@@ -10114,7 +10122,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: imageBuffer}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: imageBuffer}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -10136,7 +10144,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
             }
             break
             case 'neko': {
@@ -10159,7 +10167,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: imageBuffer}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: imageBuffer}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -10181,110 +10189,110 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
             }
             case 'wallhp': case 'akira': case 'akiyama': case 'ana': case 'art': case 'asuna': case 'ayuzawa': case 'boruto': case 'bts': case 'chiho': case 'chitoge': case 'cosplay': case 'cosplayloli': case 'cosplaysagiri': case 'cyber': case 'deidara': case 'doraemon': case 'elaina': case 'emilia': case 'erza': case 'exo':  case 'gamewallpaper': case 'gremory': case 'hacker': case 'hestia': case 'husbu': case 'inori': case 'islamic': case 'isuzu': case 'itachi': case 'itori': case 'jennie': case 'jiso': case 'justina': case 'kaga': case 'kagura': case 'kakasih': case 'kaori': case 'cartoon': case 'shortquote': case 'keneki': case 'kotori': case 'kurumi': case 'lisa': case 'loli2': case 'madara': case 'megumin': case 'mikasa': case 'mikey': case 'miku': case 'minato': case 'mountain': case 'naruto': case 'nekonime': case 'nezuko': case 'onepiece': case 'pentol': case 'pokemon': case 'programming':  case 'randomnime': case 'randomnime2': case 'rize': case 'rose': case 'sagiri': case 'sakura': case 'sasuke': case 'satanic': case 'shina': case 'shinka': case 'shinomiya': case 'shizuka': case 'shota': case 'space': case 'technology': case 'tejina': case 'toukachan': case 'tsunade': case 'waifu2': case 'yotsuba': case 'yuki': case 'yulibocil': case 'yumeko':{
-await VeronStickWait()
+await farindahStickWait()
 let heyy
-if (/akira/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/akira.json')
-if (/akiyama/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/akiyama.json')
-if (/ana/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/ana.json')
-if (/art/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/art.json')
-if (/asuna/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/asuna.json')
-if (/ayuzawa/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/ayuzawa.json')
-if (/boneka/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/boneka.json')
-if (/boruto/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/boruto.json')
-if (/bts/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/bts.json')
-if (/cecan/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/cecan.json')
-if (/chiho/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/chiho.json')
-if (/chitoge/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/chitoge.json')
-if (/cogan/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/cogan.json')
-if (/cosplay/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/cosplay.json')
-if (/cosplayloli/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/cosplayloli.json')
-if (/cosplaysagiri/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/cosplaysagiri.json')
-if (/cyber/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/cyber.json')
-if (/deidara/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/deidara.json')
-if (/doraemon/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/doraemon.json')
-if (/eba/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/eba.json')
-if (/elaina/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/elaina.json')
-if (/emilia/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/emilia.json')
-if (/erza/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/erza.json')
-if (/exo/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/exo.json')
-if (/femdom/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/femdom.json')
-if (/freefire/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/freefire.json')
-if (/gamewallpaper/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/gamewallpaper.json')
-if (/glasses/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/glasses.json')
-if (/gremory/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/gremory.json')
-if (/hacker/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/hekel.json')
-if (/hestia/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/hestia.json')
-if (/husbu/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/husbu.json')
-if (/inori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/inori.json')
-if (/islamic/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/islamic.json')
-if (/isuzu/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/isuzu.json')
-if (/itachi/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/itachi.json')
-if (/itori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/itori.json')
-if (/jennie/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/jeni.json')
-if (/jiso/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/jiso.json')
-if (/justina/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/justina.json')
-if (/kaga/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/kaga.json')
-if (/kagura/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/kagura.json')
-if (/kakasih/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/kakasih.json')
-if (/kaori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/kaori.json')
-if (/cartoon/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/kartun.json')
-if (/shortquote/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/katakata.json')
-if (/keneki/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/keneki.json')
-if (/kotori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/kotori.json')
-if (/kpop/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/kpop.json')
-if (/kucing/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/kucing.json')
-if (/kurumi/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/kurumi.json')
-if (/lisa/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/lisa.json')
-if (/loli2/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/loli.json')
-if (/madara/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/madara.json')
-if (/megumin/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/megumin.json')
-if (/mikasa/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/mikasa.json')
-if (/mikey/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/mikey.json')
-if (/miku/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/miku.json')
-if (/minato/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/minato.json')
-if (/mobile/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/mobil.json')
-if (/motor/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/motor.json')
-if (/mountain/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/mountain.json')
-if (/naruto/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/naruto.json')
-if (/nekonime/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/nekonime.json')
-if (/nezuko/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/nezuko.json')
-if (/onepiece/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/onepiece.json')
-if (/pentol/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/pentol.json')
-if (/pokemon/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/pokemon.json')
-if (/profil/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/profil.json')
-if (/progamming/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/programming.json')
-if (/pubg/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/pubg.json')
-if (/randblackpink/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/randblackpink.json')
-if (/randomnime/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/randomnime.json')
-if (/randomnime2/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/randomnime2.json')
-if (/rize/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/rize.json')
-if (/rose/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/rose.json')
-if (/ryujin/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/ryujin.json')
-if (/sagiri/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/sagiri.json')
-if (/sakura/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/sakura.json')
-if (/sasuke/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/sasuke.json')
-if (/satanic/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/satanic.json')
-if (/shina/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/shina.json')
-if (/shinka/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/shinka.json')
-if (/shinomiya/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/shinomiya.json')
-if (/shizuka/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/shizuka.json')
-if (/shota/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/shota.json')
-if (/space/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/tatasurya.json')
-if (/technology/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/technology.json')
-if (/tejina/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/tejina.json')
-if (/toukachan/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/toukachan.json')
-if (/tsunade/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/tsunade.json')
-if (/waifu2/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/waifu.json')
-if (/wallhp/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/wallhp.json')
-if (/wallml/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/wallml.json')
-if (/wallmlnime/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/wallnime.json')
-if (/yotsuba/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/yotsuba.json')
-if (/yuki/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/yuki.json')
-if (/yulibocil/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/yulibocil.json')
-if (/yumeko/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/master/yumeko.json')
+if (/akira/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/akira.json')
+if (/akiyama/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/akiyama.json')
+if (/ana/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/ana.json')
+if (/art/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/art.json')
+if (/asuna/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/asuna.json')
+if (/ayuzawa/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/ayuzawa.json')
+if (/boneka/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/boneka.json')
+if (/boruto/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/boruto.json')
+if (/bts/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/bts.json')
+if (/cecan/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/cecan.json')
+if (/chiho/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/chiho.json')
+if (/chitoge/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/chitoge.json')
+if (/cogan/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/cogan.json')
+if (/cosplay/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/cosplay.json')
+if (/cosplayloli/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/cosplayloli.json')
+if (/cosplaysagiri/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/cosplaysagiri.json')
+if (/cyber/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/cyber.json')
+if (/deidara/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/deidara.json')
+if (/doraemon/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/doraemon.json')
+if (/eba/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/eba.json')
+if (/elaina/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/elaina.json')
+if (/emilia/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/emilia.json')
+if (/erza/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/erza.json')
+if (/exo/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/exo.json')
+if (/femdom/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/femdom.json')
+if (/freefire/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/freefire.json')
+if (/gamewallpaper/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/gamewallpaper.json')
+if (/glasses/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/glasses.json')
+if (/gremory/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/gremory.json')
+if (/hacker/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/hekel.json')
+if (/hestia/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/hestia.json')
+if (/husbu/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/husbu.json')
+if (/inori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/inori.json')
+if (/islamic/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/islamic.json')
+if (/isuzu/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/isuzu.json')
+if (/itachi/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/itachi.json')
+if (/itori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/itori.json')
+if (/jennie/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/jeni.json')
+if (/jiso/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/jiso.json')
+if (/justina/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/justina.json')
+if (/kaga/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/kaga.json')
+if (/kagura/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/kagura.json')
+if (/kakasih/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/kakasih.json')
+if (/kaori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/kaori.json')
+if (/cartoon/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/kartun.json')
+if (/shortquote/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/katakata.json')
+if (/keneki/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/keneki.json')
+if (/kotori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/kotori.json')
+if (/kpop/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/kpop.json')
+if (/kucing/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/kucing.json')
+if (/kurumi/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/kurumi.json')
+if (/lisa/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/lisa.json')
+if (/loli2/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/loli.json')
+if (/madara/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/madara.json')
+if (/megumin/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/megumin.json')
+if (/mikasa/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/mikasa.json')
+if (/mikey/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/mikey.json')
+if (/miku/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/miku.json')
+if (/minato/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/minato.json')
+if (/mobile/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/mobil.json')
+if (/motor/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/motor.json')
+if (/mountain/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/mountain.json')
+if (/naruto/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/naruto.json')
+if (/nekonime/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/nekonime.json')
+if (/nezuko/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/nezuko.json')
+if (/onepiece/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/onepiece.json')
+if (/pentol/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/pentol.json')
+if (/pokemon/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/pokemon.json')
+if (/profil/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/profil.json')
+if (/progamming/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/programming.json')
+if (/pubg/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/pubg.json')
+if (/randblackpink/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/randblackpink.json')
+if (/randomnime/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/randomnime.json')
+if (/randomnime2/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/randomnime2.json')
+if (/rize/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/rize.json')
+if (/rose/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/rose.json')
+if (/ryujin/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/ryujin.json')
+if (/sagiri/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/sagiri.json')
+if (/sakura/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/sakura.json')
+if (/sasuke/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/sasuke.json')
+if (/satanic/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/satanic.json')
+if (/shina/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/shina.json')
+if (/shinka/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/shinka.json')
+if (/shinomiya/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/shinomiya.json')
+if (/shizuka/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/shizuka.json')
+if (/shota/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/shota.json')
+if (/space/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/tatasurya.json')
+if (/technology/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/technology.json')
+if (/tejina/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/tejina.json')
+if (/toukachan/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/toukachan.json')
+if (/tsunade/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/tsunade.json')
+if (/waifu2/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/waifu.json')
+if (/wallhp/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/wallhp.json')
+if (/wallml/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/wallml.json')
+if (/wallmlnime/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/wallnime.json')
+if (/yotsuba/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/yotsuba.json')
+if (/yuki/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/yuki.json')
+if (/yulibocil/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/yulibocil.json')
+if (/yumeko/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/master/yumeko.json')
 let yeha = heyy[Math.floor(Math.random() * heyy.length)]
 let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -10302,7 +10310,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: {url: yeha}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: {url: yeha}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -10324,15 +10332,15 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'lyrics': {
-if (!text) return replygcVeron(`What lyrics you looking for?\nExample usage: ${prefix}lyrics Thunder`)
-await VeronStickWait()
+if (!text) return replygcFaridah(`What lyrics you looking for?\nExample usage: ${prefix}lyrics Thunder`)
+await farindahStickWait()
 const { lyrics, lyricsv2 } = require('@bochilteam/scraper')
 const result = await lyricsv2(text).catch(async _ => await lyrics(text))
-const Veronlirik = `
+const faridahlirik = `
 *Title :* ${result.title}
 *Author :* ${result.author}
 *Url :* ${result.link}
@@ -10349,14 +10357,14 @@ let msgs = generateWAMessageFromContent(m.chat, {
         },
         interactiveMessage: proto.Message.InteractiveMessage.create({
           body: proto.Message.InteractiveMessage.Body.create({
-            text: Veronlirik
+            text: faridahlirik
           }),
           footer: proto.Message.InteractiveMessage.Footer.create({
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -10378,18 +10386,18 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'pick': {
-            	if (!m.isGroup) return VeronStickGroup()
-            	if (!text) return replygcVeron(`What do you want to pick?\nExample: ${prefix + command} idiot`)
-             const groupMetadata = m.isGroup ? await VeronicaX.groupMetadata(m.chat)
+            	if (!m.isGroup) return farindahStickGroup()
+            	if (!text) return replygcFaridah(`What do you want to pick?\nExample: ${prefix + command} idiot`)
+             const groupMetadata = m.isGroup ? await Faridah.groupMetadata(m.chat)
                  .catch((e) => {}) : ""
              const participants = m.isGroup ? await groupMetadata.participants : ""
              let member = participants.map((u) => u.id)
              let me = m.sender
-             let Veronshimts = member[Math.floor(Math.random() * member.length)]
+             let faridahshimts = member[Math.floor(Math.random() * member.length)]
              let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
     message: {
@@ -10399,14 +10407,14 @@ case 'pick': {
         },
         interactiveMessage: proto.Message.InteractiveMessage.create({
           body: proto.Message.InteractiveMessage.Body.create({
-            text: `The most *${text}* here is *@${Veronshimts.split("@")[0]}*`
+            text: `The most *${text}* here is *@${faridahshimts.split("@")[0]}*`
           }),
           footer: proto.Message.InteractiveMessage.Footer.create({
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -10415,7 +10423,7 @@ case 'pick': {
             }],
           }), 
           contextInfo: {
-                  mentionedJid: [Veronshimts], 
+                  mentionedJid: [faridahshimts], 
                   forwardingScore: 999,
                   isForwarded: true,
                 forwardedNewsletterMessageInfo: {
@@ -10428,21 +10436,21 @@ case 'pick': {
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
              
          }
      break
      case 'say': case 'tts': case 'gtts':{
-if (!text) return replygcVeron('Where is the text?')
+if (!text) return replygcFaridah('Where is the text?')
             let texttts = text
-            const Veronrl = googleTTS.getAudioUrl(texttts, {
+            const farindahrl = googleTTS.getAudioUrl(texttts, {
                 lang: "en",
                 slow: false,
                 host: "https://translate.google.com",
             })
-            return VeronicaX.sendMessage(m.chat, {
+            return Faridah.sendMessage(m.chat, {
                 audio: {
-                    url: Veronrl,
+                    url: farindahrl,
                 },
                 mimetype: 'audio/mp4',
                 ptt: true,
@@ -10470,7 +10478,7 @@ if (!text) return replygcVeron('Where is the text?')
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -10492,12 +10500,12 @@ if (!text) return replygcVeron('Where is the text?')
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
     }
     break
     case 'quotes':{
-const quoteVerony = await axios.get(`https://favqs.com/api/qotd`)
-        const textquotes = `*${themeemoji} Quote:* ${quoteVerony.data.quote.body}\n\n*${themeemoji} Author:* ${quoteVerony.data.quote.author}`
+const quotekayinza = await axios.get(`https://favqs.com/api/qotd`)
+        const textquotes = `*${themeemoji} Quote:* ${quotekayinza.data.quote.body}\n\n*${themeemoji} Author:* ${quotekayinza.data.quote.author}`
 let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
     message: {
@@ -10514,7 +10522,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -10536,7 +10544,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'truth': case 'dare': {
@@ -10557,7 +10565,7 @@ case 'truth': case 'dare': {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: bufferdare}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: bufferdare}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -10583,7 +10591,7 @@ case 'truth': case 'dare': {
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'dere':{
@@ -10658,7 +10666,7 @@ case 'dere':{
     "shout you bastard in front of your mom/papa",
     "change the name to i am idiot for 24 hours",
     "slap urself firmly and send the sound of slap through voice noteðŸ˜‚",
-    "say i love the bot owner Veron through voice note",
+    "say i love the bot owner Ridz Coder through voice note",
     "send your gf/bf pic here",
     "make any tiktok dance challenge video and put it on status, u can delete it after 5hrs",
     "breakup with your best friend for 5hrs without telling him/her that its a dare",
@@ -10670,7 +10678,7 @@ case 'dere':{
      "put your father name on status for 5hrs",
      "send abusive words in any grup, excepting this grup, and send screenshot proof here"
 ]
-              const Verondare = dare[Math.floor(Math.random() * dare.length)]
+              const kayinzadare = dare[Math.floor(Math.random() * dare.length)]
               bufferdare = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
               let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -10681,14 +10689,14 @@ case 'dere':{
         },
         interactiveMessage: proto.Message.InteractiveMessage.create({
           body: proto.Message.InteractiveMessage.Body.create({
-            text: '_You choose DARE_\n'+ Verondare
+            text: '_You choose DARE_\n'+ kayinzadare
           }),
           footer: proto.Message.InteractiveMessage.Footer.create({
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: bufferdare}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: bufferdare}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -10710,7 +10718,7 @@ case 'dere':{
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
               break
        case 'truth':{
@@ -10785,7 +10793,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
     "Mention the incident that makes you hurt that you still remember",
     "what achievements have you got this year?",
     "what was your worst habit at school?",
-    "do you love the bot creator, Veron?ðŸ¤£",
+    "do you love the bot creator, Ridz Coder?",
     "have you ever thought of taking revenge from ur teacher?",
     "do you like current prime minister of ur country",
     "you non veg or veg",
@@ -10805,7 +10813,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
     "Whats the strangest dream you have ever had",
     "do you play pubg, if you then send ur id number"
 ]
-              const Verontruth = truth[Math.floor(Math.random() * truth.length)]
+              const kayinzatruth = truth[Math.floor(Math.random() * truth.length)]
               buffertruth = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
               let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -10816,14 +10824,14 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         },
         interactiveMessage: proto.Message.InteractiveMessage.create({
           body: proto.Message.InteractiveMessage.Body.create({
-            text: '_You choose TRUTH_\n'+ Verontruth
+            text: '_You choose TRUTH_\n'+ kayinzatruth
           }),
           footer: proto.Message.InteractiveMessage.Footer.create({
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: bufferdare}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: bufferdare}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -10845,13 +10853,13 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
               break
               case 'hug': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://api.waifu.pics/sfw/hug`)
 
         try {
@@ -10889,7 +10897,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -10902,8 +10910,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
         case 'cry': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://api.waifu.pics/sfw/cry`)
 
         try {
@@ -10941,7 +10949,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -10954,8 +10962,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
         case 'kill': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://api.waifu.pics/sfw/kill`)
 
         try {
@@ -10993,7 +11001,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -11006,8 +11014,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
         case 'pat': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://api.waifu.pics/sfw/pat`)
 
         try {
@@ -11045,7 +11053,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -11058,8 +11066,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
         case 'lick': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://api.waifu.pics/sfw/lick`)
 
         try {
@@ -11097,7 +11105,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -11110,8 +11118,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
         case 'kiss': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://api.waifu.pics/sfw/kiss`)
 
         try {
@@ -11149,7 +11157,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -11162,8 +11170,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
         case 'bite': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://api.waifu.pics/sfw/cry`)
 
         try {
@@ -11201,7 +11209,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -11214,8 +11222,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
         case 'yeet': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://api.waifu.pics/sfw/yeet`)
 
         try {
@@ -11253,7 +11261,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -11266,8 +11274,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
         case 'bully': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://api.waifu.pics/sfw/bully`)
 
         try {
@@ -11305,7 +11313,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -11318,8 +11326,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
         case 'bonk': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://api.waifu.pics/sfw/bonk`)
 
         try {
@@ -11357,7 +11365,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -11370,8 +11378,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
         case 'wink': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://api.waifu.pics/sfw/wink`)
 
         try {
@@ -11409,7 +11417,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -11422,8 +11430,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
         case 'poke': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://api.waifu.pics/sfw/poke`)
 
         try {
@@ -11461,7 +11469,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -11474,8 +11482,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
         case 'nom': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://api.waifu.pics/sfw/nom`)
 
         try {
@@ -11513,7 +11521,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -11526,8 +11534,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
         case 'slap': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://api.waifu.pics/sfw/slap`)
 
         try {
@@ -11565,7 +11573,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -11578,8 +11586,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
         case 'smile': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://api.waifu.pics/sfw/smile`)
 
         try {
@@ -11617,7 +11625,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -11630,8 +11638,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
         case 'wave': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://api.waifu.pics/sfw/wave`)
 
         try {
@@ -11669,7 +11677,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -11682,8 +11690,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
         case 'awoo': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://api.waifu.pics/sfw/awoo`)
 
         try {
@@ -11721,7 +11729,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -11734,8 +11742,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
         case 'blush': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://api.waifu.pics/sfw/blush`)
 
         try {
@@ -11773,7 +11781,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -11786,8 +11794,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
         case 'smug': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://api.waifu.pics/sfw/smug`)
 
         try {
@@ -11825,7 +11833,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -11838,8 +11846,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
         case 'glomp': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://api.waifu.pics/sfw/glomp`)
 
         try {
@@ -11877,7 +11885,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -11890,8 +11898,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
         case 'happy': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://api.waifu.pics/sfw/happy`)
 
         try {
@@ -11929,7 +11937,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -11942,8 +11950,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
         case 'dance': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://api.waifu.pics/sfw/dance`)
 
         try {
@@ -11981,7 +11989,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -11994,8 +12002,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
         case 'cringe': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://api.waifu.pics/sfw/cringe`)
 
         try {
@@ -12033,7 +12041,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -12046,8 +12054,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
         case 'cuddle': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://api.waifu.pics/sfw/cuddle`)
 
         try {
@@ -12085,7 +12093,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -12098,8 +12106,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
         case 'highfive': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://api.waifu.pics/sfw/awoo`)
 
         try {
@@ -12137,7 +12145,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -12150,8 +12158,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
         case 'handhold': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://api.waifu.pics/sfw/handhold`)
 
         try {
@@ -12189,7 +12197,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -12202,8 +12210,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
                 case 'spank': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://nekos.life/api/v2/img/spank`)
 
         try {
@@ -12241,7 +12249,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -12254,8 +12262,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
         case 'feed': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://nekos.life/api/v2/img/feed`)
 
         try {
@@ -12293,7 +12301,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -12306,8 +12314,8 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
         break;
                 case 'tickle': {
 
-        if (!m.isGroup) return VeronStickGroup()
-        if (!m.mentionedJid[0] && !m.quoted) return replygcVeron(`Tag or reply to a person`)
+        if (!m.isGroup) return farindahStickGroup()
+        if (!m.mentionedJid[0] && !m.quoted) return replygcFaridah(`Tag or reply to a person`)
         var pat = await fetchJson(`https://nekos.life/api/v2/img/tickle`)
 
         try {
@@ -12345,7 +12353,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 
           var fetchedgif = await GIFBufferToVideoBuffer(buffer)
 
-          VeronicaX.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
+          Faridah.sendMessage(m.chat, { video: fetchedgif, gifPlayback: true, mentions: ment, caption: musers }, { quoted: m })
 
         } catch (error) {
 
@@ -12359,210 +12367,210 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
 case 'shinobu':{
 axios.get(`https://api.waifu.pics/sfw/shinobu`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'stickhandhold': {
 axios.get(`https://api.waifu.pics/sfw/handhold`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'stickshinobu': {
 axios.get(`https://api.waifu.pics/sfw/shinobu`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'stickhighfive': {
 axios.get(`https://api.waifu.pics/sfw/highfive`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'stickcuddle': {
 axios.get(`https://api.waifu.pics/sfw/cuddle`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'stickcringe': {
 axios.get(`https://api.waifu.pics/sfw/cringe`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'stickdance': {
 axios.get(`https://api.waifu.pics/sfw/dance`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'stickhappy': {
 axios.get(`https://api.waifu.pics/sfw/happy`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'stickglomp': {
 axios.get(`https://api.waifu.pics/sfw/glomp`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'sticksmug': {
 axios.get(`https://api.waifu.pics/sfw/smug`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'stickblush': {
 axios.get(`https://api.waifu.pics/sfw/blush`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'stickawoo': {
 axios.get(`https://api.waifu.pics/sfw/awoo`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'stickwave': {
 axios.get(`https://api.waifu.pics/sfw/wave`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'sticksmile': {
 axios.get(`https://api.waifu.pics/sfw/smile`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'stickslap': {
 axios.get(`https://api.waifu.pics/sfw/slap`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'sticknom': {
 axios.get(`https://api.waifu.pics/sfw/nom`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'stickpoke': {
 axios.get(`https://api.waifu.pics/sfw/poke`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'stickwink': {
 axios.get(`https://api.waifu.pics/sfw/wink`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'stickbonk': {
 axios.get(`https://api.waifu.pics/sfw/bonk`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'stickbully': {
 axios.get(`https://api.waifu.pics/sfw/bully`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'stickyeet': {
 axios.get(`https://api.waifu.pics/sfw/yeet`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'stickbite': {
 axios.get(`https://api.waifu.pics/sfw/bite`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'stickkiss': {
 axios.get(`https://api.waifu.pics/sfw/kiss`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'sticklick': {
 axios.get(`https://api.waifu.pics/sfw/lick`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'stickpat': {
 axios.get(`https://api.waifu.pics/sfw/pat`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'stickhug': {
 axios.get(`https://api.waifu.pics/sfw/hug`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'stickkill': {
 axios.get(`https://api.waifu.pics/sfw/kill`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'stickcry': {
 axios.get(`https://api.waifu.pics/sfw/cry`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'stickspank':{
                 axios.get(`https://nekos.life/api/v2/img/spank`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'sticktickle':{
                 axios.get(`https://nekos.life/api/v2/img/tickle`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
@@ -12577,12 +12585,12 @@ case 'lizard':
 case 'meow':{
                 axios.get(`https://nekos.life/api/v2/img/${command}`)
 .then(({data}) => {
-VeronicaX.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+Faridah.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'animeawoo':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/awoo`)       
  let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -12600,7 +12608,7 @@ await VeronStickWait()
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -12622,11 +12630,11 @@ await VeronStickWait()
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animemegumin':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/megumin`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -12645,7 +12653,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -12667,11 +12675,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animeshinobu':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/shinobu`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -12690,7 +12698,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -12712,11 +12720,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animehandhold':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/handhold`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -12735,7 +12743,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -12757,11 +12765,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animehighfive':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/highfive`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -12780,7 +12788,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -12802,11 +12810,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animecringe':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/cringe`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -12825,7 +12833,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -12847,11 +12855,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animedance':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/dance`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -12870,7 +12878,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -12892,11 +12900,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animehappy':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/happy`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -12915,7 +12923,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -12937,11 +12945,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animeglomp':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/glomp`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -12960,7 +12968,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -12982,11 +12990,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animesmug':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/smug`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -13005,7 +13013,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -13027,11 +13035,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animeblush':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/blush`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -13050,7 +13058,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -13072,11 +13080,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animewave':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/wave`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -13095,7 +13103,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -13117,11 +13125,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animesmile':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/smile`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -13140,7 +13148,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -13162,11 +13170,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animepoke':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/poke`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -13185,7 +13193,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -13207,11 +13215,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animewink':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/wink`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -13230,7 +13238,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -13252,11 +13260,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animebonk':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/bonk`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -13275,7 +13283,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -13297,11 +13305,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animebully':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/bully`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -13320,7 +13328,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -13342,11 +13350,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animeyeet':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/yeet`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -13365,7 +13373,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -13387,11 +13395,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animebite':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/bite`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -13410,7 +13418,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -13432,11 +13440,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animelick':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/lick`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -13455,7 +13463,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -13477,11 +13485,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animekill':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/kill`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -13500,7 +13508,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -13522,11 +13530,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animecry':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/cry`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -13545,7 +13553,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -13567,11 +13575,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animewlp':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/wallpaper`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -13590,7 +13598,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -13612,11 +13620,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animekiss':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/kiss`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -13635,7 +13643,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -13657,11 +13665,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animehug':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/hug`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -13680,7 +13688,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -13702,11 +13710,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animeneko':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/neko`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -13725,7 +13733,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -13747,11 +13755,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animepat':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/pat`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -13770,7 +13778,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -13792,11 +13800,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animeslap':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/slap`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -13815,7 +13823,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -13837,11 +13845,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animecuddle':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/cuddle`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -13860,7 +13868,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -13882,11 +13890,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animewaifu':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/waifu`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -13905,7 +13913,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -13927,11 +13935,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animenom':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/nom`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -13950,7 +13958,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -13972,11 +13980,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animefoxgirl':{
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/fox_girl`)       
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -13995,7 +14003,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -14017,11 +14025,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animetickle': {
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/tickle`)     
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -14040,7 +14048,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -14062,11 +14070,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animegecg': {
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/gecg`)     
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -14085,7 +14093,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -14107,11 +14115,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'dogwoof': {
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/woof`)     
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -14130,7 +14138,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -14152,11 +14160,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case '8ballpool': {
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/8ball`)     
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -14175,7 +14183,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -14197,11 +14205,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'goosebird': {
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/goose`)     
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -14220,7 +14228,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -14242,11 +14250,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animefeed': {
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/feed`)     
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -14265,7 +14273,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -14287,11 +14295,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'animeavatar': {
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/avatar`)     
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -14310,7 +14318,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -14332,11 +14340,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'lizardpic': {
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/lizard`)     
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -14355,7 +14363,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -14377,11 +14385,11 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'catmeow': {
-await VeronStickWait()
+await farindahStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/meow`)     
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -14400,7 +14408,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -14422,15 +14430,15 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 }
 break
 case 'anime': {
-if (!text) return replygcVeron(`Which anime are you lookin for?`)
+if (!text) return replygcFaridah(`Which anime are you lookin for?`)
 const malScraper = require('mal-scraper')
-await VeronStickWait()
+await farindahStickWait()
         const anime = await malScraper.getInfoFromName(text).catch(() => null)
-        if (!anime) return replygcVeron(`Could not find`)
+        if (!anime) return replygcFaridah(`Could not find`)
 let animetxt = `
 🎀 *Title: ${anime.title}*
 🎋 *Type: ${anime.type}*
@@ -14463,7 +14471,7 @@ _*Here is the result of ${text}*_\n\n${animetxt}`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:anime.picture}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:anime.picture}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -14485,14 +14493,14 @@ _*Here is the result of ${text}*_\n\n${animetxt}`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 
                 }
                 break
 case 'hentaivid': case 'hentai': case 'hentaivideo': {
-	if (!m.isGroup) return VeronStickGroup()
-if (!AntiNsfw) return replygcVeron(mess.nsfw)
-                await VeronStickWait()
+	if (!m.isGroup) return farindahStickGroup()
+if (!AntiNsfw) return replygcFaridah(mess.nsfw)
+                await farindahStickWait()
                 const { hentai } = require('./lib/scraper.js')
                 anu = await hentai()
                 result912 = anu[Math.floor(Math.random(), anu.length)]
@@ -14512,7 +14520,7 @@ if (!AntiNsfw) return replygcVeron(mess.nsfw)
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ video: { url: result912.video_1 } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ video: { url: result912.video_1 } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -14534,14 +14542,14 @@ if (!AntiNsfw) return replygcVeron(mess.nsfw)
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
                 
             }
             break
 case 'trap' :{
-if (!m.isGroup) return VeronStickGroup()
-if (!AntiNsfw) return replygcVeron(mess.nsfw)
-await VeronStickWait()
+if (!m.isGroup) return farindahStickGroup()
+if (!AntiNsfw) return replygcFaridah(mess.nsfw)
+await farindahStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/nsfw/${command}`)       
 let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -14560,7 +14568,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -14582,13 +14590,13 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'hentai-neko' :
 case 'hneko' :{
-if (!m.isGroup) return VeronStickGroup()
-if (!AntiNsfw) return replygcVeron(mess.nsfw)
+if (!m.isGroup) return farindahStickGroup()
+if (!AntiNsfw) return replygcFaridah(mess.nsfw)
     waifudd = await axios.get(`https://waifu.pics/api/nsfw/neko`)
 let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -14607,7 +14615,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -14629,14 +14637,14 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'hentai-waifu' :
 case 'nwaifu' :{
-if (!m.isGroup) return VeronStickGroup()
-if (!AntiNsfw) return replygcVeron(mess.nsfw)
-await VeronStickWait()
+if (!m.isGroup) return farindahStickGroup()
+if (!AntiNsfw) return replygcFaridah(mess.nsfw)
+await farindahStickWait()
     waifudd = await axios.get(`https://waifu.pics/api/nsfw/waifu`)         
 let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -14655,7 +14663,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -14677,13 +14685,13 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'gasm':{
-if (!m.isGroup) return VeronStickGroup()
-	if (!AntiNsfw) return replygcVeron(mess.nsfw)
-await VeronStickWait()						
+if (!m.isGroup) return farindahStickGroup()
+	if (!AntiNsfw) return replygcFaridah(mess.nsfw)
+await farindahStickWait()						
  waifudd = await axios.get(`https://nekos.life/api/v2/img/${command}`)
 let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -14702,7 +14710,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -14724,14 +14732,14 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break  
 case 'milf':{
-if (!m.isGroup) return VeronStickGroup()
-await VeronStickWait()
+if (!m.isGroup) return farindahStickGroup()
+await farindahStickWait()
 var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/milf.json'))
-var Veronyresult = pickRandom(ahegaonsfw)
+var kayinzaresult = pickRandom(ahegaonsfw)
 let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
     message: {
@@ -14749,7 +14757,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:Veronyresult.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:kayinzaresult.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -14771,13 +14779,13 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break 
 case 'animespank':{
-if (!m.isGroup) return VeronStickGroup()
-if (!AntiNsfw) return replygcVeron(mess.nsfw)
-await VeronStickWait()
+if (!m.isGroup) return farindahStickGroup()
+if (!AntiNsfw) return replygcFaridah(mess.nsfw)
+await farindahStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/spank`)     
             let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -14796,7 +14804,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:waifudd.data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -14818,15 +14826,15 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'blowjob':{
-if (!m.isGroup) return VeronStickGroup()
-	if (!AntiNsfw) return replygcVeron(mess.nsfw)
-await VeronStickWait()
+if (!m.isGroup) return farindahStickGroup()
+	if (!AntiNsfw) return replygcFaridah(mess.nsfw)
+await farindahStickWait()
 var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/blowjob.json'))
-var Veronyresult = pickRandom(ahegaonsfw)
+var kayinzaresult = pickRandom(ahegaonsfw)
 let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
     message: {
@@ -14844,7 +14852,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:Veronyresult.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:kayinzaresult.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -14866,15 +14874,15 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'cuckold':{
-if (!m.isGroup) return VeronStickGroup()
-	if (!AntiNsfw) return replygcVeron(mess.nsfw)
-await VeronStickWait()
+if (!m.isGroup) return farindahStickGroup()
+	if (!AntiNsfw) return replygcFaridah(mess.nsfw)
+await farindahStickWait()
 var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/cuckold.json'))
-var Veronyresult = pickRandom(ahegaonsfw)
+var kayinzaresult = pickRandom(ahegaonsfw)
 let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
     message: {
@@ -14892,7 +14900,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:Veronyresult.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:kayinzaresult.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -14914,15 +14922,15 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'eba':{
-if (!m.isGroup) return VeronStickGroup()
-	if (!AntiNsfw) return replygcVeron(mess.nsfw)
-await VeronStickWait()
+if (!m.isGroup) return farindahStickGroup()
+	if (!AntiNsfw) return replygcFaridah(mess.nsfw)
+await farindahStickWait()
 var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/eba.json'))
-var Veronyresult = pickRandom(ahegaonsfw)
+var kayinzaresult = pickRandom(ahegaonsfw)
 let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
     message: {
@@ -14940,7 +14948,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:Veronyresult.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:kayinzaresult.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -14962,15 +14970,15 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'pussy':{
-if (!m.isGroup) return VeronStickGroup()
-	if (!AntiNsfw) return replygcVeron(mess.nsfw)
-await VeronStickWait()
+if (!m.isGroup) return farindahStickGroup()
+	if (!AntiNsfw) return replygcFaridah(mess.nsfw)
+await farindahStickWait()
 var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/pussy.json'))
-var Veronyresult = pickRandom(ahegaonsfw)
+var kayinzaresult = pickRandom(ahegaonsfw)
 let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
     message: {
@@ -14988,7 +14996,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:Veronyresult.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:kayinzaresult.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -15010,15 +15018,15 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'yuri':{
-if (!m.isGroup) return VeronStickGroup()
-	if (!AntiNsfw) return replygcVeron(mess.nsfw)
-await VeronStickWait()
+if (!m.isGroup) return farindahStickGroup()
+	if (!AntiNsfw) return replygcFaridah(mess.nsfw)
+await farindahStickWait()
 var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/yuri.json'))
-var Veronyresult = pickRandom(ahegaonsfw)
+var kayinzaresult = pickRandom(ahegaonsfw)
 let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
     message: {
@@ -15036,7 +15044,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:Veronyresult.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:kayinzaresult.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -15058,15 +15066,15 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'zettai':{
-if (!m.isGroup) return VeronStickGroup()
-	if (!AntiNsfw) return replygcVeron(mess.nsfw)
-await VeronStickWait()
+if (!m.isGroup) return farindahStickGroup()
+	if (!AntiNsfw) return replygcFaridah(mess.nsfw)
+await farindahStickWait()
 var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/zettai.json'))
-var Veronyresult = pickRandom(ahegaonsfw)
+var kayinzaresult = pickRandom(ahegaonsfw)
 let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
     message: {
@@ -15084,7 +15092,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url:Veronyresult.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url:kayinzaresult.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -15106,13 +15114,13 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'gifblowjob':{
-if (!m.isGroup) return VeronStickGroup()
-if (!AntiNsfw) return replygcVeron(mess.nsfw)
-await VeronStickWait()
+if (!m.isGroup) return farindahStickGroup()
+if (!AntiNsfw) return replygcFaridah(mess.nsfw)
+await farindahStickWait()
   let assss = await axios.get ("https://api.waifu.pics/nsfw/blowjob")
     var bobuff = await fetchBuffer(assss.data.url)
     var bogif = await buffergif(bobuff)
@@ -15133,7 +15141,7 @@ _*Here is the result of ${command}*_`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({video:bogif, gifPlayback:true }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({video:bogif, gifPlayback:true }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -15155,7 +15163,7 @@ _*Here is the result of ${command}*_`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
     break
 case 'checkme':{
@@ -15200,11 +15208,11 @@ case 'checkme':{
 
 *≡═══《 CHECK PROPERTIES 》═══≡*`
 					try {
-ppuser = await VeronicaX.profilePictureUrl(m.sender, 'image')
+ppuser = await Faridah.profilePictureUrl(m.sender, 'image')
 } catch (err) {
 ppuser = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
 }
-ppVeron = await getBuffer(ppuser)
+ppkayinza = await getBuffer(ppuser)
 let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
     message: {
@@ -15221,7 +15229,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: ppVeron, mentions: [bet]}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: ppkayinza, mentions: [bet]}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -15243,7 +15251,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'awesomecheck':
@@ -15257,7 +15265,7 @@ case 'awesomecheck':
                     case 'lovelycheck':
                       case 'uglycheck':
 case 'handsomecheck':{
-				if (!text) return replygcVeron(`Tag Someone, Example : ${prefix + command} @Veron`)
+				if (!text) return replygcFaridah(`Tag Someone, Example : ${prefix + command} @ridzcoder`)
 					const gan = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const teng = gan[Math.floor(Math.random() * gan.length)]
 					let msgs = generateWAMessageFromContent(m.chat, {
@@ -15276,7 +15284,7 @@ case 'handsomecheck':{
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -15298,11 +15306,11 @@ case 'handsomecheck':{
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 					break
 case 'beautifulcheck':{
-				if (!text) return replygcVeron(`Tag Someone, Example : ${prefix + command} @Veron`)
+				if (!text) return replygcFaridah(`Tag Someone, Example : ${prefix + command} @ridzcoder`)
 					const can = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const tik = can[Math.floor(Math.random() * can.length)]
 					let msgs = generateWAMessageFromContent(m.chat, {
@@ -15321,7 +15329,7 @@ case 'beautifulcheck':{
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -15343,13 +15351,13 @@ case 'beautifulcheck':{
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 					break
 					case 'charactercheck':{
-					if (!text) return replygcVeron(`Tag Someone, Example : ${prefix + command} @Veron`)
-					const Verony =['Compassionate','Generous','Grumpy','Forgiving','Obedient','Good','Simp','Kind-Hearted','patient','UwU','top, anyway','Helpful']
-					const taky = Verony[Math.floor(Math.random() * Verony.length)]
+					if (!text) return replygcFaridah(`Tag Someone, Example : ${prefix + command} @ridzcoder`)
+					const kayinza =['Compassionate','Generous','Grumpy','Forgiving','Obedient','Good','Simp','Kind-Hearted','patient','UwU','top, anyway','Helpful']
+					const taky = kayinza[Math.floor(Math.random() * kayinza.length)]
 					let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
     message: {
@@ -15366,7 +15374,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -15388,42 +15396,42 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 				     break
 case 'gura':
 case 'gurastick':{
-var ano = await fetchJson('https://raw.githubusercontent.com/DGVeron/Media/main/gura')
+var ano = await fetchJson('https://raw.githubusercontent.com/rivozn-kidz/Media/main/gura')
 var wifegerak = ano.split('\n')
 var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-encmedia = await VeronicaX.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
+encmedia = await Faridah.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
 
 }
 break
 case 'telestick': {
-	if (m.isGroup) return VeronStickPrivate()
+	if (m.isGroup) return farindahStickPrivate()
 		if (args[0] && args[0].match(/(https:\/\/t.me\/addstickers\/)/gi)) {
-		let Veronresources = await Telesticker(args[0])
-		await replygcVeron(`Sending ${Veronresources.length} stickers...`)
-		if (m.isGroup && Veronresources.length > 30) {
-			await replygcVeron('Number of stickers more than 30, bot will send it in private chat.')
-			for (let i = 0; i < Veronresources.length; i++) {
-				VeronicaX.sendMessage(m.sender, { sticker: { url: Veronresources[i].url }})
+		let farindahresources = await Telesticker(args[0])
+		await replygcFaridah(`Sending ${farindahresources.length} stickers...`)
+		if (m.isGroup && farindahresources.length > 30) {
+			await replygcFaridah('Number of stickers more than 30, bot will send it in private chat.')
+			for (let i = 0; i < farindahresources.length; i++) {
+				Faridah.sendMessage(m.sender, { sticker: { url: farindahresources[i].url }})
 			}
 		} else {
-			for (let i = 0; i < Veronresources.length; i++) {
-				VeronicaX.sendMessage(m.chat, { sticker: { url: Veronresources[i].url }})
+			for (let i = 0; i < farindahresources.length; i++) {
+				Faridah.sendMessage(m.chat, { sticker: { url: farindahresources[i].url }})
 			}
 		}
-	} else replygcVeron(`Where is the telegram sticker link?\nExample. ${prefix + command} https://t.me/addstickers/FriendlyDeath`)
+	} else replygcFaridah(`Where is the telegram sticker link?\nExample. ${prefix + command} https://t.me/addstickers/FriendlyDeath`)
 }
 break
 case 'setcmd': {
-                if (!m.quoted) return replygcVeron('Reply Message!')
-                if (!m.quoted.fileSha256) return replygcVeron('SHA256 Hash Missing')
-                if (!text) return replygcVeron(`For What Command?`)
+                if (!m.quoted) return replygcFaridah('Reply Message!')
+                if (!m.quoted.fileSha256) return replygcFaridah('SHA256 Hash Missing')
+                if (!text) return replygcFaridah(`For What Command?`)
                 let hash = m.quoted.fileSha256.toString('base64')
-                if (global.db.data.sticker[hash] && global.db.data.sticker[hash].locked) return replygcVeron('You have no permission to change this sticker command')
+                if (global.db.data.sticker[hash] && global.db.data.sticker[hash].locked) return replygcFaridah('You have no permission to change this sticker command')
                 global.db.data.sticker[hash] = {
                     text,
                     mentionedJid: m.mentionedJid,
@@ -15431,15 +15439,15 @@ case 'setcmd': {
                     at: + new Date,
                     locked: false,
                 }
-                replygcVeron(`Done!`)
+                replygcFaridah(`Done!`)
             }
             break
 case 'delcmd': {
                 let hash = m.quoted.fileSha256.toString('base64')
-                if (!hash) return replygcVeron(`No hashes`)
-                if (global.db.data.sticker[hash] && global.db.data.sticker[hash].locked) return replygcVeron('You have no permission to delete this sticker command')             
+                if (!hash) return replygcFaridah(`No hashes`)
+                if (global.db.data.sticker[hash] && global.db.data.sticker[hash].locked) return replygcFaridah('You have no permission to delete this sticker command')             
                 delete global.db.data.sticker[hash]
-                replygcVeron(`Done!`)
+                replygcFaridah(`Done!`)
             }
             break
 case 'listcmd': {
@@ -15448,22 +15456,22 @@ case 'listcmd': {
 Info: *bold* hash is Locked
 ${Object.entries(global.db.data.sticker).map(([key, value], index) => `${index + 1}. ${value.locked ? `*${key}*` : key} : ${value.text}`).join('\n')}
 `.trim()
-                VeronicaX.sendText(m.chat, teks, m, { mentions: Object.values(global.db.data.sticker).map(x => x.mentionedJid).reduce((a,b) => [...a, ...b], []) })
+                Faridah.sendText(m.chat, teks, m, { mentions: Object.values(global.db.data.sticker).map(x => x.mentionedJid).reduce((a,b) => [...a, ...b], []) })
             }
             break 
 case 'lockcmd': {
-                if (!VeronTheCreator) return VeronStickOwner()
-                if (!m.quoted) return replygcVeron('Reply Message!')
-                if (!m.quoted.fileSha256) return replygcVeron('SHA256 Hash Missing')
+                if (!RidzTheCreator) return RidzStickOwner()
+                if (!m.quoted) return replygcFaridah('Reply Message!')
+                if (!m.quoted.fileSha256) return replygcFaridah('SHA256 Hash Missing')
                 let hash = m.quoted.fileSha256.toString('base64')
-                if (!(hash in global.db.data.sticker)) return replygcVeron('Hash not found in database')
+                if (!(hash in global.db.data.sticker)) return replygcFaridah('Hash not found in database')
                 global.db.data.sticker[hash].locked = !/^un/i.test(command)
-                replygcVeron('Done!')
+                replygcFaridah('Done!')
             }
             break
             case 'ss': case 'ssweb': {
-if (!q) return replygcVeron(`Example ${prefix+command} link`)
-await VeronStickWait()
+if (!q) return replygcFaridah(`Example ${prefix+command} link`)
+await farindahStickWait()
 let krt = await scp2.ssweb(q)
 let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -15481,7 +15489,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: krt.result}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: krt.result}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -15503,7 +15511,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'pickupline': {
@@ -15530,7 +15538,7 @@ try {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -15552,7 +15560,7 @@ try {
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
   } catch (error) {
     console.error(error)
     // Handle the error appropriately
@@ -15582,7 +15590,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -15604,7 +15612,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
   } catch (error) {
     console.error(error)
   }
@@ -15654,7 +15662,7 @@ ${translatedChapterHindi.text}`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -15676,14 +15684,14 @@ ${translatedChapterHindi.text}`
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
   } catch (error) {
-    replygcVeron(`Error: ${error.message}`)
+    replygcFaridah(`Error: ${error.message}`)
   }
   }
   break
   case 'translate':{
-  	if (!q) return replygcVeron(`*Where is the text*\n\n*𝙴xample usage*\n*${prefix + command} <language id> <text>*\n*${prefix + command} ja yo wassup*`)
+  	if (!q) return replygcFaridah(`*Where is the text*\n\n*𝙴xample usage*\n*${prefix + command} <language id> <text>*\n*${prefix + command} ja yo wassup*`)
   	const defaultLang = 'en'
 const tld = 'cn'
     let err = `
@@ -15720,7 +15728,7 @@ https://cloud.google.com/translate/docs/languages
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -15742,9 +15750,9 @@ https://cloud.google.com/translate/docs/languages
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
     } catch (e) {
-        return replygcVeron(err)
+        return replygcFaridah(err)
     } 
     }
     break
@@ -15789,19 +15797,19 @@ ${translatedTafsirUrdu.text}\n
 🔮 *Explanation (English):*\n
 ${translatedTafsirEnglish.text}`
 
-    replygcVeron(quranSurah)
+    replygcFaridah(quranSurah)
 
     if (json.data.recitation.full) {
-      VeronicaX.sendMessage(m.chat, { audio: {url: json.data.recitation.full}, mimetype: 'audio/mp4', ptt: true, fileName: `recitation.mp3`, }, {quoted: m})
+      Faridah.sendMessage(m.chat, { audio: {url: json.data.recitation.full}, mimetype: 'audio/mp4', ptt: true, fileName: `recitation.mp3`, }, {quoted: m})
     }
   } catch (error) {
-    replygcVeron(`Error: ${error.message}`)
+    replygcFaridah(`Error: ${error.message}`)
   }
   }
   break
   case 'mediafire': {
-  	if (!args[0]) return replygcVeron(`Enter the mediafire link next to the command`)
-    if (!args[0].match(/mediafire/gi)) return replygcVeron(`Link incorrect`)
+  	if (!args[0]) return replygcFaridah(`Enter the mediafire link next to the command`)
+    if (!args[0].match(/mediafire/gi)) return replygcFaridah(`Link incorrect`)
     const { mediafiredl } = require('@bochilteam/scraper')
     let full = /f$/i.test(command)
     let u = /https?:\/\//.test(args[0]) ? args[0] : 'https://' + args[0]
@@ -15815,11 +15823,11 @@ ${translatedTafsirEnglish.text}`
 ▢ *Extension:* ${ext}
 ▢ *Uploaded:* ${aploud}
 `.trim()
-    VeronicaX.sendMessage(m.chat, { document : { url : url}, fileName : filename, mimetype: ext }, { quoted : m })
+    Faridah.sendMessage(m.chat, { document : { url : url}, fileName : filename, mimetype: ext }, { quoted : m })
     }
     break
 case 'tagadmin': case 'listadmin': case 'admin':{
-    	if (!m.isGroup) return VeronStickGroup()
+    	if (!m.isGroup) return farindahStickGroup()
     const groupAdmins = participants.filter(p => p.admin)
     const listAdmin = groupAdmins.map((v, i) => `${i + 1}. @${v.id.split('@')[0]}`).join('\n')
     const owner = groupMetadata.owner || groupAdmins.find(p => p.admin === 'superadmin')?.id || m.chat.split`-`[0] + '@s.whatsapp.net'
@@ -15843,7 +15851,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -15865,36 +15873,36 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
    
 }
 break
 case 'addlist':
-if (!VeronTheCreator) return VeronStickOwner()
-if (!m.isGroup) return VeronStickGroup()
+if (!RidzTheCreator) return RidzStickOwner()
+if (!m.isGroup) return farindahStickGroup()
 var args1 = text.split("@")[0]
 var args2 = text.split("@")[1]
-if (!q.includes("@")) return replygcVeron(`Usage Example: ${prefix+command} *Item Name@Item*\n\n_Example_\n\n${prefix+command} namelist@List`)
-if (isAlreadyResponList(from, args1, db_respon_list)) return replygcVeron(`List of responses with key : *${args1}* already in this group.`)
+if (!q.includes("@")) return replygcFaridah(`Usage Example: ${prefix+command} *Item Name@Item*\n\n_Example_\n\n${prefix+command} namelist@List`)
+if (isAlreadyResponList(from, args1, db_respon_list)) return replygcFaridah(`List of responses with key : *${args1}* already in this group.`)
 if (/image/.test(mime)) {
-media = await VeronicaX.downloadAndSaveMediaMessage(quoted)
+media = await Faridah.downloadAndSaveMediaMessage(quoted)
 mem = await TelegraPh(media)
 addResponList(from, args1, args2, true, `${mem}`, db_respon_list)
-replygcVeron(`Successfully set list message with key : *${args1}*`)
+replygcFaridah(`Successfully set list message with key : *${args1}*`)
 if (fs.existsSync(media)) fs.unlinkSync(media)
 } else {
 addResponList(from, args1, args2, false, '-', db_respon_list)
-replygcVeron(`Successful Add List With Key : *${args1}*`)
+replygcFaridah(`Successful Add List With Key : *${args1}*`)
 }
 break
 case 'dellist':
-if (!Veronica) return VeronStickOwner()
-if (!m.isGroup) return VeronStickGroup()
-if (db_respon_list.length === 0) return replygcVeron(`There is no message list in the database yet`)
-if (!q) return replygcVeron(`Usage Example: ${prefix + command} *Item name*\n\n_Example_\n\n${prefix + command} listname`)
-if (!isAlreadyResponList(from, q, db_respon_list)) return replygcVeron(`Item list by Name *${q}* not in the database!`)
+if (!Faridahx) return RidzStickOwner()
+if (!m.isGroup) return farindahStickGroup()
+if (db_respon_list.length === 0) return replygcFaridah(`There is no message list in the database yet`)
+if (!q) return replygcFaridah(`Usage Example: ${prefix + command} *Item name*\n\n_Example_\n\n${prefix + command} listname`)
+if (!isAlreadyResponList(from, q, db_respon_list)) return replygcFaridah(`Item list by Name *${q}* not in the database!`)
 delResponList(from, q, db_respon_list)
-replygcVeron(`Successfully delete list message with key *${q}*`)
+replygcFaridah(`Successfully delete list message with key *${q}*`)
 break
 case 'store':
 case 'shop': 
@@ -15904,20 +15912,20 @@ for (let x of db_respon_list) {
 teks += `│⭔ ${x.key}\n`
 }
 teks += `│\n└────────────⭓\n\n`
-replygcVeron(teks)
+replygcFaridah(teks)
 }
 break
 case 'instagram': case 'ig': case 'igvideo': case 'igimage': case 'igvid': case 'igimg': {
-	  if (!text) return replygcVeron(`You need to give the URL of Any Instagram video, post, reel, image`)
+	  if (!text) return replygcFaridah(`You need to give the URL of Any Instagram video, post, reel, image`)
   let res
   try {
     res = await fetch(`https://www.guruapi.tech/api/igdlv1?url=${text}`)
   } catch (error) {
-    return replygcVeron(`An error occurred: ${error.message}`)
+    return replygcFaridah(`An error occurred: ${error.message}`)
   }
   let api_response = await res.json()
   if (!api_response || !api_response.data) {
-    return replygcVeron(`No video or image found or Invalid response from API.`)
+    return replygcFaridah(`No video or image found or Invalid response from API.`)
   }
   const mediaArray = api_response.data;
   for (const mediaData of mediaArray) {
@@ -15941,7 +15949,7 @@ case 'instagram': case 'ig': case 'igvideo': case 'igimage': case 'igvid': case 
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ video: {url: mediaURL}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ video: {url: mediaURL}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -15963,7 +15971,7 @@ case 'instagram': case 'ig': case 'igvideo': case 'igimage': case 'igvid': case 
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
     } else if (mediaType === 'image') {
     	let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -15981,7 +15989,7 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: {url: mediaURL}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: {url: mediaURL}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -16003,14 +16011,14 @@ return await VeronicaX.relayMessage(m.chat, msgs.message, {})
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
     }
   }
 }
 break
 case 'gimage':{
-if (!text) return replygcVeron(`Usage: ${prefix}gimage dgVeron github`);
-VeronicaX.sendMessage(m.chat, { react: { text: `⏱️`, key: m.key }})
+if (!text) return replygcFaridah(`Usage: ${prefix}gimage Ridz Coder github`);
+Faridah.sendMessage(m.chat, { react: { text: `⏱️`, key: m.key }})
 let ini = await fetchJson(`https://aemt.me/googleimage?query=${q}`);
 try{
 for (let bing of ini.result) {
@@ -16031,7 +16039,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: bing }}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: bing }}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -16053,17 +16061,17 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
-VeronicaX.sendMessage(m.chat, { react: { text: `☑️`, key: m.key }})
+await Faridah.relayMessage(m.chat, msgs.message, {})
+Faridah.sendMessage(m.chat, { react: { text: `☑️`, key: m.key }})
 }
 } catch (e) {
-VeronicaX.sendMessage(m.chat, { react: { text: `✖️`, key: m.key }})
+Faridah.sendMessage(m.chat, { react: { text: `✖️`, key: m.key }})
 }
 }
 break
 case 'removebg': case 'nobg':{
-if (!quoted) return replygcVeron(`Send/Reply Image With Caption ${prefix + command}`)
-if (!/image/.test(mime)) return replygcVeron(`Send/Reply Image With Caption ${prefix + command}`)
+if (!quoted) return replygcFaridah(`Send/Reply Image With Caption ${prefix + command}`)
+if (!/image/.test(mime)) return replygcFaridah(`Send/Reply Image With Caption ${prefix + command}`)
 let q = m.quoted ? m.quoted : m
 let media = await q.download()
 let url = await uploadImage(media)
@@ -16085,7 +16093,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: {url: data.result}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: {url: data.result}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -16107,12 +16115,12 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case'tozombie':{
-if (!quoted) return replygcVeron(`Send/Reply Image With Caption ${prefix + command}`)
-if (!/image/.test(mime)) return replygcVeron(`Send/Reply Image With Caption ${prefix + command}`)
+if (!quoted) return replygcFaridah(`Send/Reply Image With Caption ${prefix + command}`)
+if (!/image/.test(mime)) return replygcFaridah(`Send/Reply Image With Caption ${prefix + command}`)
 let q = m.quoted ? m.quoted : m
 let media = await q.download()
 let url = await uploadImage(media)
@@ -16134,7 +16142,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: {url: data.url}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: {url: data.url}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -16156,12 +16164,12 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case'toanime':{
-if (!quoted) return replygcVeron(`Send/Reply Image With Caption ${prefix + command}`)
-if (!/image/.test(mime)) return replygcVeron(`Send/Reply Image With Caption ${prefix + command}`)
+if (!quoted) return replygcFaridah(`Send/Reply Image With Caption ${prefix + command}`)
+if (!/image/.test(mime)) return replygcFaridah(`Send/Reply Image With Caption ${prefix + command}`)
 let q = m.quoted ? m.quoted : m
 let media = await q.download()
 let url = await uploadImage(media)
@@ -16182,7 +16190,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: {url:gpt.result}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: {url:gpt.result}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -16204,12 +16212,12 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
+return await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'capcut':{
-if (!text) return replygcVeron(`Enter the link\nExample\nhttps://www.capcut.net/sharevideo?template_id=7239111787965205762&language=in&region=ID`)
-await VeronicaX.sendMessage(m.chat, { react: { text: "⏱️",key: m.key,}}) 
+if (!text) return replygcFaridah(`Enter the link\nExample\nhttps://www.capcut.net/sharevideo?template_id=7239111787965205762&language=in&region=ID`)
+await Faridah.sendMessage(m.chat, { react: { text: "⏱️",key: m.key,}}) 
 try{  
 let anu = await fetchJson(`https://aemt.me/download/capcut?url=${text}`)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -16228,7 +16236,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ video: { url: anu.result.video_ori}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ video: { url: anu.result.video_ori}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -16250,65 +16258,65 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-return await VeronicaX.relayMessage(m.chat, msgs.message, {})
-await VeronicaX.sendMessage(m.chat, { react: { text: "☑️",key: m.key,}})   
+return await Faridah.relayMessage(m.chat, msgs.message, {})
+await Faridah.sendMessage(m.chat, { react: { text: "☑️",key: m.key,}})   
 }catch (error) {
-await VeronicaX.sendMessage(m.chat, { react: { text: "✖️",key: m.key,}})   
+await Faridah.sendMessage(m.chat, { react: { text: "✖️",key: m.key,}})   
 }
 }
 break 
 case 'smeme': case 'stickermeme': case 'stickmeme': {
 
 if (!/webp/.test(mime) && /image/.test(mime)) {
-if (!text) return replygcVeron(`Usage: ${prefix + command} text1|text2`)
+if (!text) return replygcFaridah(`Usage: ${prefix + command} text1|text2`)
 let { TelegraPh } = require('./lib/uploader.js')
 
 atas = text.split('|')[0] ? text.split('|')[0] : '-'
 bawah = text.split('|')[1] ? text.split('|')[1] : '-'
-mee = await VeronicaX.downloadAndSaveMediaMessage(quoted)
+mee = await Faridah.downloadAndSaveMediaMessage(quoted)
 
 mem = await TelegraPh(mee)
 
 meme = `https://api.memegen.link/images/custom/${encodeURIComponent(atas)}/${encodeURIComponent(bawah)}.png?background=${mem}`
 
-memek = await VeronicaX.sendImageAsSticker(m.chat, meme, m, { packname: global.packname, author: global.author })
+memek = await Faridah.sendImageAsSticker(m.chat, meme, m, { packname: global.packname, author: global.author })
 
 
 } else {
-replygcVeron(`Send/reply image with caption ${prefix + command} text1|text2`)
+replygcFaridah(`Send/reply image with caption ${prefix + command} text1|text2`)
 }
 }
 
 break
 
 case'smeta': {
-if (!/webp/.test(mime)) return replygcVeron('Reply sticker!')
+if (!/webp/.test(mime)) return replygcFaridah('Reply sticker!')
   var stiker = false
     try {
         let [packname, ...author] = q.split('|')
             //var author = (author  []).join('|')
                 let mime = m.quoted.mimetype || ''
                         //let img = await q.download()
-                            let img = await VeronicaX.downloadAndSaveMediaMessage(quoted, makeid(5))
-                                if (!img) return replygcVeron('Reply a sticker!')
+                            let img = await Faridah.downloadAndSaveMediaMessage(quoted, makeid(5))
+                                if (!img) return replygcFaridah('Reply a sticker!')
                                     var stiker = await addExifAvatar(img, `Made by`, `Cheems Bot`)
                                       } catch (e) {
                                           console.error(e)
                                               if (Buffer.isBuffer(e)) stiker = e
                                                 } finally {
-                                                    if (stiker) VeronicaX.sendMessage(m.chat, {
+                                                    if (stiker) Faridah.sendMessage(m.chat, {
                                                           sticker: stiker
                                                               }, {
                                                                     quoted: m
                                                                         })
-                                                                            else return replygcVeron('reply sticker')
+                                                                            else return replygcFaridah('reply sticker')
                                                                               }
                                                                               }       
                                                                               break
 case 'instagram2': case 'ig2':{
-if (!text) return replygcVeron(`Enter the link!!!`)
-if (!isUrl(args[0])) return replygcVeron(`Where is the link?`)
-await VeronicaX.sendMessage(m.chat, { react: { text: "⏱️",key: m.key,}})
+if (!text) return replygcFaridah(`Enter the link!!!`)
+if (!isUrl(args[0])) return replygcFaridah(`Where is the link?`)
+await Faridah.sendMessage(m.chat, { react: { text: "⏱️",key: m.key,}})
 try{   
 let anu = await fetchJson(`https://aemt.me/download/igdl?url=${text}`)
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -16327,7 +16335,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ video: { url: anu.result[0].url }}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ video: { url: anu.result[0].url }}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -16349,15 +16357,15 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
-await VeronicaX.sendMessage(m.chat, { react: { text: "☑️",key: m.key,}})  
+await Faridah.relayMessage(m.chat, msgs.message, {})
+await Faridah.sendMessage(m.chat, { react: { text: "☑️",key: m.key,}})  
 }catch (error) {
-await VeronicaX.sendMessage(m.chat, { react: { text: "✖️",key: m.key,}})   
+await Faridah.sendMessage(m.chat, { react: { text: "✖️",key: m.key,}})   
 }
 }
 break
 case 'itunes': {
-if (!text) return replygcVeron('Please provide a song name')
+if (!text) return replygcFaridah('Please provide a song name')
   try {
     let res = await fetch(`https://api.popcat.xyz/itunes?q=${encodeURIComponent(text)}`)
     if (!res.ok) {
@@ -16393,7 +16401,7 @@ if (!text) return replygcVeron('Please provide a song name')
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({image: {url:json.thumbnail}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({image: {url:json.thumbnail}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -16415,9 +16423,9 @@ if (!text) return replygcVeron('Please provide a song name')
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
     } else {
-      replygcVeron(songInfo)
+      replygcFaridah(songInfo)
     }
   } catch (error) {
     console.error(error)
@@ -16425,53 +16433,53 @@ await VeronicaX.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'spam':
-				if (!VeronTheCreator) return VeronStickOwner()
-					if (!text) return replygcVeron(`Use ${prefix +command} text|amount`)
-				Veronarg = text.split("|")
-				if (!Veronarg) return replygcVeron(`Use ${prefix+ command} text|amount`)
-				if (Number(Veronarg[1]) >= 50) return replygcVeron('Max 50!')
-				if (isNaN(Veronarg[1])) return replygcVeron(`must be a number`)
-				for (let i = 0; i < Veronarg[1]; i++){
-					VeronicaX.sendMessage(from, {text: Veronarg[0]})
+				if (!RidzTheCreator) return RidzStickOwner()
+					if (!text) return replygcFaridah(`Use ${prefix +command} text|amount`)
+				kayinzaarg = text.split("|")
+				if (!kayinzaarg) return replygcFaridah(`Use ${prefix+ command} text|amount`)
+				if (Number(kayinzaarg[1]) >= 50) return replygcFaridah('Max 50!')
+				if (isNaN(kayinzaarg[1])) return replygcFaridah(`must be a number`)
+				for (let i = 0; i < kayinzaarg[1]; i++){
+					Faridah.sendMessage(from, {text: kayinzaarg[0]})
 				}
 				break
 case 'simisimi': case 'simi':
-if (!text) replygcVeron('What do u want to ask?')
+if (!text) replygcFaridah('What do u want to ask?')
 let simi = await fetchJson(`https://aemt.me/simi?text=${text}`)
 const simi2 = simi.result
-VeronicaX.sendMessage(m.chat, {text: simi2}, {quoted: m})
+Faridah.sendMessage(m.chat, {text: simi2}, {quoted: m})
 break
 case 'clearall': {
-if (!VeronTheCreator) return VeronStickOwner()
-VeronicaX.chatModify({ delete: true, lastMessages: [{ key: m.key, messageTimestamp: m.messageTimestamp }] }, m.chat)
+if (!RidzTheCreator) return RidzStickOwner()
+Faridah.chatModify({ delete: true, lastMessages: [{ key: m.key, messageTimestamp: m.messageTimestamp }] }, m.chat)
 }
 break
 case 'pinchat': {
-if (!VeronTheCreator) return VeronStickOwner()
-if (m.isGroup) return VeronStickPrivate()
-VeronicaX.chatModify({ pin: true }, m.chat)
+if (!RidzTheCreator) return RidzStickOwner()
+if (m.isGroup) return farindahStickPrivate()
+Faridah.chatModify({ pin: true }, m.chat)
 }
 break
 case 'unpinchat': {
-if (!VeronTheCreator) return VeronStickOwner()
-if (m.isGroup) return VeronStickPrivate()
-VeronicaX.chatModify({ pin: false }, m.chat)
+if (!RidzTheCreator) return RidzStickOwner()
+if (m.isGroup) return farindahStickPrivate()
+Faridah.chatModify({ pin: false }, m.chat)
 }
 break
 case 'database': {
-if (!VeronTheCreator) return VeronStickOwner()
+if (!RidzTheCreator) return RidzStickOwner()
 totalreg = Object.keys(global.db.data.users).length
     let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length
-    replygcVeron(`*${totalreg} users using Bot*`)
+    replygcFaridah(`*${totalreg} users using Bot*`)
 }
 break 
 case 'getjoinrequest':{
-	if (!m.isGroup) return VeronStickGroup()
-	if (!isBotAdmins) return VeronStickBotAdmin()
-if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
-	const response = await VeronicaX.groupRequestParticipantsList(m.chat);
+	if (!m.isGroup) return farindahStickGroup()
+	if (!isBotAdmins) return farindahStickBotAdmin()
+if (!isAdmins && !RidzTheCreator) return farindahStickAdmin()
+	const response = await Faridah.groupRequestParticipantsList(m.chat);
   if (!response || !response.length) {
-    VeronicaX.sendMessage(m.chat, {text: 'No pending join requests. ✅'}, {quoted:m});
+    Faridah.sendMessage(m.chat, {text: 'No pending join requests. ✅'}, {quoted:m});
     return;
   }
   let replyMessage = `${themeemoji} Join Request List:\n`;
@@ -16484,12 +16492,12 @@ if (!isAdmins && !VeronTheCreator) return VeronStickAdmin()
     replyMessage += `\n⏰ *Time:* ${formattedTime}\n`;
   });
 
-  VeronicaX.sendMessage(m.chat, {text: replyMessage}, {quoted:m});
+  Faridah.sendMessage(m.chat, {text: replyMessage}, {quoted:m});
 };
 break
 case 'twitter': case 'twitterdl': case 'twitterdl': {
-	if (!args[0]) return replygcVeron(`📌 Example : \n*${prefix + command}* https://twitter.com/fernandavasro/status/1569741835555291139?t=ADxk8P3Z3prq8USIZUqXCg&s=19`)
-	if (!isUrl(args[0]) && !args[0].includes('twitter.com')) return replygcVeron('Link Invalid!')
+	if (!args[0]) return replygcFaridah(`📌 Example : \n*${prefix + command}* https://twitter.com/fernandavasro/status/1569741835555291139?t=ADxk8P3Z3prq8USIZUqXCg&s=19`)
+	if (!isUrl(args[0]) && !args[0].includes('twitter.com')) return replygcFaridah('Link Invalid!')
           try {
           let { SD, HD, desc, thumb, audio } = await fg.twitter(args[0])
           let te = ` 
@@ -16512,7 +16520,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({video: {url:HD}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({video: {url:HD}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -16534,17 +16542,17 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
 } catch (e) {
-  	replygcVeron(`Verify that the link is from Twitter`)
+  	replygcFaridah(`Verify that the link is from Twitter`)
 	}
 }
 break
 case 'xvideodl': case 'xvideosearch': case 'xvideo': case 'xvideos': case 'xvideosdl': {
-	if (!m.isGroup) return VeronStickGroup()
-	if (!AntiNsfw) return replygcVeron(mess.nsfw)
-  if (!text) return replygcVeron(`What do you want to search?\nUsage: *${prefix + command} <search>*\n\nExample: ${prefix+command} hot japanese\nyou can use a link as well\nExample: ${prefix+command} link *`);
-    if (!text) return replygcVeron('Please provide a search query or a valid Xvideos URL.');
+	if (!m.isGroup) return farindahStickGroup()
+	if (!AntiNsfw) return replygcFaridah(mess.nsfw)
+  if (!text) return replygcFaridah(`What do you want to search?\nUsage: *${prefix + command} <search>*\n\nExample: ${prefix+command} hot japanese\nyou can use a link as well\nExample: ${prefix+command} link *`);
+    if (!text) return replygcFaridah('Please provide a search query or a valid Xvideos URL.');
     // Check if the input is a valid Xvideos URL
     const isURL = /^(https?:\/\/)?(www\.)?xvideos\.com\/.+$/i.test(text);
    try {
@@ -16571,7 +16579,7 @@ case 'xvideodl': case 'xvideosearch': case 'xvideo': case 'xvideos': case 'xvide
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ video: Buffer.from(buffer)}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ video: Buffer.from(buffer)}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -16593,12 +16601,12 @@ case 'xvideodl': case 'xvideosearch': case 'xvideo': case 'xvideos': case 'xvide
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
       } else {
         // If it's not a valid URL, perform a search and display the search results
         const results = await xvideosSearch(text);
         if (results.length === 0) {
-          replygcVeron('No search results found for the given query.');
+          replygcFaridah('No search results found for the given query.');
         } else {
           const searchResults = results.map((result, index) => {
             return `${index + 1}. *${result.title}*\nDuration: ${result.duration}\nQuality: ${result.quality}\nURL: ${result.url}`;
@@ -16619,7 +16627,7 @@ await VeronicaX.relayMessage(m.chat, msgs.message, {})
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -16641,20 +16649,20 @@ await VeronicaX.relayMessage(m.chat, msgs.message, {})
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
         }
       }
     } catch (error) {
       console.error(error);
-      return replygcVeron('Failed to fetch Xvideos video details.');
+      return replygcFaridah('Failed to fetch Xvideos video details.');
     }
   };
   break
   case 'xnxxdl': case 'xnxx': case 'xnxxsearch': {
-  if (!m.isGroup) return VeronStickGroup()
-	if (!AntiNsfw) return replygcVeron(mess.nsfw)
+  if (!m.isGroup) return farindahStickGroup()
+	if (!AntiNsfw) return replygcFaridah(mess.nsfw)
   if (!text)
-    return replygcVeron(`What do you want to search?\nUsage: *${prefix + command} <search>*\n\nExample: Hot japanese\nor you can use a link as well\nExample: .${prefix + command} link *`)
+    return replygcFaridah(`What do you want to search?\nUsage: *${prefix + command} <search>*\n\nExample: Hot japanese\nor you can use a link as well\nExample: .${prefix + command} link *`)
   let url
   try {
     url = new URL(text)
@@ -16681,7 +16689,7 @@ await VeronicaX.relayMessage(m.chat, msgs.message, {})
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ video: {url: files.high}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ video: {url: files.high}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -16703,14 +16711,14 @@ await VeronicaX.relayMessage(m.chat, msgs.message, {})
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
-        VeronicaX.sendMessage(m.chat, {video:{url: files.high}, caption: 'Here is go!!'}, {quoted:m})
+await Faridah.relayMessage(m.chat, msgs.message, {})
+        Faridah.sendMessage(m.chat, {video:{url: files.high}, caption: 'Here is go!!'}, {quoted:m})
       } else {
-        replygcVeron('🔴 Error: Failed to retrieve the download URL.')
+        replygcFaridah('🔴 Error: Failed to retrieve the download URL.')
       }
     } catch (e) {
       console.error(e)
-      replygcVeron('🔴 Error: We encountered a problem while processing the request.')
+      replygcFaridah('🔴 Error: We encountered a problem while processing the request.')
     }
   } else {
     try {
@@ -16733,7 +16741,7 @@ await VeronicaX.relayMessage(m.chat, msgs.message, {})
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -16742,7 +16750,7 @@ await VeronicaX.relayMessage(m.chat, msgs.message, {})
             }],
           }), 
           contextInfo: {
-                  mentionJid: VeronicaX.parseMention(message),
+                  mentionJid: Faridah.parseMention(message),
                   forwardingScore: 999,
                   isForwarded: true,
                 forwardedNewsletterMessageInfo: {
@@ -16755,13 +16763,13 @@ await VeronicaX.relayMessage(m.chat, msgs.message, {})
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
       } else {
-        replygcVeron('🔴 Error: No search results found.')
+        replygcFaridah('🔴 Error: No search results found.')
       }
     } catch (e) {
       console.error(e)
-      replygcVeron('🔴 Error: We encountered a problem while processing the request.')
+      replygcFaridah('🔴 Error: We encountered a problem while processing the request.')
     }
   }
 }
@@ -16791,9 +16799,9 @@ Verse ${json.verse_no}:\n
 ${json.translation}\n
 *🧘‍♂️ Spiritual Insight (Purport):*\n
 ${json.purport}`
-    replygcVeron(gitaVerse)
+    replygcFaridah(gitaVerse)
     if (json.audio_link) {
-      VeronicaX.sendMessage(m.chat, {audio: {url:json.audio_link}, mimetype: 'audio/mp4', ptt: true}, {quoted:m})
+      Faridah.sendMessage(m.chat, {audio: {url:json.audio_link}, mimetype: 'audio/mp4', ptt: true}, {quoted:m})
     }
   } catch (error) {
     console.error(error)
@@ -16804,34 +16812,34 @@ break
 case 'apk': {
 	try {
     if (command === 'apk') {
-      if (!text) return replygcVeron(`*[❗] Please provide the APK Name you want to download.*`);
+      if (!text) return replygcFaridah(`*[❗] Please provide the APK Name you want to download.*`);
       let data = await download(text);
       if (data.size.replace(' MB', '') > 200) {
-        return await VeronicaX.sendMessage(m.chat, { text: '*[⛔] The file is too large.*' }, { quoted: m });
+        return await Faridah.sendMessage(m.chat, { text: '*[⛔] The file is too large.*' }, { quoted: m });
       }
       if (data.size.includes('GB')) {
-        return await VeronicaX.sendMessage(m.chat, { text: '*[⛔] The file is too large.*' }, { quoted: m });
+        return await Faridah.sendMessage(m.chat, { text: '*[⛔] The file is too large.*' }, { quoted: m });
       }
-      await VeronicaX.sendMessage(
+      await Faridah.sendMessage(
         m.chat,
         { document: { url: data.dllink }, mimetype: 'application/vnd.android.package-archive', fileName: data.name + '.apk', caption: null },
         { quoted: m }
       )
     }
   } catch {
-    return replygcVeron(`*[❗] An error occurred. Make sure to provide a valid link.*`);
+    return replygcFaridah(`*[❗] An error occurred. Make sure to provide a valid link.*`);
   }
 };
 break
 case 'mega':{
 	try {
-if (!text) return replygcVeron(`${prefix + command} https://mega.nz/file/ovJTHaQZ#yAbkrvQgykcH_NDKQ8eIc0zvsN7jonBbHZ_HTQL6lZ8`);
+if (!text) return replygcFaridah(`${prefix + command} https://mega.nz/file/ovJTHaQZ#yAbkrvQgykcH_NDKQ8eIc0zvsN7jonBbHZ_HTQL6lZ8`);
 const { File } = require('megajs');
         const file = File.fromURL(text);
         await file.loadAttributes();
-        if (file.size >= 300000000) return replygcVeron('Error: File size is too large (Maximum Size: 300MB)');
+        if (file.size >= 300000000) return replygcFaridah('Error: File size is too large (Maximum Size: 300MB)');
         const downloadingMessage = `🌩️ Downloading file... Please wait.`;
-        replygcVeron(downloadingMessage);
+        replygcFaridah(downloadingMessage);
         const caption = `*_Successfully downloaded..._*\nFile: ${file.name}\nSize: ${formatBytes(file.size)}`;
         const data = await file.downloadBuffer();
         const fileExtension = path.extname(file.name).toLowerCase();
@@ -16846,14 +16854,14 @@ const { File } = require('megajs');
             ".png": "image/png",
         };
         let mimetype = mimeTypes[fileExtension] || "application/octet-stream";
-        await VeronicaX.sendMessage(m.chat, {document: data, mimetype: mimetype, fileName: file.name, caption: caption}, {quoted:m});
+        await Faridah.sendMessage(m.chat, {document: data, mimetype: mimetype, fileName: file.name, caption: caption}, {quoted:m});
     } catch (error) {
-        return replygcVeron(`Error: ${error.message}`);
+        return replygcFaridah(`Error: ${error.message}`);
     }
 }
 break
 case 'diffusion':{
-if (!text) return replygcVeron('What do u want to make?')
+if (!text) return replygcFaridah('What do u want to make?')
     let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     let raw = JSON.stringify({
@@ -16900,7 +16908,7 @@ if (!text) return replygcVeron('What do u want to make?')
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: result.output[0] } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: result.output[0] } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -16922,7 +16930,7 @@ if (!text) return replygcVeron('What do u want to make?')
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
     } catch (error) {
         console.log('error', error);
         let msgs = generateWAMessageFromContent(m.chat, {
@@ -16941,7 +16949,7 @@ await VeronicaX.relayMessage(m.chat, msgs.message, {})
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: `${error.config.url}` } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: `${error.config.url}` } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -16963,12 +16971,12 @@ await VeronicaX.relayMessage(m.chat, msgs.message, {})
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
     }
 }
 break
 case 'indo-ai': {
-	if (!text) return replygcVeron(`*• Example:* ${prefix + command} halo`)
+	if (!text) return replygcFaridah(`*• Example:* ${prefix + command} halo`)
 try {
 let gpt = await (await fetch(`https://itzpire.com/ai/gpt-web?q=${text}`)).json()
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -16987,7 +16995,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image:  fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image:  fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17009,17 +17017,17 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
  } catch(e) {
- return replygcVeron("`*Error*`")
+ return replygcFaridah("`*Error*`")
 }
 }
 break
 case 'photoleap': {
-	if (!text) return replygcVeron(`*• Example:* ${prefix + command} blue sea`);
+	if (!text) return replygcFaridah(`*• Example:* ${prefix + command} blue sea`);
   let currentTime = Date.now();
   let lastUsed = 0;
-  if (currentTime - lastUsed < 10000) return replygcVeron("Cooldown 10 seconds, try again later");
+  if (currentTime - lastUsed < 10000) return replygcFaridah("Cooldown 10 seconds, try again later");
   lastUsed = currentTime;
   try {
     let gpt = await (await fetch(`https://tti.photoleapapp.com/api/v1/generate?prompt=${text}`)).json();
@@ -17039,7 +17047,7 @@ case 'photoleap': {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: gpt.result_url } }, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: gpt.result_url } }, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17061,15 +17069,15 @@ case 'photoleap': {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
   } catch(e) {
-    return replygcVeron("`*Error*`");
+    return replygcFaridah("`*Error*`");
   }
 }
 break
 case 'ai':
 case 'openai': {
-	if (!text) return replygcVeron(`*• Example:* ${prefix + command} what is your name`);   
+	if (!text) return replygcFaridah(`*• Example:* ${prefix + command} what is your name`);   
         try {
 let gpt = await (await fetch(`https://itzpire.com/ai/gpt?model=gpt-4&q=${text}`)).json()
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -17088,7 +17096,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image:  fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image:  fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17110,14 +17118,14 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
  } catch(e) {
- return replygcVeron("`*Error*`")
+ return replygcFaridah("`*Error*`")
 }
 }
     break
         case 'animate': {
-	if (!text) return replygcVeron(`*• Example:* ${prefix + command} a cat chasing mouse`);   
+	if (!text) return replygcFaridah(`*• Example:* ${prefix + command} a cat chasing mouse`);   
         try {
 let gpt = await (await fetch(`https://itzpire.com/ai/animate-diff?prompt=${text}`)).json()
 const response = await axios.get(gpt.data.image_urls, { responseType: 'arraybuffer' })
@@ -17139,7 +17147,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ video: fetchedgif }, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ video: fetchedgif }, { upload: Faridah.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17161,14 +17169,14 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
  } catch(e) {
- return replygcVeron("`*Error*`")
+ return replygcFaridah("`*Error*`")
 }
 }
     break
         case 'diffusion-anime': {
-	if (!text) return replygcVeron(`*• Example:* ${prefix + command} what is your name`);   
+	if (!text) return replygcFaridah(`*• Example:* ${prefix + command} what is your name`);   
         try {
 let gpt = await (await fetch(`https://itzpire.com/ai/animediff2?prompt=${text}`)).json()
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -17187,7 +17195,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: {url: gpt.result} }, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ image: {url: gpt.result} }, { upload: Faridah.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17209,14 +17217,14 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
  } catch(e) {
- return replygcVeron("`*Error*`")
+ return replygcFaridah("`*Error*`")
 }
 }
     break
     case 'bingai': {
-	if (!text) return replygcVeron(`*• Example:* ${prefix + command} what is your name`);   
+	if (!text) return replygcFaridah(`*• Example:* ${prefix + command} what is your name`);   
         try {
 let gpt = await (await fetch(`https://itzpire.com/ai/bing-ai?model=Balanced&q=${text}`)).json()
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -17235,7 +17243,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: Faridah.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17257,14 +17265,14 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
  } catch(e) {
- return replygcVeron("`*Error*`")
+ return replygcFaridah("`*Error*`")
 }
 }
     break
     case 'blackboxai': {
-	if (!text) return replygcVeron(`*• Example:* ${prefix + command} write a program to delete file`);   
+	if (!text) return replygcFaridah(`*• Example:* ${prefix + command} write a program to delete file`);   
         try {
 let gpt = await (await fetch(`https://itzpire.com/ai/blackbox-ai?q=${text}`)).json()
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -17283,7 +17291,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: Faridah.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17305,14 +17313,14 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
  } catch(e) {
- return replygcVeron("`*Error*`")
+ return replygcFaridah("`*Error*`")
 }
 }
     break
     case 'travel-assistant': {
-	if (!text) return replygcVeron(`*• Example:* ${prefix + command} how can i visit taj mahal`);   
+	if (!text) return replygcFaridah(`*• Example:* ${prefix + command} how can i visit taj mahal`);   
         try {
 let gpt = await (await fetch(`https://itzpire.com/ai/copilot2trip?q=${text}`)).json()
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -17331,7 +17339,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png') }, { upload: Faridah.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17353,14 +17361,14 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
  } catch(e) {
- return replygcVeron("`*Error*`")
+ return replygcFaridah("`*Error*`")
 }
 }
     break
     case 'dalle': {
-	if (!text) return replygcVeron(`*• Example:* ${prefix + command} a girl singing in public`);   
+	if (!text) return replygcFaridah(`*• Example:* ${prefix + command} a girl singing in public`);   
         try {
 let gpt = await (await fetch(`https://itzpire.com/ai/dalle?prompt=${text}`)).json()
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -17379,7 +17387,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: gpt.result }}, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ image: { url: gpt.result }}, { upload: Faridah.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17401,14 +17409,14 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
  } catch(e) {
- return replygcVeron("`*Error*`")
+ return replygcFaridah("`*Error*`")
 }
 }
     break
     case 'guru-ai': {
-	if (!text) return replygcVeron(`*• Example:* ${prefix + command} how to make girl pregnant`);   
+	if (!text) return replygcFaridah(`*• Example:* ${prefix + command} how to make girl pregnant`);   
         try {
 let gpt = await (await fetch(`https://itzpire.com/ai/degreeGuru?q=${text}`)).json()
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -17427,7 +17435,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17449,14 +17457,14 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
  } catch(e) {
- return replygcVeron("`*Error*`")
+ return replygcFaridah("`*Error*`")
 }
 }
     break
     case 'emi-ai': {
-	if (!text) return replygcVeron(`*• Example:* ${prefix + command} a girl singing in public`);   
+	if (!text) return replygcFaridah(`*• Example:* ${prefix + command} a girl singing in public`);   
         try {
 let gpt = await (await fetch(`https://itzpire.com/ai/emi?prompt=${text}`)).json()
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -17475,7 +17483,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: gpt.result }}, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ image: { url: gpt.result }}, { upload: Faridah.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17497,14 +17505,14 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
  } catch(e) {
- return replygcVeron("`*Error*`")
+ return replygcFaridah("`*Error*`")
 }
 }
     break
     case 'claude-ai': {
-	if (!text) return replygcVeron(`*• Example:* ${prefix + command} how to make girl pregnant`);   
+	if (!text) return replygcFaridah(`*• Example:* ${prefix + command} how to make girl pregnant`);   
         try {
 let gpt = await (await fetch(`https://itzpire.com/ai/claude?q=${text}`)).json()
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -17523,7 +17531,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17545,14 +17553,14 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
  } catch(e) {
- return replygcVeron("`*Error*`")
+ return replygcFaridah("`*Error*`")
 }
 }
     break
     case 'costume-ai': {
-	if (!text) return replygcVeron(`*• Example:* ${prefix + command} how to make girl pregnant`);   
+	if (!text) return replygcFaridah(`*• Example:* ${prefix + command} how to make girl pregnant`);   
         try {
 let gpt = await (await fetch(`https://itzpire.com/ai/gpt-logic?q=${text}&logic=${text}&realtime=true`)).json()
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -17571,7 +17579,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17593,14 +17601,14 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
  } catch(e) {
- return replygcVeron("`*Error*`")
+ return replygcFaridah("`*Error*`")
 }
 }
     break
     case 'herc-ai': {
-	if (!text) return replygcVeron(`*• Example:* ${prefix + command} how to make girl pregnant`);   
+	if (!text) return replygcFaridah(`*• Example:* ${prefix + command} how to make girl pregnant`);   
         try {
 let gpt = await (await fetch(`https://itzpire.com/ai/hercai-chat?model=v3&q=${text}`)).json()
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -17619,7 +17627,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ image: fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17641,14 +17649,14 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
  } catch(e) {
- return replygcVeron("`*Error*`")
+ return replygcFaridah("`*Error*`")
 }
 }
     break
     case 'hercaiv1': {
-	if (!text) return replygcVeron(`*• Example:* ${prefix + command} a girl singing in public`);   
+	if (!text) return replygcFaridah(`*• Example:* ${prefix + command} a girl singing in public`);   
         try {
 let gpt = await (await fetch(`https://itzpire.com/ai/hercai-img?model=v1&prompt=${text}`)).json()
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -17667,7 +17675,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: gpt.data.response }}, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ image: { url: gpt.data.response }}, { upload: Faridah.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17689,14 +17697,14 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
  } catch(e) {
- return replygcVeron("`*Error*`")
+ return replygcFaridah("`*Error*`")
 }
 }
     break
     case 'hercai-cartoon': {
-	if (!text) return replygcVeron(`*• Example:* ${prefix + command} a girl singing in public`);   
+	if (!text) return replygcFaridah(`*• Example:* ${prefix + command} a girl singing in public`);   
         try {
 let gpt = await (await fetch(`https://itzpire.com/ai/hercai-img?model=v3&prompt=${text}`)).json()
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -17715,7 +17723,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: gpt.data.response }}, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ image: { url: gpt.data.response }}, { upload: Faridah.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17737,14 +17745,14 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
  } catch(e) {
- return replygcVeron("`*Error*`")
+ return replygcFaridah("`*Error*`")
 }
 }
     break
     case 'hercai-animefy': {
-	if (!text) return replygcVeron(`*• Example:* ${prefix + command} a girl singing in public`);   
+	if (!text) return replygcFaridah(`*• Example:* ${prefix + command} a girl singing in public`);   
         try {
 let gpt = await (await fetch(`https://itzpire.com/ai/hercai-img?model=animefy&prompt=${text}`)).json()
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -17763,7 +17771,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: gpt.data.response }}, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ image: { url: gpt.data.response }}, { upload: Faridah.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17785,14 +17793,14 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
  } catch(e) {
- return replygcVeron("`*Error*`")
+ return replygcFaridah("`*Error*`")
 }
 }
     break
     case 'hercai-lexica': {
-	if (!text) return replygcVeron(`*• Example:* ${prefix + command} a girl singing in public`);   
+	if (!text) return replygcFaridah(`*• Example:* ${prefix + command} a girl singing in public`);   
         try {
 let gpt = await (await fetch(`https://itzpire.com/ai/hercai-img?model=lexica&prompt=${text}`)).json()
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -17811,7 +17819,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: gpt.data.response }}, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ image: { url: gpt.data.response }}, { upload: Faridah.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17833,14 +17841,14 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
  } catch(e) {
- return replygcVeron("`*Error*`")
+ return replygcFaridah("`*Error*`")
 }
 }
     break
     case 'hercai-prodia': {
-	if (!text) return replygcVeron(`*• Example:* ${prefix + command} a girl singing in public`);   
+	if (!text) return replygcFaridah(`*• Example:* ${prefix + command} a girl singing in public`);   
         try {
 let gpt = await (await fetch(`https://itzpire.com/ai/hercai-img?model=prodia&prompt=${text}`)).json()
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -17859,7 +17867,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: gpt.data.response }}, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ image: { url: gpt.data.response }}, { upload: Faridah.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17881,14 +17889,14 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
  } catch(e) {
- return replygcVeron("`*Error*`")
+ return replygcFaridah("`*Error*`")
 }
 }
     break
     case 'hercai-simurg': {
-	if (!text) return replygcVeron(`*• Example:* ${prefix + command} a girl singing in public`);   
+	if (!text) return replygcFaridah(`*• Example:* ${prefix + command} a girl singing in public`);   
         try {
 let gpt = await (await fetch(`https://itzpire.com/ai/hercai-img?model=simurg&prompt=${text}`)).json()
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -17907,7 +17915,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: gpt.data.response }}, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ image: { url: gpt.data.response }}, { upload: Faridah.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17929,14 +17937,14 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
  } catch(e) {
- return replygcVeron("`*Error*`")
+ return replygcFaridah("`*Error*`")
 }
 }
     break
     case 'hercai-raava': {
-	if (!text) return replygcVeron(`*• Example:* ${prefix + command} a girl singing in public`);   
+	if (!text) return replygcFaridah(`*• Example:* ${prefix + command} a girl singing in public`);   
         try {
 let gpt = await (await fetch(`https://itzpire.com/ai/hercai-img?model=raava&prompt=${text}`)).json()
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -17955,7 +17963,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: gpt.data.response }}, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ image: { url: gpt.data.response }}, { upload: Faridah.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -17977,14 +17985,14 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
  } catch(e) {
- return replygcVeron("`*Error*`")
+ return replygcFaridah("`*Error*`")
 }
 }
     break
     case 'hercai-shonin': {
-	if (!text) return replygcVeron(`*• Example:* ${prefix + command} a girl singing in public`);   
+	if (!text) return replygcFaridah(`*• Example:* ${prefix + command} a girl singing in public`);   
         try {
 let gpt = await (await fetch(`https://itzpire.com/ai/hercai-img?model=shonin&prompt=${text}`)).json()
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -18003,7 +18011,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: gpt.data.response }}, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ image: { url: gpt.data.response }}, { upload: Faridah.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -18025,16 +18033,16 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
  } catch(e) {
- return replygcVeron("`*Error*`")
+ return replygcFaridah("`*Error*`")
 }
 }
     break
     case 'realistic': case '3dmodel': {
-    	if (!text) return replygcVeron(`*Example:* ${prefix + command} blue sky`)
+    	if (!text) return replygcFaridah(`*Example:* ${prefix + command} blue sky`)
   let currentTime = Date.now();
-  if (currentTime - lastUsed < 10000) return replygcVeron("Cooldown 10 seconds, try again later")
+  if (currentTime - lastUsed < 10000) return replygcFaridah("Cooldown 10 seconds, try again later")
   lastUsed = currentTime;
   try {
     let negative = 'ugly, deformed, noisy, blurry, distorted, out of focus, bad anatomy, extra limbs, poorly drawn face, poorly drawn hands, missing fingers, adult, naked, 18+';
@@ -18055,7 +18063,7 @@ await VeronicaX.relayMessage(m.chat, msgs.message, {})
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: gpt.result }}, { upload: VeronicaX.waUploadToServer })  
+          ...await prepareWAMessageMedia({ image: { url: gpt.result }}, { upload: Faridah.waUploadToServer })  
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -18077,14 +18085,14 @@ await VeronicaX.relayMessage(m.chat, msgs.message, {})
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
   } catch(e) {
-    return replygcVeron("`GPT Not Responding`")
+    return replygcFaridah("`GPT Not Responding`")
   }
 }
 break
 case 'wikipedia': case 'wiki': {
-	if (!text) return replygcVeron(`Enter what you want to search for on Wikipedia`)
+	if (!text) return replygcFaridah(`Enter what you want to search for on Wikipedia`)
 	
     try {
 	const link =  await axios.get(`https://en.wikipedia.org/wiki/${text}`)
@@ -18111,7 +18119,7 @@ ${resulw}`
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image:  fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image:  fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -18133,9 +18141,9 @@ ${resulw}`
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
 } catch (e) {
-  replygcVeron('⚠️ No results found ')
+  replygcFaridah('⚠️ No results found ')
 }
 }
 break
@@ -18144,7 +18152,7 @@ case 'traceanime': {
     let q = m.quoted ? m.quoted : m;
     let mime = (q.msg || q).mimetype || q.mediaType || "";
     if (!mime.startsWith('image')) {
-      return replygcVeron("*Respond to an image*");
+      return replygcFaridah("*Respond to an image*");
     }
     let data = await q.download();
     let image = await uploadImage(data);
@@ -18154,7 +18162,7 @@ case 'traceanime': {
     let result = await response.json();
     console.log("API Response:", result);
     if (!result || result.error || result.result.length === 0) {
-      return replygcVeron("*Error: Could not track the anime.*");
+      return replygcFaridah("*Error: Could not track the anime.*");
     }
     let { anilist, from, to, similarity, video, episode } = result.result[0];
     let animeTitle = anilist.title ? anilist.title.romaji || anilist.title.native : "Unknown Title";
@@ -18192,7 +18200,7 @@ case 'traceanime': {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({video: {url: video}}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({video: {url: video}}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -18214,15 +18222,15 @@ case 'traceanime': {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
   } catch (error) {
     console.error("Error:", error);
-    replygcVeron("*Error: Could not track the anime or send the video.*");
+    replygcFaridah("*Error: Could not track the anime or send the video.*");
   }
 };
 break
 case 'stickersearch': {
-if (!text) return replygcVeron(`Example : ${m.prefix + command} kururmi`)
+if (!text) return replygcFaridah(`Example : ${m.prefix + command} kururmi`)
 var js = await fetch(`https://dikaardnt.com/api/search/sticker?q=${q}`)
 var json = await js.json()
 let msgs = generateWAMessageFromContent(m.chat, {
@@ -18247,7 +18255,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image:  fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image:  fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -18269,11 +18277,11 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'apksearch': {
-if (!text) return replygcVeron(`Example : ${prefix + command} whatsapp`)
+if (!text) return replygcFaridah(`Example : ${prefix + command} whatsapp`)
 var js = await fetch(`https://dikaardnt.com/api/search/apk?q=${q}`)
 var json = await js.json()
 var capt = `
@@ -18300,7 +18308,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
           }),
           header: proto.Message.InteractiveMessage.Header.create({
           hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image: { url: json[0].thumbnail }}, { upload: VeronicaX.waUploadToServer })
+          ...await prepareWAMessageMedia({ image: { url: json[0].thumbnail }}, { upload: Faridah.waUploadToServer })
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
@@ -18322,21 +18330,21 @@ let msgs = generateWAMessageFromContent(m.chat, {
     }
   }
 }, { quoted: m })
-await VeronicaX.relayMessage(m.chat, msgs.message, {})
+await Faridah.relayMessage(m.chat, msgs.message, {})
 }
 break
 case 'readmore': {
 	let [l, r] = text.split`|`
     if (!l) l = ''
     if (!r) r = ''
-    VeronicaX.sendMessage(m.chat, {text: l + readmore + r}, {quoted: m})
+    Faridah.sendMessage(m.chat, {text: l + readmore + r}, {quoted: m})
 }
 break;
   case 'totalfeature':
         case 'totalfitur': 
         case 'totalcmd': 
         case 'totalcommand': 
-            replygcVeron(`Total Features of ${botname} is ${Veronfeature()}`)
+            replygcFaridah(`Total Features of ${botname} is ${Faridahfeature()}`)
         break
 case 'nebula': case 'menu':
             case 'help': {
@@ -18346,53 +18354,53 @@ case 'nebula': case 'menu':
             let a = db.data.users[sender]
             let me = m.sender
             let xmenu_oh2 = `
-╭─❍ *NEBULA MD MENU* ⬡────⭓
-├▢⬡  ${Veronytimewisher} ${pushname} 
-├▢⬡ 𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
-├▢⬡ 𝗢𝘄𝗻𝗲𝗿 𝗡𝗼: +${ownernumber}
-├▢⬡ 𝗣r𝗲𝗳𝗶𝘅 :  [ ${vprefix} ]
-├▢⬡ 𝗠𝗼𝗱𝗲 : ${VeronicaX.public ? 'Public' : `Self`}
-╰─────────────────────━━
+╭──⧼♛ *NEBULA MD V1* ♛ ⧽──≽
+│┃友  ${kayinzatimewisher} ${pushname} 
+│┃友 𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
+│┃友 𝗢𝘄𝗻𝗲𝗿 𝗡𝗼: +${ownernumber}
+│┃友 𝗣r𝗲𝗳𝗶𝘅 :  [ ${vprefix} ]
+│┃友 𝗠𝗼𝗱𝗲 : ${Faridah.public ? 'Public' : `Self`}
+╰───────────────≽
  `
             let xmenu_oh = `
-╭─❍ *NEBULA MD MENU* ⬡────⭓
-├▢⬡  ${Veronytimewisher} ${pushname} 
-├▢⬡ 𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
-├▢⬡ 𝗢𝘄𝗻𝗲𝗿 𝗡𝗼: +${ownernumber}
-├▢⬡ 𝗣r𝗲𝗳𝗶𝘅 :  [ ${vprefix} ]
-├▢⬡ 𝗠𝗼𝗱𝗲 : ${VeronicaX.public ? 'Public' : `Self`}
-╰─────────────────────━━
-╭─❍ *SELECT MENU* ⬡────⭓
-│❏${prefix}allmenu
-│❏${prefix}searchmenu
-│❏${prefix}downloadmenu
-│❏${prefix}gamemenu
-│❏${prefix}funmenu
-│❏${prefix}aimenu
-│❏${prefix}groupmenu
-│❏${prefix}ownermenu
-│❏${prefix}convertmenu
-│❏${prefix}listmenu
-│❏${prefix}religionmenu
-│❏${prefix}animemenu
-│❏${prefix}nsfwmenu
-│❏${prefix}randomphotomenu
-│❏${prefix}randomvideomenu
-│❏${prefix}stickermenu
-│❏${prefix}databasemenu
-│❏${prefix}storemenu
-│❏${prefix}stalkermenu
-│❏${prefix}othermenu
-└─────────────────┈ ⳹`
+╭──⧼♛ *NEBULA MD V1* ♛ ⧽──≽
+│┃友  ${kayinzatimewisher} ${pushname} 
+│┃友 𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
+│┃友 𝗢𝘄𝗻𝗲𝗿 𝗡𝗼: +${ownernumber}
+│┃友 𝗣r𝗲𝗳𝗶𝘅 :  [ ${vprefix} ]
+│┃友 𝗠𝗼𝗱𝗲 : ${Faridah.public ? 'Public' : `Self`}
+╰────────────────────≽
+╭──⧼♛ *SELECT MENU* ♛ ⧽──≽
+│┃友${prefix}allmenu
+│┃友${prefix}searchmenu
+│┃友${prefix}downloadmenu
+│┃友${prefix}gamemenu
+│┃友${prefix}funmenu
+│┃友${prefix}aimenu
+│┃友${prefix}groupmenu
+│┃友${prefix}ownermenu
+│┃友${prefix}convertmenu
+│┃友${prefix}listmenu
+│┃友${prefix}religionmenu
+│┃友${prefix}animemenu
+│┃友${prefix}nsfwmenu
+│┃友${prefix}randomphotomenu
+│┃友${prefix}randomvideomenu
+│┃友${prefix}stickermenu
+│┃友${prefix}databasemenu
+│┃友${prefix}storemenu
+│┃友${prefix}stalkermenu
+│┃友${prefix}othermenu
+└──────────────────≽`
 if (typemenu === 'v1') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         image: fs.readFileSync('./Media/theme/NEBULA.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
@@ -18409,14 +18417,14 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
@@ -18424,7 +18432,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    VeronicaX.relayMessage(m.chat, {
+                    Faridah.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -18432,7 +18440,7 @@ if (typemenu === 'v1') {
                         }
                     }, { quoted: m })
                 } else if (typemenu === 'v6') {
-                    VeronicaX.relayMessage(m.chat,  {
+                    Faridah.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -18450,7 +18458,7 @@ if (typemenu === 'v1') {
                        }
                     }, { quoted: m })
                 } else if (typemenu === 'v7') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -18473,7 +18481,7 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
       video: fs.readFileSync('./Media/theme/nebula.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
@@ -18490,7 +18498,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
       } else if (typemenu === 'v9') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
 video: fs.readFileSync('./Media/theme/nebula.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
@@ -18550,7 +18558,7 @@ let msg = generateWAMessageFromContent(from, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           })
@@ -18559,7 +18567,7 @@ let msg = generateWAMessageFromContent(from, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 } else if (typemenu === 'v11') {
@@ -18578,7 +18586,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/NEBULA.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/NEBULA.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -18599,7 +18607,7 @@ let msg = generateWAMessageFromContent(m.chat, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
                                   ],
                 }),
@@ -18618,7 +18626,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         },
       }, { quoted: m })
       
-      await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+      await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
         messageId: msg.key.id
         })
         } else if (typemenu === 'v12') {
@@ -18637,7 +18645,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -18742,7 +18750,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           }),
@@ -18761,7 +18769,7 @@ let msg = generateWAMessageFromContent(m.chat, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -18770,14 +18778,14 @@ break
             case 'allmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${allmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
@@ -18794,14 +18802,14 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
@@ -18809,7 +18817,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    VeronicaX.relayMessage(m.chat, {
+                    Faridah.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -18817,7 +18825,7 @@ if (typemenu === 'v1') {
                         }
                     }, { quoted: m })
                 } else if (typemenu === 'v6') {
-                    VeronicaX.relayMessage(m.chat,  {
+                    Faridah.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -18835,7 +18843,7 @@ if (typemenu === 'v1') {
                        }
                     }, { quoted: m })
                 } else if (typemenu === 'v7') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -18858,7 +18866,7 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
       video: fs.readFileSync('./Media/theme/nebula.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
@@ -18876,7 +18884,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                     } else if (typemenu === 'v9') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
 video: fs.readFileSync('./Media/theme/nebula.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
@@ -18936,7 +18944,7 @@ let msg = generateWAMessageFromContent(from, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           })
@@ -18945,7 +18953,7 @@ let msg = generateWAMessageFromContent(from, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 } else if (typemenu === 'v11') {
@@ -18964,7 +18972,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -18985,7 +18993,7 @@ let msg = generateWAMessageFromContent(m.chat, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
                                   ],
                 }),
@@ -19004,7 +19012,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         },
       }, { quoted: m })
       
-      await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+      await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
         messageId: msg.key.id
         })
         } else if (typemenu === 'v12') {
@@ -19023,7 +19031,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -19053,7 +19061,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           }),
@@ -19072,7 +19080,7 @@ let msg = generateWAMessageFromContent(m.chat, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -19081,14 +19089,14 @@ break
             case 'ownermenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${ownermenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
@@ -19105,14 +19113,14 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
@@ -19120,7 +19128,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    VeronicaX.relayMessage(m.chat, {
+                    Faridah.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -19128,7 +19136,7 @@ if (typemenu === 'v1') {
                         }
                     }, { quoted: m })
                 } else if (typemenu === 'v6') {
-                    VeronicaX.relayMessage(m.chat,  {
+                    Faridah.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -19146,7 +19154,7 @@ if (typemenu === 'v1') {
                        }
                     }, { quoted: m })
                 } else if (typemenu === 'v7') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -19169,7 +19177,7 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
       video: fs.readFileSync('./Media/theme/nebula.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
@@ -19187,7 +19195,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                     } else if (typemenu === 'v9') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
 video: fs.readFileSync('./Media/theme/nebula.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
@@ -19247,7 +19255,7 @@ let msg = generateWAMessageFromContent(from, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           })
@@ -19256,7 +19264,7 @@ let msg = generateWAMessageFromContent(from, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 } else if (typemenu === 'v11') {
@@ -19275,7 +19283,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -19296,7 +19304,7 @@ let msg = generateWAMessageFromContent(m.chat, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
                                   ],
                 }),
@@ -19315,7 +19323,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         },
       }, { quoted: m })
       
-      await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+      await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
         messageId: msg.key.id
         })
         } else if (typemenu === 'v12') {
@@ -19334,7 +19342,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -19364,7 +19372,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           }),
@@ -19383,7 +19391,7 @@ let msg = generateWAMessageFromContent(m.chat, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -19392,14 +19400,14 @@ break
 case 'othermenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${othermenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
@@ -19416,14 +19424,14 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
@@ -19431,7 +19439,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    VeronicaX.relayMessage(m.chat, {
+                    Faridah.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -19439,7 +19447,7 @@ if (typemenu === 'v1') {
                         }
                     }, { quoted: m })
                 } else if (typemenu === 'v6') {
-                    VeronicaX.relayMessage(m.chat,  {
+                    Faridah.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -19457,7 +19465,7 @@ if (typemenu === 'v1') {
                        }
                     }, { quoted: m })
                 } else if (typemenu === 'v7') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -19480,7 +19488,7 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
       video: fs.readFileSync('./Media/theme/nebula.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
@@ -19498,7 +19506,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                     } else if (typemenu === 'v9') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
 video: fs.readFileSync('./Media/theme/nebula.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
@@ -19558,7 +19566,7 @@ let msg = generateWAMessageFromContent(from, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           })
@@ -19567,7 +19575,7 @@ let msg = generateWAMessageFromContent(from, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 } else if (typemenu === 'v11') {
@@ -19586,7 +19594,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -19607,7 +19615,7 @@ let msg = generateWAMessageFromContent(m.chat, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
                                   ],
                 }),
@@ -19626,7 +19634,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         },
       }, { quoted: m })
       
-      await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+      await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
         messageId: msg.key.id
         })
         } else if (typemenu === 'v12') {
@@ -19645,7 +19653,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -19675,7 +19683,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           }),
@@ -19694,7 +19702,7 @@ let msg = generateWAMessageFromContent(m.chat, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -19703,14 +19711,14 @@ break
 case 'downloadmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${downloadmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
@@ -19727,14 +19735,14 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
@@ -19742,7 +19750,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    VeronicaX.relayMessage(m.chat, {
+                    Faridah.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -19750,7 +19758,7 @@ if (typemenu === 'v1') {
                         }
                     }, { quoted: m })
                 } else if (typemenu === 'v6') {
-                    VeronicaX.relayMessage(m.chat,  {
+                    Faridah.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -19768,7 +19776,7 @@ if (typemenu === 'v1') {
                        }
                     }, { quoted: m })
                 } else if (typemenu === 'v7') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -19791,7 +19799,7 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
       video: fs.readFileSync('./Media/theme/nebula.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
@@ -19809,7 +19817,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                     } else if (typemenu === 'v9') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
 video: fs.readFileSync('./Media/theme/nebula.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
@@ -19869,7 +19877,7 @@ let msg = generateWAMessageFromContent(from, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           })
@@ -19878,7 +19886,7 @@ let msg = generateWAMessageFromContent(from, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 } else if (typemenu === 'v11') {
@@ -19897,7 +19905,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -19918,7 +19926,7 @@ let msg = generateWAMessageFromContent(m.chat, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
                                   ],
                 }),
@@ -19937,7 +19945,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         },
       }, { quoted: m })
       
-      await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+      await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
         messageId: msg.key.id
         })
         } else if (typemenu === 'v12') {
@@ -19956,7 +19964,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -19986,7 +19994,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           }),
@@ -20005,7 +20013,7 @@ let msg = generateWAMessageFromContent(m.chat, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -20014,14 +20022,14 @@ break
 case 'groupmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${groupmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
@@ -20038,14 +20046,14 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
@@ -20053,7 +20061,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    VeronicaX.relayMessage(m.chat, {
+                    Faridah.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -20061,7 +20069,7 @@ if (typemenu === 'v1') {
                         }
                     }, { quoted: m })
                 } else if (typemenu === 'v6') {
-                    VeronicaX.relayMessage(m.chat,  {
+                    Faridah.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -20079,7 +20087,7 @@ if (typemenu === 'v1') {
                        }
                     }, { quoted: m })
                 } else if (typemenu === 'v7') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -20102,7 +20110,7 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
       video: fs.readFileSync('./Media/theme/nebula.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
@@ -20120,7 +20128,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                     } else if (typemenu === 'v9') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
 video: fs.readFileSync('./Media/theme/nebula.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
@@ -20180,7 +20188,7 @@ let msg = generateWAMessageFromContent(from, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           })
@@ -20189,7 +20197,7 @@ let msg = generateWAMessageFromContent(from, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 } else if (typemenu === 'v11') {
@@ -20208,7 +20216,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -20229,7 +20237,7 @@ let msg = generateWAMessageFromContent(m.chat, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
                                   ],
                 }),
@@ -20248,7 +20256,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         },
       }, { quoted: m })
       
-      await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+      await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
         messageId: msg.key.id
         })
         } else if (typemenu === 'v12') {
@@ -20267,7 +20275,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -20297,7 +20305,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           }),
@@ -20316,7 +20324,7 @@ let msg = generateWAMessageFromContent(m.chat, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -20325,14 +20333,14 @@ break
 case 'gamemenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${gamemenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
@@ -20349,14 +20357,14 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
@@ -20364,7 +20372,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    VeronicaX.relayMessage(m.chat, {
+                    Faridah.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -20372,7 +20380,7 @@ if (typemenu === 'v1') {
                         }
                     }, { quoted: m })
                 } else if (typemenu === 'v6') {
-                    VeronicaX.relayMessage(m.chat,  {
+                    Faridah.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -20390,7 +20398,7 @@ if (typemenu === 'v1') {
                        }
                     }, { quoted: m })
                 } else if (typemenu === 'v7') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -20413,7 +20421,7 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
       video: fs.readFileSync('./Media/theme/nebula.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
@@ -20431,7 +20439,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                     } else if (typemenu === 'v9') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
 video: fs.readFileSync('./Media/theme/nebula.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
@@ -20491,7 +20499,7 @@ let msg = generateWAMessageFromContent(from, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           })
@@ -20500,7 +20508,7 @@ let msg = generateWAMessageFromContent(from, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 } else if (typemenu === 'v11') {
@@ -20519,7 +20527,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -20540,7 +20548,7 @@ let msg = generateWAMessageFromContent(m.chat, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
                                   ],
                 }),
@@ -20559,7 +20567,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         },
       }, { quoted: m })
       
-      await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+      await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
         messageId: msg.key.id
         })
         } else if (typemenu === 'v12') {
@@ -20578,7 +20586,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -20608,7 +20616,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           }),
@@ -20627,7 +20635,7 @@ let msg = generateWAMessageFromContent(m.chat, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -20636,14 +20644,14 @@ break
 case 'funmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${funmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
@@ -20660,14 +20668,14 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
@@ -20675,7 +20683,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    VeronicaX.relayMessage(m.chat, {
+                    Faridah.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -20683,7 +20691,7 @@ if (typemenu === 'v1') {
                         }
                     }, { quoted: m })
                 } else if (typemenu === 'v6') {
-                    VeronicaX.relayMessage(m.chat,  {
+                    Faridah.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -20701,7 +20709,7 @@ if (typemenu === 'v1') {
                        }
                     }, { quoted: m })
                 } else if (typemenu === 'v7') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -20724,7 +20732,7 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
       video: fs.readFileSync('./Media/theme/nebula.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
@@ -20742,7 +20750,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                     } else if (typemenu === 'v9') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
 video: fs.readFileSync('./Media/theme/nebula.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
@@ -20802,7 +20810,7 @@ let msg = generateWAMessageFromContent(from, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           })
@@ -20811,7 +20819,7 @@ let msg = generateWAMessageFromContent(from, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 } else if (typemenu === 'v11') {
@@ -20830,7 +20838,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -20851,7 +20859,7 @@ let msg = generateWAMessageFromContent(m.chat, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
                                   ],
                 }),
@@ -20870,7 +20878,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         },
       }, { quoted: m })
       
-      await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+      await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
         messageId: msg.key.id
         })
         } else if (typemenu === 'v12') {
@@ -20889,7 +20897,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -20919,7 +20927,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           }),
@@ -20938,7 +20946,7 @@ let msg = generateWAMessageFromContent(m.chat, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -20947,14 +20955,14 @@ break
 case 'stalkermenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${stalkermenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
@@ -20971,14 +20979,14 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
@@ -20986,7 +20994,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    VeronicaX.relayMessage(m.chat, {
+                    Faridah.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -20994,7 +21002,7 @@ if (typemenu === 'v1') {
                         }
                     }, { quoted: m })
                 } else if (typemenu === 'v6') {
-                    VeronicaX.relayMessage(m.chat,  {
+                    Faridah.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -21012,7 +21020,7 @@ if (typemenu === 'v1') {
                        }
                     }, { quoted: m })
                 } else if (typemenu === 'v7') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -21035,7 +21043,7 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
       video: fs.readFileSync('./Media/theme/nebula.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
@@ -21053,7 +21061,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                     } else if (typemenu === 'v9') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
 video: fs.readFileSync('./Media/theme/nebula.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
@@ -21116,7 +21124,7 @@ let msg = generateWAMessageFromContent(from, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           })
@@ -21125,7 +21133,7 @@ let msg = generateWAMessageFromContent(from, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 } else if (typemenu === 'v11') {
@@ -21144,7 +21152,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -21165,7 +21173,7 @@ let msg = generateWAMessageFromContent(m.chat, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
                                   ],
                 }),
@@ -21184,7 +21192,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         },
       }, { quoted: m })
       
-      await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+      await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
         messageId: msg.key.id
         })
         } else if (typemenu === 'v12') {
@@ -21203,7 +21211,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -21233,7 +21241,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           }),
@@ -21252,7 +21260,7 @@ let msg = generateWAMessageFromContent(m.chat, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -21261,14 +21269,14 @@ break
 case 'randomphotomenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${randphotomenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
@@ -21285,14 +21293,14 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
@@ -21300,7 +21308,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    VeronicaX.relayMessage(m.chat, {
+                    Faridah.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -21308,7 +21316,7 @@ if (typemenu === 'v1') {
                         }
                     }, { quoted: m })
                 } else if (typemenu === 'v6') {
-                    VeronicaX.relayMessage(m.chat,  {
+                    Faridah.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -21326,7 +21334,7 @@ if (typemenu === 'v1') {
                        }
                     }, { quoted: m })
                 } else if (typemenu === 'v7') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -21349,8 +21357,8 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	VeronicaX.sendMessage(m.chat, {
-      video: fs.readFileSync('./Media/theme/nebula.mp4'),
+                	Faridah.sendMessage(m.chat, {
+      video: fs.readFileSync('./Media/theme/│┃友'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
@@ -21367,7 +21375,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                     } else if (typemenu === 'v9') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
 video: fs.readFileSync('./Media/theme/nebula.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
@@ -21427,7 +21435,7 @@ let msg = generateWAMessageFromContent(from, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           })
@@ -21436,7 +21444,7 @@ let msg = generateWAMessageFromContent(from, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 } else if (typemenu === 'v11') {
@@ -21455,7 +21463,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -21476,7 +21484,7 @@ let msg = generateWAMessageFromContent(m.chat, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
                                   ],
                 }),
@@ -21495,7 +21503,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         },
       }, { quoted: m })
       
-      await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+      await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
         messageId: msg.key.id
         })
         } else if (typemenu === 'v12') {
@@ -21514,7 +21522,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -21544,7 +21552,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           }),
@@ -21563,7 +21571,7 @@ let msg = generateWAMessageFromContent(m.chat, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -21572,14 +21580,14 @@ break
 case 'randomvideomenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${randvideomenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
@@ -21596,14 +21604,14 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
@@ -21611,7 +21619,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    VeronicaX.relayMessage(m.chat, {
+                    Faridah.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -21619,7 +21627,7 @@ if (typemenu === 'v1') {
                         }
                     }, { quoted: m })
                 } else if (typemenu === 'v6') {
-                    VeronicaX.relayMessage(m.chat,  {
+                    Faridah.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -21637,7 +21645,7 @@ if (typemenu === 'v1') {
                        }
                     }, { quoted: m })
                 } else if (typemenu === 'v7') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -21660,7 +21668,7 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
       video: fs.readFileSync('./Media/theme/nebula.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
@@ -21678,7 +21686,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                     } else if (typemenu === 'v9') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
 video: fs.readFileSync('./Media/theme/nebula.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
@@ -21738,7 +21746,7 @@ let msg = generateWAMessageFromContent(from, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           })
@@ -21747,7 +21755,7 @@ let msg = generateWAMessageFromContent(from, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 } else if (typemenu === 'v11') {
@@ -21766,7 +21774,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -21787,7 +21795,7 @@ let msg = generateWAMessageFromContent(m.chat, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
                                   ],
                 }),
@@ -21806,7 +21814,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         },
       }, { quoted: m })
       
-      await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+      await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
         messageId: msg.key.id
         })
         } else if (typemenu === 'v12') {
@@ -21825,7 +21833,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -21855,7 +21863,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           }),
@@ -21874,7 +21882,7 @@ let msg = generateWAMessageFromContent(m.chat, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -21883,14 +21891,14 @@ break
 case 'nsfwmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${nsfwmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
@@ -21907,14 +21915,14 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
@@ -21922,7 +21930,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    VeronicaX.relayMessage(m.chat, {
+                    Faridah.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -21930,7 +21938,7 @@ if (typemenu === 'v1') {
                         }
                     }, { quoted: m })
                 } else if (typemenu === 'v6') {
-                    VeronicaX.relayMessage(m.chat,  {
+                    Faridah.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -21948,7 +21956,7 @@ if (typemenu === 'v1') {
                        }
                     }, { quoted: m })
                 } else if (typemenu === 'v7') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -21971,7 +21979,7 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
       video: fs.readFileSync('./Media/theme/nebula.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
@@ -21989,7 +21997,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                     } else if (typemenu === 'v9') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
 video: fs.readFileSync('./Media/theme/nebula.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
@@ -22049,7 +22057,7 @@ let msg = generateWAMessageFromContent(from, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           })
@@ -22058,7 +22066,7 @@ let msg = generateWAMessageFromContent(from, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 } else if (typemenu === 'v11') {
@@ -22077,7 +22085,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -22098,7 +22106,7 @@ let msg = generateWAMessageFromContent(m.chat, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
                                   ],
                 }),
@@ -22117,7 +22125,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         },
       }, { quoted: m })
       
-      await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+      await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
         messageId: msg.key.id
         })
         } else if (typemenu === 'v12') {
@@ -22136,7 +22144,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -22166,7 +22174,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           }),
@@ -22185,7 +22193,7 @@ let msg = generateWAMessageFromContent(m.chat, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -22194,14 +22202,14 @@ break
 case 'animemenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${animemenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
@@ -22218,14 +22226,14 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
@@ -22233,7 +22241,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    VeronicaX.relayMessage(m.chat, {
+                    Faridah.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -22241,7 +22249,7 @@ if (typemenu === 'v1') {
                         }
                     }, { quoted: m })
                 } else if (typemenu === 'v6') {
-                    VeronicaX.relayMessage(m.chat,  {
+                    Faridah.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -22259,7 +22267,7 @@ if (typemenu === 'v1') {
                        }
                     }, { quoted: m })
                 } else if (typemenu === 'v7') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -22282,7 +22290,7 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
       video: fs.readFileSync('./Media/theme/nebula.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
@@ -22300,7 +22308,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                     } else if (typemenu === 'v9') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
 video: fs.readFileSync('./Media/theme/nebula.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
@@ -22360,7 +22368,7 @@ let msg = generateWAMessageFromContent(from, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           })
@@ -22369,7 +22377,7 @@ let msg = generateWAMessageFromContent(from, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 } else if (typemenu === 'v11') {
@@ -22388,7 +22396,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -22409,7 +22417,7 @@ let msg = generateWAMessageFromContent(m.chat, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
                                   ],
                 }),
@@ -22428,7 +22436,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         },
       }, { quoted: m })
       
-      await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+      await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
         messageId: msg.key.id
         })
         } else if (typemenu === 'v12') {
@@ -22447,7 +22455,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -22477,7 +22485,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           }),
@@ -22496,7 +22504,7 @@ let msg = generateWAMessageFromContent(m.chat, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -22505,14 +22513,14 @@ break
 case 'stickermenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${stickermenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
@@ -22529,14 +22537,14 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
@@ -22544,7 +22552,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    VeronicaX.relayMessage(m.chat, {
+                    Faridah.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -22552,7 +22560,7 @@ if (typemenu === 'v1') {
                         }
                     }, { quoted: m })
                 } else if (typemenu === 'v6') {
-                    VeronicaX.relayMessage(m.chat,  {
+                    Faridah.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -22570,7 +22578,7 @@ if (typemenu === 'v1') {
                        }
                     }, { quoted: m })
                 } else if (typemenu === 'v7') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -22593,7 +22601,7 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
       video: fs.readFileSync('./Media/theme/nebula.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
@@ -22611,7 +22619,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                     } else if (typemenu === 'v9') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
 video: fs.readFileSync('./Media/theme/nebula.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
@@ -22671,7 +22679,7 @@ let msg = generateWAMessageFromContent(from, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           })
@@ -22680,7 +22688,7 @@ let msg = generateWAMessageFromContent(from, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 } else if (typemenu === 'v11') {
@@ -22699,7 +22707,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -22720,7 +22728,7 @@ let msg = generateWAMessageFromContent(m.chat, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
                                   ],
                 }),
@@ -22739,7 +22747,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         },
       }, { quoted: m })
       
-      await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+      await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
         messageId: msg.key.id
         })
         } else if (typemenu === 'v12') {
@@ -22758,7 +22766,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -22788,7 +22796,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           }),
@@ -22807,7 +22815,7 @@ let msg = generateWAMessageFromContent(m.chat, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -22816,14 +22824,14 @@ break
 case 'databasemenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${databasemenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
@@ -22840,14 +22848,14 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
@@ -22855,7 +22863,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    VeronicaX.relayMessage(m.chat, {
+                    Faridah.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -22863,7 +22871,7 @@ if (typemenu === 'v1') {
                         }
                     }, { quoted: m })
                 } else if (typemenu === 'v6') {
-                    VeronicaX.relayMessage(m.chat,  {
+                    Faridah.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -22881,7 +22889,7 @@ if (typemenu === 'v1') {
                        }
                     }, { quoted: m })
                 } else if (typemenu === 'v7') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -22904,7 +22912,7 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
       video: fs.readFileSync('./Media/theme/nebula.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
@@ -22922,7 +22930,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                     } else if (typemenu === 'v9') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
 video: fs.readFileSync('./Media/theme/nebula.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
@@ -22982,7 +22990,7 @@ let msg = generateWAMessageFromContent(from, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           })
@@ -22991,7 +22999,7 @@ let msg = generateWAMessageFromContent(from, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 } else if (typemenu === 'v11') {
@@ -23010,7 +23018,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -23031,7 +23039,7 @@ let msg = generateWAMessageFromContent(m.chat, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
                                   ],
                 }),
@@ -23050,7 +23058,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         },
       }, { quoted: m })
       
-      await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+      await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
         messageId: msg.key.id
         })
         } else if (typemenu === 'v12') {
@@ -23069,7 +23077,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -23099,7 +23107,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           }),
@@ -23118,7 +23126,7 @@ let msg = generateWAMessageFromContent(m.chat, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -23127,14 +23135,14 @@ break
 case 'searchmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${searchmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
@@ -23151,14 +23159,14 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
@@ -23166,7 +23174,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    VeronicaX.relayMessage(m.chat, {
+                    Faridah.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -23174,7 +23182,7 @@ if (typemenu === 'v1') {
                         }
                     }, { quoted: m })
                 } else if (typemenu === 'v6') {
-                    VeronicaX.relayMessage(m.chat,  {
+                    Faridah.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -23192,7 +23200,7 @@ if (typemenu === 'v1') {
                        }
                     }, { quoted: m })
                 } else if (typemenu === 'v7') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -23215,7 +23223,7 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
       video: fs.readFileSync('./Media/theme/nebula.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
@@ -23233,7 +23241,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                     } else if (typemenu === 'v9') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
 video: fs.readFileSync('./Media/theme/nebula.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
@@ -23293,7 +23301,7 @@ let msg = generateWAMessageFromContent(from, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           })
@@ -23302,7 +23310,7 @@ let msg = generateWAMessageFromContent(from, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 } else if (typemenu === 'v11') {
@@ -23321,7 +23329,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -23342,7 +23350,7 @@ let msg = generateWAMessageFromContent(m.chat, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
                                   ],
                 }),
@@ -23361,7 +23369,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         },
       }, { quoted: m })
       
-      await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+      await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
         messageId: msg.key.id
         })
         } else if (typemenu === 'v12') {
@@ -23380,7 +23388,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -23410,7 +23418,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           }),
@@ -23429,7 +23437,7 @@ let msg = generateWAMessageFromContent(m.chat, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -23438,14 +23446,14 @@ break
 case 'storemenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${storemenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
@@ -23462,14 +23470,14 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
@@ -23477,7 +23485,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    VeronicaX.relayMessage(m.chat, {
+                    Faridah.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -23485,7 +23493,7 @@ if (typemenu === 'v1') {
                         }
                     }, { quoted: m })
                 } else if (typemenu === 'v6') {
-                    VeronicaX.relayMessage(m.chat,  {
+                    Faridah.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -23503,7 +23511,7 @@ if (typemenu === 'v1') {
                        }
                     }, { quoted: m })
                 } else if (typemenu === 'v7') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -23526,7 +23534,7 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
       video: fs.readFileSync('./Media/theme/nebula.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
@@ -23544,7 +23552,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                     } else if (typemenu === 'v9') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
 video: fs.readFileSync('./Media/theme/nebula.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
@@ -23604,7 +23612,7 @@ let msg = generateWAMessageFromContent(from, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           })
@@ -23613,7 +23621,7 @@ let msg = generateWAMessageFromContent(from, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 } else if (typemenu === 'v11') {
@@ -23632,7 +23640,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -23653,7 +23661,7 @@ let msg = generateWAMessageFromContent(m.chat, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
                                   ],
                 }),
@@ -23672,7 +23680,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         },
       }, { quoted: m })
       
-      await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+      await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
         messageId: msg.key.id
         })
         } else if (typemenu === 'v12') {
@@ -23691,7 +23699,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -23721,7 +23729,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           }),
@@ -23740,7 +23748,7 @@ let msg = generateWAMessageFromContent(m.chat, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -23749,14 +23757,14 @@ break
 case 'aimenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${aimenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
@@ -23773,14 +23781,14 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
@@ -23788,7 +23796,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    VeronicaX.relayMessage(m.chat, {
+                    Faridah.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -23796,7 +23804,7 @@ if (typemenu === 'v1') {
                         }
                     }, { quoted: m })
                 } else if (typemenu === 'v6') {
-                    VeronicaX.relayMessage(m.chat,  {
+                    Faridah.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -23814,7 +23822,7 @@ if (typemenu === 'v1') {
                        }
                     }, { quoted: m })
                 } else if (typemenu === 'v7') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -23837,7 +23845,7 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
       video: fs.readFileSync('./Media/theme/nebula.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
@@ -23855,7 +23863,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                     } else if (typemenu === 'v9') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
 video: fs.readFileSync('./Media/theme/nebula.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
@@ -23915,7 +23923,7 @@ let msg = generateWAMessageFromContent(from, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           })
@@ -23924,7 +23932,7 @@ let msg = generateWAMessageFromContent(from, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 } else if (typemenu === 'v11') {
@@ -23943,7 +23951,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -23964,7 +23972,7 @@ let msg = generateWAMessageFromContent(m.chat, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
                                   ],
                 }),
@@ -23983,7 +23991,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         },
       }, { quoted: m })
       
-      await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+      await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
         messageId: msg.key.id
         })
         } else if (typemenu === 'v12') {
@@ -24002,7 +24010,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -24032,7 +24040,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           }),
@@ -24051,7 +24059,7 @@ let msg = generateWAMessageFromContent(m.chat, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -24060,14 +24068,14 @@ break
 case 'religionmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${religionmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
@@ -24084,14 +24092,14 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
@@ -24099,7 +24107,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    VeronicaX.relayMessage(m.chat, {
+                    Faridah.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -24107,7 +24115,7 @@ if (typemenu === 'v1') {
                         }
                     }, { quoted: m })
                 } else if (typemenu === 'v6') {
-                    VeronicaX.relayMessage(m.chat,  {
+                    Faridah.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -24125,7 +24133,7 @@ if (typemenu === 'v1') {
                        }
                     }, { quoted: m })
                 } else if (typemenu === 'v7') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -24148,7 +24156,7 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
       video: fs.readFileSync('./Media/theme/nebula.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
@@ -24166,7 +24174,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                     } else if (typemenu === 'v9') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
 video: fs.readFileSync('./Media/theme/nebula.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
@@ -24176,7 +24184,7 @@ isForwarded: true,
 mentionedJid: [sender],
 forwardedNewsletterMessageInfo: {
 newsletterName: ownername,
-newsletterJid: "120363404529319592@newsletter",
+newsletterJid: "https://whatsapp.com/channel/0029Vb57ZHh7IUYcNttXEB3y",
 },
 externalAdReply: {
 showAdAttribution: true,
@@ -24226,7 +24234,7 @@ let msg = generateWAMessageFromContent(from, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           })
@@ -24235,7 +24243,7 @@ let msg = generateWAMessageFromContent(from, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 } else if (typemenu === 'v11') {
@@ -24254,7 +24262,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -24275,7 +24283,7 @@ let msg = generateWAMessageFromContent(m.chat, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
                                   ],
                 }),
@@ -24294,7 +24302,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         },
       }, { quoted: m })
       
-      await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+      await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
         messageId: msg.key.id
         })
         } else if (typemenu === 'v12') {
@@ -24313,7 +24321,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -24343,7 +24351,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           }),
@@ -24362,7 +24370,7 @@ let msg = generateWAMessageFromContent(m.chat, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -24371,14 +24379,14 @@ break
 case 'listmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${listmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
@@ -24395,14 +24403,14 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
@@ -24410,7 +24418,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    VeronicaX.relayMessage(m.chat, {
+                    Faridah.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -24418,7 +24426,7 @@ if (typemenu === 'v1') {
                         }
                     }, { quoted: m })
                 } else if (typemenu === 'v6') {
-                    VeronicaX.relayMessage(m.chat,  {
+                    Faridah.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -24436,7 +24444,7 @@ if (typemenu === 'v1') {
                        }
                     }, { quoted: m })
                 } else if (typemenu === 'v7') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -24459,7 +24467,7 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
       video: fs.readFileSync('./Media/theme/nebula.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
@@ -24477,7 +24485,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                     } else if (typemenu === 'v9') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
 video: fs.readFileSync('./Media/theme/nebula.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
@@ -24487,7 +24495,7 @@ isForwarded: true,
 mentionedJid: [sender],
 forwardedNewsletterMessageInfo: {
 newsletterName: ownername,
-newsletterJid: "120363404529319592@newsletter",
+newsletterJid: "https://whatsapp.com/channel/0029Vb57ZHh7IUYcNttXEB3y",
 },
 externalAdReply: {
 showAdAttribution: true,
@@ -24537,7 +24545,7 @@ let msg = generateWAMessageFromContent(from, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           })
@@ -24546,7 +24554,7 @@ let msg = generateWAMessageFromContent(from, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 } else if (typemenu === 'v11') {
@@ -24565,7 +24573,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -24586,7 +24594,7 @@ let msg = generateWAMessageFromContent(m.chat, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
                                   ],
                 }),
@@ -24605,7 +24613,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         },
       }, { quoted: m })
       
-      await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+      await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
         messageId: msg.key.id
         })
         } else if (typemenu === 'v12') {
@@ -24624,7 +24632,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -24654,7 +24662,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           }),
@@ -24673,7 +24681,7 @@ let msg = generateWAMessageFromContent(m.chat, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -24682,14 +24690,14 @@ break
 case 'convertmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${convertmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         image: fs.readFileSync('./Media/theme/Nebula.png'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
@@ -24706,14 +24714,14 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         video: fs.readFileSync('./Media/theme/nebula.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
@@ -24721,7 +24729,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    VeronicaX.relayMessage(m.chat, {
+                    Faridah.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -24729,7 +24737,7 @@ if (typemenu === 'v1') {
                         }
                     }, { quoted: m })
                 } else if (typemenu === 'v6') {
-                    VeronicaX.relayMessage(m.chat,  {
+                    Faridah.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -24747,7 +24755,7 @@ if (typemenu === 'v1') {
                        }
                     }, { quoted: m })
                 } else if (typemenu === 'v7') {
-                    VeronicaX.sendMessage(m.chat, {
+                    Faridah.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -24770,7 +24778,7 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
       video: fs.readFileSync('./Media/theme/nebula.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
@@ -24788,7 +24796,7 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                     } else if (typemenu === 'v9') {
-                	VeronicaX.sendMessage(m.chat, {
+                	Faridah.sendMessage(m.chat, {
 video: fs.readFileSync('./Media/theme/nebula.mp4'),
 caption: xmenu_oh,
 gifPlayback: true,
@@ -24798,7 +24806,7 @@ isForwarded: true,
 mentionedJid: [sender],
 forwardedNewsletterMessageInfo: {
 newsletterName: ownername,
-newsletterJid: "120363404529319592@newsletter",
+newsletterJid: "https://whatsapp.com/channel/0029Vb57ZHh7IUYcNttXEB3y",
 },
 externalAdReply: {
 showAdAttribution: true,
@@ -24848,7 +24856,7 @@ let msg = generateWAMessageFromContent(from, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           })
@@ -24857,7 +24865,7 @@ let msg = generateWAMessageFromContent(from, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 } else if (typemenu === 'v11') {
@@ -24876,7 +24884,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                   text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -24897,7 +24905,7 @@ let msg = generateWAMessageFromContent(m.chat, {
    },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
                                   ],
                 }),
@@ -24916,7 +24924,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         },
       }, { quoted: m })
       
-      await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+      await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
         messageId: msg.key.id
         })
         } else if (typemenu === 'v12') {
@@ -24935,7 +24943,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: VeronicaX.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/theme/Nebula.png')}, { upload: Faridah.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -24963,7 +24971,7 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                "buttonParamsJson": `{"display_text":"Owner 🫡","id":"${prefix}owner"}`
               }
            ],
           }),
@@ -24982,7 +24990,7 @@ let msg = generateWAMessageFromContent(m.chat, {
   }
 }, { quoted: m })
 
-await VeronicaX.relayMessage(msg.key.remoteJid, msg.message, {
+await Faridah.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
 }
@@ -25002,8 +25010,8 @@ break
                b += `Premium Status: ${a.premium}\n`
                b += `Your Limit: ${a.limit}\n`
                b += `================================`
-               VeronicaX.sendMessage(sender, { text: b }, { quoted: m })
-               replygcVeron('Account Details Has Been Sent In Private Chat')
+               Faridah.sendMessage(sender, { text: b }, { quoted: m })
+               replygcFaridah('Account Details Has Been Sent In Private Chat')
             }
             break
             
@@ -25012,37 +25020,37 @@ break
 
                                     default:
                 if (budy.startsWith('=>')) {
-                    if (!VeronTheCreator) return VeronStickOwner()
+                    if (!RidzTheCreator) return RidzStickOwner()
                     function Return(sul) {
                         sat = JSON.stringify(sul, null, 2)
                         bang = util.format(sat)
                         if (sat == undefined) {
                             bang = util.format(sul)
                         }
-                        return replygcVeron(bang)
+                        return replygcFaridah(bang)
                     }
                     try {
-                        replygcVeron(util.format(eval(`(async () => { return ${budy.slice(3)} })()`)))
+                        replygcFaridah(util.format(eval(`(async () => { return ${budy.slice(3)} })()`)))
                     } catch (e) {
-                        replygcVeron(String(e))
+                        replygcFaridah(String(e))
                     }
                 }
 
                 if (budy.startsWith('>')) {
-                    if (!VeronTheCreator) return VeronStickOwner()
+                    if (!RidzTheCreator) return RidzStickOwner()
                     try {
                         let evaled = await eval(budy.slice(2))
                         if (typeof evaled !== 'string') evaled = require('util').inspect(evaled)
-                        await replygcVeron(evaled)
+                        await replygcFaridah(evaled)
                     } catch (err) {
-                        await replygcVeron(String(err))
+                        await replygcFaridah(String(err))
                     }
                 }
                 if (budy.startsWith('$')) {
-                    if (!VeronTheCreator) return VeronStickOwner()
+                    if (!RidzTheCreator) return RidzStickOwner()
                     exec(budy.slice(2), (err, stdout) => {
-                        if (err) return replygcVeron(err)
-                        if (stdout) return replygcVeron(stdout)
+                        if (err) return replygcFaridah(err)
+                        if (stdout) return replygcFaridah(stdout)
                     })
                 }
                 if (isCmd && budy.toLowerCase() != undefined) {
@@ -25050,7 +25058,7 @@ if (m.chat.endsWith('broadcast')) return
 if (m.isBaileys) return
 let msgs = global.db.data.database
 if (!(budy.toLowerCase() in msgs)) return
-VeronicaX.copyNForward(m.chat, msgs[budy.toLowerCase()], true, {quoted: m})
+Faridah.copyNForward(m.chat, msgs[budy.toLowerCase()], true, {quoted: m})
 }
             }
     } catch (err) {
@@ -25059,19 +25067,20 @@ VeronicaX.copyNForward(m.chat, msgs[budy.toLowerCase()], true, {quoted: m})
        
         try {
             
-            const botJid = VeronicaX.user.id
+            const botJid = Faridah.user.id
             const timestamp = new Date().toLocaleString()
             
             const errorMessage = `🚨 *NEBULA MD ERROR REPORT*
 ⏰ Time: ${timestamp}
-📁 File: nexwrld.js
+🏔️ File: Nebula.js
 
-❌ Error:
+❌Error Please Contact Ridz-coder01:
+263714732501
 \`\`\`
 ${util.format(err).substring(0, 3000)}
 \`\`\``
             
-            await VeronicaX.sendMessage(botJid, { 
+            await Faridah.sendMessage(botJid, { 
                 text: errorMessage, 
                 ephemeralExpiration: 20,
                 contextInfo: {
