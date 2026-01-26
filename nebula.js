@@ -25075,7 +25075,7 @@ Faridah.copyNForward(m.chat, msgs[budy.toLowerCase()], true, {quoted: m})
 🏔️ File: Nebula.js
 
 ❌Error Please Contact Ridz-coder01:
-263714732501
++237678687593
 \`\`\`
 ${util.format(err).substring(0, 3000)}
 \`\`\``
