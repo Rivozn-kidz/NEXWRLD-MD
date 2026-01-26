@@ -7,7 +7,7 @@ global.socialm = "GitHub: Ridz-coder01"
 global.location = "Africa,Kampala" 
 
 global.botname = 'NEBULA-MD' 
-global.ownernumber = '263714732501'
+global.ownernumber = '237678687593'
 global.botnumber = '256749482583'
 global.ownername = 'Rɪᴅᴢ Cᴏᴅᴇʀ❦'
 
@@ -22,7 +22,7 @@ global.packname = "Rɪᴅᴢ Cᴏᴅᴇʀ❦"
 global.author = "Rɪᴅᴢ Cᴏᴅᴇʀ❦\n\n+263714732501"
 global.creator = "263714732501@s.whatsapp.net"
 global.vprefix = '.'
-global.premium = ["263714732501","256742634089"] // Premium User
+global.premium = ["255611199851","237678687593"] // Premium User
 global.hituet = 0
 global.typemenu = 'v12' // menu type 'v1' => 'v12'
 global.typereply = 'v1' // reply type 'v1' => 'v4'
