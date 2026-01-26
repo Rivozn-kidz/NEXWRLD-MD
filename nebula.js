@@ -6915,7 +6915,7 @@ case 'play2': {
     
     // Get MP3 download link from API
 const response = await axios.get(
- `https://yt-dl.officialhectormanuel.workers.dev/?url=${encodeURIComponent(anup3k.url)}`
+ `https://veron-apis.zone.id/downloader/youtube?url=${encodeURIComponent(anup3k.url)}`
 );
     
     if (!response.data.success || !response.data.result.success) {
@@ -6951,7 +6951,7 @@ case 'play': {
     
     // Get MP3 download link from API
 const response = await axios.get(
- `https://yt-dl.officialhectormanuel.workers.dev/?url=${encodeURIComponent(anup3k.url)}`
+ `https://veron-apis.zone.id/downloader/youtube?url=${encodeURIComponent(anup3k.url)}`
 );
     
     if (!response.data.success || !response.data.result.success) {
@@ -6987,7 +6987,7 @@ case 'playx': {
     
     // Get MP3 download link from API
     const response = await axios.get(
-`https://yt-dl.officialhectormanuel.workers.dev/?url=${encodeURIComponent(text)}`
+`https://veron-apis.zone.id/downloader/youtube?url=${encodeURIComponent(textl)}`
 );
     
     if (!response.data.success || !response.data.result.success) {
@@ -7029,7 +7029,7 @@ case 'ytvideo': {
     
     // Get video download link from API
 const response = await axios.get(
-  `https://api.nekolabs.web.id/downloader/youtube/v1?url=${encodeURIComponent(text)}&format=${quality}`
+`https://veron-apis.zone.id/downloader/youtube1?url=${encodeURIComponent(text)}&type=video&quality=${quality}`
 );
     
     if (!response.data.success || !response.data.result.success) {
