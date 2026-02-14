@@ -20,7 +20,7 @@ global.botscript = 'https://github.com/ridz-coder01/NEBULA-MD'
 global.packname = "Rɪᴅᴢ Cᴏᴅᴇʀ❦"
 
 global.author = "Rɪᴅᴢ Cᴏᴅᴇʀ❦\n\n+237678687593"
-global.creator = "263714732501@s.whatsapp.net"
+global.creator = "237678687593@s.whatsapp.net"
 global.vprefix = '.'
 global.premium = ["255611199851","237678687593"] // Premium User
 global.hituet = 0
@@ -40,7 +40,7 @@ global.mess = {
     error: 'Error! Please try again later',
     success: 'Here you go!'
 }
-global.thumb = fs.readFileSync('./Media/theme/vero.jpg')
+global.thumb = fs.readFileSync('./Media/theme/Nebula.png')
 
 
 let file = require.resolve(__filename)
