@@ -122,15 +122,15 @@ async function startSession() {
           const msg = await store.loadMessage(key.remoteJid, key.id, undefined)
           return msg?.message || undefined
         } catch (e) {
-          return { conversation: "ᴅᴇᴅɪᴄᴀᴛᴇᴅ ᴛᴏ Fᴀʀɪᴅᴀʜ🧝" }
+          return { conversation: "Cʀᴇᴀᴛᴇᴅ Bʏ Rɪᴅᴢ Cᴏᴅᴇʀ" }
         }
       }
     }
     return {
-      conversation: "ᴅᴇᴅɪᴄᴀᴛᴇᴅ ᴛᴏ Fᴀʀɪᴅᴀʜ🧝"
+      conversation: "Cʀᴇᴀᴛᴇᴅ Bʏ Rɪᴅᴢ Cᴏᴅᴇʀ"
     }
   }
-  
+
   const connectionOptions = {
     version,
     isLatest,
@@ -167,7 +167,7 @@ async function startSession() {
   }
 
   const nebulamd = makeWASocket(connectionOptions)
-  
+
   store.bind(nebulamd.ev)
 
   const CLEANUP_INTERVAL = 6 * 60 * 60 * 1000;
@@ -186,22 +186,22 @@ async function startSession() {
 
     let phoneNumberInput = phoneNumber
     if (!phoneNumberInput) {
-      
+
       phoneNumberInput = await question(chalk.bgBlack(chalk.greenBright(`Please type your WhatsApp number 😍\nFor example: +2567*** : .`)))
       phoneNumberInput = phoneNumberInput.replace(/[^0-9]/g, '')
     } else {
-  
+
       phoneNumberInput = phoneNumberInput.replace(/[^0-9]/g, '')
     }
 
     if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumberInput.startsWith(v))) {
       console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number:")))
-      
+
       if (!phoneNumber) {
         phoneNumberInput = await question(chalk.bgBlack(chalk.greenBright(`Please type your WhatsApp number : .`)))
         phoneNumberInput = phoneNumberInput.replace(/[^0-9]/g, '')
       } else {
-        
+
         process.exit(0)
       }
     }
@@ -251,7 +251,7 @@ async function startSession() {
       if (update.connection == "open" || update.receivedPendingNotifications == "true") {
         console.log(color(` `,'magenta'))
         console.log(color(`🌿Connected to => ` + JSON.stringify(nebulamd.user, null, 2), 'yellow'))
-      
+
 
         try {
             await nebulamd.sendMessage(nebulamd.user.id, { 
@@ -265,7 +265,7 @@ async function startSession() {
 │┃友 🧝 Mode: ${global.opts.mode || 'public'}
 │┃友 🧝 Version: [ ${require('./package.json').version || '1.0.0'} ]
 ┕──────────────────────❒
-> *ᴅᴇᴅɪᴄᴀᴛᴇᴅ ᴛᴏ Fᴀʀɪᴅᴀʜ🧝*` 
+> *Cʀᴇᴀᴛᴇᴅ Bʏ Rɪᴅᴢ Cᴏᴅᴇʀ*` 
             }, { ephemeralExpiration: 20 });
         } catch (err) {
             console.log('Failed to send startup message:', err);
@@ -296,7 +296,7 @@ async function startSession() {
           } catch (err) {
             ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
           }
-         
+
           memb = metadata.participants.length
           kayinzaWlcm = await getBuffer(ppuser)
           kayinzaLft = await getBuffer(ppuser)
@@ -316,7 +316,7 @@ async function startSession() {
 │┃友  𝗝𝗼𝗶𝗻𝗲𝗱 : 
 │┃友${xtime} ${xdate}
 ┕────────────────────────≽
-> *ᴅᴇᴅɪᴄᴀᴛᴇᴅ ᴛᴏ Fᴀʀɪᴅᴀʜ🧝*`
+> *Cʀᴇᴀᴛᴇᴅ Bʏ Rɪᴅᴢ Cᴏᴅᴇʀ*`
             let msgs = generateWAMessageFromContent(anu.id, {
               viewOnceMessage: {
                 message: {
@@ -372,7 +372,7 @@ async function startSession() {
 │┃友  𝗧𝗶𝗺𝗲 : 
 │┃友${kayinzatime} ${kayinzadate}
 ┕─────────────────────≽
-   > *ᴅᴇᴅɪᴄᴀᴛᴇᴅ ᴛᴏ Fᴀʀɪᴅᴀʜ🧝*`
+   > *Cʀᴇᴀᴛᴇᴅ Bʏ Rɪᴅᴢ Cᴏᴅᴇʀ*`
             let msgs = generateWAMessageFromContent(anu.id, {
               viewOnceMessage: {
                 message: {
@@ -420,7 +420,7 @@ async function startSession() {
     }
   })
 
-  
+
   nebulamd.ev.on('call', async (kayinzaPapa) => {
     if (global.anticall){
       console.log(kayinzaPapa)
@@ -556,7 +556,7 @@ async function startSession() {
       return msg?.message
     }
     return {
-      conversation: "ᴅᴇᴅɪᴄᴀᴛᴇᴅ ᴛᴏ Fᴀʀɪᴅᴀʜ🧝"
+      conversation: "Cʀᴇᴀᴛᴇᴅ Bʏ Rɪᴅᴢ Cᴏᴅᴇʀ"
     }
   }
   nebulamd.ev.on('messages.update', async chatUpdate => {
