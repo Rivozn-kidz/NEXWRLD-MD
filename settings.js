@@ -3,7 +3,7 @@ const chalk = require('chalk')
 
 
 global.ytname = "YT: Ridz-coder01"
-global.socialm = "GitHub: Ridz-coder01"
+global.socialm = "GitHub: Ridzcoder"
 global.location = "Africa,Kampala" 
 
 global.botname = 'NEBULA-MD' 
@@ -15,8 +15,8 @@ global.websitex = "https://ridzcoder.zone.id"
 global.wagc = "https://chat.whatsapp.com/KQzM54TU1LmGwIGc2TcOGi"
 global.themeemoji = '🧝'
 
-global.wm = "ᴅᴇᴅɪᴄᴀᴛᴇᴅ ᴛᴏ Fᴀʀɪᴅᴀʜ🧝"
-global.botscript = 'https://github.com/ridz-coder01/NEBULA-MD'
+global.wm = "Cʀᴇᴀᴛᴇᴅ Bʏ Rɪᴅᴢ Cᴏᴅᴇʀ🧝"
+global.botscript = 'https://github.com/ridzcoder/NEBULA-MD'
 global.packname = "Rɪᴅᴢ Cᴏᴅᴇʀ❦"
 
 global.author = "Rɪᴅᴢ Cᴏᴅᴇʀ❦\n\n+237678687593"
